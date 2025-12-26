@@ -1,0 +1,157 @@
+.tool-page.finance {
+  height: 100vh;
+  background: var(--bg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    &:hover { background: var(--hover); }
+    svg { width: 20px; height: 20px; }
+  }
+
+  .title { font-size: 20px; font-weight: 600; color: var(--text); }
+
+  .tool-content {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 20px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .mode-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 14px;
+    border-bottom: 2px solid var(--border);
+    flex-shrink: 0;
+    button {
+      flex: 1;
+      padding: 12px 8px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 15px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+      &.active {
+        color: var(--primary-color);
+        font-weight: 600;
+        &::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--primary-color); }
+      }
+    }
+  }
+
+  .result-preview {
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    .preview-item {
+      text-align: center;
+      .label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+      .value { font-size: 20px; font-weight: 700; color: var(--text); &.primary { color: var(--primary-color); } &.error { color: #e74c3c; font-size: 14px; } }
+    }
+  }
+
+  .section-title { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+
+  .input-section { margin-bottom: 14px; flex: 1; }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    &:last-child { border-bottom: none; }
+    label { font-size: 15px; color: var(--text); white-space: nowrap; flex-shrink: 0; }
+  }
+
+  .input-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 160px;
+    &.wide { width: 180px; }
+    input {
+      flex: 1;
+      width: 100%;
+      padding: 10px 12px;
+      border: none;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      text-align: right;
+      &::placeholder { color: var(--text-secondary); text-align: left; }
+    }
+    .unit { padding: 10px 12px; background: var(--bg); color: var(--text-secondary); font-size: 14px; border-left: 1px solid var(--border); }
+  }
+
+  .toggle-group {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    button {
+      flex: 1;
+      padding: 10px 16px;
+      border: none;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      &.active { background: #333; color: white; }
+      &:not(:last-child) { border-right: 1px solid var(--border); }
+    }
+    &.three button { padding: 10px 12px; }
+  }
+
+  .extra-info {
+    padding: 14px;
+    background: var(--bg);
+    border-radius: 10px;
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      .label { color: var(--text-secondary); }
+      .value { color: var(--text); font-weight: 500; }
+    }
+  }
+}

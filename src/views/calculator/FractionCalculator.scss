@@ -1,0 +1,213 @@
+.calculator-page.fraction {
+  height: 100vh;
+  background: var(--bg);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    &:hover { background: var(--hover); }
+    svg { width: 18px; height: 18px; }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .calculator {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .fraction-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 12px;
+    background: var(--bg);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+
+  .mixed-fraction {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .whole-part {
+    min-width: 36px;
+    min-height: 52px;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    
+    &:hover { border-color: var(--text-secondary); }
+    &.active { border-color: var(--primary-color); background: rgba(74, 144, 217, 0.1); }
+  }
+
+  .fraction-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+  }
+
+  .numerator, .denominator {
+    padding: 6px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 4px;
+    min-width: 36px;
+    text-align: center;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    
+    &.active { background: var(--primary-color); color: white; }
+    &:hover:not(.active) { background: var(--hover); }
+  }
+
+  .fraction-line {
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    margin: 1px 0;
+  }
+
+  .operator-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    button {
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 6px;
+      background: var(--hover);
+      color: var(--text);
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      
+      &.active { background: var(--primary-color); color: white; }
+      &:hover:not(.active) { background: var(--border); }
+    }
+  }
+
+  .result-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--bg);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    
+    .equals { font-size: 24px; color: var(--text); }
+    
+    .mixed-fraction.result {
+      .whole-part {
+        border: none;
+        min-width: auto;
+        min-height: auto;
+        padding: 0;
+        font-size: 28px;
+        color: var(--primary-color);
+        cursor: default;
+        &:hover { border-color: transparent; }
+      }
+      
+      .numerator, .denominator {
+        font-size: 24px;
+        color: var(--primary-color);
+        cursor: default;
+        border: none;
+        &:hover { background: transparent; }
+      }
+    }
+    
+    .decimal {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-left: 8px;
+    }
+  }
+
+  .keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .row {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .key {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    
+    &:hover { transform: scale(1.03); }
+    &:active { transform: scale(0.97); }
+    &:empty { visibility: hidden; }
+    
+    &.number { background: var(--bg); color: var(--text); }
+    &.function { background: var(--hover); color: var(--text-secondary); }
+    &.equals { background: var(--primary-color); color: white; }
+  }
+}

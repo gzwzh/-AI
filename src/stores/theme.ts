@@ -1,20 +1,22 @@
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { create } from 'zustand'
 
-export const useThemeStore = defineStore('theme', () => {
-  const theme = ref<'light' | 'dark'>(
-    (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
-  )
+type Theme = 'light' | 'dark'
 
-  const toggleTheme = () => {
-    theme.value = theme.value === 'light' ? 'dark' : 'light'
-    localStorage.setItem('theme', theme.value)
+interface ThemeState {
+  theme: Theme
+  toggleTheme: () => void
+  setTheme: (theme: Theme) => void
+}
+
+export const useThemeStore = create<ThemeState>((set) => ({
+  theme: (localStorage.getItem('theme') as Theme) || 'light',
+  toggleTheme: () => set((state) => {
+    const newTheme = state.theme === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', newTheme)
+    return { theme: newTheme }
+  }),
+  setTheme: (theme) => {
+    localStorage.setItem('theme', theme)
+    set({ theme })
   }
-
-  const setTheme = (newTheme: 'light' | 'dark') => {
-    theme.value = newTheme
-    localStorage.setItem('theme', theme.value)
-  }
-
-  return { theme, toggleTheme, setTheme }
-})
+}))

@@ -1,0 +1,132 @@
+.tool-page.radix {
+  height: 100vh;
+  background: var(--bg);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    &:hover { background: var(--hover); }
+    svg { width: 18px; height: 18px; }
+  }
+
+  .title { font-size: 20px; font-weight: 600; color: var(--text); }
+
+  .tool-content {
+    flex: 1;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+
+  .copy-section {
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    
+    .copy-title { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; }
+    
+    .copy-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      
+      button {
+        padding: 10px 6px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover { background: var(--hover); }
+        &:active { transform: scale(0.95); }
+        &.copied { background: #4caf50; color: white; border-color: #4caf50; }
+      }
+    }
+  }
+
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    
+    &.active { border-color: var(--primary-color); }
+    
+    label { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+    
+    input {
+      border: none;
+      background: transparent;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      font-family: 'Consolas', monospace;
+      &:focus { outline: none; }
+      &::placeholder { color: var(--text-secondary); opacity: 0.5; }
+    }
+  }
+
+  .keypad { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .hex-keys { margin-bottom: 6px; }
+  .row { display: flex; gap: 6px; flex: 1; }
+
+  .key {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.15s;
+    
+    &:hover:not(:disabled) { transform: scale(1.03); }
+    &:active:not(:disabled) { transform: scale(0.97); }
+    &:disabled { opacity: 0.3; cursor: not-allowed; }
+    &.hex { background: var(--primary-color); color: white; }
+    &.function { background: var(--hover); color: var(--text-secondary); }
+  }
+}

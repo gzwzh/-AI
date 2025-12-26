@@ -1,0 +1,269 @@
+.tool-page.date {
+  height: 100vh;
+  background: var(--bg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    &:hover { background: var(--hover); }
+    svg { width: 20px; height: 20px; }
+  }
+
+  .title { font-size: 20px; font-weight: 600; color: var(--text); }
+
+  .tool-content {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 20px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .mode-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+    
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s;
+      &.active { background: var(--primary-color); color: white; }
+    }
+  }
+
+  .calc-area { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    &:last-of-type { border-bottom: none; }
+    label { font-size: 15px; color: var(--text); white-space: nowrap; flex-shrink: 0; }
+  }
+
+  .date-field {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    input[type="date"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      &:focus { outline: none; border-color: var(--primary-color); }
+    }
+  }
+
+  .today-btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover { opacity: 0.9; }
+  }
+
+  .input-field, .select-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    input, select {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      width: 100px;
+      text-align: center;
+      &:focus { outline: none; border-color: var(--primary-color); }
+    }
+    .unit { font-size: 14px; color: var(--text-secondary); }
+  }
+
+  .leap-check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    input[type="checkbox"] { width: 18px; height: 18px; }
+  }
+
+  .result-area {
+    padding: 16px;
+    background: var(--bg);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .result-main {
+    margin-bottom: 14px;
+    .number { font-size: 40px; font-weight: 700; color: var(--primary-color); }
+    .unit { font-size: 18px; color: var(--text-secondary); margin-left: 6px; }
+  }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      .value { font-size: 18px; font-weight: 600; color: var(--text); }
+      .label { font-size: 13px; color: var(--text-secondary); }
+    }
+  }
+
+  .workdays-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2e7d32;
+    .icon { font-size: 16px; }
+    strong { font-weight: 600; }
+  }
+
+  .adjust-inputs { display: flex; gap: 12px; padding: 12px 0; }
+
+  .adjust-item {
+    flex: 1;
+    label { display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; text-align: center; }
+  }
+
+  .number-input {
+    display: flex;
+    align-items: center;
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+    button {
+      width: 36px;
+      height: 44px;
+      border: none;
+      background: var(--hover);
+      color: var(--text);
+      font-size: 18px;
+      cursor: pointer;
+      &:hover { background: var(--primary-color); color: white; }
+    }
+    input {
+      flex: 1;
+      width: 100%;
+      padding: 10px 4px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 16px;
+      text-align: center;
+      &:focus { outline: none; }
+      &::-webkit-inner-spin-button, &::-webkit-outer-spin-button { -webkit-appearance: none; }
+    }
+  }
+
+  .result-date {
+    .date { font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 6px; }
+    .weekday { font-size: 15px; color: var(--text-secondary); }
+  }
+
+  .convert-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      cursor: pointer;
+      &.active { background: #333; color: white; border-color: #333; }
+    }
+  }
+
+  .lunar-result {
+    .lunar-main {
+      margin-bottom: 10px;
+      .ganzhi { font-size: 20px; font-weight: 600; color: var(--text); }
+      .shengxiao { font-size: 16px; color: #e74c3c; margin-left: 8px; }
+    }
+    .lunar-date { font-size: 28px; font-weight: 700; color: var(--primary-color); margin-bottom: 12px; }
+    .lunar-extra {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      .tag {
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 13px;
+        &.jieqi { background: #e3f2fd; color: #1565c0; }
+        &.festival { background: #fce4ec; color: #c2185b; }
+      }
+    }
+  }
+
+  .solar-result {
+    .solar-date { font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 6px; }
+    .solar-weekday { font-size: 15px; color: var(--text-secondary); }
+  }
+
+  .error-msg { color: #e74c3c; font-size: 15px; }
+}

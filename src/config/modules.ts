@@ -12,14 +12,12 @@ export interface ModuleCategory {
   modules: ModuleItem[]
 }
 
-// 计算器模块
 const calculatorModules: ModuleItem[] = [
   { id: 'basic', name: '基础计算器', icon: 'calculator', route: '/calculator/basic', category: 'calculator' },
   { id: 'scientific', name: '科学计算器', icon: 'scientific', route: '/calculator/scientific', category: 'calculator' },
   { id: 'fraction', name: '分数计算器', icon: 'fraction', route: '/calculator/fraction', category: 'calculator' },
 ]
 
-// 实用工具模块
 const toolModules: ModuleItem[] = [
   { id: 'currency', name: '汇率换算', icon: 'currency', route: '/tool/currency', category: 'tool' },
   { id: 'relative', name: '亲戚称呼', icon: 'relative', route: '/tool/relative', category: 'tool' },
@@ -34,7 +32,6 @@ const toolModules: ModuleItem[] = [
   { id: 'memo', name: '备忘录', icon: 'memo', route: '/tool/memo', category: 'tool' },
 ]
 
-// 单位换算模块
 const converterModules: ModuleItem[] = [
   { id: 'length', name: '长度转换', icon: 'length', route: '/converter/length', category: 'converter' },
   { id: 'area', name: '面积转换', icon: 'area', route: '/converter/area', category: 'converter' },
