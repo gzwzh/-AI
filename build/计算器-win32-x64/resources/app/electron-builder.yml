@@ -1,0 +1,23 @@
+appId: com.calculator
+productName: 计算器
+directories:
+  output: release
+files:
+  - dist/**/*
+  - electron/**/*
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: public/计算器.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 计算器
+  installerIcon: public/计算器.ico
+  uninstallerIcon: public/计算器.ico
+publish: never

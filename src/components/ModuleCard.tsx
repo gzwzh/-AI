@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import type { ModuleItem } from '@/config/modules'
 import ModuleIcon from './ModuleIcon'
 import './ModuleCard.scss'
@@ -8,12 +8,18 @@ interface ModuleCardProps {
 }
 
 export default function ModuleCard({ module }: ModuleCardProps) {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(module.route)
+  }
+
   return (
-    <Link to={module.route} className="module-card">
+    <div className="module-card" onClick={handleClick}>
       <div className="card-icon">
         <ModuleIcon name={module.icon} />
       </div>
       <span className="card-name">{module.name}</span>
-    </Link>
+    </div>
   )
 }

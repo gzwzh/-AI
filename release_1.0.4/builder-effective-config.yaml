@@ -1,0 +1,32 @@
+directories:
+  output: release_1.0.4
+  buildResources: build
+appId: com.calculator
+productName: 全能计算器
+files:
+  - filter:
+      - dist/**/*
+      - electron/**/*
+      - public/计算器.ico
+extraResources:
+  - from: public/计算器.ico
+    to: 计算器.ico
+extraFiles:
+  - from: updater.exe
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: public/计算器.ico
+  signAndEditExecutable: true
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 全能计算器
+  artifactName: 全能计算器-安装版-${version}.${ext}
+portable:
+  artifactName: 全能计算器-便携版.${ext}
+electronVersion: 28.3.3

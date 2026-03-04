@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useThemeStore } from '@/stores/theme'
+import { useAuthStore } from '@/stores/auth'
+import UpdateModal from '@/components/UpdateModal'
 import Home from '@/views/Home'
 import BasicCalculator from '@/views/calculator/BasicCalculator'
 import ScientificCalculator from '@/views/calculator/ScientificCalculator'
@@ -20,9 +23,20 @@ import './App.scss'
 
 function App() {
   const theme = useThemeStore((state) => state.theme)
+  const initializeAuth = useAuthStore((state) => state.initializeAuth)
+  const [version, setVersion] = useState('')
+
+  // 应用启动时初始化登录状态
+  useEffect(() => {
+    initializeAuth()
+    if (window.electronAPI) {
+      window.electronAPI.getAppVersion().then(setVersion).catch(console.error)
+    }
+  }, [initializeAuth])
 
   return (
     <div className={`app ${theme}`}>
+      <UpdateModal />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator/basic" element={<BasicCalculator />} />
@@ -41,6 +55,18 @@ function App() {
         <Route path="/tool/account" element={<AccountBook />} />
         <Route path="/tool/memo" element={<Memo />} />
       </Routes>
+      <div style={{
+        position: 'fixed',
+        bottom: '10px',
+        right: '10px',
+        fontSize: '12px',
+        color: 'var(--text-secondary, #999)',
+        opacity: 0.7,
+        zIndex: 999,
+        pointerEvents: 'none'
+      }}>
+        v{version}
+      </div>
     </div>
   )
 }

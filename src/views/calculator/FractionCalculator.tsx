@@ -19,6 +19,7 @@ export default function FractionCalculator() {
   const [operator, setOperator] = useState<'+' | '-' | '×' | '÷'>('+')
   const [activeInput, setActiveInput] = useState<ActiveInput>('n1')
   const [hasCalculated, setHasCalculated] = useState(false)
+  const [error, setError] = useState('')
 
   const gcd = (a: number, b: number): number => {
     a = Math.abs(a)
@@ -48,20 +49,27 @@ export default function FractionCalculator() {
   }
 
   const calculate = () => {
-    const f1 = toImproper(fraction1)
-    const f2 = toImproper(fraction2)
-    if (f1.den === 0 || f2.den === 0) {
-      setResult({ whole: 0, numerator: 0, denominator: 1 })
-      setHasCalculated(true)
+    setError('')
+    if (fraction1.denominator === 0 || fraction2.denominator === 0) {
+      setError('分母不能为0')
+      setHasCalculated(false)
       return
     }
+
+    const f1 = toImproper(fraction1)
+    const f2 = toImproper(fraction2)
+
     let resNum = 0, resDen = 1
     switch (operator) {
       case '+': resNum = f1.num * f2.den + f2.num * f1.den; resDen = f1.den * f2.den; break
       case '-': resNum = f1.num * f2.den - f2.num * f1.den; resDen = f1.den * f2.den; break
       case '×': resNum = f1.num * f2.num; resDen = f1.den * f2.den; break
       case '÷':
-        if (f2.num === 0) { setResult({ whole: 0, numerator: 0, denominator: 1 }); setHasCalculated(true); return }
+        if (f2.num === 0) { 
+          setError('除数不能为0')
+          setHasCalculated(false)
+          return 
+        }
         resNum = f1.num * f2.den; resDen = f1.den * f2.num; break
     }
     setResult(toMixed(resNum, resDen))
@@ -86,6 +94,7 @@ export default function FractionCalculator() {
       setFraction({ ...fraction, [field]: newValue * (field === 'whole' ? sign : 1) })
     }
     setHasCalculated(false)
+    setError('')
   }
 
   const toggleSign = () => {
@@ -94,6 +103,7 @@ export default function FractionCalculator() {
     const setFraction = isFirst ? setFraction1 : setFraction2
     setFraction({ ...fraction, whole: -fraction.whole })
     setHasCalculated(false)
+    setError('')
   }
 
   const backspace = () => {
@@ -105,6 +115,7 @@ export default function FractionCalculator() {
     const newValue = Math.floor(Math.abs(fraction[field]) / 10)
     setFraction({ ...fraction, [field]: newValue * (field === 'whole' ? sign : 1) })
     setHasCalculated(false)
+    setError('')
   }
 
   const clear = () => {
@@ -113,6 +124,7 @@ export default function FractionCalculator() {
     setResult({ whole: 0, numerator: 0, denominator: 1 })
     setHasCalculated(false)
     setActiveInput('n1')
+    setError('')
   }
 
   const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '±'], ['0', '', '', '=']]
@@ -170,6 +182,8 @@ export default function FractionCalculator() {
           </div>
         </div>
         
+        {error && <div className="error-message" style={{color: '#ff4d4f', textAlign: 'center', marginBottom: '16px', fontSize: '14px'}}>{error}</div>}
+
         {hasCalculated && (
           <div className="result-area">
             <span className="equals">=</span>

@@ -1,0 +1,86 @@
+.tool-page { height: 100vh; background: var(--bg); padding: 12px; display: flex; flex-direction: column; overflow: hidden; }
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.back-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border: none; border-radius: 50%;
+  background: var(--card-bg); color: var(--text); cursor: pointer;
+  &:hover { background: var(--hover); }
+  svg { width: 18px; height: 18px; }
+}
+.title { font-size: 20px; font-weight: 600; color: var(--text); }
+.tool-content {
+  flex: 1; max-width: 500px; margin: 0 auto; width: 100%; background: var(--card-bg);
+  border-radius: 12px; padding: 12px; box-shadow: 0 4px 20px var(--shadow);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.gender-select {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-shrink: 0;
+  .label { font-size: 15px; color: var(--text-secondary); }
+  button {
+    padding: 8px 18px; border: 1px solid var(--border); border-radius: 16px;
+    background: var(--bg); color: var(--text); font-size: 15px; cursor: pointer;
+    &.active { background: var(--primary-color); border-color: var(--primary-color); color: white; }
+  }
+}
+.display-area { 
+  background: var(--bg); border-radius: 10px; padding: 14px; margin-bottom: 10px;
+  min-height: 100px; flex-shrink: 0;
+}
+.chain-display {
+  font-size: 17px; color: var(--text); margin-bottom: 10px; min-height: 40px;
+  line-height: 1.4;
+  .placeholder { color: var(--text-secondary); font-size: 15px; }
+  .chain-text { color: var(--primary-color); font-weight: 500; }
+}
+.result-display { padding-top: 10px; border-top: 1px solid var(--border); }
+.result-row {
+  display: flex; align-items: center; margin-bottom: 8px;
+  &:last-child { margin-bottom: 0; }
+  .label { font-size: 14px; color: var(--text-secondary); width: 70px; }
+  .value { font-size: 26px; font-weight: 700; color: var(--primary-color); }
+  &.reverse .value { color: #27ae60; }
+}
+.error-msg { font-size: 14px; color: #e74c3c; text-align: center; padding: 8px 0; }
+.relation-buttons { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; flex-shrink: 0; }
+.button-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.bottom-row { grid-template-columns: 1fr 1fr; }
+.rel-btn {
+  padding: 16px 6px; border: 1px solid var(--border); border-radius: 6px; 
+  font-size: 20px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+  background: var(--bg); color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  &:hover:not(:disabled) { background: var(--hover); }
+  &:active:not(:disabled) { transform: scale(0.95); }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+  &.spouse { background: #fff3e0; color: #e65100; border-color: #ffcc80; }
+  &.parent { background: #fce4ec; color: #c2185b; border-color: #f8bbd9; }
+  &.sibling { background: #e3f2fd; color: #1565c0; border-color: #90caf9; }
+  &.child { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+  &.action { background: var(--bg); color: var(--text-secondary); }
+  &.reverse-btn {
+    background: var(--bg); color: var(--text);
+    &.active { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+  }
+  &.calc-btn { background: #ff9800; color: white; border-color: #ff9800; font-size: 22px; font-weight: 700; }
+}
+.examples { padding-top: 12px; border-top: 1px solid var(--border); flex: 1; overflow: auto; }
+.example-title { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+.example-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.example-item {
+  display: flex; justify-content: space-between; padding: 8px 12px;
+  background: var(--bg); border-radius: 6px; font-size: 14px;
+  .path { color: var(--text-secondary); }
+  .name { color: var(--text); font-weight: 500; }
+}
+
+:root[data-theme="dark"] {
+  .rel-btn {
+    &.spouse { background: #4a3728; color: #ffb74d; border-color: #6d4c41; }
+    &.parent { background: #4a2c3a; color: #f48fb1; border-color: #6d3b50; }
+    &.sibling { background: #1e3a5f; color: #64b5f6; border-color: #2c5282; }
+    &.child { background: #1e4620; color: #81c784; border-color: #2e7d32; }
+  }
+}
