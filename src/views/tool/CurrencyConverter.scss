@@ -1,42 +1,14 @@
 .tool-page.currency {
   height: 100vh;
   background: var(--bg);
-  padding: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
-
-  .back-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: var(--card-bg);
-    color: var(--text);
-    cursor: pointer;
-    &:hover { background: var(--hover); }
-    svg { width: 18px; height: 18px; }
-  }
-
-  .title { font-size: 20px; font-weight: 600; color: var(--text); }
-
   .tool-content {
     flex: 1;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 12px auto;
     width: 100%;
     background: var(--card-bg);
     border-radius: 12px;

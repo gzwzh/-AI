@@ -1,6 +1,6 @@
-import { useState, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import { useState, useMemo, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import ToolHeader from '@/components/ToolHeader'
 import './CurrencyConverter.scss'
 
 interface Currency {
@@ -27,6 +27,7 @@ const defaultCurrencies: Currency[] = [
 
 export default function CurrencyConverter() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [currencies] = useState<Currency[]>(() => {
     const saved = localStorage.getItem('currencies')
     if (saved) try { return JSON.parse(saved) } catch { return [...defaultCurrencies] }
@@ -35,6 +36,23 @@ export default function CurrencyConverter() {
   const [fromCurrency, setFromCurrency] = useState(0)
   const [toCurrency, setToCurrency] = useState(1)
   const [fromValue, setFromValue] = useState('100')
+
+  useEffect(() => {
+    if (location.state) {
+      const { from, to, amount } = location.state
+      if (from) {
+        const fromIndex = currencies.findIndex(c => c.code === from)
+        if (fromIndex !== -1) setFromCurrency(fromIndex)
+      }
+      if (to) {
+        const toIndex = currencies.findIndex(c => c.code === to)
+        if (toIndex !== -1) setToCurrency(toIndex)
+      }
+      if (amount !== undefined) {
+        setFromValue(String(amount))
+      }
+    }
+  }, [location.state, currencies])
 
   const toValue = useMemo(() => {
     const amount = parseFloat(fromValue) || 0
@@ -70,15 +88,7 @@ export default function CurrencyConverter() {
 
   return (
     <div className="tool-page currency">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">汇率换算</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="汇率换算" />
       
       <main className="tool-content">
         <div className="convert-area">

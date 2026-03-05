@@ -1,15 +1,20 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import { evaluate } from 'mathjs'
+import ToolHeader from '@/components/ToolHeader'
+import HistorySidebar from '@/components/HistorySidebar'
+import { useHistoryStore } from '@/stores/history'
 import './BasicCalculator.scss'
 
 export default function BasicCalculator() {
   const navigate = useNavigate()
+  const addHistory = useHistoryStore((state) => state.addHistory)
   const [display, setDisplay] = useState('0')
   const [expression, setExpression] = useState('')
   const [waitingForOperand, setWaitingForOperand] = useState(true)
   const [lastInputWasOperator, setLastInputWasOperator] = useState(false)
   const [openParenCount, setOpenParenCount] = useState(0)
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false)
 
   const buttons = [
     ['C', '()', '⌫', '÷'],
@@ -138,9 +143,16 @@ export default function BasicCalculator() {
         }
         try {
           const evalExpr = finalExpr.replace(/×/g, '*').replace(/÷/g, '/')
-          const result = Function('"use strict"; return (' + evalExpr + ')')()
-          const resultNum = parseFloat(result.toPrecision(12))
-          setDisplay(String(resultNum))
+          const result = evaluate(evalExpr)
+          const resultStr = String(Number(result.toFixed(12)))
+          
+          addHistory({
+            type: 'basic',
+            expression: finalExpr,
+            result: resultStr
+          })
+          
+          setDisplay(resultStr)
           setExpression('')
           setOpenParenCount(0)
         } catch {
@@ -180,20 +192,49 @@ export default function BasicCalculator() {
 
   return (
     <div className="calculator-page">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">基础计算器</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader 
+        title="基础计算器" 
+        extraActions={
+          <button className="history-btn" onClick={() => setIsHistoryOpen(true)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+          </button>
+        }
+      />
+
+      <HistorySidebar />
       
       <main className="calculator">
         <div className="display">
           <div className="expression">{displayExpression}</div>
-          <div className="result">{display}</div>
+          <div className="result-container">
+            <div className="result">{display}</div>
+            <div className="result-actions">
+              <button 
+                className="action-btn" 
+                onClick={() => {
+                  navigator.clipboard.writeText(display)
+                }} 
+                title="复制结果"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+              <button 
+                className="action-btn" 
+                onClick={() => {
+                  navigate('/tool/uppercase', { state: { amount: display, from: 'calculator' } })
+                }} 
+                title="转大写金额"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 8v4l3 3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
         
         <div className="keypad">

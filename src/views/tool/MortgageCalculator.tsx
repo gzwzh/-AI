@@ -1,10 +1,17 @@
 import { useState, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+import ToolHeader from '@/components/ToolHeader'
 import './MortgageCalculator.scss'
 
+type ScheduleItem = {
+  month: number
+  payment: number
+  principal: number
+  interest: number
+  remaining: number
+}
+
 export default function MortgageCalculator() {
-  const navigate = useNavigate()
   const [loanType, setLoanType] = useState<'commercial' | 'fund' | 'combined'>('commercial')
   const [commercialAmount, setCommercialAmount] = useState<number | null>(null)
   const [commercialRateType, setCommercialRateType] = useState<'lpr' | 'base'>('lpr')
@@ -13,8 +20,9 @@ export default function MortgageCalculator() {
   const [commercialBaseRate, setCommercialBaseRate] = useState(4.9)
   const [fundAmount, setFundAmount] = useState<number | null>(null)
   const [fundRate, setFundRate] = useState(2.6)
-  const [loanYears, setLoanYears] = useState<number | null>(null)
+  const [loanYears, setLoanYears] = useState<number | null>(30)
   const [paymentType, setPaymentType] = useState<'equal' | 'principal'>('equal')
+  const [showSchedule, setShowSchedule] = useState(false)
 
   const commercialRate = useMemo(() => {
     if (commercialRateType === 'lpr') return commercialLpr + commercialBasisPoints / 10
@@ -25,21 +33,71 @@ export default function MortgageCalculator() {
     const P = amount * 10000
     const r = rate / 100 / 12
     const n = years * 12
-    if (r === 0) return { monthlyPayment: P / n, firstMonthPayment: P / n, lastMonthPayment: P / n, totalPayment: P, totalInterest: 0 }
+    if (r === 0) {
+      return {
+        monthlyPayment: P / n,
+        firstMonthPayment: P / n,
+        lastMonthPayment: P / n,
+        totalPayment: P,
+        totalInterest: 0,
+        schedule: Array.from({ length: n }, (_, i) => ({
+          month: i + 1,
+          payment: P / n,
+          principal: P / n,
+          interest: 0,
+          remaining: P - (i + 1) * (P / n)
+        }))
+      }
+    }
+
+    // 等额本息
     const equalMonthly = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1)
     const equalTotal = equalMonthly * n
     const equalInterest = equalTotal - P
+    const equalSchedule = []
+    let remainingEqual = P
+    for (let i = 1; i <= n; i++) {
+      const interest = remainingEqual * r
+      const principal = equalMonthly - interest
+      remainingEqual -= principal
+      equalSchedule.push({
+        month: i,
+        payment: equalMonthly,
+        principal,
+        interest,
+        remaining: Math.max(0, remainingEqual)
+      })
+    }
+
+    // 等额本金
     const monthlyPrincipal = P / n
+    const principalSchedule = []
+    let remainingPrincipal = P
+    let totalPrincipalInterest = 0
+    for (let i = 1; i <= n; i++) {
+      const interest = remainingPrincipal * r
+      const payment = monthlyPrincipal + interest
+      totalPrincipalInterest += interest
+      remainingPrincipal -= monthlyPrincipal
+      principalSchedule.push({
+        month: i,
+        payment,
+        principal: monthlyPrincipal,
+        interest,
+        remaining: Math.max(0, remainingPrincipal)
+      })
+    }
+
     const firstMonth = monthlyPrincipal + P * r
     const lastMonth = monthlyPrincipal + monthlyPrincipal * r
-    const principalInterest = (n + 1) * P * r / 2
-    const principalTotal = P + principalInterest
+
     return {
       monthlyPayment: equalMonthly,
       firstMonthPayment: firstMonth,
       lastMonthPayment: lastMonth,
-      totalPayment: paymentType === 'equal' ? equalTotal : principalTotal,
-      totalInterest: paymentType === 'equal' ? equalInterest : principalInterest
+      totalPayment: paymentType === 'equal' ? equalTotal : P + totalPrincipalInterest,
+      totalInterest: paymentType === 'equal' ? equalInterest : totalPrincipalInterest,
+      schedule: paymentType === 'equal' ? equalSchedule : principalSchedule
     }
   }
 
@@ -63,6 +121,22 @@ export default function MortgageCalculator() {
     if (cAmount <= 0 && fAmount <= 0) return null
     const commercialCalc = cAmount > 0 ? calculateLoan(cAmount, commercialRate, years) : null
     const fundCalc = fAmount > 0 ? calculateLoan(fAmount, fundRate, years) : null
+    
+    // 合并还款明细
+    const n = years * 12
+    const combinedSchedule = []
+    for (let i = 0; i < n; i++) {
+      const cMonth = commercialCalc?.schedule[i]
+      const fMonth = fundCalc?.schedule[i]
+      combinedSchedule.push({
+        month: i + 1,
+        payment: (cMonth?.payment || 0) + (fMonth?.payment || 0),
+        principal: (cMonth?.principal || 0) + (fMonth?.principal || 0),
+        interest: (cMonth?.interest || 0) + (fMonth?.interest || 0),
+        remaining: (cMonth?.remaining || 0) + (fMonth?.remaining || 0)
+      })
+    }
+
     return {
       type: 'combined',
       monthlyPayment: (commercialCalc?.monthlyPayment || 0) + (fundCalc?.monthlyPayment || 0),
@@ -74,23 +148,24 @@ export default function MortgageCalculator() {
       commercial: commercialCalc,
       fund: fundCalc,
       commercialAmount: cAmount * 10000,
-      fundAmount: fAmount * 10000
+      fundAmount: fAmount * 10000,
+      schedule: combinedSchedule
     }
   }, [loanType, commercialAmount, fundAmount, commercialRate, fundRate, loanYears, paymentType])
 
   const formatMoney = (num: number) => num.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
+  const pieData = useMemo(() => {
+    if (!result) return []
+    return [
+      { name: '贷款本金', value: result.loanAmount, color: '#3498db' },
+      { name: '支付利息', value: result.totalInterest, color: '#e74c3c' }
+    ]
+  }, [result])
+
   return (
     <div className="tool-page mortgage">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">房贷计算</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="房贷计算" />
       
       <main className="tool-content">
         <div className="loan-type-tabs">
@@ -184,26 +259,112 @@ export default function MortgageCalculator() {
         </div>
 
         {result && (
-          <div className="result-section">
-            {paymentType === 'equal' ? (
-              <div className="result-main">
-                <div className="label">每月还款</div>
-                <div className="value">¥ {formatMoney(result.monthlyPayment)}</div>
-              </div>
-            ) : (
-              <>
-                <div className="result-main">
-                  <div className="label">首月还款</div>
-                  <div className="value">¥ {formatMoney(result.firstMonthPayment)}</div>
+          <div className="result-container">
+            <div className="result-section">
+              <div className="result-header">
+                <div className="payment-summary">
+                  {paymentType === 'equal' ? (
+                    <div className="result-main">
+                      <div className="label">每月还款</div>
+                      <div className="value">¥ {formatMoney(result.monthlyPayment)}</div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="result-main">
+                        <div className="label">首月还款</div>
+                        <div className="value">¥ {formatMoney(result.firstMonthPayment)}</div>
+                      </div>
+                      <div className="result-sub">末月还款：¥ {formatMoney(result.lastMonthPayment)}</div>
+                    </>
+                  )}
                 </div>
-                <div className="result-sub">末月还款：¥ {formatMoney(result.lastMonthPayment)}</div>
-              </>
-            )}
-            <div className="result-details">
-              <div className="detail-item"><span className="label">贷款总额</span><span className="value">¥ {formatMoney(result.loanAmount)}</span></div>
-              <div className="detail-item"><span className="label">还款总额</span><span className="value">¥ {formatMoney(result.totalPayment)}</span></div>
-              <div className="detail-item"><span className="label">支付利息</span><span className="value highlight">¥ {formatMoney(result.totalInterest)}</span></div>
-              <div className="detail-item"><span className="label">还款期数</span><span className="value">{(loanYears || 0) * 12} 期</span></div>
+                <div className="chart-container">
+                  <ResponsiveContainer width="100%" height={180}>
+                    <PieChart margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                      <Pie
+                        data={pieData}
+                        innerRadius={45}
+                        outerRadius={65}
+                        paddingAngle={5}
+                        dataKey="value"
+                        cx="50%"
+                        cy="45%"
+                      >
+                        {pieData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip 
+                        formatter={(value: number | undefined) => `¥${formatMoney(value ?? 0)}`}
+                        contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', zIndex: 100 }}
+                      />
+                      <Legend 
+                        verticalAlign="bottom" 
+                        align="center" 
+                        layout="horizontal" 
+                        iconSize={10}
+                        iconType="circle"
+                        wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+              
+              <div className="result-details">
+                <div className="detail-item">
+                  <span className="label">贷款总额</span>
+                  <span className="value">¥ {formatMoney(result.loanAmount)}</span>
+                </div>
+                <div className="detail-item">
+                  <span className="label">还款总额</span>
+                  <span className="value">¥ {formatMoney(result.totalPayment)}</span>
+                </div>
+                <div className="detail-item">
+                  <span className="label">支付利息</span>
+                  <span className="value highlight">¥ {formatMoney(result.totalInterest)}</span>
+                </div>
+                <div className="detail-item">
+                  <span className="label">还款期数</span>
+                  <span className="value">{(loanYears || 0) * 12} 期</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="schedule-section">
+              <button className="toggle-schedule" onClick={() => setShowSchedule(!showSchedule)}>
+                {showSchedule ? '隐藏还款明细' : '查看还款明细'}
+                <svg className={showSchedule ? 'open' : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              
+              {showSchedule && (
+                <div className="schedule-table-wrapper">
+                  <table className="schedule-table">
+                    <thead>
+                      <tr>
+                        <th>期数</th>
+                        <th>月供</th>
+                        <th>本金</th>
+                        <th>利息</th>
+                        <th>剩余</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(result.schedule as ScheduleItem[]).map((item) => (
+                        <tr key={item.month}>
+                          <td>{item.month}</td>
+                          <td>¥{formatMoney(item.payment)}</td>
+                          <td>¥{formatMoney(item.principal)}</td>
+                          <td>¥{formatMoney(item.interest)}</td>
+                          <td>¥{formatMoney(item.remaining)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           </div>
         )}

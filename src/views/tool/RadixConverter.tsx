@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './RadixConverter.scss'
 
 type InputType = 'dec' | 'bin' | 'oct' | 'hex'
@@ -77,24 +77,16 @@ export default function RadixConverter() {
   }
 
   const decButtons = [['7', '8', '9'], ['4', '5', '6'], ['1', '2', '3'], ['0', 'C', '⌫']]
-  const hexButtons = [['A', 'B', 'C'], ['D', 'E', 'F']]
+  const hexKeys = ['A', 'B', 'C', 'D', 'E', 'F']
 
   return (
     <div className="tool-page radix">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">进制转换</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="进制转换" />
       
       <main className="tool-content">
         <div className="input-group">
           {(['dec', 'bin', 'oct', 'hex'] as const).map((type) => (
-            <div key={type} className={`input-row ${activeInput === type ? 'active' : ''}`}>
+            <div key={type} className={`input-row ${activeInput === type ? 'active' : ''}`} onClick={() => setActiveInput(type)}>
               <label>{type === 'dec' ? '十进制 (DEC)' : type === 'bin' ? '二进制 (BIN)' : type === 'oct' ? '八进制 (OCT)' : '十六进制 (HEX)'}</label>
               <input
                 type="text"
@@ -119,31 +111,30 @@ export default function RadixConverter() {
         </div>
         
         <div className="keypad">
-          {activeInput === 'hex' && (
-            <div className="hex-keys">
-              {hexButtons.map((row, i) => (
-                <div key={i} className="row">
-                  {row.map((btn) => <button key={btn} className="key hex" onClick={() => inputDigit(btn)}>{btn}</button>)}
+          <div className="keypad-layout">
+            <div className="num-keys-container">
+              {decButtons.map((row, i) => (
+                <div key={i} className="key-row">
+                  {row.map((btn) => (
+                    <button
+                      key={btn}
+                      className={`key ${['C', '⌫'].includes(btn) ? 'function' : ''}`}
+                      disabled={(activeInput === 'bin' && !['0', '1', 'C', '⌫'].includes(btn)) || (activeInput === 'oct' && !['0', '1', '2', '3', '4', '5', '6', '7', 'C', '⌫'].includes(btn))}
+                      onClick={() => btn === 'C' ? clear() : btn === '⌫' ? backspace() : inputDigit(btn)}
+                    >
+                      {btn}
+                    </button>
+                  ))}
                 </div>
               ))}
             </div>
-          )}
-          <div className="num-keys">
-            {decButtons.map((row, i) => (
-              <div key={i} className="row">
-                {row.map((btn) => (
-                  <button
-                    key={btn}
-                    className={`key ${['C', '⌫'].includes(btn) ? 'function' : ''}`}
-                    disabled={activeInput === 'bin' && !['0', '1', 'C', '⌫'].includes(btn)}
-                    style={activeInput === 'oct' && parseInt(btn) > 7 ? { opacity: 0.3 } : {}}
-                    onClick={() => btn === 'C' ? clear() : btn === '⌫' ? backspace() : inputDigit(btn)}
-                  >
-                    {btn}
-                  </button>
+            {activeInput === 'hex' && (
+              <div className="hex-keys-container">
+                {hexKeys.map((btn) => (
+                  <button key={btn} className="key hex" onClick={() => inputDigit(btn)}>{btn}</button>
                 ))}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </main>

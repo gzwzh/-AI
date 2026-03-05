@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './FormulaCalculator.scss'
 
 interface Formula {
@@ -94,14 +94,9 @@ function FormulaCalculator() {
   }
 
   return (
-    <div className="tool-page">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </button>
-        <h1 className="title">万能公式</h1>
-        <ThemeToggle />
-      </header>
+    <div className="tool-page formula">
+      <ToolHeader title="万能公式" />
+      
       <main className="tool-content">
         <div className="category-tabs">
           <button className={selectedCategory === '全部' ? 'active' : ''} onClick={() => setSelectedCategory('全部')}>全部</button>

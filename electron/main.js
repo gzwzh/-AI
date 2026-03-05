@@ -14,12 +14,12 @@ function createWindow() {
     height: 700,
     minWidth: 800,
     minHeight: 600,
+    frame: false, // 彻底隐藏原生边框和标题栏
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     },
-    titleBarStyle: 'default',
     show: false,
     title: '全能计算器',
     icon: path.join(__dirname, '../public/计算器.ico')
@@ -30,7 +30,7 @@ function createWindow() {
   })
 
   if (isDev) {
-    win.loadURL('http://localhost:5175/-AI/')
+    win.loadURL('http://localhost:5175/')
     win.webContents.openDevTools() // 开发模式打开调试工具
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'))
@@ -52,6 +52,27 @@ function createWindow() {
 // IPC Handlers
 ipcMain.handle('get-app-version', () => {
   return app.getVersion()
+})
+
+ipcMain.on('window-minimize', () => {
+  const win = BrowserWindow.getFocusedWindow()
+  if (win) win.minimize()
+})
+
+ipcMain.on('window-maximize', () => {
+  const win = BrowserWindow.getFocusedWindow()
+  if (win) {
+    if (win.isMaximized()) {
+      win.unmaximize()
+    } else {
+      win.maximize()
+    }
+  }
+})
+
+ipcMain.on('window-close', () => {
+  const win = BrowserWindow.getFocusedWindow()
+  if (win) win.close()
 })
 
 ipcMain.handle('check-update', async (event, software, version) => {

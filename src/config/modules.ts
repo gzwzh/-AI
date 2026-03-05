@@ -28,8 +28,11 @@ const toolModules: ModuleItem[] = [
   { id: 'uppercase', name: '大写金额', icon: 'uppercase', route: '/tool/uppercase', category: 'tool' },
   { id: 'finance', name: '理财计算', icon: 'finance', route: '/tool/finance', category: 'tool' },
   { id: 'formula', name: '万能公式', icon: 'formula', route: '/tool/formula', category: 'tool' },
+  { id: 'discount', name: '折扣与小费', icon: 'discount', route: '/tool/discount', category: 'tool' },
   { id: 'account', name: '记账本', icon: 'account', route: '/tool/account', category: 'tool' },
   { id: 'memo', name: '备忘录', icon: 'memo', route: '/tool/memo', category: 'tool' },
+  { id: 'health', name: '健康计算', icon: 'health', route: '/tool/health', category: 'tool' },
+  { id: 'graph', name: '函数绘图', icon: 'graph', route: '/tool/graph', category: 'tool' },
 ]
 
 const converterModules: ModuleItem[] = [

@@ -1,42 +1,14 @@
 .tool-page.finance {
   height: 100vh;
   background: var(--bg);
-  padding: 16px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
-
-  .back-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: var(--card-bg);
-    color: var(--text);
-    cursor: pointer;
-    &:hover { background: var(--hover); }
-    svg { width: 20px; height: 20px; }
-  }
-
-  .title { font-size: 20px; font-weight: 600; color: var(--text); }
-
   .tool-content {
     flex: 1;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 16px auto;
     width: 100%;
     background: var(--card-bg);
     border-radius: 16px;

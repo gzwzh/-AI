@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import { useState, useMemo, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import ToolHeader from '@/components/ToolHeader'
+import { useHistoryStore } from '@/stores/history'
 import './TaxCalculator.scss'
 
 const taxBrackets = [
@@ -15,42 +16,70 @@ const taxBrackets = [
 
 export default function TaxCalculator() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [salary, setSalary] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (location.state && location.state.salary) {
+      setSalary(Number(location.state.salary))
+    }
+  }, [location.state])
   const [socialInsurance, setSocialInsurance] = useState<number | null>(null)
   const [specialDeduction, setSpecialDeduction] = useState<number | null>(null)
   const threshold = 5000
+
+  const { addHistory } = useHistoryStore()
+  const [lastCalculated, setLastCalculated] = useState<string>('')
 
   const taxResult = useMemo(() => {
     const salaryVal = salary || 0
     const insuranceVal = socialInsurance || 0
     const deductionVal = specialDeduction || 0
     if (salaryVal <= 0) return null
-    const monthlyTaxableIncome = salaryVal - insuranceVal - deductionVal - threshold
-    if (monthlyTaxableIncome <= 0) return { taxableIncome: 0, tax: 0, afterTax: salaryVal - insuranceVal, rate: 0 }
+    const monthlyTaxableIncome = Math.max(0, salaryVal - insuranceVal - deductionVal - threshold)
     const yearlyTaxableIncome = monthlyTaxableIncome * 12
+    
     let bracket = taxBrackets[0]
     for (const b of taxBrackets) {
       if (yearlyTaxableIncome > b.min && yearlyTaxableIncome <= b.max) { bracket = b; break }
       if (yearlyTaxableIncome > b.max) bracket = b
     }
+
     const yearlyTax = yearlyTaxableIncome * bracket.rate - bracket.deduction
-    const monthlyTax = yearlyTax / 12
-    return { taxableIncome: monthlyTaxableIncome, tax: Math.max(0, monthlyTax), afterTax: salaryVal - insuranceVal - Math.max(0, monthlyTax), rate: bracket.rate * 100 }
-  }, [salary, socialInsurance, specialDeduction])
+    const monthlyTax = Math.max(0, yearlyTax / 12)
+    const afterTax = salaryVal - insuranceVal - monthlyTax
+
+    const result = {
+      taxableIncome: monthlyTaxableIncome,
+      tax: monthlyTax,
+      afterTax: afterTax,
+      rate: bracket.rate * 100
+    }
+
+    return result
+  }, [salary, socialInsurance, specialDeduction, threshold])
+
+  // 自动保存历史记录
+  useEffect(() => {
+    if (salary && salary > 0 && taxResult) {
+      const currentId = `${salary}-${socialInsurance || 0}-${specialDeduction || 0}`
+      if (currentId !== lastCalculated) {
+        addHistory({
+          type: 'tax',
+          title: `月薪 ¥${salary} 个税估算`,
+          expression: `税前 ${salary} - 五险一金 ${socialInsurance || 0} - 专项 ${specialDeduction || 0}`,
+          result: `税后 ¥${Math.round(taxResult.afterTax)} (个税 ¥${Math.round(taxResult.tax)})`
+        })
+        setLastCalculated(currentId)
+      }
+    }
+  }, [salary, socialInsurance, specialDeduction, taxResult, addHistory, lastCalculated])
 
   const formatMoney = (num: number) => num.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
   return (
     <div className="tool-page tax">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">个税计算</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="个税计算" />
       
       <main className="tool-content">
         <div className="input-section">

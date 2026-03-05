@@ -1,11 +1,28 @@
-import { useState, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import { useState, useMemo, useEffect, useCallback } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import ToolHeader from '@/components/ToolHeader'
 import './UppercaseMoney.scss'
 
 export default function UppercaseMoney() {
   const navigate = useNavigate()
-  const [amount, setAmount] = useState('0')
+  const location = useLocation()
+  const [amount, setAmount] = useState(location.state?.amount?.replace(/[^0-9.]/g, '') || '0')
+  const [copied, setCopied] = useState(false)
+  const [fromCalculator, setFromCalculator] = useState(location.state?.from === 'calculator')
+
+  useEffect(() => {
+    if (location.state) {
+      if (location.state.from === 'calculator') {
+        setFromCalculator(true)
+      }
+      if (location.state.amount) {
+        const filteredAmount = location.state.amount.replace(/[^0-9.]/g, '')
+        if (filteredAmount) {
+          setAmount(filteredAmount)
+        }
+      }
+    }
+  }, [location.state])
 
   const digitMap = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
   const unitMap = ['', '拾', '佰', '仟']
@@ -51,7 +68,10 @@ export default function UppercaseMoney() {
     return (isNegative ? '负' : '') + result
   }
 
-  const uppercase = useMemo(() => toUppercase(parseFloat(amount) || 0), [amount])
+  const uppercase = useMemo(() => {
+    const val = parseFloat(amount)
+    return isNaN(val) ? '零元整' : toUppercase(val)
+  }, [amount])
 
   const inputDigit = (digit: string) => {
     if (amount === '0' && digit !== '.') setAmount(digit)
@@ -68,23 +88,35 @@ export default function UppercaseMoney() {
   const backspace = () => { setAmount(amount.length > 1 ? amount.slice(0, -1) : '0') }
   const clear = () => { setAmount('0') }
 
-  const copyResult = async () => {
-    try { await navigator.clipboard.writeText(uppercase) } catch { /* ignore */ }
+  const copyResult = useCallback(async () => {
+    try { 
+      await navigator.clipboard.writeText(uppercase)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch { /* ignore */ }
+  }, [uppercase])
+
+  const handleBack = () => {
+    if (fromCalculator) {
+      navigate('/calculator/basic')
+    } else {
+      navigate('/')
+    }
   }
 
   const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', ''], ['0', '00', '.', '']]
 
   return (
     <div className="tool-page uppercase">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">大写金额</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader 
+        title="大写金额" 
+        onBack={handleBack}
+        extraActions={fromCalculator && (
+          <button className="return-text-btn" onClick={handleBack}>
+            返回计算器
+          </button>
+        )}
+      />
       
       <main className="tool-content">
         <div className="display-area">
@@ -92,10 +124,27 @@ export default function UppercaseMoney() {
             <span className="currency">¥</span>
             <span className="value">{amount}</span>
           </div>
-          <div className="uppercase-display" onClick={copyResult}>
-            <div className="label">大写金额 (点击复制)</div>
+          <div className={`uppercase-display ${copied ? 'copied' : ''}`} onClick={copyResult}>
+            <div className="label">{copied ? '已复制到剪贴板' : '大写金额 (点击复制)'}</div>
             <div className="value">{uppercase}</div>
+            {copied && (
+              <div className="copy-indicator">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+            )}
           </div>
+          {fromCalculator && (
+            <div className="return-action">
+              <button className="return-main-btn" onClick={handleBack}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                返回计算器
+              </button>
+            </div>
+          )}
         </div>
         
         <div className="keypad">

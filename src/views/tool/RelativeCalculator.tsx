@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import relationship from 'relationship.js'
 import './RelativeCalculator.scss'
 
@@ -74,15 +74,7 @@ function RelativeCalculator() {
 
   return (
     <div className="tool-page">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">亲戚称呼</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="亲戚称呼" />
       <main className="tool-content">
         <div className="gender-select">
           <span className="label">我的性别：</span>

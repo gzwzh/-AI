@@ -14,6 +14,39 @@
     margin-bottom: 8px;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
+    -webkit-app-region: drag;
+
+    .back-btn, .header-actions {
+      -webkit-app-region: no-drag;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .history-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: var(--hover-color);
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
   }
 
   .back-btn {
@@ -79,11 +112,48 @@
       word-break: break-all;
     }
     
-    .result {
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--text);
-      word-break: break-all;
+    .result-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+
+      .result {
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--text);
+        word-break: break-all;
+        flex: 1;
+      }
+
+      .result-actions {
+        display: flex;
+        gap: 6px;
+        padding-bottom: 2px;
+
+        .action-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 6px;
+          color: var(--text-secondary);
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s;
+
+          &:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
     }
   }
 

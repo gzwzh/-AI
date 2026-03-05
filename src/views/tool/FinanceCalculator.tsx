@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './FinanceCalculator.scss'
 
 export default function FinanceCalculator() {
@@ -50,24 +50,26 @@ export default function FinanceCalculator() {
     const periodsPerYear = regularFreq === 'month' ? 12 : 52
     const r = annualRate / periodsPerYear
     const n = years * periodsPerYear
-    const total = r === 0 ? PMT * n : PMT * ((Math.pow(1 + r, n) - 1) / r) * (1 + r)
+    
+    // 避免过大的幂运算导致 Infinity
+    if (n > 1200) return { interest: 0, total: 0, totalInvest: 0, overflow: true }
+    
+    const powerResult = Math.pow(1 + r, n)
+    if (!isFinite(powerResult)) return { interest: 0, total: 0, totalInvest: 0, overflow: true }
+    
+    const total = r === 0 ? PMT * n : PMT * ((powerResult - 1) / r) * (1 + r)
     const totalInvest = PMT * n
-    return { interest: total - totalInvest, total, totalInvest }
+    
+    if (!isFinite(total) || total > 1e15) return { interest: 0, total: 0, totalInvest: 0, overflow: true }
+    
+    return { interest: total - totalInvest, total, totalInvest, overflow: false }
   }, [regularAmount, regularYears, regularRate, regularFreq])
 
   const formatMoney = (num: number) => num.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
   return (
     <div className="tool-page finance">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">理财计算</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="理财计算" />
       
       <main className="tool-content">
         <div className="mode-tabs">
@@ -177,11 +179,23 @@ export default function FinanceCalculator() {
             <div className="result-preview">
               <div className="preview-item">
                 <span className="label">利息收益(元)</span>
-                <span className="value primary">{regularResult ? formatMoney(regularResult.interest) : '0'}元</span>
+                {regularResult && !regularResult.overflow ? (
+                  <span className="value primary">{formatMoney(regularResult.interest)}元</span>
+                ) : regularResult?.overflow ? (
+                  <span className="value error">数值过大</span>
+                ) : (
+                  <span className="value primary">0元</span>
+                )}
               </div>
               <div className="preview-item">
                 <span className="label">本息合计（元）</span>
-                <span className="value">{regularResult ? formatMoney(regularResult.total) : '0'}元</span>
+                {regularResult && !regularResult.overflow ? (
+                  <span className="value">{formatMoney(regularResult.total)}元</span>
+                ) : regularResult?.overflow ? (
+                  <span className="value error">数值过大</span>
+                ) : (
+                  <span className="value">0元</span>
+                )}
               </div>
             </div>
             <div className="section-title">请输入定投信息</div>

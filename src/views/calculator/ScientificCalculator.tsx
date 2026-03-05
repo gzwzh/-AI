@@ -1,16 +1,21 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { evaluate, pi, e, factorial, sin, cos, tan, log10, log } from 'mathjs'
 import ThemeToggle from '@/components/ThemeToggle'
+import HistorySidebar from '@/components/HistorySidebar'
+import { useHistoryStore } from '@/stores/history'
 import './ScientificCalculator.scss'
 
 export default function ScientificCalculator() {
   const navigate = useNavigate()
+  const addHistory = useHistoryStore((state) => state.addHistory)
   const [display, setDisplay] = useState('0')
   const [expression, setExpression] = useState('')
   const [waitingForOperand, setWaitingForOperand] = useState(true)
   const [lastInputWasOperator, setLastInputWasOperator] = useState(false)
   const [isRadians, setIsRadians] = useState(false)
   const [openParenCount, setOpenParenCount] = useState(0)
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false)
 
   const buttons = [
     ['fx', 'DEG', 'xʸ', 'ʸ√x', 'C'],
@@ -30,14 +35,6 @@ export default function ScientificCalculator() {
   }
 
   const toRadians = (deg: number) => deg * Math.PI / 180
-
-  const factorial = (n: number): number => {
-    if (n < 0 || !Number.isInteger(n)) return NaN
-    if (n === 0 || n === 1) return 1
-    let result = 1
-    for (let i = 2; i <= n; i++) result *= i
-    return result
-  }
 
   const inputDigit = (digit: string) => {
     if (waitingForOperand) {
@@ -83,7 +80,7 @@ export default function ScientificCalculator() {
   }
 
   const inputConstant = (constant: string) => {
-    setDisplay(constant === 'π' ? String(Math.PI) : String(Math.E))
+    setDisplay(constant === 'π' ? String(pi) : String(e))
     setWaitingForOperand(true)
     setLastInputWasOperator(false)
   }
@@ -110,26 +107,31 @@ export default function ScientificCalculator() {
 
   const applyFunction = (func: string) => {
     const value = parseFloat(display)
-    let result: number
+    let result: any
     
-    switch (func) {
-      case 'sin': result = isRadians ? Math.sin(value) : Math.sin(toRadians(value)); break
-      case 'cos': result = isRadians ? Math.cos(value) : Math.cos(toRadians(value)); break
-      case 'tan': result = isRadians ? Math.tan(value) : Math.tan(toRadians(value)); break
-      case 'cot': 
-        const tanVal = isRadians ? Math.tan(value) : Math.tan(toRadians(value))
-        result = 1 / tanVal
-        break
-      case 'ln': result = Math.log(value); break
-      case 'lg': result = Math.log10(value); break
-      case '1/x': result = 1 / value; break
-      case 'n!': result = factorial(Math.floor(value)); break
-      default: return
+    try {
+      switch (func) {
+        case 'sin': result = isRadians ? sin(value) : sin(toRadians(value)); break
+        case 'cos': result = isRadians ? cos(value) : cos(toRadians(value)); break
+        case 'tan': result = isRadians ? tan(value) : tan(toRadians(value)); break
+        case 'cot': 
+          const tanVal = isRadians ? tan(value) : tan(toRadians(value))
+          result = 1 / tanVal
+          break
+        case 'ln': result = log(value); break
+        case 'lg': result = log10(value); break
+        case '1/x': result = 1 / value; break
+        case 'n!': result = factorial(Math.floor(value)); break
+        default: return
+      }
+      
+      const resultStr = String(Number(result.toFixed(10)))
+      setDisplay(resultStr)
+      setWaitingForOperand(true)
+      setLastInputWasOperator(false)
+    } catch {
+      setDisplay('Error')
     }
-    
-    setDisplay(String(parseFloat(result.toFixed(10))))
-    setWaitingForOperand(true)
-    setLastInputWasOperator(false)
   }
 
   const performOperation = (operator: string) => {
@@ -146,8 +148,16 @@ export default function ScientificCalculator() {
         }
         try {
           const evalExpr = finalExpr.replace(/×/g, '*').replace(/÷/g, '/').replace(/\^/g, '**')
-          const result = Function('"use strict"; return (' + evalExpr + ')')()
-          setDisplay(String(parseFloat(result.toFixed(10))))
+          const result = evaluate(evalExpr)
+          const resultStr = String(Number(result.toFixed(10)))
+          
+          addHistory({
+            expression: finalExpr,
+            result: resultStr,
+            type: 'scientific'
+          })
+          
+          setDisplay(resultStr)
           setExpression('')
           setOpenParenCount(0)
         } catch {
@@ -211,20 +221,55 @@ export default function ScientificCalculator() {
   return (
     <div className="calculator-page scientific">
       <header className="header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
+        <button className="back-btn" onClick={() => navigate('/')}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
         </button>
         <h1 className="title">科学计算器</h1>
-        <ThemeToggle />
+        <div className="header-actions">
+          <button className="history-btn" onClick={() => setIsHistoryOpen(true)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+          </button>
+          <ThemeToggle />
+        </div>
       </header>
+
+      <HistorySidebar />
       
       <main className="calculator">
         <div className="display">
           <div className="mode-indicator">{isRadians ? 'RAD' : 'DEG'}</div>
           <div className="expression">{displayExpression}</div>
-          <div className="result">{display}</div>
+          <div className="result-container">
+            <div className="result">{display}</div>
+            <div className="result-actions">
+              <button 
+                className="action-btn" 
+                onClick={() => {
+                  navigator.clipboard.writeText(display)
+                }} 
+                title="复制结果"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+              <button 
+                className="action-btn" 
+                onClick={() => {
+                  navigate('/tool/uppercase', { state: { amount: display } })
+                }} 
+                title="转大写金额"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 8v4l3 3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
         
         <div className="keypad">

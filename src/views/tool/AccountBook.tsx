@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './AccountBook.scss'
 
 interface Record {
@@ -143,17 +143,11 @@ function AccountBook() {
   }
 
   return (
-    <div className="account-page">
+    <div className="tool-page account">
       {!showAddPage ? (
         <div className="list-page">
-          <header className="header">
-            <button className="back-btn" onClick={() => navigate(-1)}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            </button>
-            <h1 className="title">记账本</h1>
-            <ThemeToggle />
-          </header>
-          <main className="main">
+          <ToolHeader title="记账本" />
+          <main className="tool-content">
             <div className="stats-card">
               <div className="month-nav">
                 <button onClick={prevMonth}>‹</button>
@@ -200,14 +194,9 @@ function AccountBook() {
         </div>
       ) : (
         <div className="add-page">
-          <header className="add-header">
-            <button className="back-btn-light" onClick={() => setShowAddPage(false)}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            </button>
-            <h1>记一笔</h1>
-            <div style={{width: 40}}></div>
-          </header>
-          <div className="type-tabs">
+          <ToolHeader title="添加账目" onBack={() => setShowAddPage(false)} />
+          <main className="tool-content">
+            <div className="type-tabs">
             <button className={activeTab === 'expense' ? 'active' : ''} onClick={() => switchTab('expense')}>支出</button>
             <button className={activeTab === 'income' ? 'active' : ''} onClick={() => switchTab('income')}>收入</button>
           </div>
@@ -233,6 +222,7 @@ function AccountBook() {
             <button onClick={() => inputDigit('1')}>1</button><button onClick={() => inputDigit('2')}>2</button><button onClick={() => inputDigit('3')}>3</button><button onClick={clearAmount}>C</button>
             <button onClick={() => inputDigit('0')}>0</button><button onClick={inputDecimal}>.</button>
           </div>
+          </main>
         </div>
       )}
 

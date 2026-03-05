@@ -1,6 +1,6 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './Memo.scss'
 
 interface MemoItem {
@@ -84,17 +84,11 @@ function Memo() {
   const getPreview = (content: string) => content.length > 50 ? content.slice(0, 50) + '...' : content
 
   return (
-    <div className="memo-page">
+    <div className="tool-page memo">
       {!showEditor ? (
         <div className="list-view">
-          <header className="header">
-            <button className="back-btn" onClick={() => navigate(-1)}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            </button>
-            <h1 className="title">备忘录</h1>
-            <ThemeToggle />
-          </header>
-          <main className="main">
+          <ToolHeader title="备忘录" />
+          <main className="tool-content">
             <div className="search-bar">
               <span className="search-icon">🔍</span>
               <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="搜索备忘录..." />
@@ -123,15 +117,10 @@ function Memo() {
         </div>
       ) : (
         <div className="editor-view">
-          <header className="editor-header">
-            <button className="back-btn" onClick={saveMemo}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            </button>
-            <div className="editor-actions">
-              {editingMemo && <button className="delete-btn" onClick={() => deleteMemo(editingMemo.id)}>🗑️</button>}
-              <button className="save-btn" onClick={saveMemo}>完成</button>
-            </div>
-          </header>
+          <ToolHeader 
+            title={editingMemo ? '编辑备忘' : '新建备忘'} 
+            onBack={saveMemo}
+          />
           <div className="editor-content">
             <input type="text" value={newMemo.title} onChange={e => setNewMemo({ ...newMemo, title: e.target.value })} className="title-input" placeholder="标题" />
             <div className="color-picker">
