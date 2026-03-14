@@ -23,9 +23,12 @@
       gap: 12px;
       -webkit-app-region: drag;
       pointer-events: none; /* 允许穿透，除非是交互元素 */
+      flex-shrink: 0;
+      min-width: fit-content;
       
       .title-icon, .title, .title-divider, .title-subtext {
         pointer-events: none;
+        white-space: nowrap;
       }
     }
 
@@ -34,6 +37,8 @@
       align-items: center;
       gap: 16px;
       -webkit-app-region: drag;
+      flex-shrink: 0;
+      margin-left: auto;
 
       .custom-button, .history-trigger, .login-btn, .theme-toggle, .window-controls {
         -webkit-app-region: no-drag;
@@ -387,7 +392,8 @@
 }
 
 .category {
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  width: 620px;
 }
 
 .category-title {
@@ -397,20 +403,22 @@
   margin-bottom: 20px;
   padding-left: 8px;
   border-left: 3px solid var(--primary-color);
+  text-align: left;
 }
 
 .module-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 140px);
   gap: 20px;
-  justify-items: center;
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
+  .category {
+    width: 460px;
+  }
   .module-grid {
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: start;
+    grid-template-columns: repeat(3, 140px);
   }
 }
 
@@ -479,9 +487,12 @@
     padding: 0 8px;
   }
 
+  .category {
+    width: 300px;
+  }
   .module-grid {
-    grid-template-columns: repeat(auto-fill, 100px);
-    gap: 16px;
+    grid-template-columns: repeat(2, 140px);
+    gap: 20px;
   }
 }
 

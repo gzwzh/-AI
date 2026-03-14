@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { evaluate, pi, e, factorial, sin, cos, tan, log10, log } from 'mathjs'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import HistorySidebar from '@/components/HistorySidebar'
 import { useHistoryStore } from '@/stores/history'
 import './ScientificCalculator.scss'
@@ -220,22 +220,16 @@ export default function ScientificCalculator() {
 
   return (
     <div className="calculator-page scientific">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate('/')}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">科学计算器</h1>
-        <div className="header-actions">
+      <ToolHeader 
+        title="科学计算器" 
+        extraActions={
           <button className="history-btn" onClick={() => setIsHistoryOpen(true)}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
             </svg>
           </button>
-          <ThemeToggle />
-        </div>
-      </header>
+        }
+      />
 
       <HistorySidebar />
       

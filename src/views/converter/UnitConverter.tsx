@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import { unitConfigs, convertTemperature } from '@/config/units'
 import './UnitConverter.scss'
 
@@ -70,21 +70,13 @@ export default function UnitConverter() {
     else if (fromValue !== '0') setFromValue('-' + fromValue)
   }
 
-  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '±'], ['0', '.', '', '↔']]
+  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '±'], ['0', '.', 'empty', '↔']]
 
   if (!config) return null
 
   return (
     <div className="converter-page">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate('/')}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">{config.name}转换</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title={`${config.name}转换`} />
       
       <main className="converter">
         <div className="convert-area">
@@ -116,9 +108,9 @@ export default function UnitConverter() {
         <div className="keypad">
           {buttons.map((row, i) => (
             <div key={i} className="row">
-              {row.map((btn) => (
+              {row.map((btn, j) => (
                 <button
-                  key={btn}
+                  key={btn || `empty-${i}-${j}`}
                   className={`key ${/[0-9.]/.test(btn) ? 'number' : 'function'}`}
                   onClick={() => {
                     if (/[0-9]/.test(btn)) inputDigit(btn)
@@ -129,7 +121,7 @@ export default function UnitConverter() {
                     else if (btn === '↔') swapUnits()
                   }}
                 >
-                  {btn}
+                  {btn === 'empty' ? '' : btn}
                 </button>
               ))}
             </div>

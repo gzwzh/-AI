@@ -84,7 +84,7 @@ export default function CurrencyConverter() {
   const backspace = () => { setFromValue(fromValue.length > 1 ? fromValue.slice(0, -1) : '0') }
   const clear = () => { setFromValue('0') }
 
-  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', ''], ['0', '00', '.', '↔']]
+  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '↔'], ['0', '00', '.', 'empty']]
 
   return (
     <div className="tool-page currency">
@@ -119,9 +119,9 @@ export default function CurrencyConverter() {
         <div className="keypad">
           {buttons.map((row, i) => (
             <div key={i} className="row">
-              {row.map((btn) => (
+              {row.map((btn, j) => (
                 <button
-                  key={btn}
+                  key={btn || `empty-${i}-${j}`}
                   className={`key ${/[0-9.]/.test(btn) ? 'number' : 'function'}`}
                   onClick={() => {
                     if (/[0-9]/.test(btn)) inputDigit(btn)
@@ -132,7 +132,7 @@ export default function CurrencyConverter() {
                     else if (btn === '↔') swapCurrencies()
                   }}
                 >
-                  {btn}
+                  {btn === 'empty' ? '' : btn}
                 </button>
               ))}
             </div>

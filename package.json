@@ -1,6 +1,6 @@
 {
   "name": "calculator",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "全能计算器 - PC端",
   "author": "鲲穹AI",
   "main": "electron/main.js",
@@ -42,7 +42,7 @@
     "appId": "com.calculator",
     "productName": "全能计算器",
     "directories": {
-      "output": "release_1.0.5"
+      "output": "release_1.0.7"
     },
     "files": [
       "dist/**/*",
@@ -65,6 +65,12 @@
       "target": [
         {
           "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
           "arch": [
             "x64"
           ]

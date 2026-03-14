@@ -12,8 +12,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
-    minWidth: 800,
-    minHeight: 600,
+    minWidth: 700,
+    minHeight: 560,
     frame: false, // 彻底隐藏原生边框和标题栏
     webPreferences: {
       nodeIntegration: false,

@@ -109,3 +109,4 @@
 .confirm-actions { display: flex; gap: 12px; }
 .cancel-btn { flex: 1; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); font-size: 16px; cursor: pointer; &:hover { background: var(--hover); } }
 .delete-confirm-btn { flex: 1; padding: 14px; border: none; border-radius: 10px; background: #e74c3c; color: white; font-size: 16px; cursor: pointer; &:hover { background: #c0392b; } }
+}

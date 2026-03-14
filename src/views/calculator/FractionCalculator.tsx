@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '@/components/ThemeToggle'
+import ToolHeader from '@/components/ToolHeader'
 import './FractionCalculator.scss'
 
 interface MixedFraction {
@@ -127,19 +127,11 @@ export default function FractionCalculator() {
     setError('')
   }
 
-  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '±'], ['0', '', '', '=']]
+  const buttons = [['7', '8', '9', 'C'], ['4', '5', '6', '⌫'], ['1', '2', '3', '±'], ['0', 'empty1', 'empty2', '=']]
 
   return (
     <div className="calculator-page fraction">
-      <header className="header">
-        <button className="back-btn" onClick={() => navigate('/')}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <h1 className="title">分数计算器</h1>
-        <ThemeToggle />
-      </header>
+      <ToolHeader title="分数计算器" />
       
       <main className="calculator">
         <div className="fraction-area">
@@ -200,13 +192,13 @@ export default function FractionCalculator() {
             <span className="decimal">≈ {toDecimal}</span>
           </div>
         )}
-        
+
         <div className="keypad">
           {buttons.map((row, i) => (
             <div key={i} className="row">
-              {row.map((btn) => (
+              {row.map((btn, j) => (
                 <button
-                  key={btn}
+                  key={btn || `empty-${i}-${j}`}
                   className={`key ${/[0-9]/.test(btn) ? 'number' : ['C', '⌫', '±'].includes(btn) ? 'function' : btn === '=' ? 'equals' : ''}`}
                   onClick={() => {
                     if (/[0-9]/.test(btn)) inputDigit(btn)
@@ -216,7 +208,7 @@ export default function FractionCalculator() {
                     else if (btn === '=') calculate()
                   }}
                 >
-                  {btn}
+                  {btn.startsWith('empty') ? '' : btn}
                 </button>
               ))}
             </div>
