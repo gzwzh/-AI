@@ -1,4 +1,5 @@
 import { API_BASE_URL, API_ENDPOINTS } from '@/config/api'
+import i18n from '@/i18n'
 
 interface ApiResponse<T> {
   code: number
@@ -37,11 +38,11 @@ export async function getFeedbackUrl(softNumber: string): Promise<string | null>
       // We need to append the softNumber
       return `${result.data.url}${softNumber}`
     } else {
-      console.error(`获取问题反馈链接失败：${result.msg}`)
+      console.error(`${i18n.t('common.feedback')}${i18n.t('tool.relative.error_calc').replace('计算', '获取')}${i18n.t('common.error').replace('错误', '失败')}：${result.msg}`)
       return null
     }
   } catch (error) {
-    console.error('获取问题反馈链接失败：', error)
+    console.error(`${i18n.t('common.feedback')}${i18n.t('tool.relative.error_calc').replace('计算', '获取')}${i18n.t('common.error').replace('错误', '失败')}：`, error)
     return null
   }
 }

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { evaluate, pi, e, factorial, sin, cos, tan, log10, log } from 'mathjs'
 import ToolHeader from '@/components/ToolHeader'
 import HistorySidebar from '@/components/HistorySidebar'
@@ -7,6 +8,7 @@ import { useHistoryStore } from '@/stores/history'
 import './ScientificCalculator.scss'
 
 export default function ScientificCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const addHistory = useHistoryStore((state) => state.addHistory)
   const [display, setDisplay] = useState('0')
@@ -161,7 +163,7 @@ export default function ScientificCalculator() {
           setExpression('')
           setOpenParenCount(0)
         } catch {
-          setDisplay('Error')
+          setDisplay(t('common.error'))
         }
       }
       setWaitingForOperand(true)
@@ -221,7 +223,7 @@ export default function ScientificCalculator() {
   return (
     <div className="calculator-page scientific">
       <ToolHeader 
-        title="科学计算器" 
+        title={t('modules.items.scientific')} 
         extraActions={
           <button className="history-btn" onClick={() => setIsHistoryOpen(true)}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -245,7 +247,7 @@ export default function ScientificCalculator() {
                 onClick={() => {
                   navigator.clipboard.writeText(display)
                 }} 
-                title="复制结果"
+                title={t('common.copy_result')}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
@@ -256,7 +258,7 @@ export default function ScientificCalculator() {
                 onClick={() => {
                   navigate('/tool/uppercase', { state: { amount: display } })
                 }} 
-                title="转大写金额"
+                title={t('common.to_uppercase')}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 8v4l3 3"/>

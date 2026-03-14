@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "המחשבון הכללי",
+    "app_icon_alt": "סמל מחשבון כללי",
+    "subtext": "מוצר של Kunqiong AI",
+    "software_custom": "התאמה של תוכנה",
+    "feedback": "משוב",
+    "history": "היסטוריה",
+    "icon_alt": "סמל",
+    "back": "חזרה",
+    "copy_result": "העתק תוצאה",
+    "to_uppercase": "לכתובת גדולה",
+    "error": "שגיאה",
+    "copied": "הועתק",
+    "clear": "נקה",
+    "copied_to_clipboard": "הועתק ללוח הגזירים",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "שנה",
+    "today": "היום",
+    "yesterday": "אתמול",
+    "days_ago": "ימים לפני",
+    "month_unit": "شهر",
+    "day_unit": "יום",
+    "year_unit": "שנה",
+    "confirm_delete": "אשר מחיקה",
+    "cancel": "בטל",
+    "confirm": "אשר",
+    "save": "שמור",
+    "delete": "מחק",
+    "minimize": "צמצם",
+    "maximize": "הרחב",
+    "close": "סגור",
+    "switch_dark": "החל למוד כחול",
+    "switch_light": "החל למוד בהיר",
+    "language_switch": "שנה שפה",
+    "weekdays": [
+      "ראשון",
+      "שני",
+      "שלישי",
+      "רביעי",
+      "חמישי",
+      "ששי",
+      "שבת"
+    ]
+  },
+  "update": {
+    "found_new": "נמצאה גרסה חדשה",
+    "current_version": "גרסה נוכחית",
+    "update_log": "לוג עדכון",
+    "remind_later": "זכרו מאוחר יותר",
+    "update_now": "עדכן עכשיו"
+  },
+  "auth": {
+    "login_cancelled": "כניסה בוטלה",
+    "click_to_logout": "לחץ כדי להתחבר",
+    "logged_in": "מחובר",
+    "logout": "התנתק",
+    "click_to_login": "לחץ כדי להתחבר",
+    "logging_in": "מתחבר...",
+    "login_register": "כניסה/רישום",
+    "login_failed": "כניסה כושלת",
+    "complete_login_in_browser": "אנא השלם את הכניסה בדפדפן",
+    "cancel_login": "בטל כניסה",
+    "login_timeout": "הכניסה נסגרה",
+    "get_login_url_failed": "נכשל בהחזרת כתובת הכניסה",
+    "get_user_info_failed": "נכשל בהחזרת מידע משתמש",
+    "logout_failed": "התנתקות נכשלה"
+  },
+  "ai": {
+    "module_direct": "גישה מהירה",
+    "open_module": "פתח {{name}}, ",
+    "enter_now": "היכנס עכשיו",
+    "currency_title": "החלפת מטבע",
+    "view_details": "צג פרטים",
+    "percent_title": "חשבון אחוזים",
+    "uppercase_title": "כמות לאותיות גדולות",
+    "convert_now": "החלף עכשיו",
+    "date_title": "חישוב תאריכים",
+    "view_date_details": "צג פרטי תאריך",
+    "tax_title": "מחשבון מס",
+    "go_calculate": "לחשב",
+    "discount_title": "מחשבון הנחה",
+    "full_minus_title": "הפחתה מלאה",
+    "tip_title": "מחשבון שכר תוספות",
+    "go_pay": "מעבר לתשלום",
+    "health_title": "מחשבון בריאות",
+    "calc_now": "חישוב עכשיו",
+    "graph_title": "ריבוע פונקציה",
+    "start_drawing": "התחל לצייר",
+    "draw_function": "צייר פונקציה y = {{expr}}, ",
+    "open_graph_tool": "פתח כלי ציור גרפים אינטראקטיבי",
+    "unit_title": "המרה של יחידות",
+    "smart_calc_title": "מחשבה חכמה",
+    "math_title": "חישוב חכם"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "מחשבון",
+      "tool": "כלי",
+      "converter": "המרה"
+    },
+    "items": {
+      "basic": "מחשבון בסיסי",
+      "scientific": "מחשבון מדעי",
+      "fraction": "מחשבון שברים",
+      "currency": "מעביר מטבע",
+      "relative": "שיחת יחסית",
+      "mortgage": "מחשבון משכנתא",
+      "tax": "מחשבון מס",
+      "date": "מחשבון תאריך",
+      "radix": "ממיר בסיס",
+      "uppercase": "مال uppercase",
+      "finance": "מחשבון כספים",
+      "formula": "מחשבון נוסחה",
+      "discount": "הנחה ותוספת",
+      "account": "ספר חשבונות",
+      "memo": "הערה",
+      "health": "מחשב בריאות",
+      "graph": "מחשבון גרף",
+      "length": "אורך",
+      "area": "שטח",
+      "volume": "נפח",
+      "temperature": "טמפרטורה",
+      "speed": "מהירות",
+      "time": "זמן",
+      "weight": "משקל",
+      "power": "כוח",
+      "heat": "חום",
+      "force": "כוח",
+      "pressure": "לחץ",
+      "capacity": "קיבולת",
+      "data": "אחסון נתונים"
+    }
+  },
+  "home": {
+    "search_placeholder": "נסה חיפוש אינטליגנטי, לדוגמה, 100 דולר, 100 סמ' למטר...",
+    "smart_tips_label": "نصائح חכמות:",
+    "tips": {
+      "date": "מה התאריך אחרי 100 ימים?",
+      "tax": "כמה מיסוי עבור שכר של 1.5w?",
+      "uppercase": "כמות לאותיות גדולות",
+      "unit": "100 סמ' למטר"
+    },
+    "smart_tag": "ניתוח חכם ב-I",
+    "search_results_title": "نتائج החיפוש",
+    "no_results_text": "לא נמצאו פונקציות קשורות, נסה מילת מפתח אחרת"
+  },
+  "history": {
+    "title": "היסטוריה",
+    "clear_all": "נקה הכל",
+    "empty": "אין היסטוריה עדיין",
+    "types": {
+      "basic": "בסיסי",
+      "scientific": "علמי",
+      "converter": "יחידת מדידה",
+      "currency": "מטבע",
+      "health": "בריאות",
+      "discount": "הנחה",
+      "tax": "מיסוי",
+      "tool": "כלי",
+      "record": "רשומה"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "המכנה לא יכול להיות 0",
+      "error_zero_divisor": "המחלק לא יכול להיות 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "המר",
+    "categories": {
+      "length": "אורך",
+      "area": "שטח",
+      "volume": "נפח",
+      "weight": "משקל",
+      "temperature": "טמפרטורה",
+      "speed": "מהירות",
+      "time": "זמן",
+      "power": "כוח",
+      "heat": "חום",
+      "force": "כוח",
+      "pressure": "לחץ",
+      "capacity": "קיבולת",
+      "data": "אחסון מידע"
+    },
+    "units": {
+      "km": "קילומטר",
+      "m": "מטר",
+      "dm": "דצימטר",
+      "cm": "סנטימטר",
+      "mm": "מילימטר",
+      "μm": "מיקרומטר",
+      "nm": "ננומטר",
+      "mi": "מילי",
+      "yd": "יארד",
+      "ft": "רגל",
+      "in": "אינץ'",
+      "nmi": "מיל ימי",
+      "里": "לי (מילי סינית)",
+      "丈": "장",
+      "尺": "شي",
+      "寸": "تسون",
+      "km²": "קילומטר רבוע",
+      "ha": "הקטאר",
+      "m²": "מטר רבוע",
+      "dm²": "דצימטר רבוע",
+      "cm²": "סנטימטר רבוע",
+      "mm²": "מילימטר רבוע",
+      "mi²": "מילי רבוע",
+      "acre": "אקר",
+      "yd²": "יארד רבוע",
+      "ft²": "רגל רבוע",
+      "in²": "אינץ' רבוע",
+      "亩": "מו",
+      "分": "פן (שטח)",
+      "m³": "מטר מעוקב",
+      "dm³": "דצימטר מעוקב",
+      "cm³": "סנטימטר מעוקב",
+      "mm³": "מילימטר מעוקב",
+      "L": "ליטר",
+      "mL": "מיליליטר",
+      "gal": "גאלון (אמריקאי)",
+      "gal(UK)": "גאלון (בריטי)",
+      "pt": "פינט",
+      "ft³": "רגל מעוקב",
+      "in³": "אינץ' מעוקב",
+      "t": "טונה",
+      "kg": "קילוגרם",
+      "g": "גרם",
+      "mg": "מיליגרם",
+      "μg": "מיקרוגרם",
+      "lb": "פאונד",
+      "oz": "אونס",
+      "ct": "קרט",
+      "斤": "גין",
+      "两": "ליáng",
+      "钱": "קיאן",
+      "°C": "צלסיווס",
+      "°F": "פרנהייט",
+      "K": "קלווין",
+      "°R": "ראנגין",
+      "°Ré": "ריאומור",
+      "m/s": "מטר לשנייה",
+      "km/h": "קילומטר לשעה",
+      "mph": "מיל לשעה",
+      "kn": "נוט",
+      "Ma": "מאך",
+      "c": "מהירות האור",
+      "世纪": "מאה שנה",
+      "年": "שנה",
+      "月": "شهر",
+      "周": "שבוע",
+      "天": "יום",
+      "h": "שעה",
+      "min": "דקה",
+      "s": "שנייה",
+      "ms": "밀ישנייה",
+      "μs": "ไมcroשנייה",
+      "ns": "ננושנייה",
+      "kW": "קילוואט",
+      "W": "וואט",
+      "mW": "ميلיוואט",
+      "hp": "סוס כוח",
+      "PS": "סוס כוח מטרי",
+      "kcal/s": "קילו קאלוריה לשנייה",
+      "BTU/s": "BTU לשנייה",
+      "kJ": "קילו ג'ול",
+      "J": "ג'ול",
+      "cal": "קאלוריה",
+      "kcal": "קילו קאלוריה",
+      "Wh": "וואט-שעה",
+      "kWh": "קילו וואט-שעה",
+      "BTU": "יחידה תרמית בריטית",
+      "kN": "קילו ניוטון",
+      "N": "ניוטון",
+      "dyn": "דין",
+      "kgf": "קילוגרם-כוח",
+      "gf": "גרם-כוח",
+      "lbf": "פונט-כוח",
+      "Pa": "פאסקל",
+      "hPa": "הקטופאסקל",
+      "kPa": "קילופאסקל",
+      "MPa": "מגאפסקל",
+      "bar": "בר",
+      "mbar": "מיליבר",
+      "atm": "אטמוספרה",
+      "mmHg": "מ''ג",
+      "inHg": "אינ''ג",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "קילוליטר",
+      "dL": "דציליטר",
+      "cL": "סנטיליטר",
+      "qt": "קוורט",
+      "cup": "כוס",
+      "fl oz": "אونס נוזלי",
+      "bit": "ביט",
+      "B": "בייט",
+      "KB": "КБ",
+      "MB": "МБ",
+      "GB": "ГБ",
+      "TB": "ТБ",
+      "PB": "ПБ",
+      "Kbit": "קילוביט",
+      "Mbit": "מגאביט",
+      "Gbit": "גיגהביט"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "החלפת מטבע",
+      "names": {
+        "CNY": "צ'ין",
+        "USD": "долר אמריקאי",
+        "EUR": "אירו",
+        "GBP": "לירה בריטית",
+        "JPY": "יון יפני",
+        "KRW": "ווון קוריאני",
+        "HKD": "דולר הונגרי",
+        "TWD": "טואן טאיוואני",
+        "SGD": "דולר סינגפורי",
+        "AUD": "דולר אוסטרלי",
+        "CAD": "דולר קנדי",
+        "CHF": "פרנק שווייצרי"
+      }
+    },
+    "radix": {
+      "title": "ממיר בסיס",
+      "dec": " деסימל (DEC)",
+      "bin": "בינארי (BIN)",
+      "oct": "אוקטלי (OCT)",
+      "hex": "הקסאדהשימלי (HEX)"
+    },
+    "uppercase": {
+      "title": "مال uppercase",
+      "zero_yuan_整": "אפס יואן רק",
+      "zero": "אפס",
+      "digits": [
+        "אפס",
+        "אחד",
+        "שני",
+        "שלושה",
+        "ארבעה",
+        "חמישה",
+        "ששה",
+        "שבעה",
+        "שמונה",
+        "תשעה"
+      ],
+      "units": [
+        ", ",
+        "עשרה",
+        "מאות",
+        "אלפים"
+      ],
+      "big_units": [
+        ", ",
+        "עشرת אלפים",
+        "מאה מיליון",
+        "טריליון"
+      ],
+      "yuan": "יואן",
+      "zheng": "רק",
+      "jiao": "ג'יאו",
+      "fen": "פין",
+      "negative": "שלילי",
+      "back_to_calculator": "חזרה למחשבון",
+      "click_to_copy": "כותרת (לחץ כדי להעתיק)"
+    },
+    "mortgage": {
+      "title": "מחשבון משכנתא",
+      "commercial_loan": "לוואי מסחרי",
+      "fund_loan": "לוואי קרן",
+      "combined_loan": "לוואי משלב",
+      "loan_amount": "סכום הלוואה",
+      "loan_rate": "סיבת הלוואה",
+      "fund_loan_amount": "סכום לוואי קרן",
+      "fund_loan_rate": "סיבת לוואי קרן",
+      "commercial_loan_amount": "סכום לוואי מסחרי",
+      "commercial_rate_type": "סוג סיבת",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "נקודות בסיס",
+      "commercial_loan_rate": "סיבת מסחרית",
+      "principal": "ראשי",
+      "interest": "ดอก",
+      "equal_monthly": "תשלום חודשי שווה",
+      "equal_principal": "תשלום ראשוני שווה",
+      "payment_type": "סוג תשלום",
+      "loan_years": "שנים של הלוואה",
+      "lpr_rate": "סיבת LPR",
+      "basis_points": "BP",
+      "base_rate": "סיבת בסיס",
+      "rate_type": "סוג סיבת",
+      "total_payment": "סה\"כ תשלום",
+      "total_interest": "סה\"כ דמי ריבית",
+      "monthly_payment": "תשלום חודשי",
+      "first_month_payment": "شهر ראשון",
+      "last_month_payment": "شهر אחרון",
+      "monthly_decrease": "הקטנת שכר תשלומים חודשי",
+      "view_schedule": "הצגת תקציב",
+      "hide_schedule": "הסתרת תקציב",
+      "schedule_title": "תקציב",
+      "period": "תקופה",
+      "monthly_pay": "תשלום",
+      "principal_part": "סכום עיקרי",
+      "interest_part": "אינטראס",
+      "remaining_principal": "נותר",
+      "payment_method": "שיטה",
+      "loan_total": "סכום הלוואה",
+      "repayment_periods": "תקופות תשלום",
+      "period_unit": "شهر",
+      "remaining": "נותר"
+    },
+    "relative": {
+      "title": "קריאת יחס",
+      "my_gender": "גדרי:",
+      "placeholder": "לחץ על כפתורים למטה כדי להוסיף יחס",
+      "i_call_ta": "אני קורא להם:",
+      "ta_calls_me": "הם קוראים לי:",
+      "reverse_check": "הפיכת יחס",
+      "example_title": "דוגמאות נפוצות",
+      "error_same_sex": "יחסים בין בני אותו מגדר לא נתמכים עדיין",
+      "error_not_found": "יחס רחוק מדי או שאינו בقاعدة הנתונים",
+      "error_calc": "שגיאה בחישוב",
+      "prefix": "ה",
+      "connector": "'s ",
+      "labels": {
+        "f": "אב",
+        "m": "אם",
+        "h": "בן-زיווג",
+        "w": "בת-זיווג",
+        "ob": "אח older",
+        "lb": "אח younger",
+        "os": "אחות older",
+        "ls": "אחות younger",
+        "s": "בן",
+        "d": "בת"
+      },
+      "buttons": {
+        "f": "אב",
+        "m": "אם",
+        "h": "בן-זיווג",
+        "w": "בת-זיווג",
+        "ob": "אח+",
+        "lb": "אח-",
+        "os": "אחות+",
+        "ls": "אחות-",
+        "s": "בן",
+        "d": "בת"
+      },
+      "examples": {
+        "爷爷": "סבא",
+        "外婆": "סבתה",
+        "伯父": "דוד(שנשא)",
+        "叔叔": "דוד(צעיר)",
+        "舅舅": "דוד(אם)",
+        "姑姑": "אשת דוד"
+      }
+    },
+    "tax": {
+      "title": "מחשבון מס",
+      "salary_label": "שכר חודשי",
+      "insurance_label": "ביטוח חברתי",
+      "deduction_label": "הטבות מיוחדות",
+      "threshold_label": "סף",
+      "hint": "הטבות כוללות: חינוך ילדים, שכר דירה, ריבית משכנתא וכו'",
+      "after_tax_salary": "שכר לאחר מס",
+      "taxable_income": "ราย הכנסה מוגדרת למס",
+      "applicable_rate": "שיעור",
+      "payable_tax": "מס לתשלום",
+      "table_title": "שכירות מס (שנתי)",
+      "table_headers": [
+        "רמה",
+        "ราย הכנסה מוגדרת למס",
+        "שיעור",
+        "הטבה"
+      ],
+      "ten_thousand_unit": "אלף",
+      "history": {
+        "title": "חישוב מס עבור שכר ¥{{salary}}, ",
+        "expression": "שכר לפני מס {{salary}} - ביטוח {{insurance}} - הטבות {{deduction}}, ",
+        "result": "שכר אחרי מס ¥{{afterTax}} (מס ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "ספר חשבונות",
+      "expense": "התנה",
+      "income": "доход",
+      "add_record": "הוסף פריט",
+      "report": "דיווח",
+      "monthly_expense": "התנה חודשית",
+      "monthly_income": "доход חודשי",
+      "balance": "מאזן",
+      "no_records": "אין רשומות עדיין",
+      "note": "הערה",
+      "note_placeholder": "הוסף הערה...",
+      "report_title": "דיווח",
+      "total_expense": "סה''כ התנה",
+      "total_income": "סה''כ Доход",
+      "expense_detail": "פרטי התנה",
+      "income_detail": "פרטי Доход",
+      "delete_confirm_text": "אתה בטוח שברצונך למחוק את הרשומה הזו?",
+      "categories": {
+        "expense": {
+          "消费": "צריכה",
+          "餐饮": "אוכל",
+          "购物": "קניות",
+          "住房": "בית",
+          "交通": "תחבורה",
+          "通讯": "תקשורת",
+          "娱乐": "הנאה",
+          "医疗": "ריפוי",
+          "教育": "השכלה",
+          "其他": "אחר"
+        },
+        "income": {
+          "工资": "שכר",
+          "奖金": "בונוס",
+          "投资": "ลงכש",
+          "兼职": "עבודה חלקית",
+          "红包": "קופסא אדומה",
+          "其他": "אחר"
+        }
+      },
+      "weekdays": [
+        "יום ראשון",
+        "יום שני",
+        "יום שלישי",
+        "יום רביעי",
+        "יום חמישי",
+        "יום שישי",
+        "יום שבת"
+      ]
+    },
+    "memo": {
+      "title": "הערה",
+      "search_placeholder": "חיפוש הערות...",
+      "no_title": "אין כותרת",
+      "no_memos": "אין הערות עדיין",
+      "title_label": "כותרת",
+      "content_placeholder": "הכנס תוכן...",
+      "delete_confirm_text": "אתה בטוח שברצונך למחוק את ההערה הזו?",
+      "pin": "לנתק",
+      "unpin": "לפרוק"
+    },
+    "health": {
+      "title": "חשבון בריאות",
+      "bmi_label": "מגמה של BMI",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "מין",
+      "male": "זכר",
+      "female": "נקבה",
+      "height": "גובה (ס''מ)",
+      "weight": "משקל (ק''ג)",
+      "age": "גיל",
+      "activity_level": "רמת פעילות",
+      "activity": {
+        "sedentary": "ישן",
+        "light": "קל (1-3 פעמים בשבוע)",
+        "moderate": "בינוני (3-5 פעמים בשבוע)",
+        "active": "פעיל (6-7 פעמים בשבוע)",
+        "very_active": "מאוד פעיל (עבודה משמעת יומית)"
+      },
+      "status": {
+        "underweight": "נמוך מהתורם",
+        "normal": "נורמלי",
+        "overweight": "מעל התורם",
+        "obese": "חובב"
+      }
+    },
+    "graph": {
+      "title": "رسم גרף פונקציה",
+      "placeholder": "הכנס פונקציה, לדוגמה x^2, sin(x)...",
+      "x_min": "X מינימום",
+      "x_max": "X מקסימום"
+    },
+    "formula": {
+      "title": "מחשבון נוסחה",
+      "category_label": "קטגוריה",
+      "all": "כל",
+      "select_formula": "בחר נוסחה",
+      "result_title": "نتון",
+      "formula_label": "נוסחה",
+      "variables_label": "משתנים",
+      "categories": {
+        "几何": "גיאומטריה",
+        "物理": "פיזיקה",
+        "数学": "מתמטיקה",
+        "金融": "مالית",
+        "健康": "בריאות"
+      },
+      "items": {
+        "circle_area": {
+          "name": "שטח מעגל",
+          "description": "חישוב שטח עם רדיוס",
+          "variables": {
+            "r": "רדיוס"
+          }
+        },
+        "circle_perimeter": {
+          "name": "היקף מעגל",
+          "description": "חישוב היקף עם רדיוס",
+          "variables": {
+            "r": "רדיוס"
+          }
+        },
+        "sphere_volume": {
+          "name": "נפח כדור",
+          "description": "חישוב נפח עם רדיוס",
+          "variables": {
+            "r": "רדיוס"
+          }
+        },
+        "triangle_area": {
+          "name": "שטח משולש",
+          "description": "חישוב שטח עם בסיס וגובה",
+          "variables": {
+            "a": "בסיס",
+            "h": "גובה"
+          }
+        },
+        "trapezoid_area": {
+          "name": "שטח טרפז",
+          "description": "חישוב שטח עם בסיסים וגובה",
+          "variables": {
+            "a": "עליון",
+            "b": "سفני",
+            "h": "גובה"
+          }
+        },
+        "cylinder_volume": {
+          "name": "נפח גליל",
+          "description": "חישוב נפח עם רדיוס וגובה",
+          "variables": {
+            "r": "רדיוס",
+            "h": "גובה"
+          }
+        },
+        "cone_volume": {
+          "name": "נפח חרוט",
+          "description": "חישוב נפח עם רדיוס וגובה",
+          "variables": {
+            "r": "רדיוס",
+            "h": "גובה"
+          }
+        },
+        "speed": {
+          "name": "מהירות",
+          "description": "חישוב מהירות עם מרחק וזמן",
+          "variables": {
+            "s": "מרחק",
+            "t": "זמן"
+          }
+        },
+        "acceleration": {
+          "name": "تسارע",
+          "description": "חישוב تسארע",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "חוק שני של ניוטון",
+          "description": "חישוב כוח",
+          "variables": {
+            "m": "מסה(kg)",
+            "a": "تسארע(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "אנרגיה קינטית",
+          "description": "חישוב אנרגיה קינטית",
+          "variables": {
+            "m": "מסה(kg)",
+            "v": "מהירות (מ/ש)"
+          }
+        },
+        "potential_energy": {
+          "name": "אנרגיה פוטנציאלית",
+          "description": "חשב אנרגיה פוטנציאלית",
+          "variables": {
+            "m": "מסה (קג)",
+            "g": "ג",
+            "h": "גובה (מ)"
+          }
+        },
+        "ohm_law": {
+          "name": "חוק אום",
+          "description": "חשב זרם",
+          "variables": {
+            "U": "מתח (וולט)",
+            "R": "נגד (אומ\"ג)"
+          }
+        },
+        "power_electric": {
+          "name": "כוח חשמלי",
+          "description": "חשב כוח",
+          "variables": {
+            "U": "מתח (וולט)",
+            "I": "זרם (אמפר)"
+          }
+        },
+        "pythagorean": {
+          "name": "משפט פיתגורס",
+          "description": "חשב צלע נגיעה",
+          "variables": {
+            "a": "א",
+            "b": "ב"
+          }
+        },
+        "quadratic": {
+          "name": "שורש ריבועי",
+          "description": "דיסקרימיננטה של ax²+bx+c=0",
+          "variables": {
+            "a": "א",
+            "b": "ב",
+            "c": "ג"
+          }
+        },
+        "compound_interest": {
+          "name": "ดอกเบี้ยทบต้น",
+          "description": "חשב סכום עם דמי ריבית",
+          "variables": {
+            "P": "เงินต้น",
+            "r": "อัตรา (%)",
+            "n": "ปี"
+          }
+        },
+        "bmi": {
+          "name": "ดัชนีมวลกาย",
+          "description": "คำนวณ BMI โดยใช้น้ำหนักและส่วนสูง",
+          "variables": {
+            "weight": "น้ำหนัก (กิโลกรัม)",
+            "height": "ส่วนสูง (เมตร)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "ส่วนลด & ค่าบริการ",
+      "original_price": "ราคา",
+      "price_placeholder": "ใส่จำนวน",
+      "discount_label": "ส่วนลด",
+      "percent": "เปอร์เซ็นต์",
+      "flat_amount": "จำนวนคงที่",
+      "tip_label": "ค่าบริการ",
+      "split_label": "แบ่ง",
+      "person_unit": "คน",
+      "result_title": "ผลลัพธ์",
+      "saved_amount": "ประหยัด",
+      "discounted_price": "ราคาสุทธิ",
+      "tip_amount": "จำนวนค่าบริการ",
+      "total_price": "ราคาทั้งหมด",
+      "per_person": "ต่อคน"
+    },
+    "date": {
+      "title": "เครื่องคำนวณวันที่",
+      "diff_mode": "ความแตกต่างของวันที่",
+      "add_mode": "การคำนวณวันที่",
+      "convert_mode": "המרה לירחית",
+      "start_date": "תאריך התחלה",
+      "end_date": "תאריך סיום",
+      "base_date": "תאריך בסיס",
+      "diff_time": "הפרש זמן",
+      "before": "לפני",
+      "after": "אחרי",
+      "result_title": "نتון",
+      "diff_days": "הפרש ימים",
+      "workdays": "ימים עבודה",
+      "weeks": "שבועות",
+      "hours": "שעות",
+      "minutes": "דקות",
+      "solar2lunar": "שמש לירח",
+      "lunar2solar": "ירח לשמש",
+      "solar_date": "תאריך שמשי",
+      "lunar": "ירח",
+      "shengxiao": "סמל חיות",
+      "jieqi": "תקופת שמש",
+      "festival": "חג",
+      "leap_month": "חודש מעובר",
+      "leap_month_prefix": "شهر מעובר ",
+      "workdays_label": "ימים עבודה (ללא שישי ושבת)",
+      "lunar_year": "שנה ירחית",
+      "lunar_month": "חודש ירחית",
+      "lunar_day": "יום ירחית",
+      "invalid_date": "תאריך לא חוקי"
+    },
+    "finance": {
+      "title": "מחשבון פיננסי",
+      "bank_mode": "חיסכון בנקאי",
+      "compound_mode": "אינטראס קומפונד",
+      "regular_mode": "השקעה רגולרית",
+      "interest_yuan": "ריבית",
+      "interest_profit": "רווח",
+      "total_yuan": "סה\"כ",
+      "total_sum": "סכום כולל",
+      "bank_info": "הכנס מידע חיסכון",
+      "bank_amount": "כמות",
+      "bank_years": "שנים",
+      "rate_percent": "שיעור (%)",
+      "compound_info": "הכנס מידע הפקעה",
+      "initial_principal": "ראשי מטבע",
+      "invest_years": "שנים",
+      "return_rate": "שיעור הפקעה (%)",
+      "compound_freq": "תדירות",
+      "regular_info": "הכנס מידע רגיל",
+      "regular_amount": "כמות תקופתית",
+      "regular_years": "שנים",
+      "regular_rate": "שיעור הפקעה (%)",
+      "regular_freq": "תדירות",
+      "total_return": "הפיכת סך",
+      "total_invest": "סה\"כ משקיע",
+      "overflow_error": "הערכה מוגזמת",
+      "freq": {
+        "year": "שנתיים",
+        "month": "شهרי",
+        "day": "יומי",
+        "week": "שבועי"
+      }
+    }
+  }
+}

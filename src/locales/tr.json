@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "Tüm Hesap Makinesi",
+    "app_icon_alt": "Tüm Hesap Makinesi Simge",
+    "subtext": "Kunqiong AI'nın bir ürünü",
+    "software_custom": "Yazılım Özelleştirme",
+    "feedback": "Geribildirim",
+    "history": "Geçmiş",
+    "icon_alt": "Simge",
+    "back": "Geri",
+    "copy_result": "Sonucu Kopyala",
+    "to_uppercase": "Büyük Harfe Dönüştür",
+    "error": "Hata",
+    "copied": "Kopyalandı",
+    "clear": "Temizle",
+    "copied_to_clipboard": "Panoya kopyalandı",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Yıl",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "days_ago": "gün önce",
+    "month_unit": "Ay",
+    "day_unit": "Gün",
+    "year_unit": "Yıl",
+    "confirm_delete": "Silme Onayla",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "minimize": "Küçült",
+    "maximize": "Büyüt",
+    "close": "Kapat",
+    "switch_dark": "Karanlık Moda Geç",
+    "switch_light": "Açık Moda Geç",
+    "language_switch": "Dil Değiştir",
+    "weekdays": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ]
+  },
+  "update": {
+    "found_new": "Yeni Sürüm Bulundu",
+    "current_version": "Mevcut Sürüm",
+    "update_log": "Güncelleme Geçmişi",
+    "remind_later": "Daha Sonra Hatırlat",
+    "update_now": "Şimdi Güncelle"
+  },
+  "auth": {
+    "login_cancelled": "Giriş İptal Edildi",
+    "click_to_logout": "Çıkış Yapmak İçin Tıkla",
+    "logged_in": "Giriş Yapıldı",
+    "logout": "Çıkış Yap",
+    "click_to_login": "Giriş Yapmak İçin Tıkla",
+    "logging_in": "Giriş yapılıyor...",
+    "login_register": "Giriş Yap/Kayıt Ol",
+    "login_failed": "Giriş Başarısız",
+    "complete_login_in_browser": "Lütfen tarayıcıda giriş işlemini tamamlayın",
+    "cancel_login": "Giriş İptal",
+    "login_timeout": "Giriş Zaman Aşımı",
+    "get_login_url_failed": "Giriş URL'si alınamadı",
+    "get_user_info_failed": "Kullanıcı bilgisi alınamadı",
+    "logout_failed": "Çıkış başarısız"
+  },
+  "ai": {
+    "module_direct": "Hızlı Erişim",
+    "open_module": ", {{name}} aç",
+    "enter_now": "Şimdi Gir",
+    "currency_title": "Döviz Çevirici",
+    "view_details": "Detayları Görüntüle",
+    "percent_title": "Yüzde Hesap",
+    "uppercase_title": "Tutarı Büyük Harfe Dönüştür",
+    "convert_now": "Şu An Dönüştür",
+    "date_title": "Tarih Hesaplama",
+    "view_date_details": "Tarih Detaylarını Görüntüle",
+    "tax_title": "Vergi Hesaplayıcı",
+    "go_calculate": "Hesapla",
+    "discount_title": "İndirim Hesap",
+    "full_minus_title": "Tam İndirim",
+    "tip_title": "Bahşiş Hesap",
+    "go_pay": "Ödemeye Git",
+    "health_title": "Sağlık Hesap",
+    "calc_now": "Şu An Hesapla",
+    "graph_title": "Fonksiyon Grafikleri",
+    "start_drawing": "Çizime Başla",
+    "draw_function": "Fonksiyon çiz y = {{expr}}, ",
+    "open_graph_tool": "Etkileşimli grafik aracı aç",
+    "unit_title": "Birim Dönüşümü",
+    "smart_calc_title": "Akıllı Hesap",
+    "math_title": "Akıllı Hesaplama"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Hesap Makinesi",
+      "tool": "Araçlar",
+      "converter": "Dönüştürücü"
+    },
+    "items": {
+      "basic": "Temel Hesap Makinesi",
+      "scientific": "Bilimsel Hesap Makinesi",
+      "fraction": "Kesir Hesap Makinesi",
+      "currency": "Döviz Dönüştürücü",
+      "relative": "Bağıl Çağrı",
+      "mortgage": "Mortgage Hesaplayıcı",
+      "tax": "Vergi Hesaplayıcı",
+      "date": "Tarih Hesaplayıcı",
+      "radix": "Radix Dönüştürücü",
+      "uppercase": "Büyük Harfli Para",
+      "finance": "Finans Hesaplayıcı",
+      "formula": "Formül Hesaplayıcı",
+      "discount": "İndirim & Bahşiş",
+      "account": "Hesap Defteri",
+      "memo": "Not",
+      "health": "Sağlık Hesaplayıcı",
+      "graph": "Grafik Hesaplayıcı",
+      "length": "Uzunluk",
+      "area": "Alan",
+      "volume": "Hacim",
+      "temperature": "Sıcaklık",
+      "speed": "Hız",
+      "time": "Zaman",
+      "weight": "Ağırlık",
+      "power": "Güç",
+      "heat": "Isı",
+      "force": "Kuvvet",
+      "pressure": "Basınç",
+      "capacity": "Kapasite",
+      "data": "Veri Depolama"
+    }
+  },
+  "home": {
+    "search_placeholder": "AI Arama deneyin, örneğin 100 dolar, 100cm metreye...",
+    "smart_tips_label": "Akıllı İpuçları:",
+    "tips": {
+      "date": "100 gün sonra ne tarih olur?",
+      "tax": "1.5w maaş için kaç vergi olur?",
+      "uppercase": "Miktarı Büyük Harfe Dönüştür",
+      "unit": "100cm metreye"
+    },
+    "smart_tag": "AI Akıllı Parse",
+    "search_results_title": "Arama Sonuçları",
+    "no_results_text": "İlgili fonksiyon bulunamadı, başka bir anahtar kelime deneyin"
+  },
+  "history": {
+    "title": "Geçmiş",
+    "clear_all": "Tümünü Temizle",
+    "empty": "Henüz geçmiş yok",
+    "types": {
+      "basic": "Temel",
+      "scientific": "Bilimsel",
+      "converter": "Birim",
+      "currency": "Para Birimi",
+      "health": "Sağlık",
+      "discount": "İndirim",
+      "tax": "Vergi",
+      "tool": "Araç",
+      "record": "Kayıt"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Payda sıfır olamaz",
+      "error_zero_divisor": "Bölen sıfır olamaz"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Dönüştür",
+    "categories": {
+      "length": "Uzunluk",
+      "area": "Alan",
+      "volume": "Hacim",
+      "weight": "Ağırlık",
+      "temperature": "Sıcaklık",
+      "speed": "Hız",
+      "time": "Zaman",
+      "power": "Güç",
+      "heat": "Isı",
+      "force": "Kuvvet",
+      "pressure": "Basınç",
+      "capacity": "Kapasite",
+      "data": "Veri Depolama"
+    },
+    "units": {
+      "km": "kilometre",
+      "m": "metre",
+      "dm": "desimetre",
+      "cm": "santimetre",
+      "mm": "milimetre",
+      "μm": "mikrometre",
+      "nm": "nanometre",
+      "mi": "mile",
+      "yd": "yarı",
+      "ft": "ayak",
+      "in": "inç",
+      "nmi": "deniz mili",
+      "里": "Li (Çin mili)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "kare kilometre",
+      "ha": "hektar",
+      "m²": "kare metre",
+      "dm²": "kare desimetre",
+      "cm²": "kare santimetre",
+      "mm²": "kare milimetre",
+      "mi²": "kare mile",
+      "acre": "aris",
+      "yd²": "kare yarım",
+      "ft²": "kare ayak",
+      "in²": "kare inç",
+      "亩": "Mu",
+      "分": "Fen (alan)",
+      "m³": "kübik metre",
+      "dm³": "kübik desimetre",
+      "cm³": "kübik santimetre",
+      "mm³": "kübik milimetre",
+      "L": "litre",
+      "mL": "mililitre",
+      "gal": "galon (ABD)",
+      "gal(UK)": "galon (İngiltere)",
+      "pt": "pint",
+      "ft³": "kübik ayak",
+      "in³": "kübik inç",
+      "t": "ton",
+      "kg": "kilogram",
+      "g": "gram",
+      "mg": "miligram",
+      "μg": "mikrogram",
+      "lb": "libre",
+      "oz": "ons",
+      "ct": "karat",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Santigrat",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "metre/saniye",
+      "km/h": "kilometre/saat",
+      "mph": "mil/saat",
+      "kn": "knot",
+      "Ma": "Mach",
+      "c": "ışık hızı",
+      "世纪": "yüzyıl",
+      "年": "yıl",
+      "月": "ay",
+      "周": "hafta",
+      "天": "gün",
+      "h": "saat",
+      "min": "dakika",
+      "s": "saniye",
+      "ms": "milisaniye",
+      "μs": "mikrosaniye",
+      "ns": "nanosaniye",
+      "kW": "kilowatt",
+      "W": "watt",
+      "mW": "milivat",
+      "hp": "beygir gücü",
+      "PS": "metrik beygir gücü",
+      "kcal/s": "kcal/saniye",
+      "BTU/s": "BTU/saniye",
+      "kJ": "kilojoule",
+      "J": "joule",
+      "cal": "kalori",
+      "kcal": "kilokalori",
+      "Wh": "watt-saat",
+      "kWh": "kilowatt-saat",
+      "BTU": "İngiliz Termal Birimi",
+      "kN": "kilonewton",
+      "N": "newton",
+      "dyn": "dyne",
+      "kgf": "kilogram-kuvvet",
+      "gf": "gram-kuvvet",
+      "lbf": "pound-kuvvet",
+      "Pa": "paskal",
+      "hPa": "hektopaskal",
+      "kPa": "kilopaskal",
+      "MPa": "megapaskal",
+      "bar": "bar",
+      "mbar": "milibar",
+      "atm": "atmosfer",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kilolitre",
+      "dL": "desilitre",
+      "cL": "santilitre",
+      "qt": "kade",
+      "cup": "kupa",
+      "fl oz": "sıvı onsons",
+      "bit": "bit",
+      "B": "bayt",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Döviz Çevirisi",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Taban Dönüştürücü",
+      "dec": "Onluk (DEC)",
+      "bin": "İkili (BIN)",
+      "oct": "Sekizlik (OCT)",
+      "hex": "Onaltılık (HEX)"
+    },
+    "uppercase": {
+      "title": "Büyük Harf Para",
+      "zero_yuan_整": "Sadece Sıfır Yuan",
+      "zero": "Sıfır",
+      "digits": [
+        "Sıfır",
+        "Bir",
+        "İki",
+        "Üç",
+        "Dört",
+        "Beş",
+        "Altı",
+        "Yedi",
+        "Sekiz",
+        "Dokuz"
+      ],
+      "units": [
+        ", ",
+        "On",
+        "Yüz",
+        "Bin"
+      ],
+      "big_units": [
+        ", ",
+        "On Bin",
+        "Yüz Milyon",
+        "Trilyon"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Sadece",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Negatif",
+      "back_to_calculator": "Hesaplayıcıya Geri Dön",
+      "click_to_copy": "Büyük Harf (Kopyalamak İçin Tıkla)"
+    },
+    "mortgage": {
+      "title": "Mortgage Hesaplayıcısı",
+      "commercial_loan": "Ticari Kredi",
+      "fund_loan": "Konut Fonu",
+      "combined_loan": "Birleştirilmiş Kredi",
+      "loan_amount": "Kredi Miktarı",
+      "loan_rate": "Kredi Oranı",
+      "fund_loan_amount": "Fon Kredi Miktarı",
+      "fund_loan_rate": "Fon Kredi Oranı",
+      "commercial_loan_amount": "Ticari Kredi Miktarı",
+      "commercial_rate_type": "Oran Türü",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Temel Nokta",
+      "commercial_loan_rate": "Ticari Oran",
+      "principal": "Ana Para",
+      "interest": "Faiz",
+      "equal_monthly": "Eşit Aylık Ödeme",
+      "equal_principal": "Eşit Ana Para Ödemesi",
+      "payment_type": "Ödeme Türü",
+      "loan_years": "Kredi Yılı",
+      "lpr_rate": "LPR Oranı",
+      "basis_points": "BP",
+      "base_rate": "Temel Oran",
+      "rate_type": "Oran Türü",
+      "total_payment": "Toplam Ödeme",
+      "total_interest": "Toplam Faiz",
+      "monthly_payment": "Aylık Ödeme",
+      "first_month_payment": "İlk Ay",
+      "last_month_payment": "Son Ay",
+      "monthly_decrease": "Aylık Azalma",
+      "view_schedule": "Planı Göster",
+      "hide_schedule": "Planı Gizle",
+      "schedule_title": "Plan",
+      "period": "Dönem",
+      "monthly_pay": "Ödeme",
+      "principal_part": "Ana Para",
+      "interest_part": "Faiz",
+      "remaining_principal": "Kalan",
+      "payment_method": "Yöntem",
+      "loan_total": "Kredi Toplamı",
+      "repayment_periods": "Dönemler",
+      "period_unit": "Ay",
+      "remaining": "Kalan"
+    },
+    "relative": {
+      "title": "Akraba Arama",
+      "my_gender": "Cinsiyetim:",
+      "placeholder": "İlişki eklemek için aşağıdaki düğmeleri tıklayın",
+      "i_call_ta": "Onları çağırıyorum:",
+      "ta_calls_me": "Onlar beni çağırıyor:",
+      "reverse_check": "Tersine",
+      "example_title": "Ortak Örnekler",
+      "error_same_sex": "Aynı cinsel ilişki şu anda desteklenmiyor",
+      "error_not_found": "İlişki çok uzak veya veritabanında yok",
+      "error_calc": "Hesaplama hatası",
+      "prefix": "Benim ",
+      "connector": "'ın ",
+      "labels": {
+        "f": "Baba",
+        "m": "Anne",
+        "h": "Eş",
+        "w": "Eş",
+        "ob": "Büyük Kardeş",
+        "lb": "Küçük Kardeş",
+        "os": "Büyük Kız",
+        "ls": "Küçük Kız",
+        "s": "Oğul",
+        "d": "Kız"
+      },
+      "buttons": {
+        "f": "Baba",
+        "m": "Anne",
+        "h": "Eş",
+        "w": "Eş",
+        "ob": "Kardeş+",
+        "lb": "Kardeş-",
+        "os": "Kız+",
+        "ls": "Kız-",
+        "s": "Oğul",
+        "d": "Kız"
+      },
+      "examples": {
+        "爷爷": "Büyükbaba",
+        "外婆": "Büyükanne",
+        "伯父": "Büyükbaba(Üst)",
+        "叔叔": "Büyükbaba(Alt)",
+        "舅舅": "Büyükbaba(Maternal)",
+        "姑姑": "Hala"
+      }
+    },
+    "tax": {
+      "title": "Vergi Hesaplayıcı",
+      "salary_label": "Aylık Maaş",
+      "insurance_label": "Sosyal Sigorta",
+      "deduction_label": "Özel İndirimler",
+      "threshold_label": "Eşik",
+      "hint": "İndirimler: çocuk eğitimi, kira, konut kredisi faizi vb.",
+      "after_tax_salary": "Vergiden Sonra Maaş",
+      "taxable_income": "Vergilendirilebilir Gelir",
+      "applicable_rate": "Oran",
+      "payable_tax": "Ödenmesi Gereken Vergi",
+      "table_title": "Vergi Dilimleri (Yıllık)",
+      "table_headers": [
+        "Seviye",
+        "Vergilendirilebilir Gelir",
+        "Oran",
+        "İndirim"
+      ],
+      "ten_thousand_unit": "w",
+      "history": {
+        "title": "Maaş ¥{{salary}} Vergi Tahmini",
+        "expression": "Vergi öncesi {{salary}} - Sigorta {{insurance}} - İndirim {{deduction}}, ",
+        "result": "Vergi sonrası ¥{{afterTax}} (Vergi ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Hesap Defteri",
+      "expense": "Gider",
+      "income": "Gelir",
+      "add_record": "Öğe Ekle",
+      "report": "Rapor",
+      "monthly_expense": "Aylık Gider",
+      "monthly_income": "Aylık Gelir",
+      "balance": "Bakiye",
+      "no_records": "Henüz kayıt yok",
+      "note": "Not",
+      "note_placeholder": "Not ekleyin...",
+      "report_title": "Rapor",
+      "total_expense": "Toplam Gider",
+      "total_income": "Toplam Gelir",
+      "expense_detail": "Gider Detayı",
+      "income_detail": "Gelir Detayı",
+      "delete_confirm_text": "Bu kaydı silmek istediğinizden emin misiniz?",
+      "categories": {
+        "expense": {
+          "消费": "Harcama",
+          "餐饮": "Yiyecek",
+          "购物": "Alışveriş",
+          "住房": "Konut",
+          "交通": "Ulaşım",
+          "通讯": "İletişim",
+          "娱乐": "Rekreasyon",
+          "医疗": "Sağlık",
+          "教育": "Eğitim",
+          "其他": "Diğer"
+        },
+        "income": {
+          "工资": "Maaş",
+          "奖金": "Prim",
+          "投资": "Yatırım",
+          "兼职": "Yarı zamanlı",
+          "红包": "Kırmızı Paket",
+          "其他": "Diğer"
+        }
+      },
+      "weekdays": [
+        "Paz",
+        "Pzt",
+        "Sal",
+        "Çar",
+        "Per",
+        "Cum",
+        "Cmt"
+      ]
+    },
+    "memo": {
+      "title": "Not",
+      "search_placeholder": "Notlar ara...",
+      "no_title": "Başlık yok",
+      "no_memos": "Henüz not yok",
+      "title_label": "Başlık",
+      "content_placeholder": "İçerik girin...",
+      "delete_confirm_text": "Bu notu silmek istediğinizden emin misiniz?",
+      "pin": "Yapıştır",
+      "unpin": "Çıkar"
+    },
+    "health": {
+      "title": "Sağlık Hesaplayıcı",
+      "bmi_label": "BMI Endeksi",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Cinsiyet",
+      "male": "Erkek",
+      "female": "Kadın",
+      "height": "Boy (cm)",
+      "weight": "Ağırlık (kg)",
+      "age": "Yaş",
+      "activity_level": "Aktivite Düzeyi",
+      "activity": {
+        "sedentary": "Sedanter",
+        "light": "Hafif (1-3 kez/hafta)",
+        "moderate": "Orta (3-5 kez/hafta)",
+        "active": "Aktif (6-7 kez/hafta)",
+        "very_active": "Çok Aktif (Günlük ağır iş)"
+      },
+      "status": {
+        "underweight": "Zayıf",
+        "normal": "Normal",
+        "overweight": "Fazla Ağırlıklı",
+        "obese": "Obez"
+      }
+    },
+    "graph": {
+      "title": "Fonksiyon Grafiği",
+      "placeholder": "Fonksiyon girin, örneğin x^2, sin(x)...",
+      "x_min": "X Min",
+      "x_max": "X Max"
+    },
+    "formula": {
+      "title": "Formül Hesaplayıcı",
+      "category_label": "Kategori",
+      "all": "Tümü",
+      "select_formula": "Formül Seç",
+      "result_title": "Sonuç",
+      "formula_label": "Formül",
+      "variables_label": "Değişkenler",
+      "categories": {
+        "几何": "Geometri",
+        "物理": "Fizik",
+        "数学": "Matematik",
+        "金融": "Finans",
+        "健康": "Sağlık"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Daire Alanı",
+          "description": "Yarıçapla alan hesapla",
+          "variables": {
+            "r": "Yarıçap"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Daire Çevresi",
+          "description": "Yarıçapla çevre hesapla",
+          "variables": {
+            "r": "Yarıçap"
+          }
+        },
+        "sphere_volume": {
+          "name": "Küre Hacmi",
+          "description": "Yarıçapla hacim hesapla",
+          "variables": {
+            "r": "Yarıçap"
+          }
+        },
+        "triangle_area": {
+          "name": "Üçgen Alanı",
+          "description": "Taban ve yükseklikle alan hesapla",
+          "variables": {
+            "a": "Taban",
+            "h": "Yükseklik"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Yamuk Alanı",
+          "description": "Tabanlar ve yükseklikle alan hesapla",
+          "variables": {
+            "a": "Üst",
+            "b": "Alt",
+            "h": "Yükseklik"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Silindir Hacmi",
+          "description": "Yarıçap ve yükseklikle hacim hesapla",
+          "variables": {
+            "r": "Yarıçap",
+            "h": "Yükseklik"
+          }
+        },
+        "cone_volume": {
+          "name": "Koni Hacmi",
+          "description": "Yarıçap ve yükseklikle hacim hesapla",
+          "variables": {
+            "r": "Yarıçap",
+            "h": "Yükseklik"
+          }
+        },
+        "speed": {
+          "name": "Hız",
+          "description": "Mesafe ve zamanla hız hesapla",
+          "variables": {
+            "s": "Mesafe",
+            "t": "Zaman"
+          }
+        },
+        "acceleration": {
+          "name": "İvme",
+          "description": "İvme hesapla",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Newton'un İkinci Yasası",
+          "description": "Kuvvet hesapla",
+          "variables": {
+            "m": "Kütle(kg)",
+            "a": "İvme(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Kinetik Enerji",
+          "description": "Kinetik enerji hesapla",
+          "variables": {
+            "m": "Kütle(kg)",
+            "v": "Hız(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Potansiyel Enerji",
+          "description": "Potansiyel enerji hesapla",
+          "variables": {
+            "m": "Kütle(kg)",
+            "g": "g",
+            "h": "Yükseklik(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Ohm Yasası",
+          "description": "Akımı hesapla",
+          "variables": {
+            "U": "Gerilim(V)",
+            "R": "Direnç(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Elektrik Gücü",
+          "description": "Gücü hesapla",
+          "variables": {
+            "U": "Gerilim(V)",
+            "I": "Akım(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Pisagor Teoremi",
+          "description": "Hipotenüsü hesapla",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Kökler",
+          "description": "ax²+bx+c=0 diskriminanti",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Bileşik Faiz",
+          "description": "Faizli toplamı hesapla",
+          "variables": {
+            "P": "Ana para",
+            "r": "Oran(%)",
+            "n": "Yıl"
+          }
+        },
+        "bmi": {
+          "name": "Vücut Kitle İndeksi",
+          "description": "Ağırlık ve boy ile Vücut Kitle İndeksi hesapla",
+          "variables": {
+            "weight": "Ağırlık(kg)",
+            "height": "Boy(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "İndirim & Propina",
+      "original_price": "Fiyat",
+      "price_placeholder": "Miktar girin",
+      "discount_label": "İndirim",
+      "percent": "Yüzde",
+      "flat_amount": "Sabit Tutar",
+      "tip_label": "Propina",
+      "split_label": "Böl",
+      "person_unit": "Kişi",
+      "result_title": "Sonuç",
+      "saved_amount": "Kazandınız",
+      "discounted_price": "Son Fiyat",
+      "tip_amount": "Propina Tutarı",
+      "total_price": "Toplam Fiyat",
+      "per_person": "Kişi Başına"
+    },
+    "date": {
+      "title": "Tarih Hesaplayıcı",
+      "diff_mode": "Tarih Farkı",
+      "add_mode": "Tarih Hesabı",
+      "convert_mode": "Ay Tarihi Dönüştür",
+      "start_date": "Başlangıç Tarihi",
+      "end_date": "Bitiş Tarihi",
+      "base_date": "Temel Tarih",
+      "diff_time": "Zaman Farkı",
+      "before": "Önce",
+      "after": "Sonra",
+      "result_title": "Sonuç",
+      "diff_days": "Gün Farkı",
+      "workdays": "İş Günü",
+      "weeks": "Hafta",
+      "hours": "Saat",
+      "minutes": "Dakika",
+      "solar2lunar": "Güneşli'den Ay Tarihi'ne",
+      "lunar2solar": "Ay Tarihi'nden Güneşli'ye",
+      "solar_date": "Güneşli Tarihi",
+      "lunar": "Ay Tarihi",
+      "shengxiao": "Çin Zodyağı",
+      "jieqi": "Güneş Dönümü",
+      "festival": "Bayram",
+      "leap_month": "Artık Ay",
+      "leap_month_prefix": "Artık ",
+      "workdays_label": "İş Günü (Haftasonu Hariç)",
+      "lunar_year": "Ay Yılı",
+      "lunar_month": "Ay Ayı",
+      "lunar_day": "Ay Günü",
+      "invalid_date": "Geçersiz tarih"
+    },
+    "finance": {
+      "title": "Finans Hesaplayıcı",
+      "bank_mode": "Banka Tasarrufu",
+      "compound_mode": "Bileşik Faiz",
+      "regular_mode": "Düzenli Yatırım",
+      "interest_yuan": "Faiz",
+      "interest_profit": "Kâr",
+      "total_yuan": "Toplam",
+      "total_sum": "Toplam Miktar",
+      "bank_info": "Tasarruf Bilgilerini Girin",
+      "bank_amount": "Miktar",
+      "bank_years": "Yıl",
+      "rate_percent": "Oran (%)",
+      "compound_info": "Yatırım Bilgilerini Girin",
+      "initial_principal": "Ana Para",
+      "invest_years": "Yıl",
+      "return_rate": "Getiri Oranı (%)",
+      "compound_freq": "Sıklık",
+      "regular_info": "Düzenli Bilgileri Girin",
+      "regular_amount": "Periyot Miktarı",
+      "regular_years": "Yıl",
+      "regular_rate": "Getiri Oranı (%)",
+      "regular_freq": "Sıklık",
+      "total_return": "Toplam Getiri",
+      "total_invest": "Toplam Yatırım",
+      "overflow_error": "Değer Taşıma Hatası",
+      "freq": {
+        "year": "Yıllık",
+        "month": "Aylık",
+        "day": "Günlük",
+        "week": "Haftalık"
+      }
+    }
+  }
+}

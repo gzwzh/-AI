@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "All Calculator",
+    "app_icon_alt": "All Calculator Icon",
+    "subtext": "Kazi ya Kunqiong AI",
+    "software_custom": "Customization ya Software",
+    "feedback": "Feedback",
+    "history": "History",
+    "icon_alt": "Icon",
+    "back": "Back",
+    "copy_result": "Kutuma Result",
+    "to_uppercase": "Kwa Kichaguzi Cha Kati",
+    "error": "Kosa",
+    "copied": "Kimekutama",
+    "clear": "Kunakua",
+    "copied_to_clipboard": "Kimekutama kwenye clipboard",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Mwezi",
+    "today": "Leo",
+    "yesterday": "Kesho",
+    "days_ago": "siku iliyopita",
+    "month_unit": "Mwezi",
+    "day_unit": "Siku",
+    "year_unit": "Mwezi",
+    "confirm_delete": "Thibitisha Kusila",
+    "cancel": "Kataa",
+    "confirm": "Thibitisha",
+    "save": "Hifadhi",
+    "delete": "Sila",
+    "minimize": "Kuondoka",
+    "maximize": "Kukamilisha",
+    "close": "Kushuka",
+    "switch_dark": "Kunguna kwa Ndege ya Kijani",
+    "switch_light": "Kunguna kwa Ndege ya Kijani",
+    "language_switch": "Badilisha Lugha",
+    "weekdays": [
+      "Jumapili",
+      "Jumatatu",
+      "Jumanne",
+      "Jumatano",
+      "Alhamisi",
+      "Ijumaa",
+      "Jumamosi"
+    ]
+  },
+  "update": {
+    "found_new": "Version Mpya Imetoka",
+    "current_version": "Version Sasa",
+    "update_log": "Log ya Upesi",
+    "remind_later": "Tushirikiane baadae",
+    "update_now": "Upesi Sasa"
+  },
+  "auth": {
+    "login_cancelled": "Kuingia Kimefutwa",
+    "click_to_logout": "Bonyeza Kuchukua",
+    "logged_in": "Imeingia",
+    "logout": "Chukua",
+    "click_to_login": "Bonyeza Kuingia",
+    "logging_in": "Inaingia...",
+    "login_register": "Ingia/Ongeza",
+    "login_failed": "Ingia Imeshindwa",
+    "complete_login_in_browser": "Tafuta ingia kwenye browser yako",
+    "cancel_login": "Kata Ingia",
+    "login_timeout": "Muda wa Ingia Umekatwa",
+    "get_login_url_failed": "Hakutazama URL ya Ingia",
+    "get_user_info_failed": "Hakutazama taarifa ya mtumiaji",
+    "logout_failed": "Kuondoka Hakutazama"
+  },
+  "ai": {
+    "module_direct": "Ufafanuzi wa Kinywaji",
+    "open_module": "Fungua {{name}}, ",
+    "enter_now": "Ndamu Sasa",
+    "currency_title": "Kutoa Kiasi la Kifanyi",
+    "view_details": "Tazama Taarifa",
+    "percent_title": "Kikali cha Kiasi",
+    "uppercase_title": "Kiasi kwa Kifanyi",
+    "convert_now": "Kunywa Sasa",
+    "date_title": "Kuhesabu ya Tarehe",
+    "view_date_details": "Tazama Taarifa ya Tarehe",
+    "tax_title": "Kalkulata ya Malipo",
+    "go_calculate": "Piga Kalkulata",
+    "discount_title": "Kalkulata ya Malipo",
+    "full_minus_title": "Kama Kupungua Kwa Jumla",
+    "tip_title": "Kalkulata ya Tipi",
+    "go_pay": "Piga Kumbukumbu",
+    "health_title": "Kalkulata ya Afya",
+    "calc_now": "Kalkulata Sasa",
+    "graph_title": "Kuchartisha Mfumo",
+    "start_drawing": "Anza Kuchapisha",
+    "draw_function": "Chapisha mfumo y = {{expr}}, ",
+    "open_graph_tool": "Fungua Chaguo cha Kuchapisha",
+    "unit_title": "Kutupa Kimo",
+    "smart_calc_title": "Kalkulata Smart",
+    "math_title": "Kalkulata Smart"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Kalkulata",
+      "tool": "Vidokezo",
+      "converter": "Kutupa"
+    },
+    "items": {
+      "basic": "Kalkulata Kaskazi",
+      "scientific": "Kalkulata Ya Fani",
+      "fraction": "Kalkulata Ya Kundi",
+      "currency": "Kutupa Kifanyi",
+      "relative": "Kumbukumbu ya Kijeni",
+      "mortgage": "Kalkulata ya Kumbukumbu",
+      "tax": "Kalkulata ya Malipo",
+      "date": "Kalkulata ya Tarehe",
+      "radix": "Kutupa ya Kimo",
+      "uppercase": "Kifanyi kwa Kifanyi",
+      "finance": "Kalkulata ya Umoja",
+      "formula": "Kalkulata ya Formula",
+      "discount": "Malipo na Tipi",
+      "account": "Kitabu cha Akaunti",
+      "memo": "Memo",
+      "health": "Makamu ya Uzuri",
+      "graph": "Makamu ya Graph",
+      "length": "Ukubwa",
+      "area": "Eneo",
+      "volume": "Ukubwa wa Kuvutia",
+      "temperature": "Sasa",
+      "speed": "Kasi",
+      "time": "Wakati",
+      "weight": "Ukomo",
+      "power": "Ushahidi",
+      "heat": "Ukohoa",
+      "force": "Kipimo",
+      "pressure": "Ukosefu",
+      "capacity": "Ustawi",
+      "data": "Hifadhi ya Data"
+    }
+  },
+  "home": {
+    "search_placeholder": "Tumia Utafiti wa AI, mfano, 100 dola, 100cm kwa m...",
+    "smart_tips_label": "Vidokezo Vya Kijamii:",
+    "tips": {
+      "date": "Ni siku gani baada ya 100 siku?",
+      "tax": "Kiasi gani cha uchumi kwa shali ya 1.5w?",
+      "uppercase": "Kiasi kwa Kichaguo",
+      "unit": "100cm kwa m"
+    },
+    "smart_tag": "Utafiti wa AI",
+    "search_results_title": "Matokeo ya Utafiti",
+    "no_results_text": "Hakuna funikio fulani, tafuta kificho kikuu"
+  },
+  "history": {
+    "title": "History",
+    "clear_all": "Kata Kama Yote",
+    "empty": "Hakuna history yetu",
+    "types": {
+      "basic": "Chini ya Kijamii",
+      "scientific": "Fizikia",
+      "converter": "Unit",
+      "currency": "Kampesi",
+      "health": "Uzuri",
+      "discount": "Kuzidisha",
+      "tax": "Uchumi",
+      "tool": "Sikili",
+      "record": "Rekodi"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Kiwango kina kuwa 0",
+      "error_zero_divisor": "Kiwango kina kuwa 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Ongeza",
+    "categories": {
+      "length": "Ukubwa",
+      "area": "Eneo",
+      "volume": "Ukubwa wa Kuvutia",
+      "weight": "Ukomo",
+      "temperature": "Sasa",
+      "speed": "Kasi",
+      "time": "Wakati",
+      "power": "Ushahidi",
+      "heat": "Ukohoa",
+      "force": "Kuvuma",
+      "pressure": "Ukosefu",
+      "capacity": "Ukubwa",
+      "data": "Kuhifadhi data"
+    },
+    "units": {
+      "km": "kilometer",
+      "m": "meter",
+      "dm": "decimeter",
+      "cm": "centimeter",
+      "mm": "millimeter",
+      "μm": "micrometer",
+      "nm": "nanometer",
+      "mi": "mile",
+      "yd": "yard",
+      "ft": "foot",
+      "in": "inch",
+      "nmi": "mile ya kihisabati",
+      "里": "Li (mile ya Kijinika)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "square kilometer",
+      "ha": "hectare",
+      "m²": "square meter",
+      "dm²": "square decimeter",
+      "cm²": "square centimeter",
+      "mm²": "square millimeter",
+      "mi²": "square mile",
+      "acre": "acre",
+      "yd²": "square yard",
+      "ft²": "square foot",
+      "in²": "square inch",
+      "亩": "Mu",
+      "分": "Fen (mkoa)",
+      "m³": "cubic meter",
+      "dm³": "cubic decimeter",
+      "cm³": "cubic centimeter",
+      "mm³": "cubic millimeter",
+      "L": "liter",
+      "mL": "milliliter",
+      "gal": "gallon (US)",
+      "gal(UK)": "gallon (UK)",
+      "pt": "pint",
+      "ft³": "cubic foot",
+      "in³": "cubic inch",
+      "t": "ton",
+      "kg": "kilogram",
+      "g": "gram",
+      "mg": "milligram",
+      "μg": "microgram",
+      "lb": "pound",
+      "oz": "senti",
+      "ct": "karaa",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Selsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "mita/kwasi",
+      "km/h": "kilomita/saa",
+      "mph": "miili/saa",
+      "kn": "knot",
+      "Ma": "Mach",
+      "c": "sauti la muda",
+      "世纪": "mikono",
+      "年": "mwaka",
+      "月": "mwezi",
+      "周": "wiki",
+      "天": "siku",
+      "h": "saati",
+      "min": "dakika",
+      "s": "sekunde",
+      "ms": "milisekunde",
+      "μs": "mikrosekunde",
+      "ns": "nanosekunde",
+      "kW": "kilowatt",
+      "W": "watt",
+      "mW": "miliwatt",
+      "hp": "horsepower",
+      "PS": "horsepower ya kifedha",
+      "kcal/s": "kcal/kwasi",
+      "BTU/s": "BTU/kwasi",
+      "kJ": "kilojoule",
+      "J": "joule",
+      "cal": "kalori",
+      "kcal": "kilokalori",
+      "Wh": "watt-kwasi",
+      "kWh": "kilowatt-kwasi",
+      "BTU": "British Thermal Unit",
+      "kN": "kilonyutoni",
+      "N": "nyutoni",
+      "dyn": "dyne",
+      "kgf": "kilogram-force",
+      "gf": "gram-force",
+      "lbf": "pound-force",
+      "Pa": "paskali",
+      "hPa": "hektopaskali",
+      "kPa": "kilopaskali",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "millibar",
+      "atm": "atmosphere",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kiloliter",
+      "dL": "deciliter",
+      "cL": "centiliter",
+      "qt": "quart",
+      "cup": "cup",
+      "fl oz": "fluid ounce",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Ukongeza Kumbukumbu",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Mchango wa Radix",
+      "dec": "Decimal (DEC)",
+      "bin": "Binary (BIN)",
+      "oct": "Octal (OCT)",
+      "hex": "Hexadecimal (HEX)"
+    },
+    "uppercase": {
+      "title": "Kifalme cha Upepo",
+      "zero_yuan_整": "Zero Yuan Only",
+      "zero": "Zero",
+      "digits": [
+        "Zero",
+        "Moja",
+        "Mbili",
+        "Tatu",
+        "Nne",
+        "Tano",
+        "Sita",
+        "Saba",
+        "Nane",
+        "Kumi"
+      ],
+      "units": [
+        ", ",
+        "Kumi",
+        "Mmoja wa mia",
+        "Mmoja wa milia"
+      ],
+      "big_units": [
+        ", ",
+        "Kumi ya milia",
+        "Mmoja wa milioni",
+        "Mmoja wa trilioni"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Chinapoto",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Hakuna",
+      "back_to_calculator": "Rudi kwenye Kalkulata",
+      "click_to_copy": "Kabidhi kwa Kuandika (Kabidhi kwa Kuandika)"
+    },
+    "mortgage": {
+      "title": "Kalkulata ya Mshale",
+      "commercial_loan": "Mshale wa Kijiji",
+      "fund_loan": "Mshale wa Fundi",
+      "combined_loan": "Mshale wa Kikamilifu",
+      "loan_amount": "Kiasi cha Mshale",
+      "loan_rate": "Kiasi cha Mshale",
+      "fund_loan_amount": "Kiasi cha Mshale wa Fundi",
+      "fund_loan_rate": "Kiasi cha Mshale wa Fundi",
+      "commercial_loan_amount": "Kiasi cha Mshale wa Kijiji",
+      "commercial_rate_type": "Aina ya Kiasi",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Points ya Asili",
+      "commercial_loan_rate": "Kiasi cha Mshale wa Kijiji",
+      "principal": "Kiasi",
+      "interest": "Kiasi",
+      "equal_monthly": "Kumbukumbu Kila Mwezi",
+      "equal_principal": "Kumbukumbu Kila Mwezi",
+      "payment_type": "Aina ya Kumbukumbu",
+      "loan_years": "Miezi ya Mshale",
+      "lpr_rate": "Kiasi cha LPR",
+      "basis_points": "BP",
+      "base_rate": "Kiasi cha Asili",
+      "rate_type": "Aina ya Kiasi",
+      "total_payment": "Kumbukumbu Kuu",
+      "total_interest": "Kiasi Kuu",
+      "monthly_payment": "Kumbukumbu Kila Mwezi",
+      "first_month_payment": "Mwezi wa kwanza",
+      "last_month_payment": "Mwezi wa mwisho",
+      "monthly_decrease": "Kama kwa mwezi",
+      "view_schedule": "Tazama Mafunzo",
+      "hide_schedule": "Fungua Mafunzo",
+      "schedule_title": "Mafunzo",
+      "period": "Muda",
+      "monthly_pay": "Kumbukumbu",
+      "principal_part": "Makamu",
+      "interest_part": "Makamu ya kisasa",
+      "remaining_principal": "Makamu yake baki",
+      "payment_method": "Ujumbe",
+      "loan_total": "Jumla ya kujifunika",
+      "repayment_periods": "Muda wa kujibu",
+      "period_unit": "Mwezi",
+      "remaining": "Baki"
+    },
+    "relative": {
+      "title": "Mshangao wa Kijinsia",
+      "my_gender": "Jinsi yangu:",
+      "placeholder": "Bofya mbalimbali ili ongeze mtazamaji",
+      "i_call_ta": "Ninapiga wao:",
+      "ta_calls_me": "Wao hupiga nami:",
+      "reverse_check": "Rusha",
+      "example_title": "Mifano ya Kiasi",
+      "error_same_sex": "Mshangao wa kijinsia kwa jinsi moja hauna kusaidiwa kwa sasa",
+      "error_not_found": "Mshangao unaojitokeza ni mkubwa au haipatikani katika database",
+      "error_calc": "Kosa katika hisabati",
+      "prefix": "Nami ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Abi",
+        "m": "Ima",
+        "h": "Mzizi",
+        "w": "Mzizi",
+        "ob": "Brother+",
+        "lb": "Brother-",
+        "os": "Sister+",
+        "ls": "Sister-",
+        "s": "Msona",
+        "d": "Mwana"
+      },
+      "buttons": {
+        "f": "Abi",
+        "m": "Ima",
+        "h": "Mzizi",
+        "w": "Mzizi",
+        "ob": "Brother+",
+        "lb": "Brother-",
+        "os": "Sister+",
+        "ls": "Sister-",
+        "s": "Msona",
+        "d": "Mwana"
+      },
+      "examples": {
+        "爷爷": "Abi",
+        "外婆": "Ima",
+        "伯父": "Mwenye wana (mkungu)",
+        "叔叔": "Mwenye wana (kizuri)",
+        "舅舅": "Mwenye wana (mama)",
+        "姑姑": "Mwana wa mwanasiba"
+      }
+    },
+    "tax": {
+      "title": "Kalkulata ya Malipo",
+      "salary_label": "Salari ya kila mwezi",
+      "insurance_label": "Bima ya kijamii",
+      "deduction_label": "Malipo ya kuzalisha",
+      "threshold_label": "Kikomo",
+      "hint": "Malipo ya kuzalisha yana: uchumi wa watoto, kifundo, kifundo cha nyumba, kifundo cha kisasa, pamoja na mengine.",
+      "after_tax_salary": "Salari baada ya malipo",
+      "taxable_income": "Ushahidi wa malipo",
+      "applicable_rate": "Rate",
+      "payable_tax": "Malipo unayotajwa",
+      "table_title": "Kikomo cha Malipo (Mwisho wa mwaka)",
+      "table_headers": [
+        "Kikomo",
+        "Ushahidi wa malipo",
+        "Rate",
+        "Kuzalisha"
+      ],
+      "ten_thousand_unit": "w",
+      "history": {
+        "title": "Tafiti ya Malipo ya Salari ¥{{salary}}, ",
+        "expression": "Salari binafsi {{salary}} - Bima {{insurance}} - Kuzalisha {{deduction}}, ",
+        "result": "Salari baada ya malipo ¥{{afterTax}} (Malipo ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Kitabu cha Mauaji",
+      "expense": "Mauaji",
+      "income": "Mali",
+      "add_record": "Ongeza Kitu",
+      "report": "Ripoti",
+      "monthly_expense": "Mauaji ya kila mwezi",
+      "monthly_income": "Mali ya kila mwezi",
+      "balance": "Pande",
+      "no_records": "Hakuna rekodi hapa chini",
+      "note": "Kumbukumbu",
+      "note_placeholder": "Ongeza kumbukumbu...",
+      "report_title": "Ripoti",
+      "total_expense": "Jumla ya mauaji",
+      "total_income": "Jumla ya mali",
+      "expense_detail": "Maelezo ya mauaji",
+      "income_detail": "Maelezo ya mali",
+      "delete_confirm_text": "Una uamini kuwa utakapigaa rekodi hii?",
+      "categories": {
+        "expense": {
+          "消费": "Mauaji",
+          "餐饮": "Chakula",
+          "购物": "Kununua",
+          "住房": "Nyumba",
+          "交通": "Mashughuli",
+          "通讯": "Mawasiliano",
+          "娱乐": "Moyo",
+          "医疗": "Kijani",
+          "教育": "Elimu",
+          "其他": "Nyingine"
+        },
+        "income": {
+          "工资": "Salari",
+          "奖金": "Bonusi",
+          "投资": "Kuweka mifugo",
+          "兼职": "Kazi ya kuzalisha",
+          "红包": "Paketi ya kumi",
+          "其他": "Mengine"
+        }
+      },
+      "weekdays": [
+        "Jumapili",
+        "Jumatatu",
+        "Jumaumo",
+        "Alhamisi",
+        "Ijumaa",
+        "Jumanne",
+        "Jumamosi"
+      ]
+    },
+    "memo": {
+      "title": "Memo",
+      "search_placeholder": "Tafuta memos...",
+      "no_title": "Hakuna Kichwa",
+      "no_memos": "Hakuna memos yetu",
+      "title_label": "Kichwa",
+      "content_placeholder": "Andika maelezo...",
+      "delete_confirm_text": "Una uamini kuondoka hii memo?",
+      "pin": "Pande",
+      "unpin": "Upepo"
+    },
+    "health": {
+      "title": "Kalkulata Ukwasi",
+      "bmi_label": "Index ya BMI",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Jinsi",
+      "male": "Mume",
+      "female": "Mwanamke",
+      "height": "Ukubwa (cm)",
+      "weight": "Ukubwa (kg)",
+      "age": "Umri",
+      "activity_level": "Ukosefu wa Muda",
+      "activity": {
+        "sedentary": "Sedentary",
+        "light": "Chpacho (1-3 wakati/kila siku)",
+        "moderate": "Kiasi cha kawaida (3-5 wakati/kila siku)",
+        "active": "Kuendeleza (6-7 wakati/kila siku)",
+        "very_active": "Kuendeleza sana (Kazi ya kikokotso kila siku)"
+      },
+      "status": {
+        "underweight": "Kushangiliwa",
+        "normal": "Normal",
+        "overweight": "Kushangilia",
+        "obese": "Mwenyekiti"
+      }
+    },
+    "graph": {
+      "title": "Maktaba ya Mfumo",
+      "placeholder": "Ingiza mfumo, kama x^2, sin(x)...",
+      "x_min": "X Min",
+      "x_max": "X Max"
+    },
+    "formula": {
+      "title": "Kalkulata Formula",
+      "category_label": "Kategoria",
+      "all": "Yote",
+      "select_formula": "Chagua Formula",
+      "result_title": "Matokeo",
+      "formula_label": "Formula",
+      "variables_label": "Vidonge",
+      "categories": {
+        "几何": "Uhusiano",
+        "物理": "Fizikia",
+        "数学": "Hisabati",
+        "金融": "Mali",
+        "健康": "Uzalendo"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Eneo la Kileo",
+          "description": "Tafuta eneo kwa radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Perimeter ya Kileo",
+          "description": "Tafuta perimeter kwa radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "sphere_volume": {
+          "name": "Ukubwa wa Moyo",
+          "description": "Tafuta ukubwa kwa radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "triangle_area": {
+          "name": "Eneo la Pembetia",
+          "description": "Tafuta eneo kwa chenye chini na upepo",
+          "variables": {
+            "a": "Chenye chini",
+            "h": "Upepo"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Eneo la Trapezoid",
+          "description": "Tafuta eneo kwa chenye chini na upepo",
+          "variables": {
+            "a": "Kipande cha juu",
+            "b": "Kipande cha chini",
+            "h": "Upepo"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Ukubwa wa Silindri",
+          "description": "Tafuta ukubwa kwa radius na upepo",
+          "variables": {
+            "r": "Radius",
+            "h": "Upepo"
+          }
+        },
+        "cone_volume": {
+          "name": "Ukubwa wa Koni",
+          "description": "Tafuta ukubwa kwa radius na upepo",
+          "variables": {
+            "r": "Radius",
+            "h": "Upepo"
+          }
+        },
+        "speed": {
+          "name": "Saidi",
+          "description": "Tafuta saidi kwa mzunguko na wakati",
+          "variables": {
+            "s": "Mzunguko",
+            "t": "Wakati"
+          }
+        },
+        "acceleration": {
+          "name": "Acceleration",
+          "description": "Tafuta acceleration",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Kanuni ya Pili ya Newton",
+          "description": "Tafuta force",
+          "variables": {
+            "m": "Mass(kg)",
+            "a": "Accel(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Energy ya Kinetic",
+          "description": "Tafuta energy ya kinetic",
+          "variables": {
+            "m": "Mass(kg)",
+            "v": "Kasi(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Upepo wa Kati",
+          "description": "Tafuta upepo wa kati",
+          "variables": {
+            "m": "Maji(kg)",
+            "g": "g",
+            "h": "Ukubwa(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Qano la Ohm",
+          "description": "Tafuta mzunguko",
+          "variables": {
+            "U": "Voltage(V)",
+            "R": "Resist(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Upepo wa Mwenye Kijambo",
+          "description": "Tafuta upepo",
+          "variables": {
+            "U": "Voltage(V)",
+            "I": "Mzunguko(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Kanoni ya Pythagoras",
+          "description": "Tafuta mstari wa kinyume",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Moyo wa Equation ya Kuadratiki",
+          "description": "Discriminant ya ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Upepo wa Kijambo",
+          "description": "Tafuta jumla na upepo",
+          "variables": {
+            "P": "Mali wa Kwanza",
+            "r": "Rate(% )",
+            "n": "Siku"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "Tafuta BMI kwa mizani na ukubwa",
+          "variables": {
+            "weight": "Mizani(kg)",
+            "height": "Ukubwa(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Kupata Pamoja na Pesa",
+      "original_price": "Bei",
+      "price_placeholder": "Andika kiasi",
+      "discount_label": "Kupata",
+      "percent": "Percent",
+      "flat_amount": "Kiasi Kwa Sawa",
+      "tip_label": "Pesa",
+      "split_label": "Kuandika",
+      "person_unit": "Mtu",
+      "result_title": "Jibu",
+      "saved_amount": "Alipoteza",
+      "discounted_price": "Bei ya Kati",
+      "tip_amount": "Kiasi cha Pesa",
+      "total_price": "Bei ya Jumla",
+      "per_person": "Kwa Mtu"
+    },
+    "date": {
+      "title": "Mchakato wa Tarehe",
+      "diff_mode": "Furuhu ya Tarehe",
+      "add_mode": "Mchakato wa Tarehe",
+      "convert_mode": "Kutuma Kwa Mwezi",
+      "start_date": "Tarehe Kuanzia",
+      "end_date": "Tarehe ya Kuisha",
+      "base_date": "Tarehe ya Kundi",
+      "diff_time": "Furaha ya Wakati",
+      "before": "Kabla",
+      "after": "Baada",
+      "result_title": "Matokeo",
+      "diff_days": "Furaha ya Siku",
+      "workdays": "Siku za Kazi",
+      "weeks": "Masiku",
+      "hours": "Saa",
+      "minutes": "Dakika",
+      "solar2lunar": "Solar kwa Mwezi",
+      "lunar2solar": "Mwezi kwa Solar",
+      "solar_date": "Tarehe ya Solar",
+      "lunar": "Mwezi",
+      "shengxiao": "Zodiac",
+      "jieqi": "Mwaka wa Mwaka",
+      "festival": "Mwaka wa Mwaka",
+      "leap_month": "Mwezi wa Mwaka",
+      "leap_month_prefix": "Mwezi wa Mwaka ",
+      "workdays_label": "Siku za Kazi (Hakuna Mchana wa Jumbo)",
+      "lunar_year": "Mwezi wa Mwaka",
+      "lunar_month": "Mwezi wa Mwaka",
+      "lunar_day": "Siku ya Mwezi",
+      "invalid_date": "Tarehe bora"
+    },
+    "finance": {
+      "title": "Mchakato wa Finansi",
+      "bank_mode": "Kushukuru Kwa Banki",
+      "compound_mode": "Kiwango cha Kipimo",
+      "regular_mode": "Kuwasiliana Kwa Kiasi",
+      "interest_yuan": "Kiwango",
+      "interest_profit": "Pesa",
+      "total_yuan": "Jumla",
+      "total_sum": "Jumla ya Kiasi",
+      "bank_info": "Ongeza Taarifa ya Kushukuru",
+      "bank_amount": "Kiasi",
+      "bank_years": "Miezi",
+      "rate_percent": "Kiwango (%)",
+      "compound_info": "Ongeza Taarifa ya Kupata",
+      "initial_principal": "Kiasi",
+      "invest_years": "Miezi",
+      "return_rate": "Kiwango cha Kujibu (%)",
+      "compound_freq": "Kamili",
+      "regular_info": "Ongeza Taarifa ya Kiasi",
+      "regular_amount": "Kiasi kwa Muda",
+      "regular_years": "Miezi",
+      "regular_rate": "Kiwango cha Kujibu (%)",
+      "regular_freq": "Kamili",
+      "total_return": "Kujibu Kikamilifu",
+      "total_invest": "Kiasi Kungu",
+      "overflow_error": "Kosa la Kiasi",
+      "freq": {
+        "year": "Mwaka",
+        "month": "Mwezi",
+        "day": "Siku",
+        "week": "Wiki"
+      }
+    }
+  }
+}

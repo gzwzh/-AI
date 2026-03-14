@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "Máy tính Tất cả",
+    "app_icon_alt": "Biểu tượng Máy tính Tất cả",
+    "subtext": "Một sản phẩm của Kunqiong AI",
+    "software_custom": "Tùy chỉnh phần mềm",
+    "feedback": "Phản hồi",
+    "history": "Lịch sử",
+    "icon_alt": "Biểu tượng",
+    "back": "Trở lại",
+    "copy_result": "Sao chép Kết quả",
+    "to_uppercase": "Chuyển thành chữ in hoa",
+    "error": "Lỗi",
+    "copied": "Đã sao chép",
+    "clear": "Xóa",
+    "copied_to_clipboard": "Đã sao chép vào bộ nhớ tạm",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Năm",
+    "today": "Hôm nay",
+    "yesterday": "Hôm qua",
+    "days_ago": "ngày trước",
+    "month_unit": "Tháng",
+    "day_unit": "Ngày",
+    "year_unit": "Năm",
+    "confirm_delete": "Xác nhận Xóa",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "minimize": "Thu nhỏ",
+    "maximize": "Phóng to",
+    "close": "Đóng",
+    "switch_dark": "Chuyển sang Chế độ tối",
+    "switch_light": "Chuyển sang Chế độ sáng",
+    "language_switch": "Thay đổi Ngôn ngữ",
+    "weekdays": [
+      "Chủ Nhật",
+      "Thứ Hai",
+      "Thứ Ba",
+      "Thứ Tư",
+      "Thứ Năm",
+      "Thứ Sáu",
+      "Thứ Bảy"
+    ]
+  },
+  "update": {
+    "found_new": "Phiên bản mới được tìm thấy",
+    "current_version": "Phiên bản hiện tại",
+    "update_log": "Lịch sử cập nhật",
+    "remind_later": "Nhắc nhở sau",
+    "update_now": "Cập nhật ngay"
+  },
+  "auth": {
+    "login_cancelled": "Đăng nhập bị hủy",
+    "click_to_logout": "Nhấp để đăng xuất",
+    "logged_in": "Đã đăng nhập",
+    "logout": "Đăng xuất",
+    "click_to_login": "Nhấp để đăng nhập",
+    "logging_in": "Đang đăng nhập...",
+    "login_register": "Đăng nhập/Đăng ký",
+    "login_failed": "Đăng nhập thất bại",
+    "complete_login_in_browser": "Vui lòng hoàn tất đăng nhập trên trình duyệt",
+    "cancel_login": "Hủy đăng nhập",
+    "login_timeout": "Hết thời gian đăng nhập",
+    "get_login_url_failed": "Không thể lấy URL đăng nhập",
+    "get_user_info_failed": "Không thể lấy thông tin người dùng",
+    "logout_failed": "Hủy đăng xuất thất bại"
+  },
+  "ai": {
+    "module_direct": "Truy cập nhanh",
+    "open_module": "Mở {{name}}, ",
+    "enter_now": "Nhập ngay",
+    "currency_title": "Trao đổi tiền tệ",
+    "view_details": "Xem chi tiết",
+    "percent_title": "Tính phần trăm",
+    "uppercase_title": "Chuyển số thành chữ",
+    "convert_now": "Chuyển đổi ngay",
+    "date_title": "Tính toán ngày tháng",
+    "view_date_details": "Xem chi tiết ngày tháng",
+    "tax_title": "Máy tính thuế",
+    "go_calculate": "Tính toán ngay",
+    "discount_title": "Tính giảm giá",
+    "full_minus_title": "Giảm toàn bộ",
+    "tip_title": "Tính tiền tip",
+    "go_pay": "Đi đến thanh toán",
+    "health_title": "Tính toán sức khỏe",
+    "calc_now": "Tính toán ngay",
+    "graph_title": "Vẽ đồ thị hàm số",
+    "start_drawing": "Bắt đầu vẽ",
+    "draw_function": "Vẽ hàm số y = {{expr}}, ",
+    "open_graph_tool": "Mở công cụ vẽ đồ thị tương tác",
+    "unit_title": "Chuyển đổi đơn vị",
+    "smart_calc_title": "Tính toán thông minh",
+    "math_title": "Tính toán thông minh"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Máy tính",
+      "tool": "Công cụ",
+      "converter": "Chuyển đổi"
+    },
+    "items": {
+      "basic": "Máy tính cơ bản",
+      "scientific": "Máy tính khoa học",
+      "fraction": "Máy tính phân số",
+      "currency": "Bộ chuyển đổi tiền tệ",
+      "relative": "Tính toán liên quan",
+      "mortgage": "Máy tính thế chấp",
+      "tax": "Máy tính thuế",
+      "date": "Máy tính ngày tháng",
+      "radix": "Bộ chuyển đổi cơ số",
+      "uppercase": "Chuyển đổi số thành chữ",
+      "finance": "Máy tính tài chính",
+      "formula": "Máy tính công thức",
+      "discount": "Tính giảm giá và tip",
+      "account": "Sổ cái",
+      "memo": "Ghi chú",
+      "health": "Máy tính sức khỏe",
+      "graph": "Máy tính đồ thị",
+      "length": "Chiều dài",
+      "area": "Diện tích",
+      "volume": "Thể tích",
+      "temperature": "Nhiệt độ",
+      "speed": "Tốc độ",
+      "time": "Thời gian",
+      "weight": "Cân nặng",
+      "power": "Công suất",
+      "heat": "Nhiệt",
+      "force": "Lực",
+      "pressure": "Áp suất",
+      "capacity": "Dung lượng",
+      "data": "Lưu trữ dữ liệu"
+    }
+  },
+  "home": {
+    "search_placeholder": "Thử tìm kiếm AI, ví dụ: 100 đô la, 100cm sang m...",
+    "smart_tips_label": "Lời khuyên thông minh:",
+    "tips": {
+      "date": "Ngày nào sẽ đến sau 100 ngày?",
+      "tax": "Thuế cho lương 1,5w là bao nhiêu?",
+      "uppercase": "Chuyển số thành chữ in hoa",
+      "unit": "100cm sang m"
+    },
+    "smart_tag": "Phân tích AI",
+    "search_results_title": "Kết quả tìm kiếm",
+    "no_results_text": "Không tìm thấy chức năng liên quan, thử từ khóa khác"
+  },
+  "history": {
+    "title": "Lịch sử",
+    "clear_all": "Xóa tất cả",
+    "empty": "Chưa có lịch sử",
+    "types": {
+      "basic": "Cơ bản",
+      "scientific": "Khoa học",
+      "converter": "Đơn vị",
+      "currency": "Tiền tệ",
+      "health": "Sức khỏe",
+      "discount": "Giảm giá",
+      "tax": "Thuế",
+      "tool": "Công cụ",
+      "record": "Ghi chép"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Mẫu số không được bằng 0",
+      "error_zero_divisor": "Số chia không được bằng 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Chuyển đổi",
+    "categories": {
+      "length": "Chiều dài",
+      "area": "Diện tích",
+      "volume": "Thể tích",
+      "weight": "Cân nặng",
+      "temperature": "Nhiệt độ",
+      "speed": "Tốc độ",
+      "time": "Thời gian",
+      "power": "Công suất",
+      "heat": "Nhiệt",
+      "force": "Lực",
+      "pressure": "Áp suất",
+      "capacity": "Dung tích",
+      "data": "Dữ liệu"
+    },
+    "units": {
+      "km": "kilômét",
+      "m": "mét",
+      "dm": "đềxmét",
+      "cm": "xen-ti-mét",
+      "mm": "mi-li-mét",
+      "μm": "micrô-mét",
+      "nm": "nâno-mét",
+      "mi": "dặm",
+      "yd": "yard",
+      "ft": "foot",
+      "in": "inch",
+      "nmi": "dặm biển",
+      "里": "Lý (dặm Trung Quốc)",
+      "丈": "Trượng",
+      "尺": "Xích",
+      "寸": "Tấc",
+      "km²": "km vuông",
+      "ha": "héc-ta",
+      "m²": "mét vuông",
+      "dm²": "đề-xi-mét vuông",
+      "cm²": "xen-ti-mét vuông",
+      "mm²": "mi-li-mét vuông",
+      "mi²": "dặm vuông",
+      "acre": "acre",
+      "yd²": "yard vuông",
+      "ft²": "foot vuông",
+      "in²": "inch vuông",
+      "亩": "Mẫu",
+      "分": "Phân (diện tích)",
+      "m³": "mét khối",
+      "dm³": "đề-xi-mét khối",
+      "cm³": "xen-ti-mét khối",
+      "mm³": "mi-li-mét khối",
+      "L": "lít",
+      "mL": "mi-li-lít",
+      "gal": "gallon (Mỹ)",
+      "gal(UK)": "gallon (Anh)",
+      "pt": "pint",
+      "ft³": "foot khối",
+      "in³": "inch khối",
+      "t": "tấn",
+      "kg": "ki-lô-gam",
+      "g": "gam",
+      "mg": "mi-li-gam",
+      "μg": "micrô-gam",
+      "lb": "pound",
+      "oz": "ounce",
+      "ct": "carat",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Celsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "mét/giây",
+      "km/h": "kilômét/giờ",
+      "mph": "dặm/giờ",
+      "kn": "hải lý/giờ",
+      "Ma": "Mach",
+      "c": "tốc độ ánh sáng",
+      "世纪": "thế kỷ",
+      "年": "năm",
+      "月": "tháng",
+      "周": "tuần",
+      "天": "ngày",
+      "h": "giờ",
+      "min": "phút",
+      "s": "giây",
+      "ms": "miligiây",
+      "μs": "micrôgiây",
+      "ns": "nanogiây",
+      "kW": "kiwatt",
+      "W": "watt",
+      "mW": "miliwatt",
+      "hp": "mã lực",
+      "PS": "mã lực mét",
+      "kcal/s": "kcal/giây",
+      "BTU/s": "BTU/giây",
+      "kJ": "ki lôjun",
+      "J": "jun",
+      "cal": "calo",
+      "kcal": "kilocalo",
+      "Wh": "watt-giờ",
+      "kWh": "kiwatt-giờ",
+      "BTU": "Đơn vị nhiệt Anh",
+      "kN": "ki lônewton",
+      "N": "newton",
+      "dyn": "đyn",
+      "kgf": "ki lôgam lực",
+      "gf": "gam lực",
+      "lbf": "pound lực",
+      "Pa": "pascan",
+      "hPa": "héc-tôpascan",
+      "kPa": "ki lôpascan",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "milibar",
+      "atm": "khí quyển",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kilolít",
+      "dL": "đêxilít",
+      "cL": "xenti lít",
+      "qt": "quart",
+      "cup": "cốc",
+      "fl oz": "ounce lỏng",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Trao đổi tiền tệ",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Chuyển đổi cơ số",
+      "dec": "Thập phân (DEC)",
+      "bin": "Nhị phân (BIN)",
+      "oct": "Tám phân (OCT)",
+      "hex": "Mười sáu phân (HEX)"
+    },
+    "uppercase": {
+      "title": "Viết hoa tiền tệ",
+      "zero_yuan_整": "Chỉ có không nguyên",
+      "zero": "Không",
+      "digits": [
+        "Không",
+        "Một",
+        "Hai",
+        "Ba",
+        "Bốn",
+        "Năm",
+        "Sáu",
+        "Bảy",
+        "Tám",
+        "Chín"
+      ],
+      "units": [
+        ", ",
+        "Mươi",
+        "Trăm",
+        "Ngàn"
+      ],
+      "big_units": [
+        ", ",
+        "Mười Ngàn",
+        "Trăm Triệu",
+        "Triệu"
+      ],
+      "yuan": "Nguyên",
+      "zheng": "Chính",
+      "jiao": "Giảo",
+      "fen": "Phân",
+      "negative": "Âm",
+      "back_to_calculator": "Quay lại Máy tính",
+      "click_to_copy": "Viết hoa (Nhấp để sao chép)"
+    },
+    "mortgage": {
+      "title": "Máy tính Thế chấp",
+      "commercial_loan": "Vay thương mại",
+      "fund_loan": "Vay quỹ",
+      "combined_loan": "Vay kết hợp",
+      "loan_amount": "Số tiền vay",
+      "loan_rate": "Lãi suất vay",
+      "fund_loan_amount": "Số tiền vay quỹ",
+      "fund_loan_rate": "Lãi suất vay quỹ",
+      "commercial_loan_amount": "Số tiền vay thương mại",
+      "commercial_rate_type": "Loại lãi suất",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Điểm cơ bản",
+      "commercial_loan_rate": "Lãi suất thương mại",
+      "principal": "Tiền gốc",
+      "interest": "Lãi",
+      "equal_monthly": "Trả góp hàng tháng bằng nhau",
+      "equal_principal": "Trả góp tiền gốc bằng nhau",
+      "payment_type": "Loại thanh toán",
+      "loan_years": "Năm vay",
+      "lpr_rate": "Lãi suất LPR",
+      "basis_points": "BP",
+      "base_rate": "Lãi suất cơ sở",
+      "rate_type": "Loại lãi suất",
+      "total_payment": "Tổng số tiền thanh toán",
+      "total_interest": "Tổng lãi suất",
+      "monthly_payment": "Số tiền thanh toán hàng tháng",
+      "first_month_payment": "Tháng Đầu Tiên",
+      "last_month_payment": "Tháng Cuối Cùng",
+      "monthly_decrease": "Giảm Hàng Tháng",
+      "view_schedule": "Xem Lịch Trình",
+      "hide_schedule": "Ẩn Lịch Trình",
+      "schedule_title": "Lịch Trình",
+      "period": "Kỳ Hạn",
+      "monthly_pay": "Thanh Toán",
+      "principal_part": "Vốn",
+      "interest_part": "Lãi Suất",
+      "remaining_principal": "Còn Lại",
+      "payment_method": "Phương Thức Thanh Toán",
+      "loan_total": "Tổng Vay",
+      "repayment_periods": "Kỳ Hạn Trả",
+      "period_unit": "Tháng",
+      "remaining": "Còn Lại"
+    },
+    "relative": {
+      "title": "Mối Quan Hệ",
+      "my_gender": "Giới Tính Của Tôi:",
+      "placeholder": "Nhấn nút bên dưới để thêm mối quan hệ",
+      "i_call_ta": "Tôi gọi họ:",
+      "ta_calls_me": "Họ gọi tôi:",
+      "reverse_check": "Đảo Ngược",
+      "example_title": "Ví Dụ Thường Gặp",
+      "error_same_sex": "Mối quan hệ cùng giới chưa được hỗ trợ",
+      "error_not_found": "Mối quan hệ quá xa hoặc không có trong cơ sở dữ liệu",
+      "error_calc": "Lỗi tính toán",
+      "prefix": "Của Tôi ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Cha",
+        "m": "Mẹ",
+        "h": "Chồng",
+        "w": "Vợ",
+        "ob": "Anh Trai Lớn",
+        "lb": "Em Trai Nhỏ",
+        "os": "Chị Gái Lớn",
+        "ls": "Em Gái Nhỏ",
+        "s": "Con Trai",
+        "d": "Con Gái"
+      },
+      "buttons": {
+        "f": "Cha",
+        "m": "Mẹ",
+        "h": "Chồng",
+        "w": "Vợ",
+        "ob": "Anh Trai+",
+        "lb": "Anh Trai-",
+        "os": "Chị Gái+",
+        "ls": "Em Gái-",
+        "s": "Con Trai",
+        "d": "Con Gái"
+      },
+      "examples": {
+        "爷爷": "Ông Nội",
+        "外婆": "Bà Ngoại",
+        "伯父": "Chú(người lớn)",
+        "叔叔": "Chú(trẻ hơn)",
+        "舅舅": "Cậu(mẹ)",
+        "姑姑": "Cô"
+      }
+    },
+    "tax": {
+      "title": "Máy tính thuế",
+      "salary_label": "Lương hàng tháng",
+      "insurance_label": "Bảo hiểm xã hội",
+      "deduction_label": "Giảm trừ đặc biệt",
+      "threshold_label": "Ngưỡng",
+      "hint": "Giảm trừ bao gồm: giáo dục con cái, tiền thuê nhà, lãi suất vay mua nhà, v.v.",
+      "after_tax_salary": "Lương sau thuế",
+      "taxable_income": "Thu nhập chịu thuế",
+      "applicable_rate": "Tỷ lệ",
+      "payable_tax": "Thuế phải nộp",
+      "table_title": "Bảng thuế (hàng năm)",
+      "table_headers": [
+        "Cấp bậc",
+        "Thu nhập chịu thuế",
+        "Tỷ lệ",
+        "Giảm trừ"
+      ],
+      "ten_thousand_unit": "vạn",
+      "history": {
+        "title": "Ước tính thuế lương ¥{{salary}}, ",
+        "expression": "Lương trước thuế {{salary}} - Bảo hiểm {{insurance}} - Giảm trừ {{deduction}}, ",
+        "result": "Lương sau thuế ¥{{afterTax}} (Thuế ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Sổ sách tài khoản",
+      "expense": "Chi tiêu",
+      "income": "Thu nhập",
+      "add_record": "Thêm mục",
+      "report": "Báo cáo",
+      "monthly_expense": "Chi tiêu hàng tháng",
+      "monthly_income": "Thu nhập hàng tháng",
+      "balance": "Số dư",
+      "no_records": "Chưa có ghi chú nào",
+      "note": "Ghi chú",
+      "note_placeholder": "Thêm ghi chú...",
+      "report_title": "Báo cáo",
+      "total_expense": "Tổng chi tiêu",
+      "total_income": "Tổng thu nhập",
+      "expense_detail": "Chi tiết chi tiêu",
+      "income_detail": "Chi tiết thu nhập",
+      "delete_confirm_text": "Bạn có chắc chắn muốn xóa ghi chú này không?",
+      "categories": {
+        "expense": {
+          "消费": "Tiêu dùng",
+          "餐饮": "Ăn uống",
+          "购物": "Mua sắm",
+          "住房": "Nhà ở",
+          "交通": "Giao thông",
+          "通讯": "Truyền thông",
+          "娱乐": "Giải trí",
+          "医疗": "Y tế",
+          "教育": "Giáo dục",
+          "其他": "Khác"
+        },
+        "income": {
+          "工资": "Lương",
+          "奖金": "Thưởng",
+          "投资": "Đầu tư",
+          "兼职": "Việc làm thêm",
+          "红包": "Phong bì đỏ",
+          "其他": "Khác"
+        }
+      },
+      "weekdays": [
+        "CN",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7"
+      ]
+    },
+    "memo": {
+      "title": "Ghi chú",
+      "search_placeholder": "Tìm kiếm ghi chú...",
+      "no_title": "Không có tiêu đề",
+      "no_memos": "Chưa có ghi chú nào",
+      "title_label": "Tiêu đề",
+      "content_placeholder": "Nhập nội dung...",
+      "delete_confirm_text": "Bạn có chắc muốn xóa ghi chú này không?",
+      "pin": "Gắn",
+      "unpin": "Bỏ gắn"
+    },
+    "health": {
+      "title": "Tính toán sức khỏe",
+      "bmi_label": "Chỉ số BMI",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Giới tính",
+      "male": "Nam",
+      "female": "Nữ",
+      "height": "Chiều cao (cm)",
+      "weight": "Cân nặng (kg)",
+      "age": "Tuổi",
+      "activity_level": "Mức độ hoạt động",
+      "activity": {
+        "sedentary": "Ít vận động",
+        "light": "Nhẹ (1-3 lần/tuần)",
+        "moderate": "Trung bình (3-5 lần/tuần)",
+        "active": "Hoạt động (6-7 lần/tuần)",
+        "very_active": "Rất hoạt động (Làm việc nặng hàng ngày)"
+      },
+      "status": {
+        "underweight": "Dưới cân",
+        "normal": "Bình thường",
+        "overweight": "Thừa cân",
+        "obese": "Béo phì"
+      }
+    },
+    "graph": {
+      "title": "Vẽ đồ thị hàm số",
+      "placeholder": "Nhập hàm số, ví dụ: x^2, sin(x)...",
+      "x_min": "X Cực tiểu",
+      "x_max": "X Cực đại"
+    },
+    "formula": {
+      "title": "Máy tính công thức",
+      "category_label": "Loại",
+      "all": "Tất cả",
+      "select_formula": "Chọn công thức",
+      "result_title": "Kết quả",
+      "formula_label": "Công thức",
+      "variables_label": "Biến số",
+      "categories": {
+        "几何": "Hình học",
+        "物理": "Vật lý",
+        "数学": "Toán học",
+        "金融": "Tài chính",
+        "健康": "Sức khỏe"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Diện tích hình tròn",
+          "description": "Tính diện tích với bán kính",
+          "variables": {
+            "r": "Bán kính"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Chu vi hình tròn",
+          "description": "Tính chu vi với bán kính",
+          "variables": {
+            "r": "Bán kính"
+          }
+        },
+        "sphere_volume": {
+          "name": "Thể tích hình cầu",
+          "description": "Tính thể tích với bán kính",
+          "variables": {
+            "r": "Bán kính"
+          }
+        },
+        "triangle_area": {
+          "name": "Diện tích tam giác",
+          "description": "Tính diện tích với cạnh đáy và chiều cao",
+          "variables": {
+            "a": "Cạnh đáy",
+            "h": "Chiều cao"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Diện tích hình thang",
+          "description": "Tính diện tích với hai cạnh đáy và chiều cao",
+          "variables": {
+            "a": "Đáy trên",
+            "b": "Đáy dưới",
+            "h": "Chiều cao"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Thể tích hình trụ",
+          "description": "Tính thể tích với bán kính và chiều cao",
+          "variables": {
+            "r": "Bán kính",
+            "h": "Chiều cao"
+          }
+        },
+        "cone_volume": {
+          "name": "Thể tích hình nón",
+          "description": "Tính thể tích với bán kính và chiều cao",
+          "variables": {
+            "r": "Bán kính",
+            "h": "Chiều cao"
+          }
+        },
+        "speed": {
+          "name": "Tốc độ",
+          "description": "Tính tốc độ với quãng đường và thời gian",
+          "variables": {
+            "s": "Quãng đường",
+            "t": "Thời gian"
+          }
+        },
+        "acceleration": {
+          "name": "Gia tốc",
+          "description": "Tính gia tốc",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Định luật II Newton",
+          "description": "Tính lực",
+          "variables": {
+            "m": "Khối lượng(kg)",
+            "a": "Gia tốc(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Năng lượng động",
+          "description": "Tính năng lượng động",
+          "variables": {
+            "m": "Khối lượng(kg)",
+            "v": "Tốc độ(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Năng lượng thế",
+          "description": "Tính năng lượng thế",
+          "variables": {
+            "m": "Khối lượng(kg)",
+            "g": "g",
+            "h": "Chiều cao(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Định luật Ohm",
+          "description": "Tính dòng điện",
+          "variables": {
+            "U": "Điện áp(V)",
+            "R": "Điện trở(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Công suất điện",
+          "description": "Tính công suất",
+          "variables": {
+            "U": "Điện áp(V)",
+            "I": "Dòng điện(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Định lý Pythagoras",
+          "description": "Tính cạnh huyền",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Nghiệm phương trình bậc hai",
+          "description": "Biệt thức của phương trình ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Lãi kép",
+          "description": "Tính tổng với lãi suất",
+          "variables": {
+            "P": "Số tiền gốc",
+            "r": "Tỷ lệ(%)",
+            "n": "Năm"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "Tính BMI với cân nặng và chiều cao",
+          "variables": {
+            "weight": "Cân nặng(kg)",
+            "height": "Chiều cao(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Khuyến mãi & Tiền boa",
+      "original_price": "Giá",
+      "price_placeholder": "Nhập số tiền",
+      "discount_label": "Khuyến mãi",
+      "percent": "Phần trăm",
+      "flat_amount": "Số tiền cố định",
+      "tip_label": "Tiền boa",
+      "split_label": "Chia sẻ",
+      "person_unit": "Người",
+      "result_title": "Kết quả",
+      "saved_amount": "Tiết kiệm",
+      "discounted_price": "Giá cuối cùng",
+      "tip_amount": "Số tiền boa",
+      "total_price": "Tổng giá",
+      "per_person": "Mỗi người"
+    },
+    "date": {
+      "title": "Máy tính ngày",
+      "diff_mode": "Hiệu ngày",
+      "add_mode": "Tính ngày",
+      "convert_mode": "Chuyển đổi Âm Dương",
+      "start_date": "Ngày bắt đầu",
+      "end_date": "Ngày kết thúc",
+      "base_date": "Ngày cơ sở",
+      "diff_time": "Khoảng cách thời gian",
+      "before": "Trước",
+      "after": "Sau",
+      "result_title": "Kết quả",
+      "diff_days": "Khoảng cách ngày",
+      "workdays": "Ngày làm việc",
+      "weeks": "Tuần",
+      "hours": "Giờ",
+      "minutes": "Phút",
+      "solar2lunar": "Dương lịch sang Âm lịch",
+      "lunar2solar": "Âm lịch sang Dương lịch",
+      "solar_date": "Ngày Dương lịch",
+      "lunar": "Âm lịch",
+      "shengxiao": "Thiên can địa chi",
+      "jieqi": "Giai đoạn khí hậu",
+      "festival": "Lễ hội",
+      "leap_month": "Tháng nhuận",
+      "leap_month_prefix": "Tháng nhuận ",
+      "workdays_label": "Ngày làm việc (không tính cuối tuần)",
+      "lunar_year": "Năm Âm lịch",
+      "lunar_month": "Tháng Âm lịch",
+      "lunar_day": "Ngày Âm lịch",
+      "invalid_date": "Ngày không hợp lệ"
+    },
+    "finance": {
+      "title": "Máy tính tài chính",
+      "bank_mode": "Tiết kiệm ngân hàng",
+      "compound_mode": "Lãi kép",
+      "regular_mode": "Đầu tư định kỳ",
+      "interest_yuan": "Lợi tức",
+      "interest_profit": "Lợi nhuận",
+      "total_yuan": "Tổng cộng",
+      "total_sum": "Tổng số",
+      "bank_info": "Nhập thông tin tiết kiệm",
+      "bank_amount": "Số tiền",
+      "bank_years": "Năm",
+      "rate_percent": "Tỷ lệ (%)",
+      "compound_info": "Nhập thông tin đầu tư",
+      "initial_principal": "Vốn ban đầu",
+      "invest_years": "Năm",
+      "return_rate": "Tỷ suất lợi nhuận (%)",
+      "compound_freq": "Tần suất",
+      "regular_info": "Nhập thông tin định kỳ",
+      "regular_amount": "Số tiền mỗi kỳ",
+      "regular_years": "Năm",
+      "regular_rate": "Tỷ suất lợi nhuận (%)",
+      "regular_freq": "Tần suất",
+      "total_return": "Tổng lợi nhuận",
+      "total_invest": "Tổng đầu tư",
+      "overflow_error": "Giá trị vượt quá",
+      "freq": {
+        "year": "Hàng năm",
+        "month": "Hàng tháng",
+        "day": "Hàng ngày",
+        "week": "Hàng tuần"
+      }
+    }
+  }
+}

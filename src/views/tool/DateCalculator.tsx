@@ -1,10 +1,12 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import { Solar, Lunar } from 'lunar-javascript'
 import './DateCalculator.scss'
 
 export default function DateCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [mode, setMode] = useState<'diff' | 'add' | 'convert'>('diff')
   const today = new Date().toISOString().split('T')[0]
@@ -83,14 +85,14 @@ export default function DateCalculator() {
       const lunar = Lunar.fromYmd(lunarYear, month, lunarDay)
       const solar = lunar.getSolar()
       return {
-        dateStr: `${solar.getYear()}年${solar.getMonth()}月${solar.getDay()}日`,
-        weekday: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][solar.getWeek()]
+        dateStr: `${solar.getYear()}${t('common.year_unit')}${solar.getMonth()}${t('common.month_unit')}${solar.getDay()}${t('common.day_unit')}`,
+        weekday: (t('common.weekdays', { returnObjects: true }) as string[])[solar.getWeek()]
       }
     } catch { return null }
-  }, [lunarYear, lunarMonth, lunarDay, isLeapMonth])
+  }, [lunarYear, lunarMonth, lunarDay, isLeapMonth, t])
 
   const formatDate = (date: Date) => {
-    const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    const weekDays = t('common.weekdays', { returnObjects: true }) as string[]
     return {
       date: date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }),
       weekday: weekDays[date.getDay()]
@@ -99,47 +101,47 @@ export default function DateCalculator() {
 
   return (
     <div className="tool-page date">
-      <ToolHeader title="日期计算" />
+      <ToolHeader title={t('tool.date.title')} />
       
       <main className="tool-content">
         <div className="mode-tabs">
-          <button className={mode === 'diff' ? 'active' : ''} onClick={() => setMode('diff')}>日期间隔</button>
-          <button className={mode === 'add' ? 'active' : ''} onClick={() => setMode('add')}>日期加减</button>
-          <button className={mode === 'convert' ? 'active' : ''} onClick={() => setMode('convert')}>阴阳互转</button>
+          <button className={mode === 'diff' ? 'active' : ''} onClick={() => setMode('diff')}>{t('tool.date.diff_mode')}</button>
+          <button className={mode === 'add' ? 'active' : ''} onClick={() => setMode('add')}>{t('tool.date.add_mode')}</button>
+          <button className={mode === 'convert' ? 'active' : ''} onClick={() => setMode('convert')}>{t('tool.date.convert_mode')}</button>
         </div>
         
         {mode === 'diff' && (
           <div className="calc-area">
             <div className="input-row">
-              <label>开始日期</label>
+              <label>{t('tool.date.start_date')}</label>
               <div className="date-field">
                 <input type="date" value={date1} onChange={(e) => setDate1(e.target.value)} />
-                <button className="today-btn" onClick={() => setDate1(today)}>今天</button>
+                <button className="today-btn" onClick={() => setDate1(today)}>{t('common.today')}</button>
               </div>
             </div>
             <div className="input-row">
-              <label>结束日期</label>
+              <label>{t('tool.date.end_date')}</label>
               <div className="date-field">
                 <input type="date" value={date2} onChange={(e) => setDate2(e.target.value)} />
-                <button className="today-btn" onClick={() => setDate2(today)}>今天</button>
+                <button className="today-btn" onClick={() => setDate2(today)}>{t('common.today')}</button>
               </div>
             </div>
             <div className="result-area">
               <div className="result-main">
                 <span className="number">{dateDiff.totalDays}</span>
-                <span className="unit">天</span>
+                <span className="unit">{t('common.day_unit')}</span>
               </div>
               <div className="result-grid">
-                <div className="grid-item"><span className="value">{dateDiff.years}</span><span className="label">年</span></div>
-                <div className="grid-item"><span className="value">{dateDiff.months}</span><span className="label">月</span></div>
-                <div className="grid-item"><span className="value">{dateDiff.days}</span><span className="label">天</span></div>
-                <div className="grid-item"><span className="value">{dateDiff.weeks}</span><span className="label">周</span></div>
-                <div className="grid-item"><span className="value">{dateDiff.hours.toLocaleString()}</span><span className="label">小时</span></div>
-                <div className="grid-item"><span className="value">{dateDiff.minutes.toLocaleString()}</span><span className="label">分钟</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.years}</span><span className="label">{t('common.year_unit')}</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.months}</span><span className="label">{t('common.month_unit')}</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.days}</span><span className="label">{t('common.day_unit')}</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.weeks}</span><span className="label">{t('tool.date.weeks')}</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.hours.toLocaleString()}</span><span className="label">{t('tool.date.hours')}</span></div>
+                <div className="grid-item"><span className="value">{dateDiff.minutes.toLocaleString()}</span><span className="label">{t('tool.date.minutes')}</span></div>
               </div>
               <div className="workdays-info">
                 <span className="icon">💼</span>
-                <span>工作日（不含周末）：<strong>{dateDiff.workdays}</strong> 天</span>
+                <span>{t('tool.date.workdays_label')}：<strong>{dateDiff.workdays}</strong> {t('common.day_unit')}</span>
               </div>
             </div>
           </div>
@@ -148,14 +150,18 @@ export default function DateCalculator() {
         {mode === 'add' && (
           <div className="calc-area">
             <div className="input-row">
-              <label>基准日期</label>
+              <label>{t('tool.date.base_date')}</label>
               <div className="date-field">
                 <input type="date" value={baseDate} onChange={(e) => setBaseDate(e.target.value)} />
-                <button className="today-btn" onClick={() => setBaseDate(today)}>今天</button>
+                <button className="today-btn" onClick={() => setBaseDate(today)}>{t('common.today')}</button>
               </div>
             </div>
             <div className="adjust-inputs">
-              {[{ label: '年', value: years, setValue: setYears }, { label: '月', value: months, setValue: setMonths }, { label: '天', value: days, setValue: setDays }].map((item) => (
+              {[
+                { label: t('common.year_unit'), value: years, setValue: setYears },
+                { label: t('common.month_unit'), value: months, setValue: setMonths },
+                { label: t('common.day_unit'), value: days, setValue: setDays }
+              ].map((item) => (
                 <div key={item.label} className="adjust-item">
                   <label>{item.label}</label>
                   <div className="number-input">
@@ -178,27 +184,27 @@ export default function DateCalculator() {
         {mode === 'convert' && (
           <div className="calc-area">
             <div className="convert-tabs">
-              <button className={convertMode === 'solar2lunar' ? 'active' : ''} onClick={() => setConvertMode('solar2lunar')}>阳历→阴历</button>
-              <button className={convertMode === 'lunar2solar' ? 'active' : ''} onClick={() => setConvertMode('lunar2solar')}>阴历→阳历</button>
+              <button className={convertMode === 'solar2lunar' ? 'active' : ''} onClick={() => setConvertMode('solar2lunar')}>{t('tool.date.solar2lunar')}</button>
+              <button className={convertMode === 'lunar2solar' ? 'active' : ''} onClick={() => setConvertMode('lunar2solar')}>{t('tool.date.lunar2solar')}</button>
             </div>
 
             {convertMode === 'solar2lunar' ? (
               <>
                 <div className="input-row">
-                  <label>阳历日期</label>
+                  <label>{t('tool.date.solar_date')}</label>
                   <div className="date-field">
                     <input type="date" value={solarDate} onChange={(e) => setSolarDate(e.target.value)} />
-                    <button className="today-btn" onClick={() => setSolarDate(today)}>今天</button>
+                    <button className="today-btn" onClick={() => setSolarDate(today)}>{t('common.today')}</button>
                   </div>
                 </div>
                 {solarToLunar && (
                   <div className="result-area">
                     <div className="lunar-result">
                       <div className="lunar-main">
-                        <span className="ganzhi">{solarToLunar.yearInGanZhi}年</span>
+                        <span className="ganzhi">{solarToLunar.yearInGanZhi}{t('common.year_unit')}</span>
                         <span className="shengxiao">【{solarToLunar.yearShengXiao}】</span>
                       </div>
-                      <div className="lunar-date">{solarToLunar.isLeap ? '闰' : ''}{solarToLunar.monthInChinese}月{solarToLunar.dayInChinese}</div>
+                      <div className="lunar-date">{solarToLunar.isLeap ? t('tool.date.leap_month_prefix') : ''}{solarToLunar.monthInChinese}{t('common.month_unit')}{solarToLunar.dayInChinese}</div>
                       {solarToLunar.jieQi && <div className="lunar-extra"><span className="tag jieqi">{solarToLunar.jieQi}</span></div>}
                       {solarToLunar.festivals.length > 0 && (
                         <div className="lunar-extra">
@@ -212,26 +218,26 @@ export default function DateCalculator() {
             ) : (
               <>
                 <div className="input-row">
-                  <label>农历年</label>
+                  <label>{t('tool.date.lunar_year')}</label>
                   <div className="input-field">
                     <input type="number" value={lunarYear} onChange={(e) => setLunarYear(Number(e.target.value))} min="1900" max="2100" />
-                    <span className="unit">年</span>
+                    <span className="unit">{t('common.year_unit')}</span>
                   </div>
                 </div>
                 <div className="input-row">
-                  <label>农历月</label>
+                  <label>{t('tool.date.lunar_month')}</label>
                   <div className="select-field">
                     <select value={lunarMonth} onChange={(e) => setLunarMonth(Number(e.target.value))}>
-                      {[1,2,3,4,5,6,7,8,9,10,11,12].map((m) => <option key={m} value={m}>{m}月</option>)}
+                      {[1,2,3,4,5,6,7,8,9,10,11,12].map((m) => <option key={m} value={m}>{m}{t('common.month_unit')}</option>)}
                     </select>
                     <label className="leap-check">
                       <input type="checkbox" checked={isLeapMonth} onChange={(e) => setIsLeapMonth(e.target.checked)} />
-                      <span>闰月</span>
+                      <span>{t('tool.date.leap_month')}</span>
                     </label>
                   </div>
                 </div>
                 <div className="input-row">
-                  <label>农历日</label>
+                  <label>{t('tool.date.lunar_day')}</label>
                   <div className="input-field">
                     <select value={lunarDay} onChange={(e) => setLunarDay(Number(e.target.value))}>
                       {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => <option key={d} value={d}>{d}</option>)}
@@ -245,7 +251,7 @@ export default function DateCalculator() {
                       <div className="solar-weekday">{lunarToSolar.weekday}</div>
                     </div>
                   ) : (
-                    <div className="error-msg">日期无效，请检查输入</div>
+                    <div className="error-msg">{t('tool.date.invalid_date')}</div>
                   )}
                 </div>
               </>

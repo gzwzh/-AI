@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import './Toast.scss'
 
 interface ToastProps {
@@ -7,6 +8,7 @@ interface ToastProps {
 }
 
 export default function Toast({ message, visible, onClose }: ToastProps) {
+  const { t } = useTranslation()
   if (!visible) return null
 
   return (
@@ -19,7 +21,7 @@ export default function Toast({ message, visible, onClose }: ToastProps) {
           </svg>
         </div>
         <div className="toast-message">{message}</div>
-        <button className="toast-close" onClick={onClose}>确定</button>
+        <button className="toast-close" onClick={onClose}>{t('common.confirm')}</button>
       </div>
     </div>
   )

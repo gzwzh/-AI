@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "All Calculator",
+    "app_icon_alt": "All Calculator Icon",
+    "subtext": "Een product van Kunqiong AI",
+    "software_custom": "Software aanpassing",
+    "feedback": "Feedback",
+    "history": "Geschiedenis",
+    "icon_alt": "Icon",
+    "back": "Terug",
+    "copy_result": "Resultaat kopiëren",
+    "to_uppercase": "In hoofdletters omzetten",
+    "error": "Fout",
+    "copied": "Kopieer",
+    "clear": "Wissen",
+    "copied_to_clipboard": "Gekopieerd naar de klembord",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Jaar",
+    "today": "Vandaag",
+    "yesterday": "Gisteren",
+    "days_ago": "dagen geleden",
+    "month_unit": "Maand",
+    "day_unit": "Dag",
+    "year_unit": "Jaar",
+    "confirm_delete": "Verwijderen bevestigen",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "minimize": "Minimaliseren",
+    "maximize": "Maximaliseren",
+    "close": "Sluiten",
+    "switch_dark": "Overschakelen naar donker modus",
+    "switch_light": "Overschakelen naar licht modus",
+    "language_switch": "Taal wijzigen",
+    "weekdays": [
+      "Zondag",
+      "Maandag",
+      "Dinsdag",
+      "Woensdag",
+      "Donderdag",
+      "Vrijdag",
+      "Zaterdag"
+    ]
+  },
+  "update": {
+    "found_new": "Nieuwe versie gevonden",
+    "current_version": "Huidige versie",
+    "update_log": "Update logboek",
+    "remind_later": "Later herinneren",
+    "update_now": "Nu updaten"
+  },
+  "auth": {
+    "login_cancelled": "Aanmelden geannuleerd",
+    "click_to_logout": "Klik om uit te loggen",
+    "logged_in": "Ingelogd",
+    "logout": "Uitloggen",
+    "click_to_login": "Klik om in te loggen",
+    "logging_in": "Aanmelden...",
+    "login_register": "Aanmelden/Registreren",
+    "login_failed": "Aanmelding mislukt",
+    "complete_login_in_browser": "Vul de aanmelding in de browser af",
+    "cancel_login": "Aanmelding annuleren",
+    "login_timeout": "Tijd voor aanmelding verstreken",
+    "get_login_url_failed": "Mislukt om login-URL op te halen",
+    "get_user_info_failed": "Mislukt om gebruikersinformatie op te halen",
+    "logout_failed": "Uitloggen mislukt"
+  },
+  "ai": {
+    "module_direct": "Snel toegang",
+    "open_module": "Open {{name}}, ",
+    "enter_now": "Nu invoeren",
+    "currency_title": "Valutawissel",
+    "view_details": "Details bekijken",
+    "percent_title": "Percentage berekening",
+    "uppercase_title": "Bedrag naar hoofdletters",
+    "convert_now": "Nu converteren",
+    "date_title": "Datumberekening",
+    "view_date_details": "Datumdetails bekijken",
+    "tax_title": "Belastingcalculator",
+    "go_calculate": "Ga rekenen",
+    "discount_title": "Kortingsrekenmachine",
+    "full_minus_title": "Volledige korting",
+    "tip_title": "Tiprekenmachine",
+    "go_pay": "Ga betalen",
+    "health_title": "Gezondheidscalculation",
+    "calc_now": "Nu berekenen",
+    "graph_title": "Functiegrafiek",
+    "start_drawing": "Begin met tekenen",
+    "draw_function": "Teken functie y = {{expr}}, ",
+    "open_graph_tool": "Open interactieve grafiektool",
+    "unit_title": "Eenheden omzetten",
+    "smart_calc_title": "Slimme calculator",
+    "math_title": "Slimme berekening"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Rekenmachine",
+      "tool": "Tools",
+      "converter": "Omzetter"
+    },
+    "items": {
+      "basic": "Basisrekenmachine",
+      "scientific": "Wetenschappelijke rekenmachine",
+      "fraction": "Breukrekenmachine",
+      "currency": "Valutawisselaar",
+      "relative": "Relatief oproepen",
+      "mortgage": "Hypothecaire rekenmachine",
+      "tax": "Belastingcalculator",
+      "date": "Datumcalculator",
+      "radix": "Radixomzetter",
+      "uppercase": "Hoofdlettersbedrag",
+      "finance": "Financiële rekenmachine",
+      "formula": "Formularekenmachine",
+      "discount": "Korting & Tip",
+      "account": "Accountboek",
+      "memo": "Notitie",
+      "health": "Gezondheidsrekenmachine",
+      "graph": "Grafiekrekenmachine",
+      "length": "Lengte",
+      "area": "Oppervlakte",
+      "volume": "Volume",
+      "temperature": "Temperatuur",
+      "speed": "Snelheid",
+      "time": "Tijd",
+      "weight": "Gewicht",
+      "power": "Kracht",
+      "heat": "Hitte",
+      "force": "Kracht",
+      "pressure": "Druk",
+      "capacity": "Capaciteit",
+      "data": "Gegevensopslag"
+    }
+  },
+  "home": {
+    "search_placeholder": "Probeer AI-zoeken, bijv. 100 dollar, 100cm naar m...",
+    "smart_tips_label": "Slimme tips:",
+    "tips": {
+      "date": "Welke datum is het na 100 dagen?",
+      "tax": "Hoeveel belasting voor een salaris van 1,5w?",
+      "uppercase": "Bedrag naar hoofdletters",
+      "unit": "100cm naar m"
+    },
+    "smart_tag": "AI Slimme Parse",
+    "search_results_title": "Zoekresultaten",
+    "no_results_text": "Geen gerelateerde functies gevonden, probeer een andere zoekterm"
+  },
+  "history": {
+    "title": "Geschiedenis",
+    "clear_all": "Alles wissen",
+    "empty": "Nog geen geschiedenis",
+    "types": {
+      "basic": "Basis",
+      "scientific": "Wetenschappelijk",
+      "converter": "Eenheid",
+      "currency": "Valuta",
+      "health": "Gezondheid",
+      "discount": "Korting",
+      "tax": "Belasting",
+      "tool": "Tool",
+      "record": "Opname"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Noemer mag niet nul zijn",
+      "error_zero_divisor": "Delende mag niet nul zijn"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Converteren",
+    "categories": {
+      "length": "Lengte",
+      "area": "Oppervlakte",
+      "volume": "Volume",
+      "weight": "Gewicht",
+      "temperature": "Temperatuur",
+      "speed": "Snelheid",
+      "time": "Tijd",
+      "power": "Kracht",
+      "heat": "Hitte",
+      "force": "Kracht",
+      "pressure": "Druk",
+      "capacity": "Capaciteit",
+      "data": "Data-opslag"
+    },
+    "units": {
+      "km": "kilometer",
+      "m": "meter",
+      "dm": "decimeter",
+      "cm": "centimeter",
+      "mm": "millimeter",
+      "μm": "micrometer",
+      "nm": "nanometer",
+      "mi": "mile",
+      "yd": "yard",
+      "ft": "voet",
+      "in": "inch",
+      "nmi": "zeemile",
+      "里": "Li (Chinese mile)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "vierkante kilometer",
+      "ha": "hectare",
+      "m²": "vierkante meter",
+      "dm²": "vierkante decimeter",
+      "cm²": "vierkante centimeter",
+      "mm²": "vierkante millimeter",
+      "mi²": "vierkante mile",
+      "acre": "acre",
+      "yd²": "vierkante yard",
+      "ft²": "vierkante voet",
+      "in²": "vierkante inch",
+      "亩": "Mu",
+      "分": "Fen (oppervlakte)",
+      "m³": "kubieke meter",
+      "dm³": "kubieke decimeter",
+      "cm³": "kubieke centimeter",
+      "mm³": "kubieke millimeter",
+      "L": "liter",
+      "mL": "milliliter",
+      "gal": "gallon (VS)",
+      "gal(UK)": "gallon (UK)",
+      "pt": "pint",
+      "ft³": "kubieke voet",
+      "in³": "kubieke inch",
+      "t": "ton",
+      "kg": "kilogram",
+      "g": "gram",
+      "mg": "milligram",
+      "μg": "microgram",
+      "lb": "pond",
+      "oz": "once",
+      "ct": "karaat",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Celsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "meter/seconde",
+      "km/h": "kilometer/uur",
+      "mph": "mijl/uur",
+      "kn": "knopen",
+      "Ma": "Mach",
+      "c": "lichtsnelheid",
+      "世纪": "eeuwen",
+      "年": "jaar",
+      "月": "maand",
+      "周": "week",
+      "天": "dag",
+      "h": "uur",
+      "min": "minuut",
+      "s": "seconde",
+      "ms": "milliseconde",
+      "μs": "microseconde",
+      "ns": "nanoseconde",
+      "kW": "kilowatt",
+      "W": "watt",
+      "mW": "milliwatt",
+      "hp": "paardenkracht",
+      "PS": "metrische paardenkracht",
+      "kcal/s": "kcal/seconde",
+      "BTU/s": "BTU/seconde",
+      "kJ": "kilojoule",
+      "J": "joule",
+      "cal": "calorie",
+      "kcal": "kilocalorie",
+      "Wh": "watt-uur",
+      "kWh": "kilowatt-uur",
+      "BTU": "British Thermal Unit",
+      "kN": "kilonewton",
+      "N": "newton",
+      "dyn": "dyne",
+      "kgf": "kilogramkracht",
+      "gf": "gramkracht",
+      "lbf": "pondkracht",
+      "Pa": "pascal",
+      "hPa": "hectopascal",
+      "kPa": "kilopascal",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "millibar",
+      "atm": "atmosfeer",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kiloliter",
+      "dL": "deciliter",
+      "cL": "centiliter",
+      "qt": "quart",
+      "cup": "kopje",
+      "fl oz": "vloeistofonzje",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Valutawissel",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Radix Converter",
+      "dec": "Decimaal (DEC)",
+      "bin": "Binair (BIN)",
+      "oct": "Octaal (OCT)",
+      "hex": "Hexadecimaal (HEX)"
+    },
+    "uppercase": {
+      "title": "Hoofdletters Geld",
+      "zero_yuan_整": "Nul Yuan Alleen",
+      "zero": "Nul",
+      "digits": [
+        "Nul",
+        "Eén",
+        "Twee",
+        "Drie",
+        "Vier",
+        "Vijf",
+        "Zes",
+        "Zeven",
+        "Acht",
+        "Negen"
+      ],
+      "units": [
+        ", ",
+        "Tien",
+        "Honderd",
+        "Duizend"
+      ],
+      "big_units": [
+        ", ",
+        "Tienduizend",
+        "Honderdmiljoen",
+        "Triljoen"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Alleen",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Negatief",
+      "back_to_calculator": "Terug naar Rekenmachine",
+      "click_to_copy": "Hoofdletters (Klik om te kopiëren)"
+    },
+    "mortgage": {
+      "title": "Hypotheekrekenmachine",
+      "commercial_loan": "Commerciële lening",
+      "fund_loan": "Woningfonds",
+      "combined_loan": "Gecombineerde lening",
+      "loan_amount": "Leningbedrag",
+      "loan_rate": "Leningtarief",
+      "fund_loan_amount": "Fondsleningbedrag",
+      "fund_loan_rate": "Fondsleningtarief",
+      "commercial_loan_amount": "Commerciele leningbedrag",
+      "commercial_rate_type": "Tarieftype",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Basispunten",
+      "commercial_loan_rate": "Commercieel tarief",
+      "principal": "Hoofdsom",
+      "interest": "Rente",
+      "equal_monthly": "Gelijke maandelijkse betaling",
+      "equal_principal": "Gelijke hoofdsom betaling",
+      "payment_type": "Betalingsvorm",
+      "loan_years": "Leningjaren",
+      "lpr_rate": "LPR-tarief",
+      "basis_points": "BP",
+      "base_rate": "Basisrate",
+      "rate_type": "Tarieftype",
+      "total_payment": "Totaalbetaling",
+      "total_interest": "Totaalrente",
+      "monthly_payment": "Maandelijkse betaling",
+      "first_month_payment": "Eerste Maand",
+      "last_month_payment": "Laatste Maand",
+      "monthly_decrease": "Maandelijkse Afname",
+      "view_schedule": "Schema Bekijken",
+      "hide_schedule": "Schema Verbergen",
+      "schedule_title": "Schema",
+      "period": "Periode",
+      "monthly_pay": "Betaling",
+      "principal_part": "Hypotheekbedrag",
+      "interest_part": "Rente",
+      "remaining_principal": "Overgebleven",
+      "payment_method": "Methode",
+      "loan_total": "Hypotheekbedrag Totaal",
+      "repayment_periods": "Perioden",
+      "period_unit": "Maand",
+      "remaining": "Overgebleven"
+    },
+    "relative": {
+      "title": "Relatie Oproep",
+      "my_gender": "Mijn Geslacht:",
+      "placeholder": "Klik op de knoppen hieronder om relatie toe te voegen",
+      "i_call_ta": "Ik noem hen:",
+      "ta_calls_me": "Zij noemen mij:",
+      "reverse_check": "Omkeren",
+      "example_title": "Veelvoorkomende Voorbeelden",
+      "error_same_sex": "Relatie tussen hetzelfde geslacht wordt nog niet ondersteund",
+      "error_not_found": "Relatie is te ver of niet in de database",
+      "error_calc": "Berekeningsfout",
+      "prefix": "Mijn ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Vader",
+        "m": "Moeder",
+        "h": "Man",
+        "w": "Vrouw",
+        "ob": "Oudere Broer",
+        "lb": "Jongere Broer",
+        "os": "Oudere Zuster",
+        "ls": "Jongere Zuster",
+        "s": "Zoon",
+        "d": "Dochter"
+      },
+      "buttons": {
+        "f": "Vader",
+        "m": "Moeder",
+        "h": "Man",
+        "w": "Vrouw",
+        "ob": "Broer+",
+        "lb": "Broer-",
+        "os": "Zuster+",
+        "ls": "Zuster-",
+        "s": "Zoon",
+        "d": "Dochter"
+      },
+      "examples": {
+        "爷爷": "Grootvader",
+        "外婆": "Grootmoeder",
+        "伯父": "Oom(ouder)",
+        "叔叔": "Oom(jonger)",
+        "舅舅": "Oom(vrouwelijk)",
+        "姑姑": "Tante"
+      }
+    },
+    "tax": {
+      "title": "Belastingrekenaar",
+      "salary_label": "Maandloon",
+      "insurance_label": "Sociale verzekering",
+      "deduction_label": "Specifieke aftrekposten",
+      "threshold_label": "Deductiegrens",
+      "hint": "Aftrekposten omvatten: kinderonderwijs, huur, hypotheekrente, etc.",
+      "after_tax_salary": "Na belasting loon",
+      "taxable_income": "Belastbaar inkomen",
+      "applicable_rate": "Tarief",
+      "payable_tax": "Te betalen belasting",
+      "table_title": "Belastingkortingen (jaarlijks)",
+      "table_headers": [
+        "Niveau",
+        "Belastbaar inkomen",
+        "Tarief",
+        "Aftrek"
+      ],
+      "ten_thousand_unit": "duizend",
+      "history": {
+        "title": "Saldo ¥{{salary}} Belasting schatting",
+        "expression": "Voor belasting {{salary}} - Verzekering {{insurance}} - Aftrek {{deduction}}, ",
+        "result": "Na belasting ¥{{afterTax}} (belasting ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Accountboek",
+      "expense": "Uitgave",
+      "income": "Inkomsten",
+      "add_record": "Item toevoegen",
+      "report": "Rapport",
+      "monthly_expense": "Maandelijkse uitgaven",
+      "monthly_income": "Maandelijkse inkomsten",
+      "balance": "Balans",
+      "no_records": "Nog geen records",
+      "note": "Notitie",
+      "note_placeholder": "Voeg notitie toe...",
+      "report_title": "Rapport",
+      "total_expense": "Totale uitgave",
+      "total_income": "Totale inkomsten",
+      "expense_detail": "Uitgavedetail",
+      "income_detail": "Inkomstdetail",
+      "delete_confirm_text": "Weet u zeker dat u deze record wilt verwijderen?",
+      "categories": {
+        "expense": {
+          "消费": "Besteding",
+          "餐饮": "Eten",
+          "购物": "Winkelen",
+          "住房": "Woning",
+          "交通": "Vervoer",
+          "通讯": "Communicatie",
+          "娱乐": "Vermaken",
+          "医疗": "Gezondheid",
+          "教育": "Onderwijs",
+          "其他": "Anders"
+        },
+        "income": {
+          "工资": "Salaris",
+          "奖金": "Bonus",
+          "投资": "Beleggen",
+          "兼职": "Tijdelijk",
+          "红包": "Rode Paktjes",
+          "其他": "Anders"
+        }
+      },
+      "weekdays": [
+        "Zon",
+        "Maan",
+        "Dins",
+        "Woens",
+        "Donder",
+        "Vrij",
+        "Zat"
+      ]
+    },
+    "memo": {
+      "title": "Memo",
+      "search_placeholder": "Zoek naar memo's...",
+      "no_title": "Geen Titel",
+      "no_memos": "Nog geen memo's",
+      "title_label": "Titel",
+      "content_placeholder": "Voer inhoud in...",
+      "delete_confirm_text": "Weet je zeker dat je deze memo wilt verwijderen?",
+      "pin": "Vastmaken",
+      "unpin": "Losmaken"
+    },
+    "health": {
+      "title": "Gezondheid Calculator",
+      "bmi_label": "BMI Index",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Geslacht",
+      "male": "Man",
+      "female": "Vrouw",
+      "height": "Lengte (cm)",
+      "weight": "Gewicht (kg)",
+      "age": "Leeftijd",
+      "activity_level": "Activiteitsniveau",
+      "activity": {
+        "sedentary": "Sedentair",
+        "light": "Licht (1-3 keer per week)",
+        "moderate": "Matig (3-5 keer per week)",
+        "active": "Actief (6-7 keer per week)",
+        "very_active": "Zeer actief (dagelijks zwaar werk)"
+      },
+      "status": {
+        "underweight": "Ondergewicht",
+        "normal": "Normaal",
+        "overweight": "Overgewicht",
+        "obese": "Obesitas"
+      }
+    },
+    "graph": {
+      "title": "Functie Grafiek",
+      "placeholder": "Voer functie in, bijv. x^2, sin(x)...",
+      "x_min": "X Min",
+      "x_max": "X Max"
+    },
+    "formula": {
+      "title": "Formule Calculator",
+      "category_label": "Categorie",
+      "all": "Allemaal",
+      "select_formula": "Selecteer Formule",
+      "result_title": "Resultaat",
+      "formula_label": "Formule",
+      "variables_label": "Variabelen",
+      "categories": {
+        "几何": "Meetkunde",
+        "物理": "Fysica",
+        "数学": "Wiskunde",
+        "金融": "Financiën",
+        "健康": "Gezondheid"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Cirkeloppervlakte",
+          "description": "Bereken oppervlakte met straal",
+          "variables": {
+            "r": "Straal"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Cirkelomtrek",
+          "description": "Bereken omtrek met straal",
+          "variables": {
+            "r": "Straal"
+          }
+        },
+        "sphere_volume": {
+          "name": "Bolvolume",
+          "description": "Bereken volume met straal",
+          "variables": {
+            "r": "Straal"
+          }
+        },
+        "triangle_area": {
+          "name": "Driehoekoppervlakte",
+          "description": "Bereken oppervlakte met basis en hoogte",
+          "variables": {
+            "a": "Basis",
+            "h": "Hoogte"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Vierhoekoppervlakte",
+          "description": "Bereken oppervlakte met basis en hoogte",
+          "variables": {
+            "a": "Bovenkant",
+            "b": "Onderkant",
+            "h": "Hoogte"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Cilindervolume",
+          "description": "Bereken volume met straal en hoogte",
+          "variables": {
+            "r": "Straal",
+            "h": "Hoogte"
+          }
+        },
+        "cone_volume": {
+          "name": "Kegelvolume",
+          "description": "Bereken volume met straal en hoogte",
+          "variables": {
+            "r": "Straal",
+            "h": "Hoogte"
+          }
+        },
+        "speed": {
+          "name": "Snelheid",
+          "description": "Bereken snelheid met afstand en tijd",
+          "variables": {
+            "s": "Afstand",
+            "t": "Tijd"
+          }
+        },
+        "acceleration": {
+          "name": "Versnelling",
+          "description": "Bereken versnelling",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Newton's Tweede Wet",
+          "description": "Bereken kracht",
+          "variables": {
+            "m": "Massa(kg)",
+            "a": "Versnelling(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Kinetische Energie",
+          "description": "Bereken kinetische energie",
+          "variables": {
+            "m": "Massa(kg)",
+            "v": "Snelheid(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Potentiële Energie",
+          "description": "Bereken potentiële energie",
+          "variables": {
+            "m": "Massa(kg)",
+            "g": "g",
+            "h": "Hoogte(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Ohm's Wet",
+          "description": "Bereken stroom",
+          "variables": {
+            "U": "Spanning(V)",
+            "R": "Weerstand(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Elektrische Kracht",
+          "description": "Bereken vermogen",
+          "variables": {
+            "U": "Spanning(V)",
+            "I": "Stroom(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Stelling van Pythagoras",
+          "description": "Bereken hypotenuse",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Vierkantswortel",
+          "description": "Discriminant van ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Samengesteld Rente",
+          "description": "Bereken totaal met rente",
+          "variables": {
+            "P": "Hoofdsom",
+            "r": "Tarief(%)",
+            "n": "Jaren"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "Bereken BMI met gewicht en lengte",
+          "variables": {
+            "weight": "Gewicht(kg)",
+            "height": "Lengte(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Korting & Tip",
+      "original_price": "Prijs",
+      "price_placeholder": "Voer bedrag in",
+      "discount_label": "Korting",
+      "percent": "Percentage",
+      "flat_amount": "Vaste hoeveelheid",
+      "tip_label": "Tip",
+      "split_label": "Verdelen",
+      "person_unit": "Persoon",
+      "result_title": "Resultaat",
+      "saved_amount": "Gespaard",
+      "discounted_price": "Eindprijs",
+      "tip_amount": "Tipbedrag",
+      "total_price": "Totaalprijs",
+      "per_person": "Per Persoon"
+    },
+    "date": {
+      "title": "Datumrekenmachine",
+      "diff_mode": "Datumverschil",
+      "add_mode": "Datumrekening",
+      "convert_mode": "Maanconv",
+      "start_date": "Startdatum",
+      "end_date": "Einddatum",
+      "base_date": "Basisdatum",
+      "diff_time": "Tijdverschil",
+      "before": "Voor",
+      "after": "Na",
+      "result_title": "Resultaat",
+      "diff_days": "Dagenverschil",
+      "workdays": "Werkdagen",
+      "weeks": "Weken",
+      "hours": "Uren",
+      "minutes": "Minuten",
+      "solar2lunar": "Zon naar Maan",
+      "lunar2solar": "Maan naar Zon",
+      "solar_date": "Zonnedatum",
+      "lunar": "Maan",
+      "shengxiao": "Dierenriem",
+      "jieqi": "Zonnestroom",
+      "festival": "Feestdag",
+      "leap_month": "Schrikmaand",
+      "leap_month_prefix": "Schrik ",
+      "workdays_label": "Werkdagen (Geen weekenden)",
+      "lunar_year": "Maanjaar",
+      "lunar_month": "Maand",
+      "lunar_day": "Maandag",
+      "invalid_date": "Ongeldige datum"
+    },
+    "finance": {
+      "title": "Financiële rekenmachine",
+      "bank_mode": "Banksparen",
+      "compound_mode": "Samengestelde rente",
+      "regular_mode": "Regelmatig beleggen",
+      "interest_yuan": "Rente",
+      "interest_profit": "Winst",
+      "total_yuan": "Totaal",
+      "total_sum": "Totaalbedrag",
+      "bank_info": "Voer spaarinformatie in",
+      "bank_amount": "Bedrag",
+      "bank_years": "Jaren",
+      "rate_percent": "Tarief (%)",
+      "compound_info": "Voer beleggingsinformatie in",
+      "initial_principal": "Hoofdsom",
+      "invest_years": "Jaren",
+      "return_rate": "Winstpercentage (%)",
+      "compound_freq": "Frequentie",
+      "regular_info": "Voer regelmatige informatie in",
+      "regular_amount": "Periodebedrag",
+      "regular_years": "Jaren",
+      "regular_rate": "Winstpercentage (%)",
+      "regular_freq": "Frequentie",
+      "total_return": "Totale opbrengst",
+      "total_invest": "Totaal belegd",
+      "overflow_error": "Waarde overschrijding",
+      "freq": {
+        "year": "Jaarlijks",
+        "month": "Maandelijks",
+        "day": "Dagelijks",
+        "week": "Wekelijks"
+      }
+    }
+  }
+}

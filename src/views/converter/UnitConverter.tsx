@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import { unitConfigs, convertTemperature } from '@/config/units'
 import './UnitConverter.scss'
 
 export default function UnitConverter() {
+  const { t } = useTranslation()
   const { type } = useParams<{ type: string }>()
   const navigate = useNavigate()
   const config = useMemo(() => type ? unitConfigs[type] : null, [type])
@@ -76,14 +78,14 @@ export default function UnitConverter() {
 
   return (
     <div className="converter-page">
-      <ToolHeader title={`${config.name}转换`} />
+      <ToolHeader title={`${t(`converter.categories.${type}`)}${t('converter.unit_suffix')}`} />
       
       <main className="converter">
         <div className="convert-area">
           <div className="unit-row">
             <select value={fromUnit} onChange={(e) => setFromUnit(Number(e.target.value))} className="unit-select">
               {config.units.map((unit, i) => (
-                <option key={i} value={i}>{unit.name} ({unit.symbol})</option>
+                <option key={i} value={i}>{t(`converter.units.${unit.symbol}`, { defaultValue: unit.name })} ({unit.symbol})</option>
               ))}
             </select>
             <div className="value-display from">{fromValue}</div>
@@ -98,7 +100,7 @@ export default function UnitConverter() {
           <div className="unit-row">
             <select value={toUnit} onChange={(e) => setToUnit(Number(e.target.value))} className="unit-select">
               {config.units.map((unit, i) => (
-                <option key={i} value={i}>{unit.name} ({unit.symbol})</option>
+                <option key={i} value={i}>{t(`converter.units.${unit.symbol}`, { defaultValue: unit.name })} ({unit.symbol})</option>
               ))}
             </select>
             <div className="value-display to">{toValue}</div>

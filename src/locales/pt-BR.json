@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "Calculadora Tudo",
+    "app_icon_alt": "Ícone da Calculadora Tudo",
+    "subtext": "Um produto da Kunqiong AI",
+    "software_custom": "Personalização de Software",
+    "feedback": "Comentário",
+    "history": "Histórico",
+    "icon_alt": "Ícone",
+    "back": "Voltar",
+    "copy_result": "Copiar Resultado",
+    "to_uppercase": "Para Maiúsculas",
+    "error": "Erro",
+    "copied": "Copiado",
+    "clear": "Limpar",
+    "copied_to_clipboard": "Copiado para a área de transferência",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Ano",
+    "today": "Hoje",
+    "yesterday": "Ontem",
+    "days_ago": "dias atrás",
+    "month_unit": "Mês",
+    "day_unit": "Dia",
+    "year_unit": "Ano",
+    "confirm_delete": "Confirmar Exclusão",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "minimize": "Minimizar",
+    "maximize": "Maximizar",
+    "close": "Fechar",
+    "switch_dark": "Alternar para Modo Escuro",
+    "switch_light": "Alternar para Modo Claro",
+    "language_switch": "Alterar Idioma",
+    "weekdays": [
+      "Domingo",
+      "Segunda-feira",
+      "Terça-feira",
+      "Quarta-feira",
+      "Quinta-feira",
+      "Sexta-feira",
+      "Sábado"
+    ]
+  },
+  "update": {
+    "found_new": "Nova Versão Encontrada",
+    "current_version": "Versão Atual",
+    "update_log": "Registro de Atualizações",
+    "remind_later": "Lembrar Mais Tarde",
+    "update_now": "Atualizar Agora"
+  },
+  "auth": {
+    "login_cancelled": "Login Cancelado",
+    "click_to_logout": "Clique para sair",
+    "logged_in": "Conectado",
+    "logout": "Sair",
+    "click_to_login": "Clique para entrar",
+    "logging_in": "Conectando...",
+    "login_register": "Login/Cadastro",
+    "login_failed": "Falha no login",
+    "complete_login_in_browser": "Por favor, conclua o login no navegador",
+    "cancel_login": "Cancelar login",
+    "login_timeout": "Tempo limite do login",
+    "get_login_url_failed": "Falha ao obter URL de login",
+    "get_user_info_failed": "Falha ao obter informações do usuário",
+    "logout_failed": "Falha ao sair"
+  },
+  "ai": {
+    "module_direct": "Acesso Rápido",
+    "open_module": "Abrir {{name}}, ",
+    "enter_now": "Entrar Agora",
+    "currency_title": "Câmbio de Moedas",
+    "view_details": "Ver Detalhes",
+    "percent_title": "Calculadora de Porcentagem",
+    "uppercase_title": "Valor para Maiúsculas",
+    "convert_now": "Converter Agora",
+    "date_title": "Cálculo de Data",
+    "view_date_details": "Ver Detalhes da Data",
+    "tax_title": "Calculadora de Imposto",
+    "go_calculate": "Calcular Agora",
+    "discount_title": "Calculadora de Desconto",
+    "full_minus_title": "Redução Total",
+    "tip_title": "Calculadora de Gorjeta",
+    "go_pay": "Ir para Pagar",
+    "health_title": "Calculadora de Saúde",
+    "calc_now": "Calcular Agora",
+    "graph_title": "Gráfico de Funções",
+    "start_drawing": "Começar a Desenhar",
+    "draw_function": "Desenhar função y = {{expr}}, ",
+    "open_graph_tool": "Abrir ferramenta de gráficos interativos",
+    "unit_title": "Conversão de Unidades",
+    "smart_calc_title": "Calculadora Inteligente",
+    "math_title": "Cálculo Inteligente"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Calculadora",
+      "tool": "Ferramentas",
+      "converter": "Conversor"
+    },
+    "items": {
+      "basic": "Calculadora Básica",
+      "scientific": "Calculadora Científica",
+      "fraction": "Calculadora de Frações",
+      "currency": "Conversor de Moedas",
+      "relative": "Ligação Relativa",
+      "mortgage": "Calculadora de Hipoteca",
+      "tax": "Calculadora de Imposto",
+      "date": "Calculadora de Data",
+      "radix": "Conversor de Radix",
+      "uppercase": "Dinheiro em Maiúsculas",
+      "finance": "Calculadora Financeira",
+      "formula": "Calculadora de Fórmulas",
+      "discount": "Desconto e Gorjeta",
+      "account": "Livro de Conta",
+      "memo": "Lembrete",
+      "health": "Calculadora de Saúde",
+      "graph": "Calculadora de Gráfico",
+      "length": "Comprimento",
+      "area": "Área",
+      "volume": "Volume",
+      "temperature": "Temperatura",
+      "speed": "Velocidade",
+      "time": "Tempo",
+      "weight": "Peso",
+      "power": "Potência",
+      "heat": "Calor",
+      "force": "Força",
+      "pressure": "Pressão",
+      "capacity": "Capacidade",
+      "data": "Armazenamento de Dados"
+    }
+  },
+  "home": {
+    "search_placeholder": "Tente Pesquisa AI, por exemplo, 100 dólares, 100cm para m...",
+    "smart_tips_label": "Dicas Inteligentes:",
+    "tips": {
+      "date": "Qual data será após 100 dias?",
+      "tax": "Quanto de imposto para salário de 1,5w?",
+      "uppercase": "Valor para Maiúsculas",
+      "unit": "100cm para m"
+    },
+    "smart_tag": "Análise Inteligente AI",
+    "search_results_title": "Resultados da Busca",
+    "no_results_text": "Nenhuma função relacionada encontrada, tente outra palavra-chave"
+  },
+  "history": {
+    "title": "Histórico",
+    "clear_all": "Limpar Tudo",
+    "empty": "Nenhum histórico ainda",
+    "types": {
+      "basic": "Básico",
+      "scientific": "Científico",
+      "converter": "Unidade",
+      "currency": "Moeda",
+      "health": "Saúde",
+      "discount": "Desconto",
+      "tax": "Imposto",
+      "tool": "Ferramenta",
+      "record": "Registro"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "O denominador não pode ser 0",
+      "error_zero_divisor": "O divisor não pode ser 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Converter",
+    "categories": {
+      "length": "Comprimento",
+      "area": "Área",
+      "volume": "Volume",
+      "weight": "Peso",
+      "temperature": "Temperatura",
+      "speed": "Velocidade",
+      "time": "Tempo",
+      "power": "Potência",
+      "heat": "Calor",
+      "force": "Força",
+      "pressure": "Pressão",
+      "capacity": "Capacidade",
+      "data": "Armazenamento de Dados"
+    },
+    "units": {
+      "km": "quilômetro",
+      "m": "metro",
+      "dm": "decímetro",
+      "cm": "centímetro",
+      "mm": "milímetro",
+      "μm": "micrometro",
+      "nm": "nanômetro",
+      "mi": "milha",
+      "yd": "jarda",
+      "ft": "pé",
+      "in": "polegada",
+      "nmi": "milha náutica",
+      "里": "Li (milha chinesa)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "quilômetro quadrado",
+      "ha": "hectare",
+      "m²": "metro quadrado",
+      "dm²": "decímetro quadrado",
+      "cm²": "centímetro quadrado",
+      "mm²": "milímetro quadrado",
+      "mi²": "milha quadrada",
+      "acre": "acre",
+      "yd²": "jarda quadrada",
+      "ft²": "pé quadrado",
+      "in²": "polegada quadrada",
+      "亩": "Mu",
+      "分": "Fen (área)",
+      "m³": "metro cúbico",
+      "dm³": "decímetro cúbico",
+      "cm³": "centímetro cúbico",
+      "mm³": "milímetro cúbico",
+      "L": "litro",
+      "mL": "mililitro",
+      "gal": "gallon (US)",
+      "gal(UK)": "gallon (UK)",
+      "pt": "pint",
+      "ft³": "pé cúbico",
+      "in³": "polegada cúbica",
+      "t": "tonelada",
+      "kg": "quilograma",
+      "g": "grama",
+      "mg": "miligrama",
+      "μg": "micrograma",
+      "lb": "libra",
+      "oz": "onça",
+      "ct": "quilate",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Celsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "metro/segundo",
+      "km/h": "quilômetro/hora",
+      "mph": "milha/hora",
+      "kn": "nó",
+      "Ma": "Mach",
+      "c": "velocidade da luz",
+      "世纪": "século",
+      "年": "ano",
+      "月": "mês",
+      "周": "semana",
+      "天": "dia",
+      "h": "hora",
+      "min": "minuto",
+      "s": "segundo",
+      "ms": "milissegundo",
+      "μs": "microssegundo",
+      "ns": "nanossegundo",
+      "kW": "quilowatt",
+      "W": "watt",
+      "mW": "miliwatt",
+      "hp": "cavalo de potência",
+      "PS": "cavalo de potência métrico",
+      "kcal/s": "kcal/segundo",
+      "BTU/s": "BTU/segundo",
+      "kJ": "quilojoule",
+      "J": "joule",
+      "cal": "caloria",
+      "kcal": "quilocaloria",
+      "Wh": "watt-hora",
+      "kWh": "quilowatt-hora",
+      "BTU": "Unidade Térmica Britânica",
+      "kN": "quilonewton",
+      "N": "newton",
+      "dyn": "dina",
+      "kgf": "quilograma-força",
+      "gf": "grama-força",
+      "lbf": "libra-força",
+      "Pa": "pascal",
+      "hPa": "hectopascal",
+      "kPa": "quilopascal",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "milibar",
+      "atm": "atmosfera",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "quilolitro",
+      "dL": "decilitro",
+      "cL": "centilitro",
+      "qt": "quarto",
+      "cup": "xícara",
+      "fl oz": "onça fluida",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Conversor de Moedas",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Conversor de Radix",
+      "dec": "Decimal (DEC)",
+      "bin": "Binário (BIN)",
+      "oct": "Octal (OCT)",
+      "hex": "Hexadecimal (HEX)"
+    },
+    "uppercase": {
+      "title": "Moeda em Maiúsculas",
+      "zero_yuan_整": "Zero Yua Apenas",
+      "zero": "Zero",
+      "digits": [
+        "Zero",
+        "Um",
+        "Dois",
+        "Três",
+        "Quatro",
+        "Cinco",
+        "Seis",
+        "Sete",
+        "Oito",
+        "Nove"
+      ],
+      "units": [
+        ", ",
+        "Dez",
+        "Centena",
+        "Milhar"
+      ],
+      "big_units": [
+        ", ",
+        "Dez Mil",
+        "Cem Milhões",
+        "Trilhão"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Apenas",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Negativo",
+      "back_to_calculator": "Voltar para o Calculador",
+      "click_to_copy": "Maiúsculas (Clique para Copiar)"
+    },
+    "mortgage": {
+      "title": "Calculadora de Hipoteca",
+      "commercial_loan": "Empréstimo Comercial",
+      "fund_loan": "Fundos de Habitação",
+      "combined_loan": "Empréstimo Combinado",
+      "loan_amount": "Valor do Empréstimo",
+      "loan_rate": "Taxa de Empréstimo",
+      "fund_loan_amount": "Valor do Empréstimo de Fundos",
+      "fund_loan_rate": "Taxa do Empréstimo de Fundos",
+      "commercial_loan_amount": "Valor do Empréstimo Comercial",
+      "commercial_rate_type": "Tipo de Taxa",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Ponto Base",
+      "commercial_loan_rate": "Taxa Comercial",
+      "principal": "Principal",
+      "interest": "Juros",
+      "equal_monthly": "Pagamento Mensal Igual",
+      "equal_principal": "Pagamento de Principal Igual",
+      "payment_type": "Tipo de Pagamento",
+      "loan_years": "Anos do Empréstimo",
+      "lpr_rate": "Taxa LPR",
+      "basis_points": "BP",
+      "base_rate": "Taxa Base",
+      "rate_type": "Tipo de Taxa",
+      "total_payment": "Pagamento Total",
+      "total_interest": "Juros Total",
+      "monthly_payment": "Pagamento Mensal",
+      "first_month_payment": "Primeiro Mês",
+      "last_month_payment": "Último Mês",
+      "monthly_decrease": "Redução Mensal",
+      "view_schedule": "Ver Cronograma",
+      "hide_schedule": "Esconder Cronograma",
+      "schedule_title": "Cronograma",
+      "period": "Período",
+      "monthly_pay": "Pagamento",
+      "principal_part": "Principal",
+      "interest_part": "Juros",
+      "remaining_principal": "Restante",
+      "payment_method": "Método",
+      "loan_total": "Total do Empréstimo",
+      "repayment_periods": "Períodos",
+      "period_unit": "Mês",
+      "remaining": "Restante"
+    },
+    "relative": {
+      "title": "Relação Telefônica",
+      "my_gender": "Meu Gênero:",
+      "placeholder": "Clique nos botões abaixo para adicionar a relação",
+      "i_call_ta": "Eu os chamo de:",
+      "ta_calls_me": "Eles me chamam de:",
+      "reverse_check": "Inverter",
+      "example_title": "Exemplos Comuns",
+      "error_same_sex": "Relação de mesmo sexo ainda não é suportada",
+      "error_not_found": "Relação muito distante ou não encontrada no banco de dados",
+      "error_calc": "Erro de cálculo",
+      "prefix": "Meu ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Pai",
+        "m": "Mãe",
+        "h": "Marido",
+        "w": "Esposa",
+        "ob": "Irmão Mais Velho",
+        "lb": "Irmão Mais Novo",
+        "os": "Irmã Mais Velha",
+        "ls": "Irmã Mais Nova",
+        "s": "Filho",
+        "d": "Filha"
+      },
+      "buttons": {
+        "f": "Pai",
+        "m": "Mãe",
+        "h": "Marido",
+        "w": "Esposa",
+        "ob": "Irmão+",
+        "lb": "Irmão-",
+        "os": "Irmã+",
+        "ls": "Irmã-",
+        "s": "Filho",
+        "d": "Filha"
+      },
+      "examples": {
+        "爷爷": "Avô",
+        "外婆": "Avó",
+        "伯父": "Tio( Mais Velho )",
+        "叔叔": "Tio( Mais Novo )",
+        "舅舅": "Tio(Maternal)",
+        "姑姑": "Tia"
+      }
+    },
+    "tax": {
+      "title": "Calculador de Impostos",
+      "salary_label": "Salário Mensal",
+      "insurance_label": "Seguro Social",
+      "deduction_label": "Deduções Especiais",
+      "threshold_label": "Limite",
+      "hint": "Deduções incluem: educação de filhos, aluguel, juros de empréstimo imobiliário, etc.",
+      "after_tax_salary": "Salário Pós-Imposto",
+      "taxable_income": "Renda Tributável",
+      "applicable_rate": "Taxa",
+      "payable_tax": "Imposto Devido",
+      "table_title": "Faixas de Imposto (Anual)",
+      "table_headers": [
+        "Nível",
+        "Renda Tributável",
+        "Taxa",
+        "Dedução"
+      ],
+      "ten_thousand_unit": "w",
+      "history": {
+        "title": "Estimativa de Imposto do Salário ¥{{salary}}, ",
+        "expression": "Antes do imposto {{salary}} - Seguro {{insurance}} - Deduções {{deduction}}, ",
+        "result": "Após o imposto ¥{{afterTax}} (Imposto ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Livro de Contas",
+      "expense": "Despesa",
+      "income": "Renda",
+      "add_record": "Adicionar Item",
+      "report": "Relatório",
+      "monthly_expense": "Despesa Mensal",
+      "monthly_income": "Renda Mensal",
+      "balance": "Saldo",
+      "no_records": "Ainda não há registros",
+      "note": "Nota",
+      "note_placeholder": "Adicionar nota...",
+      "report_title": "Relatório",
+      "total_expense": "Total de Despesas",
+      "total_income": "Total de Renda",
+      "expense_detail": "Detalhe da Despesa",
+      "income_detail": "Detalhe da Renda",
+      "delete_confirm_text": "Tem certeza de que deseja excluir este registro?",
+      "categories": {
+        "expense": {
+          "消费": "Gastos",
+          "餐饮": "Alimentação",
+          "购物": "Compras",
+          "住房": "Habitação",
+          "交通": "Transporte",
+          "通讯": "Comunicação",
+          "娱乐": "Entretenimento",
+          "医疗": "Saúde",
+          "教育": "Educação",
+          "其他": "Outros"
+        },
+        "income": {
+          "工资": "Salário",
+          "奖金": "Bônus",
+          "投资": "Investir",
+          "兼职": "Trabalho Paralelo",
+          "红包": "Pacote Vermelho",
+          "其他": "Outro"
+        }
+      },
+      "weekdays": [
+        "Dom",
+        "Seg",
+        "Ter",
+        "Qua",
+        "Qui",
+        "Sex",
+        "Sáb"
+      ]
+    },
+    "memo": {
+      "title": "Lembrete",
+      "search_placeholder": "Pesquisar lembretes...",
+      "no_title": "Sem Título",
+      "no_memos": "Ainda não há lembretes",
+      "title_label": "Título",
+      "content_placeholder": "Digite o conteúdo...",
+      "delete_confirm_text": "Tem certeza de que deseja excluir este lembrete?",
+      "pin": "Fixar",
+      "unpin": "Desfixar"
+    },
+    "health": {
+      "title": "Calculadora de Saúde",
+      "bmi_label": "Índice de Massa Corporal",
+      "bmr_label": "Taxa Metabólica Basal",
+      "tdee_label": "Gasto Energético Total Diário",
+      "gender": "Gênero",
+      "male": "Masculino",
+      "female": "Feminino",
+      "height": "Altura (cm)",
+      "weight": "Peso (kg)",
+      "age": "Idade",
+      "activity_level": "Nível de Atividade",
+      "activity": {
+        "sedentary": "Sedentário",
+        "light": "Leve (1-3 vezes por semana)",
+        "moderate": "Moderado (3-5 vezes por semana)",
+        "active": "Ativo (6-7 vezes por semana)",
+        "very_active": "Muito Ativo (Trabalho pesado diariamente)"
+      },
+      "status": {
+        "underweight": "Abaixo do Peso",
+        "normal": "Normal",
+        "overweight": "Acima do Peso",
+        "obese": "Obeso"
+      }
+    },
+    "graph": {
+      "title": "Gráfico de Funções",
+      "placeholder": "Insira a função, por exemplo, x^2, sin(x)...",
+      "x_min": "X Mínimo",
+      "x_max": "X Máximo"
+    },
+    "formula": {
+      "title": "Calculadora de Fórmulas",
+      "category_label": "Categoria",
+      "all": "Todos",
+      "select_formula": "Selecione a Fórmula",
+      "result_title": "Resultado",
+      "formula_label": "Fórmula",
+      "variables_label": "Variáveis",
+      "categories": {
+        "几何": "Geometria",
+        "物理": "Física",
+        "数学": "Matemática",
+        "金融": "Finanças",
+        "健康": "Saúde"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Área do Círculo",
+          "description": "Calcular área com raio",
+          "variables": {
+            "r": "Raio"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Perímetro do Círculo",
+          "description": "Calcular perímetro com raio",
+          "variables": {
+            "r": "Raio"
+          }
+        },
+        "sphere_volume": {
+          "name": "Volume da Esfera",
+          "description": "Calcular volume com raio",
+          "variables": {
+            "r": "Raio"
+          }
+        },
+        "triangle_area": {
+          "name": "Área do Triângulo",
+          "description": "Calcular área com base e altura",
+          "variables": {
+            "a": "Base",
+            "h": "Altura"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Área do Trapézio",
+          "description": "Calcular área com bases e altura",
+          "variables": {
+            "a": "Superior",
+            "b": "Inferior",
+            "h": "Altura"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Volume do Cilindro",
+          "description": "Calcular volume com raio e altura",
+          "variables": {
+            "r": "Raio",
+            "h": "Altura"
+          }
+        },
+        "cone_volume": {
+          "name": "Volume do Cone",
+          "description": "Calcular volume com raio e altura",
+          "variables": {
+            "r": "Raio",
+            "h": "Altura"
+          }
+        },
+        "speed": {
+          "name": "Velocidade",
+          "description": "Calcular velocidade com distância e tempo",
+          "variables": {
+            "s": "Distância",
+            "t": "Tempo"
+          }
+        },
+        "acceleration": {
+          "name": "Aceleração",
+          "description": "Calcular aceleração",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Segunda Lei de Newton",
+          "description": "Calcular força",
+          "variables": {
+            "m": "Massa(kg)",
+            "a": "Aceleração(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Energia Cinética",
+          "description": "Calcular energia cinética",
+          "variables": {
+            "m": "Massa(kg)",
+            "v": "Velocidade(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Energia Potencial",
+          "description": "Calcular energia potencial",
+          "variables": {
+            "m": "Massa(kg)",
+            "g": "g",
+            "h": "Altura(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Lei de Ohm",
+          "description": "Calcular corrente",
+          "variables": {
+            "U": "Tensão(V)",
+            "R": "Resistência(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Potência Elétrica",
+          "description": "Calcular potência",
+          "variables": {
+            "U": "Tensão(V)",
+            "I": "Corrente(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Teorema de Pitágoras",
+          "description": "Calcular hipotenusa",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Raiz Quadrática",
+          "description": "Discriminante de ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Juros Compostos",
+          "description": "Calcular total com juros",
+          "variables": {
+            "P": "Principal",
+            "r": "Taxa(%)",
+            "n": "Anos"
+          }
+        },
+        "bmi": {
+          "name": "IMC",
+          "description": "Calcular IMC com peso e altura",
+          "variables": {
+            "weight": "Peso(kg)",
+            "height": "Altura(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Desconto & Gorjeta",
+      "original_price": "Preço",
+      "price_placeholder": "Digite o valor",
+      "discount_label": "Desconto",
+      "percent": "Percentual",
+      "flat_amount": "Valor Fixo",
+      "tip_label": "Gorjeta",
+      "split_label": "Dividir",
+      "person_unit": "Pessoa",
+      "result_title": "Resultado",
+      "saved_amount": "Economizado",
+      "discounted_price": "Preço Final",
+      "tip_amount": "Valor da Gorjeta",
+      "total_price": "Preço Total",
+      "per_person": "Por Pessoa"
+    },
+    "date": {
+      "title": "Calculador de Data",
+      "diff_mode": "Diferença de Data",
+      "add_mode": "Cálculo de Data",
+      "convert_mode": "Conversor Lunar",
+      "start_date": "Data de Início",
+      "end_date": "Data Final",
+      "base_date": "Data Base",
+      "diff_time": "Diferença de Tempo",
+      "before": "Antes",
+      "after": "Depois",
+      "result_title": "Resultado",
+      "diff_days": "Diferença de Dias",
+      "workdays": "Dias Úteis",
+      "weeks": "Semanas",
+      "hours": "Horas",
+      "minutes": "Minutos",
+      "solar2lunar": "Solar para Lunar",
+      "lunar2solar": "Lunar para Solar",
+      "solar_date": "Data Solar",
+      "lunar": "Lunar",
+      "shengxiao": "Zodíaco",
+      "jieqi": "Termo Solar",
+      "festival": "Feriado",
+      "leap_month": "Mês Intercalar",
+      "leap_month_prefix": "Intercalar ",
+      "workdays_label": "Dias Úteis (Sem Sábados e Domingos)",
+      "lunar_year": "Ano Lunar",
+      "lunar_month": "Mês Lunar",
+      "lunar_day": "Dia Lunar",
+      "invalid_date": "Data inválida"
+    },
+    "finance": {
+      "title": "Calculadora Financeira",
+      "bank_mode": "Poupança Bancária",
+      "compound_mode": "Juros Compostos",
+      "regular_mode": "Investimento Regular",
+      "interest_yuan": "Juros",
+      "interest_profit": "Lucro",
+      "total_yuan": "Total",
+      "total_sum": "Valor Total",
+      "bank_info": "Informe os Dados da Poupança",
+      "bank_amount": "Valor",
+      "bank_years": "Anos",
+      "rate_percent": "Taxa (%)",
+      "compound_info": "Informe os Dados do Investimento",
+      "initial_principal": "Capital Inicial",
+      "invest_years": "Anos",
+      "return_rate": "Taxa de Retorno (%)",
+      "compound_freq": "Frequência",
+      "regular_info": "Informe os Dados Regulares",
+      "regular_amount": "Valor Periódico",
+      "regular_years": "Anos",
+      "regular_rate": "Taxa de Retorno (%)",
+      "regular_freq": "Frequência",
+      "total_return": "Retorno Total",
+      "total_invest": "Total Investido",
+      "overflow_error": "Estouro de Valor",
+      "freq": {
+        "year": "Anual",
+        "month": "Mensal",
+        "day": "Diário",
+        "week": "Semanal"
+      }
+    }
+  }
+}

@@ -1,11 +1,13 @@
 import { useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './RadixConverter.scss'
 
 type InputType = 'dec' | 'bin' | 'oct' | 'hex'
 
 export default function RadixConverter() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [decimal, setDecimal] = useState('')
   const [binary, setBinary] = useState('')
@@ -81,13 +83,13 @@ export default function RadixConverter() {
 
   return (
     <div className="tool-page radix">
-      <ToolHeader title="进制转换" />
+      <ToolHeader title={t('tool.radix.title')} />
       
       <main className="tool-content">
         <div className="input-group">
           {(['dec', 'bin', 'oct', 'hex'] as const).map((type) => (
             <div key={type} className={`input-row ${activeInput === type ? 'active' : ''}`} onClick={() => setActiveInput(type)}>
-              <label>{type === 'dec' ? '十进制 (DEC)' : type === 'bin' ? '二进制 (BIN)' : type === 'oct' ? '八进制 (OCT)' : '十六进制 (HEX)'}</label>
+              <label>{t(`tool.radix.${type}`)}</label>
               <input
                 type="text"
                 value={type === 'dec' ? decimal : type === 'bin' ? binary : type === 'oct' ? octal : hex}

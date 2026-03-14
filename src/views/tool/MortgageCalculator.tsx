@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './MortgageCalculator.scss'
 
@@ -12,6 +13,7 @@ type ScheduleItem = {
 }
 
 export default function MortgageCalculator() {
+  const { t } = useTranslation()
   const [loanType, setLoanType] = useState<'commercial' | 'fund' | 'combined'>('commercial')
   const [commercialAmount, setCommercialAmount] = useState<number | null>(null)
   const [commercialRateType, setCommercialRateType] = useState<'lpr' | 'base'>('lpr')
@@ -158,34 +160,34 @@ export default function MortgageCalculator() {
   const pieData = useMemo(() => {
     if (!result) return []
     return [
-      { name: '贷款本金', value: result.loanAmount, color: '#3498db' },
-      { name: '支付利息', value: result.totalInterest, color: '#e74c3c' }
+      { name: t('tool.mortgage.principal'), value: result.loanAmount, color: '#3498db' },
+      { name: t('tool.mortgage.interest'), value: result.totalInterest, color: '#e74c3c' }
     ]
-  }, [result])
+  }, [result, t])
 
   return (
     <div className="tool-page mortgage">
-      <ToolHeader title="房贷计算" />
+      <ToolHeader title={t('tool.mortgage.title')} />
       
       <main className="tool-content">
         <div className="loan-type-tabs">
-          <button className={loanType === 'commercial' ? 'active' : ''} onClick={() => setLoanType('commercial')}>商业贷款</button>
-          <button className={loanType === 'fund' ? 'active' : ''} onClick={() => setLoanType('fund')}>公积金</button>
-          <button className={loanType === 'combined' ? 'active' : ''} onClick={() => setLoanType('combined')}>组合贷款</button>
+          <button className={loanType === 'commercial' ? 'active' : ''} onClick={() => setLoanType('commercial')}>{t('tool.mortgage.commercial_loan')}</button>
+          <button className={loanType === 'fund' ? 'active' : ''} onClick={() => setLoanType('fund')}>{t('tool.mortgage.fund_loan')}</button>
+          <button className={loanType === 'combined' ? 'active' : ''} onClick={() => setLoanType('combined')}>{t('tool.mortgage.combined_loan')}</button>
         </div>
 
         <div className="input-section">
           {(loanType === 'fund' || loanType === 'combined') && (
             <>
               <div className="input-row">
-                <label>{loanType === 'combined' ? '公积金贷款金额' : '贷款金额'}</label>
+                <label>{loanType === 'combined' ? t('tool.mortgage.fund_loan_amount') : t('tool.mortgage.loan_amount')}</label>
                 <div className="input-field">
                   <input type="number" value={fundAmount || ''} onChange={(e) => setFundAmount(e.target.value ? Number(e.target.value) : null)} placeholder="" />
-                  <span className="unit">万元</span>
+                  <span className="unit">{t('common.ten_thousand_yuan')}</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>{loanType === 'combined' ? '公积金贷款利率' : '贷款利率'}</label>
+                <label>{loanType === 'combined' ? t('tool.mortgage.fund_loan_rate') : t('tool.mortgage.loan_rate')}</label>
                 <div className="input-field">
                   <input type="number" value={fundRate} onChange={(e) => setFundRate(Number(e.target.value))} step="0.01" />
                   <span className="unit">%</span>
@@ -197,30 +199,30 @@ export default function MortgageCalculator() {
           {(loanType === 'commercial' || loanType === 'combined') && (
             <>
               <div className="input-row">
-                <label>{loanType === 'combined' ? '商业贷款金额' : '贷款金额'}</label>
+                <label>{loanType === 'combined' ? t('tool.mortgage.commercial_loan_amount') : t('tool.mortgage.loan_amount')}</label>
                 <div className="input-field">
                   <input type="number" value={commercialAmount || ''} onChange={(e) => setCommercialAmount(e.target.value ? Number(e.target.value) : null)} placeholder="" />
-                  <span className="unit">万元</span>
+                  <span className="unit">{t('common.ten_thousand_yuan')}</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>商业贷款利率方式</label>
+                <label>{t('tool.mortgage.commercial_rate_type')}</label>
                 <div className="toggle-group">
                   <button className={commercialRateType === 'lpr' ? 'active' : ''} onClick={() => setCommercialRateType('lpr')}>LPR</button>
-                  <button className={commercialRateType === 'base' ? 'active' : ''} onClick={() => setCommercialRateType('base')}>基准利率</button>
+                  <button className={commercialRateType === 'base' ? 'active' : ''} onClick={() => setCommercialRateType('base')}>{t('tool.mortgage.base_rate')}</button>
                 </div>
               </div>
               {commercialRateType === 'lpr' ? (
                 <>
                   <div className="input-row">
-                    <label>商业LPR</label>
+                    <label>{t('tool.mortgage.commercial_lpr')}</label>
                     <div className="input-field">
                       <input type="number" value={commercialLpr} onChange={(e) => setCommercialLpr(Number(e.target.value))} step="0.01" />
                       <span className="unit">%</span>
                     </div>
                   </div>
                   <div className="input-row">
-                    <label>商业基点</label>
+                    <label>{t('tool.mortgage.commercial_basis_points')}</label>
                     <div className="basis-points-input">
                       <button onClick={() => setCommercialBasisPoints(Math.min(300, commercialBasisPoints + 5))}>+</button>
                       <button onClick={() => setCommercialBasisPoints(Math.max(-100, commercialBasisPoints - 5))}>-</button>
@@ -231,7 +233,7 @@ export default function MortgageCalculator() {
                 </>
               ) : (
                 <div className="input-row">
-                  <label>{loanType === 'combined' ? '商业贷款利率' : '贷款利率'}</label>
+                  <label>{loanType === 'combined' ? t('tool.mortgage.commercial_loan_rate') : t('tool.mortgage.loan_rate')}</label>
                   <div className="input-field">
                     <input type="number" value={commercialBaseRate} onChange={(e) => setCommercialBaseRate(Number(e.target.value))} step="0.01" />
                     <span className="unit">%</span>
@@ -242,18 +244,18 @@ export default function MortgageCalculator() {
           )}
 
           <div className="input-row">
-            <label>贷款年限</label>
+            <label>{t('tool.mortgage.loan_years')}</label>
             <div className="input-field">
               <input type="number" value={loanYears || ''} onChange={(e) => setLoanYears(e.target.value ? Number(e.target.value) : null)} placeholder="" />
-              <span className="unit">年</span>
+              <span className="unit">{t('common.year')}</span>
             </div>
           </div>
 
           <div className="input-row">
-            <label>贷款方式</label>
+            <label>{t('tool.mortgage.payment_method')}</label>
             <div className="toggle-group">
-              <button className={paymentType === 'equal' ? 'active' : ''} onClick={() => setPaymentType('equal')}>等额本息</button>
-              <button className={paymentType === 'principal' ? 'active' : ''} onClick={() => setPaymentType('principal')}>等额本金</button>
+              <button className={paymentType === 'equal' ? 'active' : ''} onClick={() => setPaymentType('equal')}>{t('tool.mortgage.equal_monthly')}</button>
+              <button className={paymentType === 'principal' ? 'active' : ''} onClick={() => setPaymentType('principal')}>{t('tool.mortgage.equal_principal')}</button>
             </div>
           </div>
         </div>
@@ -265,16 +267,16 @@ export default function MortgageCalculator() {
                 <div className="payment-summary">
                   {paymentType === 'equal' ? (
                     <div className="result-main">
-                      <div className="label">每月还款</div>
+                      <div className="label">{t('tool.mortgage.monthly_payment')}</div>
                       <div className="value">¥ {formatMoney(result.monthlyPayment)}</div>
                     </div>
                   ) : (
                     <>
                       <div className="result-main">
-                        <div className="label">首月还款</div>
+                        <div className="label">{t('tool.mortgage.first_month_payment')}</div>
                         <div className="value">¥ {formatMoney(result.firstMonthPayment)}</div>
                       </div>
-                      <div className="result-sub">末月还款：¥ {formatMoney(result.lastMonthPayment)}</div>
+                      <div className="result-sub">{t('tool.mortgage.last_month_payment')}：¥ {formatMoney(result.lastMonthPayment)}</div>
                     </>
                   )}
                 </div>
@@ -313,27 +315,27 @@ export default function MortgageCalculator() {
               
               <div className="result-details">
                 <div className="detail-item">
-                  <span className="label">贷款总额</span>
+                  <span className="label">{t('tool.mortgage.loan_total')}</span>
                   <span className="value">¥ {formatMoney(result.loanAmount)}</span>
                 </div>
                 <div className="detail-item">
-                  <span className="label">还款总额</span>
+                  <span className="label">{t('tool.mortgage.total_payment')}</span>
                   <span className="value">¥ {formatMoney(result.totalPayment)}</span>
                 </div>
                 <div className="detail-item">
-                  <span className="label">支付利息</span>
+                  <span className="label">{t('tool.mortgage.interest')}</span>
                   <span className="value highlight">¥ {formatMoney(result.totalInterest)}</span>
                 </div>
                 <div className="detail-item">
-                  <span className="label">还款期数</span>
-                  <span className="value">{(loanYears || 0) * 12} 期</span>
+                  <span className="label">{t('tool.mortgage.repayment_periods')}</span>
+                  <span className="value">{(loanYears || 0) * 12} {t('tool.mortgage.period_unit')}</span>
                 </div>
               </div>
             </div>
 
             <div className="schedule-section">
               <button className="toggle-schedule" onClick={() => setShowSchedule(!showSchedule)}>
-                {showSchedule ? '隐藏还款明细' : '查看还款明细'}
+                {showSchedule ? t('tool.mortgage.hide_schedule') : t('tool.mortgage.view_schedule')}
                 <svg className={showSchedule ? 'open' : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
                   <path d="M6 9l6 6 6-6"/>
                 </svg>
@@ -344,11 +346,11 @@ export default function MortgageCalculator() {
                   <table className="schedule-table">
                     <thead>
                       <tr>
-                        <th>期数</th>
-                        <th>月供</th>
-                        <th>本金</th>
-                        <th>利息</th>
-                        <th>剩余</th>
+                        <th>{t('tool.mortgage.period')}</th>
+                        <th>{t('tool.mortgage.monthly_pay')}</th>
+                        <th>{t('tool.mortgage.principal_part')}</th>
+                        <th>{t('tool.mortgage.interest_part')}</th>
+                        <th>{t('tool.mortgage.remaining')}</th>
                       </tr>
                     </thead>
                     <tbody>

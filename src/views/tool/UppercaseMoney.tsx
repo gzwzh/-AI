@@ -1,9 +1,11 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './UppercaseMoney.scss'
 
 export default function UppercaseMoney() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const [amount, setAmount] = useState(location.state?.amount?.replace(/[^0-9.]/g, '') || '0')
@@ -24,12 +26,12 @@ export default function UppercaseMoney() {
     }
   }, [location.state])
 
-  const digitMap = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
-  const unitMap = ['', '拾', '佰', '仟']
-  const bigUnitMap = ['', '万', '亿', '兆']
+  const digitMap = useMemo(() => t('tool.uppercase.digits', { returnObjects: true }) as string[], [t])
+  const unitMap = useMemo(() => t('tool.uppercase.units', { returnObjects: true }) as string[], [t])
+  const bigUnitMap = useMemo(() => t('tool.uppercase.big_units', { returnObjects: true }) as string[], [t])
 
-  const toUppercase = (num: number): string => {
-    if (num === 0) return '零元整'
+  const toUppercase = useCallback((num: number): string => {
+    if (num === 0) return t('tool.uppercase.zero_yuan_整')
     const isNegative = num < 0
     num = Math.abs(num)
     const [intPart, decPart] = num.toFixed(2).split('.')
@@ -50,28 +52,28 @@ export default function UppercaseMoney() {
           zeroFlag = true
           if (unitPos === 0 && bigUnitPos > 0) result += bigUnitMap[bigUnitPos]
         } else {
-          if (zeroFlag) { result += '零'; zeroFlag = false }
+          if (zeroFlag) { result += t('tool.uppercase.zero'); zeroFlag = false }
           result += digitMap[digit] + unitMap[unitPos]
           if (unitPos === 0 && bigUnitPos > 0) result += bigUnitMap[bigUnitPos]
         }
       }
-      result += '元'
+      result += t('tool.uppercase.yuan')
     }
     
     if (jiao === 0 && fen === 0) {
-      result += '整'
+      result += t('tool.uppercase.zheng')
     } else {
-      if (jiao > 0) result += digitMap[jiao] + '角'
-      else if (parseInt(intPart) > 0) result += '零'
-      if (fen > 0) result += digitMap[fen] + '分'
+      if (jiao > 0) result += digitMap[jiao] + t('tool.uppercase.jiao')
+      else if (parseInt(intPart) > 0) result += t('tool.uppercase.zero')
+      if (fen > 0) result += digitMap[fen] + t('tool.uppercase.fen')
     }
-    return (isNegative ? '负' : '') + result
-  }
+    return (isNegative ? t('tool.uppercase.negative') : '') + result
+  }, [t, digitMap, unitMap, bigUnitMap])
 
   const uppercase = useMemo(() => {
     const val = parseFloat(amount)
-    return isNaN(val) ? '零元整' : toUppercase(val)
-  }, [amount])
+    return isNaN(val) ? t('tool.uppercase.zero_yuan_整') : toUppercase(val)
+  }, [amount, toUppercase, t])
 
   const inputDigit = (digit: string) => {
     if (amount === '0' && digit !== '.') setAmount(digit)
@@ -109,11 +111,11 @@ export default function UppercaseMoney() {
   return (
     <div className="tool-page uppercase">
       <ToolHeader 
-        title="大写金额" 
+        title={t('tool.uppercase.title')} 
         onBack={handleBack}
         extraActions={fromCalculator && (
           <button className="return-text-btn" onClick={handleBack}>
-            返回计算器
+            {t('tool.uppercase.back_to_calculator')}
           </button>
         )}
       />
@@ -125,7 +127,7 @@ export default function UppercaseMoney() {
             <span className="value">{amount}</span>
           </div>
           <div className={`uppercase-display ${copied ? 'copied' : ''}`} onClick={copyResult}>
-            <div className="label">{copied ? '已复制到剪贴板' : '大写金额 (点击复制)'}</div>
+            <div className="label">{copied ? t('common.copied_to_clipboard') : t('tool.uppercase.click_to_copy')}</div>
             <div className="value">{uppercase}</div>
             {copied && (
               <div className="copy-indicator">
@@ -141,7 +143,7 @@ export default function UppercaseMoney() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
                   <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                返回计算器
+                {t('tool.uppercase.back_to_calculator')}
               </button>
             </div>
           )}

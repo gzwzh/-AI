@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './FractionCalculator.scss'
 
@@ -12,6 +13,7 @@ interface MixedFraction {
 type ActiveInput = 'w1' | 'n1' | 'd1' | 'w2' | 'n2' | 'd2'
 
 export default function FractionCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [fraction1, setFraction1] = useState<MixedFraction>({ whole: 0, numerator: 0, denominator: 1 })
   const [fraction2, setFraction2] = useState<MixedFraction>({ whole: 0, numerator: 0, denominator: 1 })
@@ -51,7 +53,7 @@ export default function FractionCalculator() {
   const calculate = () => {
     setError('')
     if (fraction1.denominator === 0 || fraction2.denominator === 0) {
-      setError('分母不能为0')
+      setError(t('calculator.fraction.error_zero_denominator'))
       setHasCalculated(false)
       return
     }
@@ -66,7 +68,7 @@ export default function FractionCalculator() {
       case '×': resNum = f1.num * f2.num; resDen = f1.den * f2.den; break
       case '÷':
         if (f2.num === 0) { 
-          setError('除数不能为0')
+          setError(t('calculator.fraction.error_zero_divisor'))
           setHasCalculated(false)
           return 
         }
@@ -131,7 +133,7 @@ export default function FractionCalculator() {
 
   return (
     <div className="calculator-page fraction">
-      <ToolHeader title="分数计算器" />
+      <ToolHeader title={t('modules.items.fraction')} />
       
       <main className="calculator">
         <div className="fraction-area">

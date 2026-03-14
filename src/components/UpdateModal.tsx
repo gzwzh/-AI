@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import './UpdateModal.scss'
 
 interface UpdateInfo {
@@ -11,6 +12,7 @@ interface UpdateInfo {
 }
 
 const UpdateModal = () => {
+  const { t } = useTranslation()
   const [showModal, setShowModal] = useState(false)
   const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null)
   const [currentVersion, setCurrentVersion] = useState('')
@@ -56,16 +58,16 @@ const UpdateModal = () => {
   return (
     <div className="update-modal-overlay">
       <div className="update-modal">
-        <h2>发现新版本</h2>
+        <h2>{t('update.found_new')}</h2>
         <div className="version-info">
-          <span className="current-version">当前版本 {currentVersion}</span>
+          <span className="current-version">{t('update.current_version')} {currentVersion}</span>
           <span className="arrow">→</span>
           <span className="new-version">{updateInfo.version}</span>
         </div>
         
         {updateInfo.update_log && (
           <div className="update-log-container">
-            <div className="log-title">更新内容</div>
+            <div className="log-title">{t('update.update_log')}</div>
             <div className="update-log">
               {updateInfo.update_log}
             </div>
@@ -75,11 +77,11 @@ const UpdateModal = () => {
         <div className="actions">
           {!updateInfo.is_mandatory && (
             <button className="cancel" onClick={handleClose}>
-              稍后提醒
+              {t('update.remind_later')}
             </button>
           )}
           <button className="confirm" onClick={handleUpdate}>
-            立即更新
+            {t('update.update_now')}
           </button>
         </div>
       </div>

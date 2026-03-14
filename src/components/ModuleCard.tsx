@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import type { ModuleItem } from '@/config/modules'
 import ModuleIcon from './ModuleIcon'
 import './ModuleCard.scss'
@@ -8,6 +9,7 @@ interface ModuleCardProps {
 }
 
 export default function ModuleCard({ module }: ModuleCardProps) {
+  const { t } = useTranslation()
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -19,7 +21,7 @@ export default function ModuleCard({ module }: ModuleCardProps) {
       <div className="card-icon">
         <ModuleIcon name={module.icon} />
       </div>
-      <span className="card-name">{module.name}</span>
+      <span className="card-name">{t(`modules.items.${module.id}`)}</span>
     </div>
   )
 }

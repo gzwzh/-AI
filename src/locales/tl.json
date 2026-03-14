@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "All Calculator",
+    "app_icon_alt": "All Calculator Icon",
+    "subtext": "Isang produkto ng Kunqiong AI",
+    "software_custom": "Software Customization",
+    "feedback": "Feedback",
+    "history": "History",
+    "icon_alt": "Icon",
+    "back": "Back",
+    "copy_result": "I-kopya ang Resulta",
+    "to_uppercase": "I-convert sa Uppercase",
+    "error": "Error",
+    "copied": "Nakopya",
+    "clear": "Linisin",
+    "copied_to_clipboard": "Nakopya sa clipboard",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Taon",
+    "today": "Ngayon",
+    "yesterday": "Kahapon",
+    "days_ago": "araw na nakalipas",
+    "month_unit": "Buwan",
+    "day_unit": "Araw",
+    "year_unit": "Taon",
+    "confirm_delete": "Kumpirmahin ang Pagbura",
+    "cancel": "Kanselahin",
+    "confirm": "Kumpirma",
+    "save": "I-save",
+    "delete": "Burahin",
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "close": "Sara",
+    "switch_dark": "Mag-switch sa Dark Mode",
+    "switch_light": "Mag-switch sa Light Mode",
+    "language_switch": "Baguhin ang Wika",
+    "weekdays": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ]
+  },
+  "update": {
+    "found_new": "Nakita ang Bagong Bersyon",
+    "current_version": "Current Version",
+    "update_log": "Update Log",
+    "remind_later": "Tandaan Sa Kalaon",
+    "update_now": "I-update Ngayon"
+  },
+  "auth": {
+    "login_cancelled": "Nakansela ang Pag-login",
+    "click_to_logout": "Pindutin para mag-logout",
+    "logged_in": "Nakalog-in",
+    "logout": "Logout",
+    "click_to_login": "Pindutin para mag-login",
+    "logging_in": "Nag-log in...",
+    "login_register": "Log in/Register",
+    "login_failed": "Nabigong mag-log in",
+    "complete_login_in_browser": "Mangyaring kumpletohan ang pag-log in sa browser",
+    "cancel_login": "Kanselahin ang Pag-log in",
+    "login_timeout": "Nawala ang oras ng pag-log in",
+    "get_login_url_failed": "Nabigong makuha ang URL ng pag-log in",
+    "get_user_info_failed": "Nabigong makuha ang impormasyon ng user",
+    "logout_failed": "Nabigong mag-logout"
+  },
+  "ai": {
+    "module_direct": "Mabilis na Paghahango",
+    "open_module": "Buksan ang {{name}}, ",
+    "enter_now": "Pumasok Ngayon",
+    "currency_title": "Palitan ng Barya",
+    "view_details": "Tingnan ang Detalye",
+    "percent_title": "Kalkulasyon ng Percentage",
+    "uppercase_title": "Ibigay ang Wastong Halaga",
+    "convert_now": "I-convert Ngayon",
+    "date_title": "Kalkulasyon ng Petsa",
+    "view_date_details": "Tingnan ang Detalye ng Petsa",
+    "tax_title": "Kalkulador ng Buwis",
+    "go_calculate": "Magkalkula Ngayon",
+    "discount_title": "Kalkulador ng Diskwento",
+    "full_minus_title": "Pangkalahatang Pagbawas",
+    "tip_title": "Kalkulador ng Tip",
+    "go_pay": "Magbayad Ngayon",
+    "health_title": "Kalkulador ng Kalusugan",
+    "calc_now": "Kalkulahin Ngayon",
+    "graph_title": "Pagguhit ng Function",
+    "start_drawing": "Simulan ang Pagguhit",
+    "draw_function": "Guhitin ang function y = {{expr}}, ",
+    "open_graph_tool": "Bukas ang interactive graphing tool",
+    "unit_title": "Konversyon ng Unit",
+    "smart_calc_title": "Smart Kalkulador",
+    "math_title": "Smart Kalkulasyon"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Kalkulador",
+      "tool": "Mga Tool",
+      "converter": "Converter"
+    },
+    "items": {
+      "basic": "Basic Calculator",
+      "scientific": "Scientific Calculator",
+      "fraction": "Fraction Calculator",
+      "currency": "Currency Converter",
+      "relative": "Relative Call",
+      "mortgage": "Mortgage Calculator",
+      "tax": "Tax Calculator",
+      "date": "Date Calculator",
+      "radix": "Radix Converter",
+      "uppercase": "Uppercase Money",
+      "finance": "Finance Calculator",
+      "formula": "Formula Calculator",
+      "discount": "Discount & Tip",
+      "account": "Akuntasyon",
+      "memo": "Memo",
+      "health": "Kalkulador ng Kalusugan",
+      "graph": "Kalkulador ng Graph",
+      "length": "Laki",
+      "area": "Area",
+      "volume": "Bolumen",
+      "temperature": "Temperatura",
+      "speed": "Bilis",
+      "time": "Oras",
+      "weight": "Bigat",
+      "power": "Pwersa",
+      "heat": "Init",
+      "force": "Pwersa",
+      "pressure": "Presyon",
+      "capacity": "Kapasidad",
+      "data": "Pag-imbak ng Data"
+    }
+  },
+  "home": {
+    "search_placeholder": "Subukan ang AI Search, halimbawa, 100 dolyar, 100cm sa m...",
+    "smart_tips_label": "Matalinong Tips:",
+    "tips": {
+      "date": "Ano ang araw pagkatapos ng 100 araw?",
+      "tax": "Magkano ang buwis para sa 1.5w na suweldo?",
+      "uppercase": "Ang Halaga sa Uppercase",
+      "unit": "100cm sa m"
+    },
+    "smart_tag": "AI Smart Parse",
+    "search_results_title": "Mga Resulta ng Paghahanap",
+    "no_results_text": "Wala pang kaugnay na function, subukan ang ibang keyword"
+  },
+  "history": {
+    "title": "Kasaysayan",
+    "clear_all": "Tanggalin lahat",
+    "empty": "Wala pa ang kasaysayan",
+    "types": {
+      "basic": "Basic",
+      "scientific": "Pang-agham",
+      "converter": "Unit",
+      "currency": "Currency",
+      "health": "Kalusugan",
+      "discount": "Discount",
+      "tax": "Buwis",
+      "tool": "Tool",
+      "record": "Record"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Ang denominator ay hindi maaaring 0",
+      "error_zero_divisor": "Ang divisor ay hindi maaaring 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "I-convert",
+    "categories": {
+      "length": "Laki",
+      "area": "Area",
+      "volume": "Bolumen",
+      "weight": "Bigat",
+      "temperature": "Temperatura",
+      "speed": "Bilis",
+      "time": "Oras",
+      "power": "Pwersa",
+      "heat": "Init",
+      "force": "Pwersa",
+      "pressure": "Presyon",
+      "capacity": "Kapasidad",
+      "data": "Data Storage"
+    },
+    "units": {
+      "km": "kilometro",
+      "m": "metro",
+      "dm": "desimetro",
+      "cm": "sentimetro",
+      "mm": "milimetro",
+      "μm": "mikrometro",
+      "nm": "nanometro",
+      "mi": "milya",
+      "yd": "yarda",
+      "ft": "paa",
+      "in": "inch",
+      "nmi": "nautical mile",
+      "里": "Li (Chinese mile)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "square kilometer",
+      "ha": "hektar",
+      "m²": "square meter",
+      "dm²": "square decimeter",
+      "cm²": "square centimeter",
+      "mm²": "square millimeter",
+      "mi²": "square mile",
+      "acre": "acre",
+      "yd²": "square yard",
+      "ft²": "square foot",
+      "in²": "square inch",
+      "亩": "Mu",
+      "分": "Fen (area)",
+      "m³": "cubic meter",
+      "dm³": "cubic decimeter",
+      "cm³": "cubic centimeter",
+      "mm³": "cubic millimeter",
+      "L": "liter",
+      "mL": "milliliter",
+      "gal": "gallon (US)",
+      "gal(UK)": "gallon (UK)",
+      "pt": "pint",
+      "ft³": "cubic foot",
+      "in³": "cubic inch",
+      "t": "ton",
+      "kg": "kilogramo",
+      "g": "gramo",
+      "mg": "milligramo",
+      "μg": "microgramo",
+      "lb": "pound",
+      "oz": "ounce",
+      "ct": "karat",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Celsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "metro/segundo",
+      "km/h": "kilometro/oras",
+      "mph": "milya/oras",
+      "kn": "knot",
+      "Ma": "Mach",
+      "c": "bilis ng liwanag",
+      "世纪": "siglo",
+      "年": "taon",
+      "月": "buwan",
+      "周": "linggo",
+      "天": "araw",
+      "h": "oras",
+      "min": "minuto",
+      "s": "segundo",
+      "ms": "milisegundo",
+      "μs": "mikrosegundo",
+      "ns": "nanosegundo",
+      "kW": "kilowatt",
+      "W": "watt",
+      "mW": "milliwatt",
+      "hp": "horsepower",
+      "PS": "metric horsepower",
+      "kcal/s": "kcal/segundo",
+      "BTU/s": "BTU/segundo",
+      "kJ": "kilojoule",
+      "J": "joule",
+      "cal": "kalorya",
+      "kcal": "kilokalorya",
+      "Wh": "watt-oras",
+      "kWh": "kilowatt-oras",
+      "BTU": "British Thermal Unit",
+      "kN": "kilonewton",
+      "N": "newton",
+      "dyn": "dyne",
+      "kgf": "kilogram-force",
+      "gf": "gram-force",
+      "lbf": "pound-force",
+      "Pa": "pascal",
+      "hPa": "hectopascal",
+      "kPa": "kilopascal",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "millibar",
+      "atm": "atmosphere",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kiloliter",
+      "dL": "deciliter",
+      "cL": "centiliter",
+      "qt": "quart",
+      "cup": "cup",
+      "fl oz": "fluid ounce",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Panghahalipas ng Barya",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Converter ng Radix",
+      "dec": "Desimal (DEC)",
+      "bin": "Binary (BIN)",
+      "oct": "Octal (OCT)",
+      "hex": "Hexadecimal (HEX)"
+    },
+    "uppercase": {
+      "title": "Uppercase na Pera",
+      "zero_yuan_整": "Zero Yuan Lamang",
+      "zero": "Zero",
+      "digits": [
+        "Zero",
+        "Isa",
+        "Dalawa",
+        "Tatlo",
+        "Apat",
+        "Limang",
+        "Anim",
+        "Pito",
+        "Walo",
+        "Nawo"
+      ],
+      "units": [
+        ", ",
+        "Sampu",
+        "Isandaan",
+        "Isakamay"
+      ],
+      "big_units": [
+        ", ",
+        "Isakamay na Sampu",
+        "Isandaan Kamay",
+        "Trilyon"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Lamang",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Negatibo",
+      "back_to_calculator": "Balik sa Kalkulador",
+      "click_to_copy": "Uppercase (I-click para I-copy)"
+    },
+    "mortgage": {
+      "title": "Mortgage Kalkulador",
+      "commercial_loan": "Komersyal na Pautang",
+      "fund_loan": "Pautang ng Pondo",
+      "combined_loan": "Kombinadong Pautang",
+      "loan_amount": "Halaga ng Pautang",
+      "loan_rate": "Rate ng Pautang",
+      "fund_loan_amount": "Halaga ng Pautang ng Pondo",
+      "fund_loan_rate": "Rate ng Pautang ng Pondo",
+      "commercial_loan_amount": "Halaga ng Komersyal na Pautang",
+      "commercial_rate_type": "Uri ng Rate",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Basis Points",
+      "commercial_loan_rate": "Komersyal na Rate",
+      "principal": "Principal",
+      "interest": "Interes",
+      "equal_monthly": "Parehong Buwanang Pagbabayad",
+      "equal_principal": "Parehong Principal na Pagbabayad",
+      "payment_type": "Uri ng Pagbabayad",
+      "loan_years": "Taon ng Pautang",
+      "lpr_rate": "Rate ng LPR",
+      "basis_points": "BP",
+      "base_rate": "Base Rate",
+      "rate_type": "Uri ng Rate",
+      "total_payment": "Kabuuang Pagbabayad",
+      "total_interest": "Kabuuang Interes",
+      "monthly_payment": "Buwanang Pagbabayad",
+      "first_month_payment": "Unang Buwan",
+      "last_month_payment": "Huling Buwan",
+      "monthly_decrease": "Pang-matagalang Pagbaba",
+      "view_schedule": "Tingnan ang Schedule",
+      "hide_schedule": "Itago ang Schedule",
+      "schedule_title": "Schedule",
+      "period": "Panahon",
+      "monthly_pay": "Pagbabayad",
+      "principal_part": "Pangunahing Bahagi",
+      "interest_part": "Interes",
+      "remaining_principal": "Naiwang",
+      "payment_method": "Paraan",
+      "loan_total": "Kabuuang Pautang",
+      "repayment_periods": "Mga Panahon",
+      "period_unit": "Buwan",
+      "remaining": "Naiwang"
+    },
+    "relative": {
+      "title": "Relasyon",
+      "my_gender": "Ako ay:",
+      "placeholder": "I-click ang mga button sa ibaba para magdagdag ng relasyon",
+      "i_call_ta": "Kailanman ako sila:",
+      "ta_calls_me": "Silang ako:",
+      "reverse_check": "Baligtarin",
+      "example_title": "Karaniwang Mga Halimbawa",
+      "error_same_sex": "Ang pare-pareho na sekswalidad ay hindi pa suportado",
+      "error_not_found": "Ang relasyon ay napakalayo o wala sa database",
+      "error_calc": "Kamalian sa pagkalkula",
+      "prefix": "Ako ang ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Ama",
+        "m": "Ina",
+        "h": "Asawa",
+        "w": "Asawang Babae",
+        "ob": "May-ari na Kapatid",
+        "lb": "Mas Batang Kapatid",
+        "os": "Mas Matandang Kapatid",
+        "ls": "Mas Batang Kapatid",
+        "s": "Anak",
+        "d": "Anak na Babae"
+      },
+      "buttons": {
+        "f": "Ama",
+        "m": "Ina",
+        "h": "Asawa",
+        "w": "Asawang Babae",
+        "ob": "Kapatid+",
+        "lb": "Kapatid-",
+        "os": "Kapatid+",
+        "ls": "Kapatid-",
+        "s": "Anak",
+        "d": "Anak na Babae"
+      },
+      "examples": {
+        "爷爷": "Grandfather",
+        "外婆": "Grandmother",
+        "伯父": "Ating Tio (Matanda)",
+        "叔叔": "Ating Tio (Bata)",
+        "舅舅": "Ating Tio (Ina)",
+        "姑姑": "Aunt"
+      }
+    },
+    "tax": {
+      "title": "Kalkulador ng Bawas",
+      "salary_label": "Pang-magaan na Salariyo",
+      "insurance_label": "Seguro sa Kanser",
+      "deduction_label": "Espesyal na Deduksyon",
+      "threshold_label": "Umabot",
+      "hint": "Ang mga deduksyon ay kasama: edukasyon ng mga bata, pwesto, interes sa utang, etc.",
+      "after_tax_salary": "Salariyo pagkatapos ng buwis",
+      "taxable_income": "Nabuwisang kita",
+      "applicable_rate": "Rate",
+      "payable_tax": "Nabubuwis",
+      "table_title": "Mga Antas ng Buwis (Taon)",
+      "table_headers": [
+        "Antas",
+        "Nabuwisang kita",
+        "Rate",
+        "Deduksyon"
+      ],
+      "ten_thousand_unit": "w",
+      "history": {
+        "title": "Estimasyon ng Buwis sa Salariyo ¥{{salary}}, ",
+        "expression": "Nabuwis {{salary}} - Seguro {{insurance}} - Deduksyon {{deduction}}, ",
+        "result": "Pagkatapos ng buwis ¥{{afterTax}} (Buwis ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Aklat ng Account",
+      "expense": "Gastos",
+      "income": "Kita",
+      "add_record": "Magdagdag ng Item",
+      "report": "Ulat",
+      "monthly_expense": "Pang-magaan na Gastos",
+      "monthly_income": "Pang-magaan na Kita",
+      "balance": "Balanse",
+      "no_records": "Wala pa ring mga tala",
+      "note": "Tandaan",
+      "note_placeholder": "Magdagdag ng tandaan...",
+      "report_title": "Ulata",
+      "total_expense": "Kabuuang Gastos",
+      "total_income": "Kabuuang Kita",
+      "expense_detail": "Detalye ng Gastos",
+      "income_detail": "Detalye ng Kita",
+      "delete_confirm_text": "Sigurado ka bang tanggalin ang tala na ito?",
+      "categories": {
+        "expense": {
+          "消费": "Paggasta",
+          "餐饮": "Pagkain",
+          "购物": "Bibili",
+          "住房": "Bahay",
+          "交通": "Transportasyon",
+          "通讯": "Komunikasyon",
+          "娱乐": "Kasiyahan",
+          "医疗": "Medikal",
+          "教育": "Edukasyon",
+          "其他": "Iba"
+        },
+        "income": {
+          "工资": "Salaro",
+          "奖金": "Bonus",
+          "投资": "Invest",
+          "兼职": "Part-time",
+          "红包": "Red Packet",
+          "其他": "Iba pa"
+        }
+      },
+      "weekdays": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ]
+    },
+    "memo": {
+      "title": "Memo",
+      "search_placeholder": "Maghanap ng mga memo...",
+      "no_title": "Wala Pang Pamagat",
+      "no_memos": "Wala pa ang mga memo",
+      "title_label": "Pamagat",
+      "content_placeholder": "Ilagay ang nilalaman...",
+      "delete_confirm_text": "Sigurado ka bang tanggalin ang memo na ito?",
+      "pin": "Ipinin",
+      "unpin": "Hindi ipinin"
+    },
+    "health": {
+      "title": "Health Calc",
+      "bmi_label": "BMI Index",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Kasarian",
+      "male": "Lalaki",
+      "female": "Babae",
+      "height": "Taas (cm)",
+      "weight": "Timbang (kg)",
+      "age": "Edad",
+      "activity_level": "Antas ng Aktibidad",
+      "activity": {
+        "sedentary": "Sedentary",
+        "light": "Light (1-3 beses/kada linggo)",
+        "moderate": "Moderate (3-5 beses/kada linggo)",
+        "active": "Active (6-7 beses/kada linggo)",
+        "very_active": "Very Active (Daily heavy labor)"
+      },
+      "status": {
+        "underweight": "Underweight",
+        "normal": "Normal",
+        "overweight": "Overweight",
+        "obese": "Obese"
+      }
+    },
+    "graph": {
+      "title": "Function Graphing",
+      "placeholder": "Ipasok ang function, halimbawa, x^2, sin(x)...",
+      "x_min": "X Min",
+      "x_max": "X Max"
+    },
+    "formula": {
+      "title": "Formula Calculator",
+      "category_label": "Kategorya",
+      "all": "Lahat",
+      "select_formula": "Pumili ng Formula",
+      "result_title": "Resulta",
+      "formula_label": "Formula",
+      "variables_label": "Variables",
+      "categories": {
+        "几何": "Heometriya",
+        "物理": "Pisika",
+        "数学": "Matematika",
+        "金融": "Pananalapi",
+        "健康": "Kalusugan"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Area ng Bilog",
+          "description": "Kalkulahin ang area gamit ang radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Perimeter ng Bilog",
+          "description": "Kalkulahin ang perimeter gamit ang radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "sphere_volume": {
+          "name": "Volume ng Esfera",
+          "description": "Kalkulahin ang volume gamit ang radius",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "triangle_area": {
+          "name": "Area ng Trianhulo",
+          "description": "Kalkulahin ang area gamit ang base at taas",
+          "variables": {
+            "a": "Base",
+            "h": "Taas"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Area ng Trapezoide",
+          "description": "Kalkulahin ang area gamit ang mga base at taas",
+          "variables": {
+            "a": "Itaas",
+            "b": "Ilalim",
+            "h": "Taas"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Volume ng Silindro",
+          "description": "Kalkulahin ang volume gamit ang radius at taas",
+          "variables": {
+            "r": "Radius",
+            "h": "Taas"
+          }
+        },
+        "cone_volume": {
+          "name": "Volume ng Kono",
+          "description": "Kalkulahin ang volume gamit ang radius at taas",
+          "variables": {
+            "r": "Radius",
+            "h": "Taas"
+          }
+        },
+        "speed": {
+          "name": "Bilis",
+          "description": "Kalkulahin ang bilis gamit ang distansya at oras",
+          "variables": {
+            "s": "Distansya",
+            "t": "Oras"
+          }
+        },
+        "acceleration": {
+          "name": "Pagtaas",
+          "description": "Kalkulahin ang pagtaas",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Ikalawang Batas ni Newton",
+          "description": "Kalkulahin ang lakas",
+          "variables": {
+            "m": "Massa(kg)",
+            "a": "Pagtaas(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Kinetic Energy",
+          "description": "Kalkulahin ang kinetic energy",
+          "variables": {
+            "m": "Massa(kg)",
+            "v": "Bilis(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Potensyal na Energia",
+          "description": "Kalkulahin ang potensyal na enerhiya",
+          "variables": {
+            "m": "Massa(kg)",
+            "g": "g",
+            "h": "Taas(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Laws ng Ohm",
+          "description": "Kalkulahin ang kuryente",
+          "variables": {
+            "U": "Voltage(V)",
+            "R": "Resist(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Elektrikong Lakas",
+          "description": "Kalkulahin ang lakas",
+          "variables": {
+            "U": "Voltage(V)",
+            "I": "Kuryente(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Teorema ng Pythagoras",
+          "description": "Kalkulahin ang hypotenuse",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Pangunahing Root",
+          "description": "Discriminant ng ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Compound Interest",
+          "description": "Kalkulahin ang kabuuang may interes",
+          "variables": {
+            "P": "Principal",
+            "r": "Rate(%)",
+            "n": "Taon"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "Kalkulahin ang BMI gamit ang timbang at taas",
+          "variables": {
+            "weight": "Timbang(kg)",
+            "height": "Taas(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Discount & Tip",
+      "original_price": "Presyo",
+      "price_placeholder": "I-enter ang halaga",
+      "discount_label": "Discount",
+      "percent": "Porsyento",
+      "flat_amount": "Flat Amount",
+      "tip_label": "Tip",
+      "split_label": "Split",
+      "person_unit": "Tao",
+      "result_title": "Resulta",
+      "saved_amount": "Nakatipid",
+      "discounted_price": "Huling Presyo",
+      "tip_amount": "Tip Amount",
+      "total_price": "Kabuuang Presyo",
+      "per_person": "Bawat Tao"
+    },
+    "date": {
+      "title": "Calculator ng Petsa",
+      "diff_mode": "Pagkakaiba ng Petsa",
+      "add_mode": "Pagkalkula ng Petsa",
+      "convert_mode": "Lunar Conv",
+      "start_date": "Petsa ng Simula",
+      "end_date": "Petsa ng Wakas",
+      "base_date": "Base Date",
+      "diff_time": "Pagkakaiba ng Oras",
+      "before": "Bago",
+      "after": "Pagkatapos",
+      "result_title": "Resulta",
+      "diff_days": "Pagkakaibang Araw",
+      "workdays": "Araw ng Trabaho",
+      "weeks": "Linggo",
+      "hours": "Oras",
+      "minutes": "Minuto",
+      "solar2lunar": "Solar sa Lunar",
+      "lunar2solar": "Lunar sa Solar",
+      "solar_date": "Solar Date",
+      "lunar": "Lunar",
+      "shengxiao": "Zodiac",
+      "jieqi": "Mga Panahon ng Solar",
+      "festival": "Pasko",
+      "leap_month": "Leap Month",
+      "leap_month_prefix": "Leap ",
+      "workdays_label": "Araw ng Trabaho (Wala ang Sabado at Linggo)",
+      "lunar_year": "Taon ng Lunar",
+      "lunar_month": "Buwan ng Lunar",
+      "lunar_day": "Araw ng Lunar",
+      "invalid_date": "Hindi wastong petsa"
+    },
+    "finance": {
+      "title": "Finance Calculator",
+      "bank_mode": "Bank Savings",
+      "compound_mode": "Compound Interest",
+      "regular_mode": "Regular Invest",
+      "interest_yuan": "Interes",
+      "interest_profit": "Kita",
+      "total_yuan": "Kabuuang Halaga",
+      "total_sum": "Kabuuang Halaga",
+      "bank_info": "I-input ang Impormasyon ng Pondo",
+      "bank_amount": "Halaga",
+      "bank_years": "Taon",
+      "rate_percent": "Rate (%)",
+      "compound_info": "I-input ang Impormasyon ng Inbestasyon",
+      "initial_principal": "Unang Principal",
+      "invest_years": "Taon",
+      "return_rate": "Rate ng Kita (%)",
+      "compound_freq": "Frequency",
+      "regular_info": "I-input ang Impormasyon ng Regular",
+      "regular_amount": "Halagang Bawat Periodo",
+      "regular_years": "Taon",
+      "regular_rate": "Rate ng Kita (%)",
+      "regular_freq": "Frequency",
+      "total_return": "Kabuuang Kita",
+      "total_invest": "Kabuuang Paghahatid",
+      "overflow_error": "OverFlow Error",
+      "freq": {
+        "year": "Taon-taon",
+        "month": "Buwan-buwan",
+        "day": "Araw-araw",
+        "week": "Linggo-linggo"
+      }
+    }
+  }
+}

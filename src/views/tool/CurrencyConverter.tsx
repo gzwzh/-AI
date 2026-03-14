@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './CurrencyConverter.scss'
 
@@ -26,6 +27,7 @@ const defaultCurrencies: Currency[] = [
 ]
 
 export default function CurrencyConverter() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const [currencies] = useState<Currency[]>(() => {
@@ -88,13 +90,13 @@ export default function CurrencyConverter() {
 
   return (
     <div className="tool-page currency">
-      <ToolHeader title="汇率换算" />
+      <ToolHeader title={t('tool.currency.title')} />
       
       <main className="tool-content">
         <div className="convert-area">
           <div className="currency-row">
             <select value={fromCurrency} onChange={(e) => setFromCurrency(Number(e.target.value))} className="currency-select">
-              {currencies.map((c, i) => <option key={c.code} value={i}>{c.symbol} {c.name} ({c.code})</option>)}
+              {currencies.map((c, i) => <option key={c.code} value={i}>{c.symbol} {t(`tool.currency.names.${c.code}`)} ({c.code})</option>)}
             </select>
             <div className="value-display from">{fromValue}</div>
           </div>
@@ -110,7 +112,7 @@ export default function CurrencyConverter() {
           
           <div className="currency-row">
             <select value={toCurrency} onChange={(e) => setToCurrency(Number(e.target.value))} className="currency-select">
-              {currencies.map((c, i) => <option key={c.code} value={i}>{c.symbol} {c.name} ({c.code})</option>)}
+              {currencies.map((c, i) => <option key={c.code} value={i}>{c.symbol} {t(`tool.currency.names.${c.code}`)} ({c.code})</option>)}
             </select>
             <div className="value-display to">{toValue}</div>
           </div>

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useAuthStore } from '@/stores/auth'
 import {
   generateSignedNonce,
@@ -12,6 +13,7 @@ import Toast from './Toast'
 import './LoginButton.scss'
 
 export default function LoginButton() {
+  const { t } = useTranslation()
   const {
     token,
     userInfo,
@@ -39,10 +41,11 @@ export default function LoginButton() {
     cancelFlagRef.current = true
     setShowCancelDialog(false)
     setIsLoading(false)
-    showToast('登录已取消')
+    showToast(t('auth.login_cancelled'))
   }
 
   const handleLogin = async () => {
+    console.log('Login button clicked');
     try {
       setIsLoading(true)
       setError(null)
@@ -94,18 +97,18 @@ export default function LoginButton() {
           console.log('用户取消了登录')
           // Toast 已在 handleCancelLogin 中显示
         } else if (error instanceof Error && error.message === '登录已取消') {
-          showToast('登录已取消')
+          showToast(t('auth.login_cancelled'))
         } else if (error instanceof Error) {
           setError(error.message)
         } else {
-          setError('登录失败')
+          setError(t('auth.login_failed'))
         }
         setToken(null)
         setUserInfo(null)
       }
     } catch (error) {
       console.error('登录流程错误:', error)
-      setError(error instanceof Error ? error.message : '登录失败')
+      setError(error instanceof Error ? error.message : t('auth.login_failed'))
       setShowCancelDialog(false)
     } finally {
       setIsLoading(false)
@@ -135,7 +138,7 @@ export default function LoginButton() {
           className="login-button logged-in"
           onClick={() => setMenuOpen((open) => !open)}
           disabled={isLoading}
-          title="点击退出登录"
+          title={t('auth.click_to_logout')}
         >
           <div className="user-avatar">
             <img src={userInfo.avatar} alt={userInfo.nickname} />
@@ -150,7 +153,7 @@ export default function LoginButton() {
               </div>
               <div>
                 <div className="login-menu-name">{userInfo.nickname}</div>
-                <div className="login-menu-status">已登录</div>
+                <div className="login-menu-status">{t('auth.logged_in')}</div>
               </div>
             </div>
             <div className="login-menu-divider" />
@@ -162,7 +165,7 @@ export default function LoginButton() {
               }}
             >
               <span className="login-menu-logout-icon">↩</span>
-              <span>退出登录</span>
+              <span>{t('auth.logout')}</span>
             </div>
           </div>
         )}
@@ -177,13 +180,13 @@ export default function LoginButton() {
         className="login-button"
         onClick={handleLogin}
         disabled={isLoading}
-        title="点击登录"
+        title={t('auth.click_to_login')}
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </svg>
-        <span className="login-text">{isLoading ? '登录中...' : '登录/注册'}</span>
+        <span className="login-text">{isLoading ? t('auth.logging_in') : t('auth.login_register')}</span>
       </button>
       {error && <div className="login-error-text">{error}</div>}
       
@@ -197,8 +200,8 @@ export default function LoginButton() {
                 <path d="M12 6v6l4 2" />
               </svg>
             </div>
-            <div className="toast-message">请在浏览器中完成登录</div>
-            <button className="toast-close cancel-btn" onClick={handleCancelLogin}>取消登录</button>
+            <div className="toast-message">{t('auth.complete_login_in_browser')}</div>
+            <button className="toast-close cancel-btn" onClick={handleCancelLogin}>{t('auth.cancel_login')}</button>
           </div>
         </div>
       )}

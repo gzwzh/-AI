@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "تمام کیلکولیٹر",
+    "app_icon_alt": "تمام کیلکولیٹر آئیکن",
+    "subtext": "کونقیونگ AI کا ایک پیداوار",
+    "software_custom": "سافٹ ویئر کسٹمائزیشن",
+    "feedback": "تسلیم",
+    "history": "تاریخ",
+    "icon_alt": "آئیکن",
+    "back": "پیچھے",
+    "copy_result": "نتائج کا کاپی کریں",
+    "to_uppercase": "بڑے حروف میں تبدیل کریں",
+    "error": "غلطی",
+    "copied": "کاپی کیا گیا",
+    "clear": "صاف کریں",
+    "copied_to_clipboard": "کلپ بورڈ میں کاپی کیا گیا",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "سال",
+    "today": "آج",
+    "yesterday": "کل",
+    "days_ago": "دن پہلے",
+    "month_unit": "ماہ",
+    "day_unit": "دن",
+    "year_unit": "سال",
+    "confirm_delete": "حذف کی تصدیق کریں",
+    "cancel": "منسوخ کریں",
+    "confirm": "تسلیم کریں",
+    "save": "بچائیں",
+    "delete": "حذف کریں",
+    "minimize": "کم کریں",
+    "maximize": "زیادہ کریں",
+    "close": "بند کریں",
+    "switch_dark": "ظلمت کی فضا میں تبدیل ہوں",
+    "switch_light": "روشن فضا میں تبدیل ہوں",
+    "language_switch": "زبان تبدیل کریں",
+    "weekdays": [
+      "اتوار",
+      "سوموار",
+      "منگل",
+      "بدھ",
+      "جمعرات",
+      "جمعہ",
+      "ہفتہ"
+    ]
+  },
+  "update": {
+    "found_new": "نیا ورژن پایا گیا",
+    "current_version": " موجودہ ورژن",
+    "update_log": "تحسین لاگ",
+    "remind_later": "بعد میں یاد دہانی کریں",
+    "update_now": "اب تحقیق کریں"
+  },
+  "auth": {
+    "login_cancelled": "لاگ ان منسوخ کر دیا گیا",
+    "click_to_logout": "لاگ آؤٹ کرنے کے لیے کلک کریں",
+    "logged_in": "لاگ ان کیا گیا",
+    "logout": "لاگ آؤٹ",
+    "click_to_login": "لاگ ان کرنے کے لیے کلک کریں",
+    "logging_in": "لاگ ان کر رہے ہیں...",
+    "login_register": "لاگ ان / رجسٹر کریں",
+    "login_failed": "لاگ ان ناکام",
+    "complete_login_in_browser": "براﺅزر میں لاگ ان مکمل کریں",
+    "cancel_login": "لاگ ان منسوخ کریں",
+    "login_timeout": "لاگ ان وقت گزرجاتا ہے",
+    "get_login_url_failed": "لاگ ان یو آر ایل حاصل کرنے میں ناکام",
+    "get_user_info_failed": "صارف کی معلومات حاصل کرنے میں ناکام",
+    "logout_failed": "لاگ آؤٹ ناکام"
+  },
+  "ai": {
+    "module_direct": "سریع رسائی",
+    "open_module": "کھولیں {{name}}, ",
+    "enter_now": "ابھی داخل ہوں",
+    "currency_title": " currencies تبدیلی",
+    "view_details": "تفصیلات دیکھیں",
+    "percent_title": "Percentage Calc",
+    "uppercase_title": "Amount to Uppercase",
+    "convert_now": "اب تبدیل کریں",
+    "date_title": "Date Calculation",
+    "view_date_details": "Date Details دیکھیں",
+    "tax_title": "Tax Calculator",
+    "go_calculate": "Calculate کریں",
+    "discount_title": "Discount Calc",
+    "full_minus_title": "Full Reduction",
+    "tip_title": "Tip Calc",
+    "go_pay": "Pay کریں",
+    "health_title": "Health Calc",
+    "calc_now": "Calculate کریں",
+    "graph_title": "Function Graphing",
+    "start_drawing": "Drawing شروع کریں",
+    "draw_function": "Function y = {{expr}} کھینچیں",
+    "open_graph_tool": "انٹرایکٹو گرافنگ ٹول کھولیں",
+    "unit_title": "Unit Conversion",
+    "smart_calc_title": "Smart Calc",
+    "math_title": "Smart Calculation"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Calculator",
+      "tool": "Tools",
+      "converter": "Converter"
+    },
+    "items": {
+      "basic": "Basic Calculator",
+      "scientific": "Scientific Calculator",
+      "fraction": "Fraction Calculator",
+      "currency": "Currency Converter",
+      "relative": "Relative Call",
+      "mortgage": "Mortgage Calculator",
+      "tax": "Tax Calculator",
+      "date": "Date Calculator",
+      "radix": "Radix Converter",
+      "uppercase": "Uppercase Money",
+      "finance": "Finance Calculator",
+      "formula": "Formula Calculator",
+      "discount": "Discount & Tip",
+      "account": "حساب کتاب",
+      "memo": "یاددہانی",
+      "health": "صحت کا کیلکولیٹر",
+      "graph": "گراف کیلکولیٹر",
+      "length": "طول",
+      "area": "کھیت",
+      "volume": "حجم",
+      "temperature": "درجہ حرارت",
+      "speed": "سرعت",
+      "time": "وقت",
+      "weight": "وزن",
+      "power": "طاقت",
+      "heat": "گرمی",
+      "force": "جن",
+      "pressure": "فشار",
+      "capacity": "کیپیسٹی",
+      "data": "ڈیٹا اسٹوریج"
+    }
+  },
+  "home": {
+    "search_placeholder": "AI سرچ کو آزماو، مثال کے طور پر، 100 ڈالر، 100 سینٹی میٹر کو میٹر میں...",
+    "smart_tips_label": "ذہیانہ نصائح:",
+    "tips": {
+      "date": "100 دن بعد کونسا تاریخ ہوگی؟",
+      "tax": "1.5 وی سال کے لیے کتنی ٹیکس ہوگی؟",
+      "uppercase": "مقدار کو بڑے حروف میں تبدیل کریں",
+      "unit": "100 سینٹی میٹر کو میٹر میں"
+    },
+    "smart_tag": "AI ذہیانہ تحلیل",
+    "search_results_title": "تریلا جات کے نتائج",
+    "no_results_text": "کوئی متعلقہ فنکشن نہیں ملا، دوبارہ کوئی دوسری کلیدی الفاظ کو آزماو"
+  },
+  "history": {
+    "title": "تاریخ",
+    "clear_all": "سب کو صاف کریں",
+    "empty": "ابھی تک کوئی تاریخ نہیں",
+    "types": {
+      "basic": "بنیادی",
+      "scientific": "علمی",
+      "converter": "یونٹ",
+      "currency": " currencies",
+      "health": "صحت",
+      "discount": "Discount",
+      "tax": "ٹیکس",
+      "tool": "ٹول",
+      "record": "ریکارڈ"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "ہر 0 نہیں ہوسکتا",
+      "error_zero_divisor": "قسیم کنندہ 0 نہیں ہوسکتا"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Convert",
+    "categories": {
+      "length": "طول",
+      "area": "کھیت",
+      "volume": "حجم",
+      "weight": "وزن",
+      "temperature": "درجہ حرارت",
+      "speed": "سرعت",
+      "time": "وقت",
+      "power": "طاقت",
+      "heat": "گرمی",
+      "force": "اُفق",
+      "pressure": "دبائی",
+      "capacity": "کیپیسٹی",
+      "data": "ڈیٹا اسٹوریج"
+    },
+    "units": {
+      "km": "کلو میٹر",
+      "m": "میٹر",
+      "dm": "ڈیسی میٹر",
+      "cm": "سینٹی میٹر",
+      "mm": "ملی میٹر",
+      "μm": "مائکرو میٹر",
+      "nm": "نینو میٹر",
+      "mi": "میل",
+      "yd": "یارڈ",
+      "ft": "فٹ",
+      "in": "انچ",
+      "nmi": "نیوٹیکل میل",
+      "里": "لی (چینی میل)",
+      "丈": "چانگ",
+      "尺": "چی",
+      "寸": "چون",
+      "km²": "مربع کلو میٹر",
+      "ha": "ہیکٹر",
+      "m²": "مربع میٹر",
+      "dm²": "مربع ڈیسی میٹر",
+      "cm²": "مربع سینٹی میٹر",
+      "mm²": "مربع ملی میٹر",
+      "mi²": "مربع میل",
+      "acre": "ایکر",
+      "yd²": "مربع یارڈ",
+      "ft²": "مربع فٹ",
+      "in²": "مربع انچ",
+      "亩": "میو",
+      "分": "فن (کھیت)",
+      "m³": "مکعب میٹر",
+      "dm³": "مکعب ڈیسی میٹر",
+      "cm³": "مکعب سینٹی میٹر",
+      "mm³": "مکعب ملی میٹر",
+      "L": "لیٹر",
+      "mL": "ملی لیٹر",
+      "gal": "گیلن (امریکی)",
+      "gal(UK)": "گیلن (برطانوی)",
+      "pt": "پنٹ",
+      "ft³": "مکعب فٹ",
+      "in³": "مکعب انچ",
+      "t": "ٹن",
+      "kg": "کلو گرام",
+      "g": "گرام",
+      "mg": "ملی گرام",
+      "μg": "مائکرو گرام",
+      "lb": "پاؤنڈ",
+      "oz": "اونس",
+      "ct": "کیریٹ",
+      "斤": "جن",
+      "两": "لیانگ",
+      "钱": "قیان",
+      "°C": "سلسیئس",
+      "°F": "فرینہائٹ",
+      "K": "کیلوین",
+      "°R": "رینکائن",
+      "°Ré": "ریمور",
+      "m/s": "میٹر/سیکنڈ",
+      "km/h": "کلومیٹر/گھنٹہ",
+      "mph": "میل/گھنٹہ",
+      "kn": "نات",
+      "Ma": "ماچ",
+      "c": " lumière کی سپیڈ",
+      "世纪": "صدی",
+      "年": "سال",
+      "月": "ماہ",
+      "周": "ہفتہ",
+      "天": "دن",
+      "h": "گھنٹہ",
+      "min": "منٹ",
+      "s": "سیکنڈ",
+      "ms": "ملی سیکنڈ",
+      "μs": "ماکرو سیکنڈ",
+      "ns": "نانو سیکنڈ",
+      "kW": "کلو وات",
+      "W": "وات",
+      "mW": "ملی وات",
+      "hp": "ہارس پاور",
+      "PS": "میٹرک ہارس پاور",
+      "kcal/s": "کلو کیلوری/سیکنڈ",
+      "BTU/s": "BTU/سیکنڈ",
+      "kJ": "کلو جول",
+      "J": "جول",
+      "cal": "کیلوری",
+      "kcal": "کلو کیلوری",
+      "Wh": "وات گھنٹہ",
+      "kWh": "کلو وات گھنٹہ",
+      "BTU": "برطانوی حرارتی اکائی",
+      "kN": "کلو نیوٹن",
+      "N": "نیوٹن",
+      "dyn": "ڈائن",
+      "kgf": "کلو گرام فورس",
+      "gf": "گرام فورس",
+      "lbf": "پاؤنڈ فورس",
+      "Pa": "پاسکل",
+      "hPa": "ہیکٹو پاسکل",
+      "kPa": "کلو پاسکل",
+      "MPa": "میگاپاسکل",
+      "bar": "بار",
+      "mbar": "میلی بار",
+      "atm": "اتموسفر",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "ٹور",
+      "kL": "کلو لیٹر",
+      "dL": "ڈیسی لیٹر",
+      "cL": "سینٹی لیٹر",
+      "qt": "کوارٹ",
+      "cup": "کپ",
+      "fl oz": "فلوئڈ اونس",
+      "bit": "بٹ",
+      "B": "بائٹ",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "کرنسی کا تبدیلی",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "ریڈیکس کنورٹر",
+      "dec": "ڈیسیمل (DEC)",
+      "bin": "بائنری (BIN)",
+      "oct": "آکٹل (OCT)",
+      "hex": "ہیکس ڈیسیمال (HEX)"
+    },
+    "uppercase": {
+      "title": "سر کے پیسہ",
+      "zero_yuan_整": "صفر روپے صرف",
+      "zero": "صفر",
+      "digits": [
+        "صفر",
+        "ایک",
+        "دو",
+        "تین",
+        "چار",
+        "پانچ",
+        "چھ",
+        "سات",
+        "آٹھ",
+        "نواں"
+      ],
+      "units": [
+        ", ",
+        "دس",
+        "سیکڑا",
+        "ہزار"
+      ],
+      "big_units": [
+        ", ",
+        "دس ہزار",
+        "ایک سو ملیون",
+        "تریلیئن"
+      ],
+      "yuan": "یوآن",
+      "zheng": "صرف",
+      "jiao": "جیاو",
+      "fen": "فن",
+      "negative": "منفی",
+      "back_to_calculator": "کیلکولیٹر کی طرف واپس جائیں",
+      "click_to_copy": "سرخی (کاپی کرنے کے لیے کلک کریں)"
+    },
+    "mortgage": {
+      "title": "مُرگیج کیلکولیٹر",
+      "commercial_loan": "تجارتی قرض",
+      "fund_loan": "ہاؤسنگ فنڈ",
+      "combined_loan": "مربوط قرض",
+      "loan_amount": "قرض کی رقم",
+      "loan_rate": "قرض کی شرح",
+      "fund_loan_amount": "فنڈ قرض کی رقم",
+      "fund_loan_rate": "فنڈ قرض کی شرح",
+      "commercial_loan_amount": "تجارتی قرض کی رقم",
+      "commercial_rate_type": "شرح کی نوعیت",
+      "commercial_lpr": "ایل پی آر",
+      "commercial_basis_points": "بیسز پوائنٹس",
+      "commercial_loan_rate": "تجارتی شرح",
+      "principal": "اسالہ",
+      "interest": "ایسالہ",
+      "equal_monthly": "مساوی ماہانہ ادا",
+      "equal_principal": "مساوی اصل ادا",
+      "payment_type": "ادائیگی کی نوعیت",
+      "loan_years": "قرض کے سال",
+      "lpr_rate": "ایل پی آر شرح",
+      "basis_points": "بی پی",
+      "base_rate": "بنیادی شرح",
+      "rate_type": "شرح کی نوعیت",
+      "total_payment": "کل ادا",
+      "total_interest": "کل ایسالہ",
+      "monthly_payment": "ماہانہ ادا",
+      "first_month_payment": "پہلا مہینہ",
+      "last_month_payment": "آخری مہینہ",
+      "monthly_decrease": "ماہانہ کمی",
+      "view_schedule": "شیڈول دیکھیں",
+      "hide_schedule": "شیڈول چھپائیں",
+      "schedule_title": "شیڈول",
+      "period": " périod",
+      "monthly_pay": "دفعہ",
+      "principal_part": "قسط",
+      "interest_part": "ایسٹریج",
+      "remaining_principal": "باقی",
+      "payment_method": "طریقہ",
+      "loan_total": "Loan Total",
+      "repayment_periods": "فروشی کے اوقات",
+      "period_unit": "ماہ",
+      "remaining": "باقی"
+    },
+    "relative": {
+      "title": "نابالغ کال",
+      "my_gender": "میرا جنس:",
+      "placeholder": "نیچے دیے گئے بٹنوں پر کلک کریں تاکہ رشتہ شامل کریں",
+      "i_call_ta": "میں انہیں کہتا ہوں:",
+      "ta_calls_me": "وہ میری طرف سے کہتے ہیں:",
+      "reverse_check": "معکوس",
+      "example_title": "عام مثالیں",
+      "error_same_sex": "اس جنس کے رشتہ کی حمایت نہیں کی گئی ہے",
+      "error_not_found": "رشتہ دور ہے یا ڈیٹا بیس میں موجود نہیں ہے",
+      "error_calc": "حساب کتاب کی خطا",
+      "prefix": "میرا ",
+      "connector": "'s ",
+      "labels": {
+        "f": "والد",
+        "m": "والدہ",
+        "h": "شوہر",
+        "w": "بیوی",
+        "ob": "بڑا بھائی",
+        "lb": "چھوٹا بھائی",
+        "os": "بڑی بہن",
+        "ls": "چھوٹی بہن",
+        "s": "بیٹا",
+        "d": "بیٹی"
+      },
+      "buttons": {
+        "f": "والد",
+        "m": "والدہ",
+        "h": "شوہر",
+        "w": "بیوی",
+        "ob": "بھائی+",
+        "lb": "بھائی-",
+        "os": "بہن+",
+        "ls": "بہن-",
+        "s": "بیٹا",
+        "d": "بیٹی"
+      },
+      "examples": {
+        "爷爷": "دیدا",
+        "外婆": "دیدی",
+        "伯父": "اونکل(بڑا)",
+        "叔叔": "اونکل(چھوٹا)",
+        "舅舅": "اونکل(ماں کا بھائی)",
+        "姑姑": "نینو"
+      }
+    },
+    "tax": {
+      "title": "ٹیکس کیلکولیٹر",
+      "salary_label": "ماہانہ سالری",
+      "insurance_label": "سوسائٹی انشورنس",
+      "deduction_label": "خصوصی ڈیڈکشنز",
+      "threshold_label": "Threshold",
+      "hint": "ڈیڈکشنز میں: بچوں کی تعلیم، رہائش، کرایہ، مارجیج لیون، وغیرہ شامل ہیں۔",
+      "after_tax_salary": "ٹیکس کے بعد کی سالری",
+      "taxable_income": "ٹیکس پر قابل گزارش آمدنی",
+      "applicable_rate": "دراخواست",
+      "payable_tax": "ادائیگی ٹیکس",
+      "table_title": "ٹیکس بریکٹس (سالانہ)",
+      "table_headers": [
+        "مستوى",
+        "ٹیکس پر قابل گزارش آمدنی",
+        "دراخواست",
+        "ڈیڈکشن"
+      ],
+      "ten_thousand_unit": "ہزار",
+      "history": {
+        "title": "سالری ¥{{salary}} ٹیکس کا تخمینہ",
+        "expression": "پہلے ٹیکس {{salary}} - انشورنس {{insurance}} - ڈیڈکشنز {{deduction}}, ",
+        "result": "ٹیکس کے بعد ¥{{afterTax}} (ٹیکس ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "اکاؤنٹ بوک",
+      "expense": "خسارہ",
+      "income": "آمدنی",
+      "add_record": "آئٹم شامل کریں",
+      "report": "رپورٹ",
+      "monthly_expense": "ماہانہ خسارہ",
+      "monthly_income": "ماہانہ آمدنی",
+      "balance": "بیلنس",
+      "no_records": "ابھی کوئی ریکارڈ نہیں ہے",
+      "note": "نوٹ",
+      "note_placeholder": "نوٹ شامل کریں...",
+      "report_title": "رپورٹ",
+      "total_expense": "کل خسارہ",
+      "total_income": "کل آمدنی",
+      "expense_detail": "خسارہ کی تفصیل",
+      "income_detail": "آمدنی کی تفصیل",
+      "delete_confirm_text": "کیا آپ یہ ریکارڈ حذف کرنے کے بارے میں یقینی ہیں؟",
+      "categories": {
+        "expense": {
+          "消费": "خرچ",
+          "餐饮": "خوراک",
+          "购物": "خریداری",
+          "住房": "رہائش",
+          "交通": "نقل و حمل",
+          "通讯": "اتصالات",
+          "娱乐": "ترقی",
+          "医疗": "طبی",
+          "教育": "تعلیم",
+          "其他": "دیگر"
+        },
+        "income": {
+          "工资": "سالری",
+          "奖金": "انعام",
+          "投资": "سرمایہ کاری",
+          "兼职": "پارٹ ٹائم",
+          "红包": "لیٹر چاکلیٹ",
+          "其他": "دیگر"
+        }
+      },
+      "weekdays": [
+        "اتوار",
+        "پیر",
+        "منگل",
+        "بدھ",
+        "جمعرات",
+        "جمعہ",
+        "ہفتہ"
+      ]
+    },
+    "memo": {
+      "title": "یادداشت",
+      "search_placeholder": "یادداشت تلاش کریں...",
+      "no_title": "کوئی عنوان نہیں",
+      "no_memos": "ابھی کوئی یادداشت نہیں",
+      "title_label": "عنوان",
+      "content_placeholder": "محتوا درج کریں...",
+      "delete_confirm_text": "کیا آپ اس یادداشت کو حذف کرنا چاہتے ہیں؟",
+      "pin": "پن کریں",
+      "unpin": "پن کریں۔"
+    },
+    "health": {
+      "title": "صحت کی حساب کتاب",
+      "bmi_label": "BMI انڈیکس",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "جنس",
+      "male": "مرد",
+      "female": "خاتون",
+      "height": "قد (سینٹی میٹر)",
+      "weight": "وزن (کلوگرام)",
+      "age": "عمر",
+      "activity_level": "فعالیت کی سطح",
+      "activity": {
+        "sedentary": "بے حرکت",
+        "light": "ہلکا (ہفتے میں 1-3 بار)",
+        "moderate": "متوسط (ہفتے میں 3-5 بار)",
+        "active": "فعال (ہفتے میں 6-7 بار)",
+        "very_active": "بہت فعال (روزانہ بھاری کام)"
+      },
+      "status": {
+        "underweight": "کم وزن",
+        "normal": "معمولی",
+        "overweight": "زائد وزن",
+        "obese": "چربی"
+      }
+    },
+    "graph": {
+      "title": "فراکشن گرافنگ",
+      "placeholder": "فراکشن داخل کریں، جیسے x^2, sin(x)...",
+      "x_min": "X منیم",
+      "x_max": "X ماکس"
+    },
+    "formula": {
+      "title": "فراکشن کیلکولیٹر",
+      "category_label": "کیٹیگری",
+      "all": "سب کچھ",
+      "select_formula": "فراکشن منتخب کریں",
+      "result_title": "نتیجہ",
+      "formula_label": "فرمولہ",
+      "variables_label": "چرکھے",
+      "categories": {
+        "几何": "جیومیٹری",
+        "物理": "فزکس",
+        "数学": "ریاضیات",
+        "金融": "مالیات",
+        "健康": "صحت"
+      },
+      "items": {
+        "circle_area": {
+          "name": "حلقہ کا رقبہ",
+          "description": "Radius سے رقبہ حساب کریں",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "circle_perimeter": {
+          "name": "حلقہ کا محیط",
+          "description": "Radius سے محیط حساب کریں",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "sphere_volume": {
+          "name": "گولہ کا حجم",
+          "description": "Radius سے حجم حساب کریں",
+          "variables": {
+            "r": "Radius"
+          }
+        },
+        "triangle_area": {
+          "name": "مثلث کا رقبہ",
+          "description": "Base اور Height سے رقبہ حساب کریں",
+          "variables": {
+            "a": "Base",
+            "h": "Height"
+          }
+        },
+        "trapezoid_area": {
+          "name": "چوکبند کا رقبہ",
+          "description": "Bases اور Height سے رقبہ حساب کریں",
+          "variables": {
+            "a": "Top",
+            "b": "Bottom",
+            "h": "Height"
+          }
+        },
+        "cylinder_volume": {
+          "name": "سلینڈر کا حجم",
+          "description": "Radius اور Height سے حجم حساب کریں",
+          "variables": {
+            "r": "Radius",
+            "h": "Height"
+          }
+        },
+        "cone_volume": {
+          "name": "کن کا حجم",
+          "description": "Radius اور Height سے حجم حساب کریں",
+          "variables": {
+            "r": "Radius",
+            "h": "Height"
+          }
+        },
+        "speed": {
+          "name": "سرعت",
+          "description": "Distance اور Time سے سرعت حساب کریں",
+          "variables": {
+            "s": "Distance",
+            "t": "Time"
+          }
+        },
+        "acceleration": {
+          "name": "تسارع",
+          "description": "تسارع حساب کریں",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "نیوٹن کا دوسرا قانون",
+          "description": "Force حساب کریں",
+          "variables": {
+            "m": "Mass(kg)",
+            "a": "Accel(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "گتی انرجی",
+          "description": "گتی انرجی حساب کریں",
+          "variables": {
+            "m": "Mass(kg)",
+            "v": "سرعت (م/س)"
+          }
+        },
+        "potential_energy": {
+          "name": "انرژی کینیٹک",
+          "description": "انرژی پتانشیل کا حساب لگائیں",
+          "variables": {
+            "m": "جرم (کے جی)",
+            "g": "جی",
+            "h": "چائی (م)"
+          }
+        },
+        "ohm_law": {
+          "name": "اوم کا قانون",
+          "description": "کریں کا حساب لگائیں",
+          "variables": {
+            "U": "ولٹیج (وی)",
+            "R": "روزیسٹ (اومیگا)"
+          }
+        },
+        "power_electric": {
+          "name": "بجلی کی طاقت",
+          "description": "طاقت کا حساب لگائیں",
+          "variables": {
+            "U": "ولٹیج (وی)",
+            "I": "کریں (ای)"
+          }
+        },
+        "pythagorean": {
+          "name": "پیتھاگوراس کا قاعدہ",
+          "description": "قائموں کا حساب لگائیں",
+          "variables": {
+            "a": "ای",
+            "b": "بی"
+          }
+        },
+        "quadratic": {
+          "name": "د二次 ریڑھ",
+          "description": "ax²+bx+c=0 ڈسکریمننٹ",
+          "variables": {
+            "a": "ای",
+            "b": "بی",
+            "c": "سی"
+          }
+        },
+        "compound_interest": {
+          "name": "مرکب سود",
+          "description": "سود کے ساتھ کل کا حساب لگائیں",
+          "variables": {
+            "P": "اصل رقم",
+            "r": "نرخ (%)",
+            "n": "سال"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "وزن اور قد کے ساتھ BMI کا حساب لگائیں",
+          "variables": {
+            "weight": "وزن (کے جی)",
+            "height": "قد (م)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Discount & Tip",
+      "original_price": "قیمت",
+      "price_placeholder": "Amount درج کریں",
+      "discount_label": "Discount",
+      "percent": "Percent",
+      "flat_amount": "Flat Amount",
+      "tip_label": "Tip",
+      "split_label": "Split",
+      "person_unit": "Person",
+      "result_title": "Result",
+      "saved_amount": "Saved",
+      "discounted_price": "Final Price",
+      "tip_amount": "Tip Amount",
+      "total_price": "Total Price",
+      "per_person": "Per Person"
+    },
+    "date": {
+      "title": "Date Calculator",
+      "diff_mode": "Date Diff",
+      "add_mode": "Date Calc",
+      "convert_mode": "چاندی کا تبدیلی",
+      "start_date": "شروع کی تاریخ",
+      "end_date": "آخر کی تاریخ",
+      "base_date": "بنیادی تاریخ",
+      "diff_time": "وقت کا فرق",
+      "before": "پہلے",
+      "after": "بعد",
+      "result_title": "نتیجہ",
+      "diff_days": "دن کا فرق",
+      "workdays": "کام کرنے والے دن",
+      "weeks": "ہفتے",
+      "hours": "گھنٹے",
+      "minutes": "منٹ",
+      "solar2lunar": "سولر سے چاندی",
+      "lunar2solar": "چاندی سے سولر",
+      "solar_date": "سولر تاریخ",
+      "lunar": "چاندی",
+      "shengxiao": "چندی کا نام",
+      "jieqi": "سولر مدت",
+      "festival": "تعطیلات",
+      "leap_month": "فروری ماہ",
+      "leap_month_prefix": "فروری ",
+      "workdays_label": "کام کرنے والے دن (سب سے زیادہ ہفتے)",
+      "lunar_year": "چاندی کا سال",
+      "lunar_month": "چاندی کا ماہ",
+      "lunar_day": "چاندی کا دن",
+      "invalid_date": "غیر معتبر تاریخ"
+    },
+    "finance": {
+      "title": "مالیاتی حساب ٹول",
+      "bank_mode": "بینک بچت",
+      "compound_mode": "مرکب سود",
+      "regular_mode": "معمولی سرمایہ داری",
+      "interest_yuan": "سود",
+      "interest_profit": "فائدہ",
+      "total_yuan": "کل",
+      "total_sum": "کل رقم",
+      "bank_info": "بچت کی معلومات داخل کریں",
+      "bank_amount": "رقم",
+      "bank_years": "سال",
+      "rate_percent": "دروازہ (%)",
+      "compound_info": "سرمایہ داری کی معلومات داخل کریں",
+      "initial_principal": "ابتدائی اصل",
+      "invest_years": "سال",
+      "return_rate": "واپسی درجہ (%)",
+      "compound_freq": "آمدنی کی فریکوئنسی",
+      "regular_info": "معمولی معلومات داخل کریں",
+      "regular_amount": "دورانیہ رقم",
+      "regular_years": "سال",
+      "regular_rate": "واپسی درجہ (%)",
+      "regular_freq": "آمدنی کی فریکوئنسی",
+      "total_return": "کل واپسی",
+      "total_invest": "کل ایکسٹ کر",
+      "overflow_error": "قدرت سے باہر قیمت",
+      "freq": {
+        "year": "سالانہ",
+        "month": "ماہانہ",
+        "day": "روزانہ",
+        "week": "ہفتہ وار"
+      }
+    }
+  }
+}

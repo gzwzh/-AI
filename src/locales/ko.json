@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "모든 계산기",
+    "app_icon_alt": "모든 계산기 아이콘",
+    "subtext": "쿤칭 AI의 제품",
+    "software_custom": "소프트웨어 맞춤 설정",
+    "feedback": "피드백",
+    "history": "역사",
+    "icon_alt": "아이콘",
+    "back": "뒤로",
+    "copy_result": "결과 복사",
+    "to_uppercase": "대문자로",
+    "error": "오류",
+    "copied": "복사됨",
+    "clear": "지우기",
+    "copied_to_clipboard": "클립보드에 복사됨",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "년",
+    "today": "오늘",
+    "yesterday": "어제",
+    "days_ago": "일 전",
+    "month_unit": "월",
+    "day_unit": "일",
+    "year_unit": "년",
+    "confirm_delete": "삭제 확인",
+    "cancel": "취소",
+    "confirm": "확인",
+    "save": "저장",
+    "delete": "삭제",
+    "minimize": "최소화",
+    "maximize": "최대화",
+    "close": "닫기",
+    "switch_dark": "다크 모드로 전환",
+    "switch_light": "라이트 모드로 전환",
+    "language_switch": "언어 변경",
+    "weekdays": [
+      "일요일",
+      "월요일",
+      "화요일",
+      "수요일",
+      "목요일",
+      "금요일",
+      "토요일"
+    ]
+  },
+  "update": {
+    "found_new": "새 버전 발견됨",
+    "current_version": "현재 버전",
+    "update_log": "업데이트 로그",
+    "remind_later": "나중에 다시 알려줘",
+    "update_now": "지금 업데이트"
+  },
+  "auth": {
+    "login_cancelled": "로그인 취소됨",
+    "click_to_logout": "로그아웃하려면 클릭하세요",
+    "logged_in": "로그인됨",
+    "logout": "로그아웃",
+    "click_to_login": "로그인하려면 클릭하세요",
+    "logging_in": "로그인 중...",
+    "login_register": "로그인/등록",
+    "login_failed": "로그인 실패",
+    "complete_login_in_browser": "브라우저에서 로그인을 완료해 주세요",
+    "cancel_login": "로그인 취소",
+    "login_timeout": "로그인 시간 초과",
+    "get_login_url_failed": "로그인 URL을 가져오지 못했습니다",
+    "get_user_info_failed": "사용자 정보를 가져오지 못했습니다",
+    "logout_failed": "로그아웃 실패"
+  },
+  "ai": {
+    "module_direct": "빠른 접근",
+    "open_module": ", {{name}} 열기",
+    "enter_now": "지금 입력",
+    "currency_title": "통화 교환",
+    "view_details": "상세 정보 보기",
+    "percent_title": "백분율 계산",
+    "uppercase_title": "금액을 대문자로 변환",
+    "convert_now": "즉시 변환",
+    "date_title": "날짜 계산",
+    "view_date_details": "날짜 상세 정보 보기",
+    "tax_title": "세금 계산기",
+    "go_calculate": "계산하기",
+    "discount_title": "할인 계산",
+    "full_minus_title": "전체 감면",
+    "tip_title": "팁 계산",
+    "go_pay": "결제하기",
+    "health_title": "건강 계산기",
+    "calc_now": "지금 계산",
+    "graph_title": "함수 그래프 그리기",
+    "start_drawing": "그리기 시작",
+    "draw_function": "함수 y = {{expr}} 그려주기",
+    "open_graph_tool": "인터랙티브 그래프 도구 열기",
+    "unit_title": "단위 변환",
+    "smart_calc_title": "스마트 계산기",
+    "math_title": "스마트 계산"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "계산기",
+      "tool": "도구",
+      "converter": "변환기"
+    },
+    "items": {
+      "basic": "기본 계산기",
+      "scientific": "과학 계산기",
+      "fraction": "분수 계산기",
+      "currency": "통화 변환기",
+      "relative": "상대 전화",
+      "mortgage": "모기지 계산기",
+      "tax": "세금 계산기",
+      "date": "날짜 계산기",
+      "radix": "진법 변환기",
+      "uppercase": "금액을 대문자로",
+      "finance": "재무 계산기",
+      "formula": "공식 계산기",
+      "discount": "할인 및 팁",
+      "account": "계좌장",
+      "memo": "메모",
+      "health": "건강 계산기",
+      "graph": "그래프 계산기",
+      "length": "길이",
+      "area": "면적",
+      "volume": "부피",
+      "temperature": "온도",
+      "speed": "속도",
+      "time": "시간",
+      "weight": "무게",
+      "power": "전력",
+      "heat": "열량",
+      "force": "힘",
+      "pressure": "압력",
+      "capacity": "용량",
+      "data": "데이터 저장소"
+    }
+  },
+  "home": {
+    "search_placeholder": "AI 검색을 시도해 보세요, 예: 100 달러, 100cm를 m로...",
+    "smart_tips_label": "스마트 팁:",
+    "tips": {
+      "date": "100일 후는 어떤 날짜입니까?",
+      "tax": "1.5w 급여의 세금은 얼마입니까?",
+      "uppercase": "금액을 대문자로 변환",
+      "unit": "100cm를 m로"
+    },
+    "smart_tag": "AI 스마트 분석",
+    "search_results_title": "검색 결과",
+    "no_results_text": "관련 기능이 없습니다, 다른 키워드를 시도해 주세요"
+  },
+  "history": {
+    "title": "역사",
+    "clear_all": "모두 지우기",
+    "empty": "아직 역사가 없습니다",
+    "types": {
+      "basic": "기본",
+      "scientific": "과학",
+      "converter": "단위",
+      "currency": "통화",
+      "health": "건강",
+      "discount": "할인",
+      "tax": "세금",
+      "tool": "도구",
+      "record": "기록"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "분모는 0일 수 없습니다",
+      "error_zero_divisor": "나눗셈자는 0일 수 없습니다"
+    }
+  },
+  "converter": {
+    "unit_suffix": "변환",
+    "categories": {
+      "length": "길이",
+      "area": "면적",
+      "volume": "부피",
+      "weight": "무게",
+      "temperature": "온도",
+      "speed": "속도",
+      "time": "시간",
+      "power": "전력",
+      "heat": "열량",
+      "force": "력",
+      "pressure": "압력",
+      "capacity": "용량",
+      "data": "데이터 저장"
+    },
+    "units": {
+      "km": "킬로미터",
+      "m": "미터",
+      "dm": "데시미터",
+      "cm": "센티미터",
+      "mm": "밀리미터",
+      "μm": "마이크로미터",
+      "nm": "나노미터",
+      "mi": "마일",
+      "yd": "야드",
+      "ft": "피트",
+      "in": "인치",
+      "nmi": "해리",
+      "里": "리 (중국 마일)",
+      "丈": "장",
+      "尺": "치",
+      "寸": "촌",
+      "km²": "제곱 킬로미터",
+      "ha": "헤كت아르",
+      "m²": "제곱 미터",
+      "dm²": "제곱 디시미터",
+      "cm²": "제곱 센티미터",
+      "mm²": "제곱 밀리미터",
+      "mi²": "제곱 마일",
+      "acre": "에이커",
+      "yd²": "제곱 야드",
+      "ft²": "제곱 피트",
+      "in²": "제곱 인치",
+      "亩": "무",
+      "分": "분 (면적)",
+      "m³": "입방 미터",
+      "dm³": "입방 디시미터",
+      "cm³": "입방 센티미터",
+      "mm³": "입방 밀리미터",
+      "L": "리터",
+      "mL": "밀리리터",
+      "gal": "갤론 (미국)",
+      "gal(UK)": "갤론 (영국)",
+      "pt": "파인트",
+      "ft³": "입방 피트",
+      "in³": "입방 인치",
+      "t": "톤",
+      "kg": "킬로그램",
+      "g": "그램",
+      "mg": "밀리그램",
+      "μg": "마이크로그램",
+      "lb": "파운드",
+      "oz": "온스",
+      "ct": "캐럿",
+      "斤": "진",
+      "两": "량",
+      "钱": "전",
+      "°C": "섭씨",
+      "°F": "화씨",
+      "K": "케빈",
+      "°R": "랭킨",
+      "°Ré": "레오ม르",
+      "m/s": "미터/초",
+      "km/h": "킬로미터/시간",
+      "mph": "마일/시간",
+      "kn": "노트",
+      "Ma": "마하",
+      "c": "광속",
+      "世纪": "세기",
+      "年": "년",
+      "月": "월",
+      "周": "주",
+      "天": "일",
+      "h": "시간",
+      "min": "분",
+      "s": "초",
+      "ms": "밀리초",
+      "μs": "마이크로초",
+      "ns": "나노초",
+      "kW": "킬로와트",
+      "W": "와트",
+      "mW": "밀리와트",
+      "hp": "마력",
+      "PS": "메트릭 마력",
+      "kcal/s": "kcal/초",
+      "BTU/s": "BTU/초",
+      "kJ": "킬로줄",
+      "J": "줄",
+      "cal": "칼로리",
+      "kcal": "킬로칼로리",
+      "Wh": "와트시",
+      "kWh": "킬로와트시",
+      "BTU": "영국열단위",
+      "kN": "킬로뉴턴",
+      "N": "뉴턴",
+      "dyn": "다인",
+      "kgf": "킬로그램힘",
+      "gf": "그램힘",
+      "lbf": "파운드힘",
+      "Pa": "파스칼",
+      "hPa": "헤クト파스칼",
+      "kPa": "킬로파스칼",
+      "MPa": "메가파스칼",
+      "bar": "바",
+      "mbar": "밀리바",
+      "atm": "대기압",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "토르",
+      "kL": "킬리리터",
+      "dL": "데シリ터",
+      "cL": "센티리터",
+      "qt": "쿼트",
+      "cup": "컵",
+      "fl oz": "플루이드 온스",
+      "bit": "비트",
+      "B": "바이트",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "통화 교환",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "진수 변환기",
+      "dec": "십진수 (DEC)",
+      "bin": "이진수 (BIN)",
+      "oct": "팔진수 (OCT)",
+      "hex": "십육진수 (HEX)"
+    },
+    "uppercase": {
+      "title": "대문자 금액",
+      "zero_yuan_整": "영 원 정",
+      "zero": "영",
+      "digits": [
+        "영",
+        "일",
+        "이",
+        "삼",
+        "사",
+        "오",
+        "육",
+        "칠",
+        "팔",
+        "구"
+      ],
+      "units": [
+        ", ",
+        "십",
+        "백",
+        "천"
+      ],
+      "big_units": [
+        ", ",
+        "만",
+        "억",
+        "조"
+      ],
+      "yuan": "유안",
+      "zheng": "정",
+      "jiao": "자오",
+      "fen": "펜",
+      "negative": "음수",
+      "back_to_calculator": "계산기로 돌아가기",
+      "click_to_copy": "대문자 (복사하려면 클릭)"
+    },
+    "mortgage": {
+      "title": "모기지 계산기",
+      "commercial_loan": "상업 대출",
+      "fund_loan": "주거 기금",
+      "combined_loan": "복합 대출",
+      "loan_amount": "대출 금액",
+      "loan_rate": "대출 금리",
+      "fund_loan_amount": "기금 대출 금액",
+      "fund_loan_rate": "기금 대출 금리",
+      "commercial_loan_amount": "상업 대출 금액",
+      "commercial_rate_type": "금리 유형",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "베이스 포인트",
+      "commercial_loan_rate": "상업 금리",
+      "principal": "원금",
+      "interest": "이자",
+      "equal_monthly": "등액 월 상환",
+      "equal_principal": "등액 원금 상환",
+      "payment_type": "지급 유형",
+      "loan_years": "대출 연수",
+      "lpr_rate": "LPR 금리",
+      "basis_points": "BP",
+      "base_rate": "기준 금리",
+      "rate_type": "금리 유형",
+      "total_payment": "총 지급액",
+      "total_interest": "총 이자",
+      "monthly_payment": "월별 지급액",
+      "first_month_payment": "첫 달",
+      "last_month_payment": "마지막 달",
+      "monthly_decrease": "월간 감소",
+      "view_schedule": "일정 보기",
+      "hide_schedule": "일정 숨기기",
+      "schedule_title": "일정",
+      "period": "기간",
+      "monthly_pay": "지급액",
+      "principal_part": "원금",
+      "interest_part": "이자",
+      "remaining_principal": "잔여 원금",
+      "payment_method": "결제 방법",
+      "loan_total": "대출 총액",
+      "repayment_periods": "상환 기간",
+      "period_unit": "월",
+      "remaining": "잔여"
+    },
+    "relative": {
+      "title": "관계",
+      "my_gender": "내 성별:",
+      "placeholder": "관계를 추가하려면 아래 버튼을 클릭하세요",
+      "i_call_ta": "나는 그들을 다음과 같이 부른다:",
+      "ta_calls_me": "그들은 나를 다음과 같이 부른다:",
+      "reverse_check": "반전",
+      "example_title": "보통 예시",
+      "error_same_sex": "같은 성별의 관계는 아직 지원되지 않습니다",
+      "error_not_found": "관계가 너무 멀거나 데이터베이스에 없습니다",
+      "error_calc": "계산 오류",
+      "prefix": "내 ",
+      "connector": "'s ",
+      "labels": {
+        "f": "아버지",
+        "m": "어머니",
+        "h": "남편",
+        "w": "아내",
+        "ob": "형",
+        "lb": "동생",
+        "os": "누나",
+        "ls": " 여동생",
+        "s": "아들",
+        "d": "딸"
+      },
+      "buttons": {
+        "f": "아버지",
+        "m": "어머니",
+        "h": "남편",
+        "w": "아내",
+        "ob": "형+",
+        "lb": "형-",
+        "os": "누나+",
+        "ls": "누나-",
+        "s": "아들",
+        "d": "딸"
+      },
+      "examples": {
+        "爷爷": "할아버지",
+        "外婆": "할머니",
+        "伯父": "숙모(형)",
+        "叔叔": "숙모(형)",
+        "舅舅": "숙모(모친)",
+        "姑姑": "숙모"
+      }
+    },
+    "tax": {
+      "title": "세금 계산기",
+      "salary_label": "월급",
+      "insurance_label": "사회보험",
+      "deduction_label": "특별공제",
+      "threshold_label": "기준선",
+      "hint": "공제 항목에는 자녀 교육, 임대료, 모기지 이자 등이 포함됩니다.",
+      "after_tax_salary": "세후 급여",
+      "taxable_income": "과세소득",
+      "applicable_rate": "율",
+      "payable_tax": "납부 세금",
+      "table_title": "세금 단계(연간)",
+      "table_headers": [
+        "단계",
+        "과세소득",
+        "율",
+        "공제"
+      ],
+      "ten_thousand_unit": "만",
+      "history": {
+        "title": "월급 ¥{{salary}} 세금 예측",
+        "expression": "세전 {{salary}} - 보험 {{insurance}} - 공제 {{deduction}}, ",
+        "result": "세후 ¥{{afterTax}} (세금 ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "회계장부",
+      "expense": "지출",
+      "income": "수입",
+      "add_record": "항목 추가",
+      "report": "보고서",
+      "monthly_expense": "월 지출",
+      "monthly_income": "월 수입",
+      "balance": "잔액",
+      "no_records": "아직 기록이 없습니다",
+      "note": "비고",
+      "note_placeholder": "비고 추가...",
+      "report_title": "보고서",
+      "total_expense": "총 지출",
+      "total_income": "총 수입",
+      "expense_detail": "지출 상세",
+      "income_detail": "수입 상세",
+      "delete_confirm_text": "이 기록을 삭제하시겠습니까?",
+      "categories": {
+        "expense": {
+          "消费": "지출",
+          "餐饮": "음식",
+          "购物": "쇼핑",
+          "住房": "주거",
+          "交通": "교통",
+          "通讯": "통신",
+          "娱乐": "오락",
+          "医疗": "의료",
+          "教育": "교육",
+          "其他": "기타"
+        },
+        "income": {
+          "工资": "급여",
+          "奖金": "보너스",
+          "投资": "투자",
+          "兼职": "아르바이트",
+          "红包": "적금",
+          "其他": "기타"
+        }
+      },
+      "weekdays": [
+        "일",
+        "월",
+        "화",
+        "수",
+        "목",
+        "금",
+        "토"
+      ]
+    },
+    "memo": {
+      "title": "메모",
+      "search_placeholder": "메모 검색...",
+      "no_title": "제목 없음",
+      "no_memos": "아직 메모가 없습니다",
+      "title_label": "제목",
+      "content_placeholder": "내용 입력...",
+      "delete_confirm_text": "이 메모를 삭제하시겠습니까?",
+      "pin": "고정",
+      "unpin": "고정 해제"
+    },
+    "health": {
+      "title": "건강 계산기",
+      "bmi_label": "BMI 지수",
+      "bmr_label": "기초 대사율",
+      "tdee_label": "총 일일 에너지 소비량",
+      "gender": "성별",
+      "male": "남성",
+      "female": "여성",
+      "height": "키 (cm)",
+      "weight": "몸무게 (kg)",
+      "age": "나이",
+      "activity_level": "활동 수준",
+      "activity": {
+        "sedentary": "저활동 (하루 종일 앉아 있음)",
+        "light": "경도 (주 1-3회)",
+        "moderate": "중간 (주 3-5회)",
+        "active": "활발 (주 6-7회)",
+        "very_active": "매우 활발 (일일 중노동)"
+      },
+      "status": {
+        "underweight": "저체중",
+        "normal": "정상",
+        "overweight": "과체중",
+        "obese": "비만"
+      }
+    },
+    "graph": {
+      "title": "함수 그래프",
+      "placeholder": "함수 입력 예: x^2, sin(x)...",
+      "x_min": "X 최소",
+      "x_max": "X 최대"
+    },
+    "formula": {
+      "title": "공식 계산기",
+      "category_label": "카테고리",
+      "all": "모두",
+      "select_formula": "공식 선택",
+      "result_title": "결과",
+      "formula_label": "공식",
+      "variables_label": "변수",
+      "categories": {
+        "几何": "기하학",
+        "物理": "물리학",
+        "数学": "수학",
+        "金融": "금융",
+        "健康": "건강"
+      },
+      "items": {
+        "circle_area": {
+          "name": "원의 넓이",
+          "description": "반지름으로 넓이 계산",
+          "variables": {
+            "r": "반지름"
+          }
+        },
+        "circle_perimeter": {
+          "name": "원의 둘레",
+          "description": "반지름으로 둘레 계산",
+          "variables": {
+            "r": "반지름"
+          }
+        },
+        "sphere_volume": {
+          "name": "구체 부피",
+          "description": "반지름으로 부피 계산",
+          "variables": {
+            "r": "반지름"
+          }
+        },
+        "triangle_area": {
+          "name": "삼각형 넓이",
+          "description": "밑변과 높이로 넓이 계산",
+          "variables": {
+            "a": "밑변",
+            "h": "높이"
+          }
+        },
+        "trapezoid_area": {
+          "name": "사다리꼴 넓이",
+          "description": "두 밑변과 높이로 넓이 계산",
+          "variables": {
+            "a": "상단",
+            "b": "하단",
+            "h": "높이"
+          }
+        },
+        "cylinder_volume": {
+          "name": "실린더 부피",
+          "description": "반지름과 높이로 부피 계산",
+          "variables": {
+            "r": "반지름",
+            "h": "높이"
+          }
+        },
+        "cone_volume": {
+          "name": "원뿔 부피",
+          "description": "반지름과 높이로 부피 계산",
+          "variables": {
+            "r": "반지름",
+            "h": "높이"
+          }
+        },
+        "speed": {
+          "name": "속도",
+          "description": "거리와 시간으로 속도 계산",
+          "variables": {
+            "s": "거리",
+            "t": "시간"
+          }
+        },
+        "acceleration": {
+          "name": "가속도",
+          "description": "가속도 계산",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "뉴턴의 제이법칙",
+          "description": "력 계산",
+          "variables": {
+            "m": "질량(kg)",
+            "a": "가속도(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "운동 에너지",
+          "description": "운동 에너지 계산",
+          "variables": {
+            "m": "질량(kg)",
+            "v": "속도(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "위치 에너지",
+          "description": "위치 에너지를 계산합니다",
+          "variables": {
+            "m": "질량(kg)",
+            "g": "g",
+            "h": "높이(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "오姆의 법칙",
+          "description": "전류를 계산합니다",
+          "variables": {
+            "U": "전압(V)",
+            "R": "저항(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "전력",
+          "description": "전력을 계산합니다",
+          "variables": {
+            "U": "전압(V)",
+            "I": "전류(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "피타고라스 정리",
+          "description": "직각삼각형의 빗변을 계산합니다",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "이차 방정식",
+          "description": "ax²+bx+c=0의 판별식",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "복리 이자",
+          "description": "이자를 포함한 총액 계산",
+          "variables": {
+            "P": "원금",
+            "r": "이율(%)",
+            "n": "년"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "체중과 키로 BMI 계산",
+          "variables": {
+            "weight": "체중(kg)",
+            "height": "키(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "할인 & 팁",
+      "original_price": "가격",
+      "price_placeholder": "금액 입력",
+      "discount_label": "할인",
+      "percent": "백분율",
+      "flat_amount": "고정 금액",
+      "tip_label": "팁",
+      "split_label": "분할",
+      "person_unit": "사람",
+      "result_title": "결과",
+      "saved_amount": "절약된 금액",
+      "discounted_price": "최종 가격",
+      "tip_amount": "팁 금액",
+      "total_price": "총 가격",
+      "per_person": "인당"
+    },
+    "date": {
+      "title": "날짜 계산기",
+      "diff_mode": "날짜 차이",
+      "add_mode": "날짜 계산",
+      "convert_mode": "음력 변환",
+      "start_date": "시작 날짜",
+      "end_date": "종료 날짜",
+      "base_date": "기준 날짜",
+      "diff_time": "시간 차이",
+      "before": "전",
+      "after": "후",
+      "result_title": "결과",
+      "diff_days": "일수 차이",
+      "workdays": "근무일",
+      "weeks": "주",
+      "hours": "시간",
+      "minutes": "분",
+      "solar2lunar": "태양력 → 음력",
+      "lunar2solar": "음력 → 태양력",
+      "solar_date": "태양력 날짜",
+      "lunar": "음력",
+      "shengxiao": "생소",
+      "jieqi": "절기",
+      "festival": "절기",
+      "leap_month": "윤월",
+      "leap_month_prefix": "윤 ",
+      "workdays_label": "근무일 (주말 제외)",
+      "lunar_year": "음력 연도",
+      "lunar_month": "음력 월",
+      "lunar_day": "음력 일",
+      "invalid_date": "잘못된 날짜"
+    },
+    "finance": {
+      "title": "재무 계산기",
+      "bank_mode": "은행 저축",
+      "compound_mode": "복리 이자",
+      "regular_mode": "정기 투자",
+      "interest_yuan": "이자",
+      "interest_profit": "수익",
+      "total_yuan": "총액",
+      "total_sum": "총 합계",
+      "bank_info": "저축 정보 입력",
+      "bank_amount": "금액",
+      "bank_years": "년",
+      "rate_percent": "율 (%)",
+      "compound_info": "투자 정보 입력",
+      "initial_principal": "원금",
+      "invest_years": "년",
+      "return_rate": "수익률 (%)",
+      "compound_freq": "빈도",
+      "regular_info": "정기 정보 입력",
+      "regular_amount": "기간 금액",
+      "regular_years": "년",
+      "regular_rate": "수익률 (%)",
+      "regular_freq": "빈도",
+      "total_return": "총 수익",
+      "total_invest": "총 투자",
+      "overflow_error": "값 오버플로우",
+      "freq": {
+        "year": "연간",
+        "month": "월간",
+        "day": "일일",
+        "week": "주간"
+      }
+    }
+  }
+}

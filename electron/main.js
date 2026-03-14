@@ -21,7 +21,7 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js')
     },
     show: false,
-    title: '全能计算器',
+    title: 'All Calculator',
     icon: path.join(__dirname, '../public/计算器.ico')
   })
 

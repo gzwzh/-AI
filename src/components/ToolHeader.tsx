@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
 import WindowControls from './WindowControls';
 import './ToolHeader.scss';
@@ -17,6 +18,7 @@ const ToolHeader: React.FC<ToolHeaderProps> = ({
   showBack = true,
   extraActions 
 }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -31,7 +33,7 @@ const ToolHeader: React.FC<ToolHeaderProps> = ({
     <header className="tool-header">
       <div className="header-left">
         {showBack && (
-          <button className="back-btn" onClick={handleBack} title="返回">
+          <button className="back-btn" onClick={handleBack} title={t('common.back')}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>

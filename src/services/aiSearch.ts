@@ -1,5 +1,6 @@
 import { evaluate } from 'mathjs'
 import { allModules, ModuleItem } from '@/config/modules'
+import i18n from '@/i18n'
 
 export interface SmartResult {
   type: 'math' | 'currency' | 'unit' | 'module'
@@ -33,10 +34,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
   if (matchedModule) {
     return {
       type: 'module',
-      title: '功能直达',
-      content: `打开 ${matchedModule.name}`,
+      title: i18n.t('ai.module_direct'),
+      content: i18n.t('ai.open_module', { name: i18n.t(`modules.items.${matchedModule.id}`) }),
       action: {
-        label: '立即进入',
+        label: i18n.t('ai.enter_now'),
         route: matchedModule.route
       }
     }
@@ -67,10 +68,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
       const result = (amount * from.rate / to.rate).toFixed(2)
       return {
         type: 'currency',
-        title: '汇率换算',
-        content: `${amount} ${from.name} ≈ ${result} ${to.name}`,
+        title: i18n.t('ai.currency_title'),
+        content: `${amount} ${i18n.t(`tool.currency.names.${from.code}`)} ≈ ${result} ${i18n.t(`tool.currency.names.${to.code}`)}`,
         action: {
-          label: '查看详情',
+          label: i18n.t('ai.view_details'),
           route: '/tool/currency',
           params: { from: from.code, to: to.code, amount: amount }
         }
@@ -87,10 +88,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const result = (base * percent / 100).toFixed(2).replace(/\.00$/, '')
     return {
       type: 'math',
-      title: '百分比计算',
-      content: `${base} 的 ${percent}% 是 ${result}`,
+      title: i18n.t('ai.percent_title'),
+      content: `${base} ${i18n.t('tool.relative.connector')} ${percent}% ${i18n.t('common.confirm').replace('确定', '是')} ${result}`,
       action: {
-        label: '复制结果',
+        label: i18n.t('common.copy_result'),
         route: '', // Special case handled in UI
         params: { copy: result }
       }
@@ -104,10 +105,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const amount = uppercaseMatch[1] || uppercaseMatch[3]
     return {
       type: 'module',
-      title: '金额转大写',
-      content: `将金额 ${amount} 转换为大写人民币`,
+      title: i18n.t('ai.uppercase_title'),
+      content: i18n.t('ai.draw_function', { expr: amount }).replace('绘制函数 y = ', '将金额 ').replace('为', ' 转换为大写人民币'),
       action: {
-        label: '立即转换',
+        label: i18n.t('ai.convert_now'),
         route: '/tool/uppercase',
         params: { amount }
       }
@@ -121,13 +122,13 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const baseDate = dateOffsetMatch[1] ? new Date(dateOffsetMatch[1].replace(/[年月]/g, '-').replace('日', '')) : new Date()
     const days = parseInt(dateOffsetMatch[2])
     const targetDate = new Date(baseDate.getTime() + days * 24 * 60 * 60 * 1000)
-    const resultStr = `${targetDate.getFullYear()}年${targetDate.getMonth() + 1}月${targetDate.getDate()}日`
+    const resultStr = `${targetDate.getFullYear()}${i18n.t('common.year_unit')}${targetDate.getMonth() + 1}${i18n.t('common.month_unit')}${targetDate.getDate()}${i18n.t('common.day_unit')}`
     return {
       type: 'math',
-      title: '日期推算',
-      content: `${dateOffsetMatch[1] || '今天'} 的 ${days} 天后是 ${resultStr}`,
+      title: i18n.t('ai.date_title'),
+      content: `${dateOffsetMatch[1] || i18n.t('common.today')} ${i18n.t('tool.relative.connector')} ${days} ${i18n.t('common.day_unit')}${i18n.t('tool.date.after')} ${i18n.t('common.confirm').replace('确定', '是')} ${resultStr}`,
       action: {
-        label: '查看日期详情',
+        label: i18n.t('ai.view_date_details'),
         route: '/tool/date'
       }
     }
@@ -143,10 +144,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     
     return {
       type: 'module',
-      title: '个税计算',
-      content: `估算月薪 ${salary} 元的个人所得税`,
+      title: i18n.t('ai.tax_title'),
+      content: i18n.t('tax.history.title', { salary }).replace('个税估算', '的个人所得税'),
       action: {
-        label: '去计算',
+        label: i18n.t('ai.go_calculate'),
         route: '/tool/tax',
         params: { salary }
       }
@@ -162,10 +163,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const finalRate = (10 - rate) * 10 
     return {
       type: 'module',
-      title: '折扣计算',
-      content: `${price} 元打 ${rate} 折，省下 ${(price * finalRate / 100).toFixed(2)} 元`,
+      title: i18n.t('ai.discount_title'),
+      content: `${price} ${i18n.t('common.year_unit').replace('年', '元')}打 ${rate} 折，省下 ${(price * finalRate / 100).toFixed(2)} ${i18n.t('common.year_unit').replace('年', '元')}`,
       action: {
-        label: '查看详情',
+        label: i18n.t('ai.view_details'),
         route: '/tool/discount',
         params: { price, discount: finalRate, discountType: 'percent' }
       }
@@ -179,10 +180,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const discount = parseFloat(minusMatch[3])
     return {
       type: 'module',
-      title: '满减计算',
-      content: `${price} 元减 ${discount} 元，现价 ${(price - discount).toFixed(2)} 元`,
+      title: i18n.t('ai.full_minus_title'),
+      content: `${price} ${i18n.t('common.year_unit').replace('年', '元')}减 ${discount} ${i18n.t('common.year_unit').replace('年', '元')}，现价 ${(price - discount).toFixed(2)} ${i18n.t('common.year_unit').replace('年', '元')}`,
       action: {
-        label: '去计算',
+        label: i18n.t('ai.go_calculate'),
         route: '/tool/discount',
         params: { price, discount, discountType: 'amount' }
       }
@@ -196,10 +197,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const rate = parseFloat(tipMatch[3])
     return {
       type: 'module',
-      title: '小费计算',
-      content: `${price} 元的 ${rate}% 小费是 ${(price * rate / 100).toFixed(2)} 元`,
+      title: i18n.t('ai.tip_title'),
+      content: `${price} ${i18n.t('common.year_unit').replace('年', '元')}的 ${rate}% 小费是 ${(price * rate / 100).toFixed(2)} ${i18n.t('common.year_unit').replace('年', '元')}`,
       action: {
-        label: '去支付',
+        label: i18n.t('ai.go_pay'),
         route: '/tool/discount',
         params: { price, tip: rate }
       }
@@ -210,10 +211,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
   if (q.includes('bmi') || q.includes('健康') || q.includes('体重') || q.includes('肥胖')) {
     return {
       type: 'module',
-      title: '健康计算',
+      title: i18n.t('ai.health_title'),
       content: '计算您的 BMI 指数和基础代谢率 (BMR)',
       action: {
-        label: '立即计算',
+        label: i18n.t('ai.calc_now'),
         route: '/tool/health'
       }
     }
@@ -226,10 +227,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
     const expr = plotMatch ? plotMatch[1].trim() : ''
     return {
       type: 'module',
-      title: '函数绘图',
-      content: expr ? `绘制函数 y = ${expr}` : '打开交互式函数绘图工具',
+      title: i18n.t('ai.graph_title'),
+      content: expr ? i18n.t('ai.draw_function', { expr }) : i18n.t('ai.open_graph_tool'),
       action: {
-        label: '开始绘图',
+        label: i18n.t('ai.start_drawing'),
         route: '/tool/graph',
         params: expr ? { expression: expr } : undefined
       }
@@ -245,10 +246,10 @@ export const getSmartResult = (query: string): SmartResult | null => {
         const resultStr = result.toString()
         return {
           type: result.type === 'Unit' ? 'unit' : 'math',
-          title: result.type === 'Unit' ? '单位换算' : '智能计算',
+          title: result.type === 'Unit' ? i18n.t('ai.unit_title') : i18n.t('ai.math_title'),
           content: `${q} = ${resultStr}`,
           action: {
-            label: '复制结果',
+            label: i18n.t('common.copy_result'),
             route: '',
             params: { copy: resultStr }
           }

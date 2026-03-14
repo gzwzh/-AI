@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "All Calculator",
+    "app_icon_alt": "Icon All Calculator",
+    "subtext": "Sebuah produk Kunqiong AI",
+    "software_custom": "Kustomisasi Perisian",
+    "feedback": "Umpan Balik",
+    "history": "Sejarah",
+    "icon_alt": "Ikon",
+    "back": "Kembali",
+    "copy_result": "Salin Keputusan",
+    "to_uppercase": "Ke Huruf Besar",
+    "error": "Ralat",
+    "copied": "Disediakan",
+    "clear": "Kosongkan",
+    "copied_to_clipboard": "Disalin ke skrin",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "Tahun",
+    "today": "Hari ini",
+    "yesterday": "Semalam",
+    "days_ago": "hari yang lalu",
+    "month_unit": "Bulan",
+    "day_unit": "Hari",
+    "year_unit": "Tahun",
+    "confirm_delete": "Sahkan Padam",
+    "cancel": "Batal",
+    "confirm": "Sahkan",
+    "save": "Simpan",
+    "delete": "Padam",
+    "minimize": "Kecilkan",
+    "maximize": "Besarkan",
+    "close": "Tutup",
+    "switch_dark": "Tukar ke Mod Gelap",
+    "switch_light": "Tukar ke Mod Terang",
+    "language_switch": "Tukar Bahasa",
+    "weekdays": [
+      "Ahad",
+      "Isnin",
+      "Selasa",
+      "Rabu",
+      "Khamis",
+      "Jumaat",
+      "Sabtu"
+    ]
+  },
+  "update": {
+    "found_new": "Versi Baharu Dijumpai",
+    "current_version": "Versi Semasa",
+    "update_log": "Log Kemas kini",
+    "remind_later": "Ingatkan Nanti",
+    "update_now": "Kemas kini Sekarang"
+  },
+  "auth": {
+    "login_cancelled": "Log Masuk Dibatalkan",
+    "click_to_logout": "Klik untuk Log Keluar",
+    "logged_in": "Telah Log Masuk",
+    "logout": "Log Keluar",
+    "click_to_login": "Klik untuk Log Masuk",
+    "logging_in": "Sedang log masuk...",
+    "login_register": "Log Masuk/Daftar",
+    "login_failed": "Gagal Log Masuk",
+    "complete_login_in_browser": "Sila selesaikan log masuk di pelayar web",
+    "cancel_login": "Batalkan Log Masuk",
+    "login_timeout": "Masa log masuk tamat",
+    "get_login_url_failed": "Gagal mendapatkan URL log masuk",
+    "get_user_info_failed": "Gagal mendapatkan maklumat pengguna",
+    "logout_failed": "Gagal log keluar"
+  },
+  "ai": {
+    "module_direct": "Akses Pantas",
+    "open_module": "Buka {{name}}, ",
+    "enter_now": "Masuk Sekarang",
+    "currency_title": "Pertukaran Mata Wang",
+    "view_details": "Lihat Butiran",
+    "percent_title": "Kira Peratus",
+    "uppercase_title": "Jumlah ke Huruf Besar",
+    "convert_now": "Tukar Sekarang",
+    "date_title": "Kira Tarikh",
+    "view_date_details": "Lihat Butiran Tarikh",
+    "tax_title": "Kira Cukai",
+    "go_calculate": "Kira Sekarang",
+    "discount_title": "Kira Diskaun",
+    "full_minus_title": "Potongan Penuh",
+    "tip_title": "Kira Tip",
+    "go_pay": "Pergi Bayar",
+    "health_title": "Kira Kesihatan",
+    "calc_now": "Kira Sekarang",
+    "graph_title": "Graf Fungsi",
+    "start_drawing": "Mulai Melukis",
+    "draw_function": "Lukis fungsi y = {{expr}}, ",
+    "open_graph_tool": "Buka alat grafik interaktif",
+    "unit_title": "Pertukaran Unit",
+    "smart_calc_title": "Kalkulator Pintar",
+    "math_title": "Kira Matematik"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "Kalkulator",
+      "tool": "Alat",
+      "converter": "Penukar"
+    },
+    "items": {
+      "basic": "Kalkulator Asas",
+      "scientific": "Kalkulator Sains",
+      "fraction": "Kalkulator Pecahan",
+      "currency": "Penukar Mata Wang",
+      "relative": "Panggilan Relatif",
+      "mortgage": "Kalkulator Pinjaman Perumahan",
+      "tax": "Kalkulator Cukai",
+      "date": "Kalkulator Tarikh",
+      "radix": "Penukar Radiks",
+      "uppercase": "Uang ke Huruf Besar",
+      "finance": "Kalkulator Kewangan",
+      "formula": "Kalkulator Formula",
+      "discount": "Diskaun & Tip",
+      "account": "Buku Akaun",
+      "memo": "Memo",
+      "health": "Kalkulator Kesihatan",
+      "graph": "Kalkulator Graf",
+      "length": "Panjang",
+      "area": "Keluasan",
+      "volume": "Isipadu",
+      "temperature": "Suhu",
+      "speed": "Laju",
+      "time": "Masa",
+      "weight": "Berat",
+      "power": "Kuasa",
+      "heat": "Haba",
+      "force": "Daya",
+      "pressure": "Tekanan",
+      "capacity": "Kapasiti",
+      "data": "Penyimpanan Data"
+    }
+  },
+  "home": {
+    "search_placeholder": "Cuba Cari AI, contoh: 100 dolar, 100cm ke m...",
+    "smart_tips_label": "Tip Pintar:",
+    "tips": {
+      "date": "Tarikh selepas 100 hari?",
+      "tax": "Berapa cukai untuk gaji 1.5w?",
+      "uppercase": "Jumlah ke Huruf Besar",
+      "unit": "100cm ke m"
+    },
+    "smart_tag": "Pengenalan AI",
+    "search_results_title": "Keputusan Carian",
+    "no_results_text": "Tiada fungsi yang berkaitan ditemui, cuba kata kunci lain"
+  },
+  "history": {
+    "title": "Sejarah",
+    "clear_all": "Kosongkan Semua",
+    "empty": "Tiada sejarah yet",
+    "types": {
+      "basic": "Asas",
+      "scientific": "Saintifik",
+      "converter": "Unit",
+      "currency": "Mata Wang",
+      "health": "Kesihatan",
+      "discount": "Diskaun",
+      "tax": "Cukai",
+      "tool": "Alat",
+      "record": "Rekod"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "Penyebut tidak boleh 0",
+      "error_zero_divisor": "Pembahagi tidak boleh 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "Tukar",
+    "categories": {
+      "length": "Panjang",
+      "area": "Keluasan",
+      "volume": "Isipadu",
+      "weight": "Berat",
+      "temperature": "Suhu",
+      "speed": "Laju",
+      "time": "Masa",
+      "power": "Kuasa",
+      "heat": "Haba",
+      "force": "Daya",
+      "pressure": "Tekanan",
+      "capacity": "Kapasiti",
+      "data": "Penyimpanan Data"
+    },
+    "units": {
+      "km": "kilometer",
+      "m": "meter",
+      "dm": "desimeter",
+      "cm": "sentimeter",
+      "mm": "milimeter",
+      "μm": "mikrometer",
+      "nm": "nanometer",
+      "mi": "miles",
+      "yd": "yard",
+      "ft": "kaki",
+      "in": "inci",
+      "nmi": "miles laut",
+      "里": "Li (miles Cina)",
+      "丈": "Zhang",
+      "尺": "Chi",
+      "寸": "Cun",
+      "km²": "kilometer persegi",
+      "ha": "hektar",
+      "m²": "meter persegi",
+      "dm²": "desimeter persegi",
+      "cm²": "sentimeter persegi",
+      "mm²": "milimeter persegi",
+      "mi²": "miles persegi",
+      "acre": "ekar",
+      "yd²": "yard persegi",
+      "ft²": "kaki persegi",
+      "in²": "inci persegi",
+      "亩": "Mu",
+      "分": "Fen (luas)",
+      "m³": "meter padu",
+      "dm³": "desimeter padu",
+      "cm³": "sentimeter padu",
+      "mm³": "milimeter padu",
+      "L": "liter",
+      "mL": "milliliter",
+      "gal": "gallon (US)",
+      "gal(UK)": "gallon (UK)",
+      "pt": "pint",
+      "ft³": "kaki padu",
+      "in³": "inci padu",
+      "t": "tan",
+      "kg": "kilogram",
+      "g": "gram",
+      "mg": "milligram",
+      "μg": "mikrogram",
+      "lb": "pound",
+      "oz": "ounce",
+      "ct": "karat",
+      "斤": "Jin",
+      "两": "Liang",
+      "钱": "Qian",
+      "°C": "Celsius",
+      "°F": "Fahrenheit",
+      "K": "Kelvin",
+      "°R": "Rankine",
+      "°Ré": "Réaumur",
+      "m/s": "meter/detik",
+      "km/h": "kilometer/jam",
+      "mph": "miles/jam",
+      "kn": "knot",
+      "Ma": "Mach",
+      "c": "kelajuan cahaya",
+      "世纪": "abad",
+      "年": "tahun",
+      "月": "bulan",
+      "周": "minggu",
+      "天": "hari",
+      "h": "jam",
+      "min": "minit",
+      "s": "saat",
+      "ms": "milli saat",
+      "μs": "microsaat",
+      "ns": "nanosaat",
+      "kW": "kilowatt",
+      "W": "watt",
+      "mW": "milliwatt",
+      "hp": "horsepower",
+      "PS": "horsepower metrik",
+      "kcal/s": "kcal/saat",
+      "BTU/s": "BTU/saat",
+      "kJ": "kilojoule",
+      "J": "joule",
+      "cal": "kalori",
+      "kcal": "kilokalori",
+      "Wh": "watt-jam",
+      "kWh": "kilowatt-jam",
+      "BTU": "British Thermal Unit",
+      "kN": "kilonewton",
+      "N": "newton",
+      "dyn": "dyne",
+      "kgf": "kilogram-daya",
+      "gf": "gram-daya",
+      "lbf": "pound-daya",
+      "Pa": "pascal",
+      "hPa": "hektopascal",
+      "kPa": "kilopascal",
+      "MPa": "megapascal",
+      "bar": "bar",
+      "mbar": "millibar",
+      "atm": "atmosfera",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "torr",
+      "kL": "kiloliter",
+      "dL": "deciliter",
+      "cL": "sentiliter",
+      "qt": "kuart",
+      "cup": "cawan",
+      "fl oz": "ounce cecair",
+      "bit": "bit",
+      "B": "byte",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "Pertukaran Mata Wang",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "Konverter Radiks",
+      "dec": "Perpuluhan (DEC)",
+      "bin": "Bina (BIN)",
+      "oct": "Oktal (OCT)",
+      "hex": "Heksadesimal (HEX)"
+    },
+    "uppercase": {
+      "title": "Wang Hurujuan",
+      "zero_yuan_整": "Sifar Ringgit Sahaja",
+      "zero": "Sifar",
+      "digits": [
+        "Sifar",
+        "Satu",
+        "Dua",
+        "Tiga",
+        "Empat",
+        "Lima",
+        "Enam",
+        "Tujuh",
+        "Lapan",
+        "Sembilan"
+      ],
+      "units": [
+        ", ",
+        "Puluh",
+        "Ratus",
+        "Ribuan"
+      ],
+      "big_units": [
+        ", ",
+        "Puluh Ribuan",
+        "Ratus Juta",
+        "Trilion"
+      ],
+      "yuan": "Yuan",
+      "zheng": "Hanya",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "negative": "Negatif",
+      "back_to_calculator": "Kembali ke Kalkulator",
+      "click_to_copy": "Huruf Besar (Klik untuk Salin)"
+    },
+    "mortgage": {
+      "title": "Kalkulator Perumahan",
+      "commercial_loan": "Pinjaman Komersial",
+      "fund_loan": "Akaun Perumahan",
+      "combined_loan": "Pinjaman Gabungan",
+      "loan_amount": "Jumlah Pinjaman",
+      "loan_rate": "Kadar Pinjaman",
+      "fund_loan_amount": "Jumlah Pinjaman Akaun",
+      "fund_loan_rate": "Kadar Pinjaman Akaun",
+      "commercial_loan_amount": "Jumlah Pinjaman Komersial",
+      "commercial_rate_type": "Jenis Kadar",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "Basis Point",
+      "commercial_loan_rate": "Kadar Komersial",
+      "principal": "Prinsipal",
+      "interest": "Bunga",
+      "equal_monthly": "Bayaran Bulanan Sama",
+      "equal_principal": "Bayaran Prinsipal Sama",
+      "payment_type": "Jenis Pembayaran",
+      "loan_years": "Tahun Pinjaman",
+      "lpr_rate": "Kadar LPR",
+      "basis_points": "BP",
+      "base_rate": "Kadar Asas",
+      "rate_type": "Jenis Kadar",
+      "total_payment": "Jumlah Pembayaran",
+      "total_interest": "Jumlah Bunga",
+      "monthly_payment": "Bayaran Bulanan",
+      "first_month_payment": "Bulan Pertama",
+      "last_month_payment": "Bulan Terakhir",
+      "monthly_decrease": "Pengurangan Bulanan",
+      "view_schedule": "Lihat Jadual",
+      "hide_schedule": "Sembunyikan Jadual",
+      "schedule_title": "Jadual",
+      "period": "Tempoh",
+      "monthly_pay": "Bayaran",
+      "principal_part": "Prinsipal",
+      "interest_part": "Faedah",
+      "remaining_principal": "Baki",
+      "payment_method": "Kaedah",
+      "loan_total": "Jumlah Pinjaman",
+      "repayment_periods": "Tempoh Pelaburan",
+      "period_unit": "Bulan",
+      "remaining": "Baki"
+    },
+    "relative": {
+      "title": "Hubungan Keluarga",
+      "my_gender": "Jantina Saya:",
+      "placeholder": "Klik butang di bawah untuk tambah hubungan",
+      "i_call_ta": "Saya memanggil mereka:",
+      "ta_calls_me": "Mereka memanggil saya:",
+      "reverse_check": "Songsang",
+      "example_title": "Contoh Biasa",
+      "error_same_sex": "Hubungan sejenis tidak disokong lagi",
+      "error_not_found": "Hubungan terlalu jauh atau tidak dalam pangkalan data",
+      "error_calc": "Ralat pengiraan",
+      "prefix": "Saya ",
+      "connector": "'s ",
+      "labels": {
+        "f": "Bapa",
+        "m": "Ibu",
+        "h": "Suami",
+        "w": "Isteri",
+        "ob": "Kakak lelaki",
+        "lb": "Adik lelaki",
+        "os": "Kakak perempuan",
+        "ls": "Adik perempuan",
+        "s": "Anak lelaki",
+        "d": "Anak perempuan"
+      },
+      "buttons": {
+        "f": "Bapa",
+        "m": "Ibu",
+        "h": "Suami",
+        "w": "Isteri",
+        "ob": "Kakak+",
+        "lb": "Adik-",
+        "os": "Kakak+",
+        "ls": "Adik-",
+        "s": "Anak lelaki",
+        "d": "Anak perempuan"
+      },
+      "examples": {
+        "爷爷": "Kapal Ayah",
+        "外婆": "Kapal Ibu",
+        "伯父": "Paman(Lebih Tua)",
+        "叔叔": "Paman(Juara)",
+        "舅舅": "Paman(Ibu)",
+        "姑姑": "Aunty"
+      }
+    },
+    "tax": {
+      "title": "Kalkulator Cukai",
+      "salary_label": "Gaji Bulanan",
+      "insurance_label": "Insurans Sosial",
+      "deduction_label": "Deductions Khas",
+      "threshold_label": "Ambang Batas",
+      "hint": "Deductions termasuk: pendidikan anak-anak, sewa, faedah pinjaman perumahan, dll.",
+      "after_tax_salary": "Gaji Selepas Cukai",
+      "taxable_income": "Pendapatan Dikenakan Cukai",
+      "applicable_rate": " kadar",
+      "payable_tax": "Cukai Yang Perlu Dibayar",
+      "table_title": "Skim Cukai (Tahunan)",
+      "table_headers": [
+        "Tahap",
+        "Pendapatan Dikenakan Cukai",
+        "Kadar",
+        "Deduction"
+      ],
+      "ten_thousand_unit": "w",
+      "history": {
+        "title": "Anggaran Cukai Gaji ¥{{salary}}, ",
+        "expression": "Sebelum Cukai {{salary}} - Insurans {{insurance}} - Deductions {{deduction}}, ",
+        "result": "Selepas Cukai ¥{{afterTax}} (Cukai ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "Buku Akaun",
+      "expense": "Perbelanjaan",
+      "income": "Pendapatan",
+      "add_record": "Tambah Rekod",
+      "report": "Laporan",
+      "monthly_expense": "Perbelanjaan Bulanan",
+      "monthly_income": "Pendapatan Bulanan",
+      "balance": "Baki",
+      "no_records": "Tiada rekod lagi",
+      "note": "Nota",
+      "note_placeholder": "Tambah nota...",
+      "report_title": "Laporan",
+      "total_expense": "Jumlah Perbelanjaan",
+      "total_income": "Jumlah Pendapatan",
+      "expense_detail": "Butiran Perbelanjaan",
+      "income_detail": "Butiran Pendapatan",
+      "delete_confirm_text": "Adakah anda pasti untuk memadam rekod ini?",
+      "categories": {
+        "expense": {
+          "消费": "Belanja",
+          "餐饮": "Makanan",
+          "购物": "Belanja",
+          "住房": "Perumahan",
+          "交通": "Kenderaan",
+          "通讯": "Komunikasi",
+          "娱乐": "Hiburan",
+          "医疗": "Kesihatan",
+          "教育": "Pendidikan",
+          "其他": "Lain-lain"
+        },
+        "income": {
+          "工资": "Gaji",
+          "奖金": "Bonus",
+          "投资": "Pelaburan",
+          "兼职": "Kerja Sambilan",
+          "红包": "Poket Merah",
+          "其他": "Lain-lain"
+        }
+      },
+      "weekdays": [
+        "Ahad",
+        "Isnin",
+        "Selasa",
+        "Rabu",
+        "Khamis",
+        "Jumaat",
+        "Sabtu"
+      ]
+    },
+    "memo": {
+      "title": "Memo",
+      "search_placeholder": "Cari memo...",
+      "no_title": "Tiada Tajuk",
+      "no_memos": "Tiada memo yet",
+      "title_label": "Tajuk",
+      "content_placeholder": "Masukkan kandungan...",
+      "delete_confirm_text": "Adakah anda pasti untuk memadam memo ini?",
+      "pin": "Tetapkan",
+      "unpin": "Keluarkan"
+    },
+    "health": {
+      "title": "Kalkulator Kesihatan",
+      "bmi_label": "Indeks BMI",
+      "bmr_label": "BMR",
+      "tdee_label": "TDEE",
+      "gender": "Jantina",
+      "male": "Lelaki",
+      "female": "Perempuan",
+      "height": "Ketinggian (cm)",
+      "weight": "Berat (kg)",
+      "age": "Umur",
+      "activity_level": " Tahap Aktiviti",
+      "activity": {
+        "sedentary": "Sedentari",
+        "light": "Ringan (1-3 kali seminggu)",
+        "moderate": "Sederhana (3-5 kali seminggu)",
+        "active": "Aktif (6-7 kali seminggu)",
+        "very_active": "Sangat Aktif (Kerja berat harian)"
+      },
+      "status": {
+        "underweight": "Di bawah Berat Badan",
+        "normal": "Normal",
+        "overweight": "Di atas Berat Badan",
+        "obese": "Obes"
+      }
+    },
+    "graph": {
+      "title": "Pemplotan Fungsi",
+      "placeholder": "Masukkan fungsi, contoh: x^2, sin(x)...",
+      "x_min": "X Min",
+      "x_max": "X Max"
+    },
+    "formula": {
+      "title": "Kalkulator Formula",
+      "category_label": "Kategori",
+      "all": "Semua",
+      "select_formula": "Pilih Formula",
+      "result_title": "Keputusan",
+      "formula_label": "Formula",
+      "variables_label": "Variabel",
+      "categories": {
+        "几何": "Geometri",
+        "物理": "Fizik",
+        "数学": "Matematik",
+        "金融": "Kewangan",
+        "健康": "Kesihatan"
+      },
+      "items": {
+        "circle_area": {
+          "name": "Luas Bulatan",
+          "description": "Kira luas dengan jejari",
+          "variables": {
+            "r": "Jejari"
+          }
+        },
+        "circle_perimeter": {
+          "name": "Perimeter Bulatan",
+          "description": "Kira perimeter dengan jejari",
+          "variables": {
+            "r": "Jejari"
+          }
+        },
+        "sphere_volume": {
+          "name": "Isipadu Sfera",
+          "description": "Kira isipadu dengan jejari",
+          "variables": {
+            "r": "Jejari"
+          }
+        },
+        "triangle_area": {
+          "name": "Luas Segitiga",
+          "description": "Kira luas dengan asas dan ketinggian",
+          "variables": {
+            "a": "Asas",
+            "h": "Ketinggian"
+          }
+        },
+        "trapezoid_area": {
+          "name": "Luas Trapezium",
+          "description": "Kira luas dengan asas dan ketinggian",
+          "variables": {
+            "a": "Atas",
+            "b": "Bawah",
+            "h": "Ketinggian"
+          }
+        },
+        "cylinder_volume": {
+          "name": "Isipadu Silinder",
+          "description": "Kira isipadu dengan jejari dan ketinggian",
+          "variables": {
+            "r": "Jejari",
+            "h": "Ketinggian"
+          }
+        },
+        "cone_volume": {
+          "name": "Isipadu Kon",
+          "description": "Kira isipadu dengan jejari dan ketinggian",
+          "variables": {
+            "r": "Jejari",
+            "h": "Ketinggian"
+          }
+        },
+        "speed": {
+          "name": "Laju",
+          "description": "Kira laju dengan jarak dan masa",
+          "variables": {
+            "s": "Jarak",
+            "t": "Masa"
+          }
+        },
+        "acceleration": {
+          "name": "Pecutan",
+          "description": "Kira pecutan",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "Hukum Kedua Newton",
+          "description": "Kira daya",
+          "variables": {
+            "m": "Jisim(kg)",
+            "a": "Pecutan(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "Tenaga Kinetik",
+          "description": "Kira tenaga kinetik",
+          "variables": {
+            "m": "Jisim(kg)",
+            "v": "Kelajuan(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "Tenaga Kinetik",
+          "description": "Kira tenaga potensi",
+          "variables": {
+            "m": "Jisim(kg)",
+            "g": "g",
+            "h": "Ketinggian(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "Hukum Ohm",
+          "description": "Kira arus",
+          "variables": {
+            "U": "Voltan(V)",
+            "R": "Rintangan(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "Kuasa Elektrik",
+          "description": "Kira kuasa",
+          "variables": {
+            "U": "Voltan(V)",
+            "I": "Arus(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "Teorem Pythagoras",
+          "description": "Kira sisi miring",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "Akar Kuadratik",
+          "description": "Diskriminan ax²+bx+c=0",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "Bunga Majmuk",
+          "description": "Kira jumlah dengan bunga",
+          "variables": {
+            "P": "Punca",
+            "r": "Kadar(%)",
+            "n": "Tahun"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "Kira BMI dengan berat dan ketinggian",
+          "variables": {
+            "weight": "Berat(kg)",
+            "height": "Ketinggian(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "Diskaun & Tip",
+      "original_price": "Harga",
+      "price_placeholder": "Masukkan jumlah",
+      "discount_label": "Diskaun",
+      "percent": "Peratus",
+      "flat_amount": "Jumlah Tetap",
+      "tip_label": "Tip",
+      "split_label": "Bahagi",
+      "person_unit": "Orang",
+      "result_title": "Keputusan",
+      "saved_amount": "Dijimatkan",
+      "discounted_price": "Harga Akhir",
+      "tip_amount": "Jumlah Tip",
+      "total_price": "Harga Keseluruhan",
+      "per_person": "Setiap Orang"
+    },
+    "date": {
+      "title": "Kalkulator Tarikh",
+      "diff_mode": "Beza Tarikh",
+      "add_mode": "Kira Tarikh",
+      "convert_mode": "Penukaran Mingu",
+      "start_date": "Tarikh Mula",
+      "end_date": "Tarikh Akhir",
+      "base_date": "Tarikh Asas",
+      "diff_time": "Perbezaan Masa",
+      "before": "Sebelum",
+      "after": "Selepas",
+      "result_title": "Keputusan",
+      "diff_days": "Perbezaan Hari",
+      "workdays": "Hari Kerja",
+      "weeks": "Minggu",
+      "hours": "Jam",
+      "minutes": "Minit",
+      "solar2lunar": "Surya ke Bulan",
+      "lunar2solar": "Bulan ke Surya",
+      "solar_date": "Tarikh Surya",
+      "lunar": "Bulan",
+      "shengxiao": "Zodiak",
+      "jieqi": "Musim Surya",
+      "festival": "Perayaan",
+      "leap_month": "Bulan Kabisat",
+      "leap_month_prefix": "Kabisat ",
+      "workdays_label": "Hari Kerja (Tanpa Sabtu dan Ahad)",
+      "lunar_year": "Tahun Bulan",
+      "lunar_month": "Bulan Bulan",
+      "lunar_day": "Hari Bulan",
+      "invalid_date": "Tarikh tidak sah"
+    },
+    "finance": {
+      "title": "Kalkulator Kewangan",
+      "bank_mode": "Simpanan Bank",
+      "compound_mode": "Bunga Majmuk",
+      "regular_mode": "Pelaburan Biasa",
+      "interest_yuan": "Faedah",
+      "interest_profit": "Untung",
+      "total_yuan": "Jumlah",
+      "total_sum": "Jumlah Keseluruhan",
+      "bank_info": "Masukkan Maklumat Simpanan",
+      "bank_amount": "Jumlah",
+      "bank_years": "Tahun",
+      "rate_percent": "Kadar (%)",
+      "compound_info": "Masukkan Maklumat Pelaburan",
+      "initial_principal": "Modal Awal",
+      "invest_years": "Tahun",
+      "return_rate": "Kadar Pulangan (%)",
+      "compound_freq": "Kekerapan",
+      "regular_info": "Masukkan Maklumat Biasa",
+      "regular_amount": "Jumlah Perodik",
+      "regular_years": "Tahun",
+      "regular_rate": "Kadar Pulangan (%)",
+      "regular_freq": "Kekerapan",
+      "total_return": "Jumlah Pulangan",
+      "total_invest": "Jumlah Pelaburan",
+      "overflow_error": "Overflows Nilai",
+      "freq": {
+        "year": "Tahunan",
+        "month": "Bulanan",
+        "day": "Harian",
+        "week": "Mingguan"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import { useHistoryStore } from '@/stores/history'
 import './TaxCalculator.scss'
@@ -15,6 +16,7 @@ const taxBrackets = [
 ]
 
 export default function TaxCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const [salary, setSalary] = useState<number | null>(null)
@@ -66,81 +68,86 @@ export default function TaxCalculator() {
       if (currentId !== lastCalculated) {
         addHistory({
           type: 'tax',
-          title: `月薪 ¥${salary} 个税估算`,
-          expression: `税前 ${salary} - 五险一金 ${socialInsurance || 0} - 专项 ${specialDeduction || 0}`,
-          result: `税后 ¥${Math.round(taxResult.afterTax)} (个税 ¥${Math.round(taxResult.tax)})`
+          title: t('tool.tax.history.title', { salary }),
+          expression: t('tool.tax.history.expression', { salary, insurance: socialInsurance || 0, deduction: specialDeduction || 0 }),
+          result: t('tool.tax.history.result', { 
+            afterTax: Math.round(taxResult.afterTax), 
+            tax: Math.round(taxResult.tax) 
+          })
         })
         setLastCalculated(currentId)
       }
     }
-  }, [salary, socialInsurance, specialDeduction, taxResult, addHistory, lastCalculated])
+  }, [salary, socialInsurance, specialDeduction, taxResult, addHistory, lastCalculated, t])
 
   const formatMoney = (num: number) => num.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
   return (
     <div className="tool-page tax">
-      <ToolHeader title="个税计算" />
+      <ToolHeader title={t('tool.tax.title')} />
       
       <main className="tool-content">
         <div className="input-section">
           <div className="input-row">
-            <label>税前月薪（元）</label>
+            <label>{t('tool.tax.salary_label')}</label>
             <div className="input-field">
-              <input type="number" value={salary || ''} onChange={(e) => setSalary(e.target.value ? Number(e.target.value) : null)} placeholder="请输入" />
-              <span className="unit">元</span>
+              <input type="number" value={salary || ''} onChange={(e) => setSalary(e.target.value ? Number(e.target.value) : null)} placeholder={t('common.confirm_delete').slice(0, 3)} />
+              <span className="unit">{t('common.year_unit').replace('年', '元')}</span>
             </div>
           </div>
           <div className="input-row">
-            <label>五险一金（元）</label>
+            <label>{t('tool.tax.insurance_label')}</label>
             <div className="input-field">
               <input type="number" value={socialInsurance || ''} onChange={(e) => setSocialInsurance(e.target.value ? Number(e.target.value) : null)} placeholder="0" />
-              <span className="unit">元</span>
+              <span className="unit">{t('common.year_unit').replace('年', '元')}</span>
             </div>
           </div>
           <div className="input-row">
-            <label>专项附加扣除（元）</label>
+            <label>{t('tool.tax.deduction_label')}</label>
             <div className="input-field">
               <input type="number" value={specialDeduction || ''} onChange={(e) => setSpecialDeduction(e.target.value ? Number(e.target.value) : null)} placeholder="0" />
-              <span className="unit">元</span>
+              <span className="unit">{t('common.year_unit').replace('年', '元')}</span>
             </div>
           </div>
           <div className="input-row">
-            <label>起征点（元）</label>
+            <label>{t('tool.tax.threshold_label')}</label>
             <div className="input-field disabled">
               <input type="number" value={threshold} disabled />
-              <span className="unit">元</span>
+              <span className="unit">{t('common.year_unit').replace('年', '元')}</span>
             </div>
           </div>
         </div>
 
-        <div className="hint-text">专项附加扣除包括：子女教育、继续教育、住房贷款利息、住房租金、赡养老人等</div>
+        <div className="hint-text">{t('tool.tax.hint')}</div>
         
         {taxResult && (
           <div className="result-section">
             <div className="result-main">
-              <div className="label">税后月薪</div>
+              <div className="label">{t('tool.tax.after_tax_salary')}</div>
               <div className="value">¥ {formatMoney(taxResult.afterTax)}</div>
             </div>
             <div className="result-details">
-              <div className="detail-item"><span className="label">应纳税所得额</span><span className="value">¥ {formatMoney(taxResult.taxableIncome)}</span></div>
-              <div className="detail-item"><span className="label">适用税率</span><span className="value">{taxResult.rate}%</span></div>
-              <div className="detail-item"><span className="label">应缴个税</span><span className="value highlight">¥ {formatMoney(taxResult.tax)}</span></div>
-              <div className="detail-item"><span className="label">五险一金</span><span className="value">¥ {formatMoney(socialInsurance || 0)}</span></div>
+              <div className="detail-item"><span className="label">{t('tool.tax.taxable_income')}</span><span className="value">¥ {formatMoney(taxResult.taxableIncome)}</span></div>
+              <div className="detail-item"><span className="label">{t('tool.tax.applicable_rate')}</span><span className="value">{taxResult.rate}%</span></div>
+              <div className="detail-item"><span className="label">{t('tool.tax.payable_tax')}</span><span className="value highlight">¥ {formatMoney(taxResult.tax)}</span></div>
+              <div className="detail-item"><span className="label">{t('tool.tax.insurance_label').replace('（元）', '')}</span><span className="value">¥ {formatMoney(socialInsurance || 0)}</span></div>
             </div>
           </div>
         )}
           
         <div className="tax-table">
-          <div className="table-title">个税税率表（年度）</div>
+          <div className="table-title">{t('tool.tax.table_title')}</div>
           <table>
             <thead>
-              <tr><th>级数</th><th>应纳税所得额</th><th>税率</th><th>速算扣除</th></tr>
+              <tr>
+                {(t('tool.tax.table_headers', { returnObjects: true }) as any).map((header: string) => <th key={header}>{header}</th>)}
+              </tr>
             </thead>
             <tbody>
               {taxBrackets.map((b, i) => (
                 <tr key={i} className={taxResult && taxResult.rate === b.rate * 100 && taxResult.tax > 0 ? 'active' : ''}>
                   <td>{i + 1}</td>
-                  <td>{b.max === Infinity ? `>${b.min/10000}万` : `${b.min/10000}-${b.max/10000}万`}</td>
+                  <td>{b.max === Infinity ? `>${b.min/10000}${t('tool.tax.ten_thousand_unit')}` : `${b.min/10000}-${b.max/10000}${t('tool.tax.ten_thousand_unit')}`}</td>
                   <td>{b.rate * 100}%</td>
                   <td>{b.deduction}</td>
                 </tr>

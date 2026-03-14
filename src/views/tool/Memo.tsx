@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './Memo.scss'
 
@@ -16,6 +17,7 @@ interface MemoItem {
 const colors = ['#4a90d9', '#27ae60', '#e74c3c', '#f39c12', '#9b59b6', '#1abc9c', '#e91e63', '#607d8b']
 
 function Memo() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [memos, setMemos] = useState<MemoItem[]>([])
   const [showEditor, setShowEditor] = useState(false)
@@ -50,10 +52,10 @@ function Memo() {
     const now = new Date()
     const diff = now.getTime() - date.getTime()
     const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-    if (days === 0) return '今天 ' + date.toTimeString().slice(0, 5)
-    if (days === 1) return '昨天'
-    if (days < 7) return `${days}天前`
-    return `${date.getMonth() + 1}月${date.getDate()}日`
+    if (days === 0) return t('common.today') + ' ' + date.toTimeString().slice(0, 5)
+    if (days === 1) return t('common.yesterday')
+    if (days < 7) return `${days}${t('common.days_ago')}`
+    return `${date.getMonth() + 1}${t('common.month_unit')}${date.getDate()}${t('common.day_unit')}`
   }
 
   const openNewMemo = () => { setEditingMemo(null); setNewMemo({ title: '', content: '', color: colors[0] }); setShowEditor(true) }
@@ -64,9 +66,9 @@ function Memo() {
     const now = new Date().toISOString()
     let newMemos: MemoItem[]
     if (editingMemo) {
-      newMemos = memos.map(m => m.id === editingMemo.id ? { ...m, title: newMemo.title || '无标题', content: newMemo.content, color: newMemo.color, updatedAt: now } : m)
+      newMemos = memos.map(m => m.id === editingMemo.id ? { ...m, title: newMemo.title || t('tool.memo.no_title'), content: newMemo.content, color: newMemo.color, updatedAt: now } : m)
     } else {
-      newMemos = [...memos, { id: Date.now(), title: newMemo.title || '无标题', content: newMemo.content, color: newMemo.color, createdAt: now, updatedAt: now, pinned: false }]
+      newMemos = [...memos, { id: Date.now(), title: newMemo.title || t('tool.memo.no_title'), content: newMemo.content, color: newMemo.color, createdAt: now, updatedAt: now, pinned: false }]
     }
     setMemos(newMemos); saveToStorage(newMemos); setShowEditor(false)
   }
@@ -87,30 +89,32 @@ function Memo() {
     <div className="tool-page memo">
       {!showEditor ? (
         <div className="list-view">
-          <ToolHeader title="备忘录" />
+          <ToolHeader title={t('tool.memo.title')} />
           <main className="tool-content">
             <div className="search-bar">
               <span className="search-icon">🔍</span>
-              <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="搜索备忘录..." />
+              <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder={t('tool.memo.search_placeholder')} />
             </div>
             {filteredMemos.length > 0 ? (
               <div className="memo-grid">
                 {filteredMemos.map(memo => (
                   <div key={memo.id} className="memo-card" style={{ borderLeftColor: memo.color }} onClick={() => openEditMemo(memo)}>
                     <div className="memo-header">
-                      <span className="memo-title">{memo.title}</span>
-                      <div className="memo-actions">
-                        <button className={`pin-btn ${memo.pinned ? 'pinned' : ''}`} onClick={e => { e.stopPropagation(); togglePin(memo) }}>📌</button>
-                        <button className="delete-item-btn" onClick={e => { e.stopPropagation(); deleteMemo(memo.id) }}>🗑️</button>
-                      </div>
+                      <span className="memo-title">{memo.title || t('tool.memo.no_title')}</span>
+                      {memo.pinned && <span className="pin-icon">📌</span>}
                     </div>
-                    <p className="memo-preview">{getPreview(memo.content)}</p>
-                    <span className="memo-date">{formatDate(memo.updatedAt)}</span>
+                    <div className="memo-preview">{getPreview(memo.content)}</div>
+                    <div className="memo-footer">
+                      <span className="memo-date">{formatDate(memo.updatedAt)}</span>
+                    </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="empty-state"><div className="empty-icon">📝</div><p>{searchQuery ? '没有找到相关备忘录' : '暂无备忘录'}</p><p className="empty-hint">点击右下角按钮创建新备忘录</p></div>
+              <div className="empty-state">
+                <div className="empty-icon">📝</div>
+                <p>{t('tool.memo.no_memos')}</p>
+              </div>
             )}
             <button className="add-btn" onClick={openNewMemo}>+</button>
           </main>
@@ -118,27 +122,64 @@ function Memo() {
       ) : (
         <div className="editor-view">
           <ToolHeader 
-            title={editingMemo ? '编辑备忘' : '新建备忘'} 
+            title={editingMemo ? t('common.save') : t('tool.memo.title')} 
             onBack={saveMemo}
           />
-          <div className="editor-content">
-            <input type="text" value={newMemo.title} onChange={e => setNewMemo({ ...newMemo, title: e.target.value })} className="title-input" placeholder="标题" />
-            <div className="color-picker">
-              <span className="color-label">颜色标签</span>
-              <div className="color-options">
-                {colors.map(color => (<button key={color} className={`color-btn ${newMemo.color === color ? 'active' : ''}`} style={{ background: color }} onClick={() => setNewMemo({ ...newMemo, color })} />))}
+          <main className="tool-content">
+            <div className="editor-header">
+              <input 
+                type="text" 
+                className="title-input" 
+                value={newMemo.title} 
+                onChange={e => setNewMemo({ ...newMemo, title: e.target.value })} 
+                placeholder={t('tool.memo.title_label')} 
+              />
+              <div className="color-picker">
+                {colors.map(c => (
+                  <div 
+                    key={c} 
+                    className={`color-item ${newMemo.color === c ? 'active' : ''}`} 
+                    style={{ backgroundColor: c }}
+                    onClick={() => setNewMemo({ ...newMemo, color: c })}
+                  />
+                ))}
               </div>
             </div>
-            <textarea value={newMemo.content} onChange={e => setNewMemo({ ...newMemo, content: e.target.value })} className="content-input" placeholder="写点什么..." />
-          </div>
+            <textarea 
+              className="content-input" 
+              value={newMemo.content} 
+              onChange={e => setNewMemo({ ...newMemo, content: e.target.value })} 
+              placeholder={t('tool.memo.content_placeholder')}
+            />
+            <div className="editor-footer">
+              <span className="date-info">
+                {editingMemo ? `${t('common.save')}: ${formatDate(editingMemo.updatedAt)}` : formatDate(new Date().toISOString())}
+              </span>
+              <div className="actions">
+                {editingMemo && (
+                  <button className="pin-btn" onClick={() => togglePin(editingMemo)}>
+                    {editingMemo.pinned ? t('tool.memo.unpin') : t('tool.memo.pin')}
+                  </button>
+                )}
+                <button className="delete-btn" onClick={() => editingMemo && deleteMemo(editingMemo.id)}>
+                  {t('common.delete')}
+                </button>
+              </div>
+            </div>
+          </main>
         </div>
       )}
 
       {showDeleteConfirm && (
         <div className="confirm-overlay" onClick={cancelDelete}>
           <div className="confirm-modal" onClick={e => e.stopPropagation()}>
-            <div className="confirm-icon">🗑️</div><h3>确认删除</h3><p>确定要删除这条备忘录吗？删除后无法恢复。</p>
-            <div className="confirm-actions"><button className="cancel-btn" onClick={cancelDelete}>取消</button><button className="delete-confirm-btn" onClick={confirmDelete}>删除</button></div>
+            <div className="confirm-icon">🗑️</div>
+            <h3>{t('common.confirm_delete')}</h3>
+            <p>{t('tool.memo.delete_confirm_text')}</p>
+            <div className="confirm-actions">
+              <button className="cancel-btn" onClick={cancelDelete}>{t('common.cancel')}</button>
+              <button className="delete-confirm-btn" onClick={confirmDelete}>{t('common.delete')}</button>
+            </div>
           </div>
         </div>
       )}

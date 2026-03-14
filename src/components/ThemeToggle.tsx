@@ -1,14 +1,16 @@
+import { useTranslation } from 'react-i18next'
 import { useThemeStore } from '@/stores/theme'
 import './ThemeToggle.scss'
 
 export default function ThemeToggle() {
+  const { t } = useTranslation()
   const { theme, toggleTheme } = useThemeStore()
 
   return (
     <button 
       className="theme-toggle" 
       onClick={toggleTheme}
-      title={theme === 'light' ? '切换到深色模式' : '切换到亮色模式'}
+      title={theme === 'light' ? t('common.switch_dark') : t('common.switch_light')}
     >
       {theme === 'light' ? (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

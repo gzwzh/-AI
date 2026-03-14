@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './FinanceCalculator.scss'
 
 export default function FinanceCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [mode, setMode] = useState<'bank' | 'compound' | 'regular'>('bank')
   const [bankAmount, setBankAmount] = useState<number | null>(null)
@@ -69,44 +71,44 @@ export default function FinanceCalculator() {
 
   return (
     <div className="tool-page finance">
-      <ToolHeader title="理财计算" />
+      <ToolHeader title={t('tool.finance.title')} />
       
       <main className="tool-content">
         <div className="mode-tabs">
-          <button className={mode === 'bank' ? 'active' : ''} onClick={() => setMode('bank')}>银行理财</button>
-          <button className={mode === 'compound' ? 'active' : ''} onClick={() => setMode('compound')}>复利理财</button>
-          <button className={mode === 'regular' ? 'active' : ''} onClick={() => setMode('regular')}>定投理财</button>
+          <button className={mode === 'bank' ? 'active' : ''} onClick={() => setMode('bank')}>{t('tool.finance.bank_mode')}</button>
+          <button className={mode === 'compound' ? 'active' : ''} onClick={() => setMode('compound')}>{t('tool.finance.compound_mode')}</button>
+          <button className={mode === 'regular' ? 'active' : ''} onClick={() => setMode('regular')}>{t('tool.finance.regular_mode')}</button>
         </div>
 
         {mode === 'bank' && (
           <>
             <div className="result-preview">
               <div className="preview-item">
-                <span className="label">利息(元)</span>
-                <span className="value primary">{bankResult ? formatMoney(bankResult.interest) : '0'}元</span>
+                <span className="label">{t('tool.finance.interest_yuan')}</span>
+                <span className="value primary">{bankResult ? formatMoney(bankResult.interest) : '0'}{t('tool.uppercase.yuan')}</span>
               </div>
               <div className="preview-item">
-                <span className="label">本息（元）</span>
-                <span className="value">{bankResult ? formatMoney(bankResult.total) : '0'}元</span>
+                <span className="label">{t('tool.finance.total_yuan')}</span>
+                <span className="value">{bankResult ? formatMoney(bankResult.total) : '0'}{t('tool.uppercase.yuan')}</span>
               </div>
             </div>
-            <div className="section-title">请输入存款信息</div>
+            <div className="section-title">{t('tool.finance.bank_info')}</div>
             <div className="input-section">
               <div className="input-row">
-                <label>存款金额(元)</label>
+                <label>{t('tool.finance.bank_amount')}</label>
                 <div className="input-field wide">
-                  <input type="number" value={bankAmount || ''} onChange={(e) => setBankAmount(e.target.value ? Number(e.target.value) : null)} placeholder="请输入金额" />
+                  <input type="number" value={bankAmount || ''} onChange={(e) => setBankAmount(e.target.value ? Number(e.target.value) : null)} placeholder={t('tool.discount.price_placeholder')} />
                 </div>
               </div>
               <div className="input-row">
-                <label>存款期限</label>
+                <label>{t('tool.finance.bank_years')}</label>
                 <div className="input-field">
-                  <input type="number" value={bankYears || ''} onChange={(e) => setBankYears(e.target.value ? Number(e.target.value) : null)} placeholder="年数" />
-                  <span className="unit">年</span>
+                  <input type="number" value={bankYears || ''} onChange={(e) => setBankYears(e.target.value ? Number(e.target.value) : null)} placeholder={t('common.year')} />
+                  <span className="unit">{t('common.year_unit')}</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>年利率(%)</label>
+                <label>{t('tool.finance.rate_percent')}</label>
                 <div className="input-field">
                   <input type="number" value={bankRate} onChange={(e) => setBankRate(Number(e.target.value))} step="0.01" />
                   <span className="unit">%</span>
@@ -120,54 +122,54 @@ export default function FinanceCalculator() {
           <>
             <div className="result-preview">
               <div className="preview-item">
-                <span className="label">利息收益(元)</span>
+                <span className="label">{t('tool.finance.interest_profit')}</span>
                 {compoundResult && !compoundResult.overflow ? (
-                  <span className="value primary">{formatMoney(compoundResult.interest)}元</span>
+                  <span className="value primary">{formatMoney(compoundResult.interest)}{t('tool.uppercase.yuan')}</span>
                 ) : compoundResult?.overflow ? (
-                  <span className="value error">数值过大</span>
+                  <span className="value error">{t('tool.finance.overflow_error')}</span>
                 ) : (
-                  <span className="value primary">0元</span>
+                  <span className="value primary">0{t('tool.uppercase.yuan')}</span>
                 )}
               </div>
               <div className="preview-item">
-                <span className="label">本息合计（元）</span>
+                <span className="label">{t('tool.finance.total_sum')}</span>
                 {compoundResult && !compoundResult.overflow ? (
-                  <span className="value">{formatMoney(compoundResult.total)}元</span>
+                  <span className="value">{formatMoney(compoundResult.total)}{t('tool.uppercase.yuan')}</span>
                 ) : compoundResult?.overflow ? (
-                  <span className="value error">数值过大</span>
+                  <span className="value error">{t('tool.finance.overflow_error')}</span>
                 ) : (
-                  <span className="value">0元</span>
+                  <span className="value">0{t('tool.uppercase.yuan')}</span>
                 )}
               </div>
             </div>
-            <div className="section-title">请输入投资信息</div>
+            <div className="section-title">{t('tool.finance.compound_info')}</div>
             <div className="input-section">
               <div className="input-row">
-                <label>投资本金(元)</label>
+                <label>{t('tool.finance.initial_principal')}</label>
                 <div className="input-field wide">
-                  <input type="number" value={compoundAmount || ''} onChange={(e) => setCompoundAmount(e.target.value ? Number(e.target.value) : null)} placeholder="请输入金额" />
+                  <input type="number" value={compoundAmount || ''} onChange={(e) => setCompoundAmount(e.target.value ? Number(e.target.value) : null)} placeholder={t('tool.discount.price_placeholder')} />
                 </div>
               </div>
               <div className="input-row">
-                <label>投资期限</label>
+                <label>{t('tool.finance.invest_years')}</label>
                 <div className="input-field">
-                  <input type="number" value={compoundYears || ''} onChange={(e) => setCompoundYears(e.target.value ? Number(e.target.value) : null)} placeholder="年数" min="1" max="50" />
-                  <span className="unit">年</span>
+                  <input type="number" value={compoundYears || ''} onChange={(e) => setCompoundYears(e.target.value ? Number(e.target.value) : null)} placeholder={t('common.year')} min="1" max="50" />
+                  <span className="unit">{t('common.year_unit')}</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>年化收益率(%)</label>
+                <label>{t('tool.finance.return_rate')}</label>
                 <div className="input-field">
                   <input type="number" value={compoundRate || ''} onChange={(e) => setCompoundRate(e.target.value ? Number(e.target.value) : null)} step="0.01" placeholder="0" min="0" max="100" />
                   <span className="unit">%</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>复利周期</label>
+                <label>{t('tool.finance.compound_freq')}</label>
                 <div className="toggle-group three">
-                  <button className={compoundFreq === 'year' ? 'active' : ''} onClick={() => setCompoundFreq('year')}>按年</button>
-                  <button className={compoundFreq === 'month' ? 'active' : ''} onClick={() => setCompoundFreq('month')}>按月</button>
-                  <button className={compoundFreq === 'day' ? 'active' : ''} onClick={() => setCompoundFreq('day')}>按日</button>
+                  <button className={compoundFreq === 'year' ? 'active' : ''} onClick={() => setCompoundFreq('year')}>{t('tool.finance.freq.year')}</button>
+                  <button className={compoundFreq === 'month' ? 'active' : ''} onClick={() => setCompoundFreq('month')}>{t('tool.finance.freq.month')}</button>
+                  <button className={compoundFreq === 'day' ? 'active' : ''} onClick={() => setCompoundFreq('day')}>{t('tool.finance.freq.day')}</button>
                 </div>
               </div>
             </div>
@@ -178,60 +180,60 @@ export default function FinanceCalculator() {
           <>
             <div className="result-preview">
               <div className="preview-item">
-                <span className="label">利息收益(元)</span>
+                <span className="label">{t('tool.finance.interest_profit')}</span>
                 {regularResult && !regularResult.overflow ? (
-                  <span className="value primary">{formatMoney(regularResult.interest)}元</span>
+                  <span className="value primary">{formatMoney(regularResult.interest)}{t('tool.uppercase.yuan')}</span>
                 ) : regularResult?.overflow ? (
-                  <span className="value error">数值过大</span>
+                  <span className="value error">{t('tool.finance.overflow_error')}</span>
                 ) : (
-                  <span className="value primary">0元</span>
+                  <span className="value primary">0{t('tool.uppercase.yuan')}</span>
                 )}
               </div>
               <div className="preview-item">
-                <span className="label">本息合计（元）</span>
+                <span className="label">{t('tool.finance.total_sum')}</span>
                 {regularResult && !regularResult.overflow ? (
-                  <span className="value">{formatMoney(regularResult.total)}元</span>
+                  <span className="value">{formatMoney(regularResult.total)}{t('tool.uppercase.yuan')}</span>
                 ) : regularResult?.overflow ? (
-                  <span className="value error">数值过大</span>
+                  <span className="value error">{t('tool.finance.overflow_error')}</span>
                 ) : (
-                  <span className="value">0元</span>
+                  <span className="value">0{t('tool.uppercase.yuan')}</span>
                 )}
               </div>
             </div>
-            <div className="section-title">请输入定投信息</div>
+            <div className="section-title">{t('tool.finance.regular_info')}</div>
             <div className="input-section">
               <div className="input-row">
-                <label>每期投入(元)</label>
+                <label>{t('tool.finance.regular_amount')}</label>
                 <div className="input-field wide">
-                  <input type="number" value={regularAmount || ''} onChange={(e) => setRegularAmount(e.target.value ? Number(e.target.value) : null)} placeholder="请输入金额" />
+                  <input type="number" value={regularAmount || ''} onChange={(e) => setRegularAmount(e.target.value ? Number(e.target.value) : null)} placeholder={t('tool.discount.price_placeholder')} />
                 </div>
               </div>
               <div className="input-row">
-                <label>投资期限</label>
+                <label>{t('tool.finance.regular_years')}</label>
                 <div className="input-field">
-                  <input type="number" value={regularYears || ''} onChange={(e) => setRegularYears(e.target.value ? Number(e.target.value) : null)} placeholder="年数" />
-                  <span className="unit">年</span>
+                  <input type="number" value={regularYears || ''} onChange={(e) => setRegularYears(e.target.value ? Number(e.target.value) : null)} placeholder={t('common.year')} />
+                  <span className="unit">{t('common.year_unit')}</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>预期年化收益(%)</label>
+                <label>{t('tool.finance.regular_rate')}</label>
                 <div className="input-field">
                   <input type="number" value={regularRate || ''} onChange={(e) => setRegularRate(e.target.value ? Number(e.target.value) : null)} step="0.01" placeholder="0" />
                   <span className="unit">%</span>
                 </div>
               </div>
               <div className="input-row">
-                <label>定投周期</label>
+                <label>{t('tool.finance.regular_freq')}</label>
                 <div className="toggle-group">
-                  <button className={regularFreq === 'month' ? 'active' : ''} onClick={() => setRegularFreq('month')}>按月</button>
-                  <button className={regularFreq === 'week' ? 'active' : ''} onClick={() => setRegularFreq('week')}>按周</button>
+                  <button className={regularFreq === 'month' ? 'active' : ''} onClick={() => setRegularFreq('month')}>{t('tool.finance.freq.month')}</button>
+                  <button className={regularFreq === 'week' ? 'active' : ''} onClick={() => setRegularFreq('week')}>{t('tool.finance.freq.week')}</button>
                 </div>
               </div>
             </div>
             {regularResult && (
               <div className="extra-info">
                 <div className="info-item">
-                  <span className="label">累计投入</span>
+                  <span className="label">{t('tool.finance.total_invest')}</span>
                   <span className="value">¥{formatMoney(regularResult.totalInvest)}</span>
                 </div>
               </div>

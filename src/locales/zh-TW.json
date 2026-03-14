@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "All Calculator",
+    "app_icon_alt": "All Calculator Icon",
+    "subtext": "Kunqiong AI 的產品",
+    "software_custom": "軟體自定義",
+    "feedback": "意見反饋",
+    "history": "歷史記錄",
+    "icon_alt": "圖標",
+    "back": "返回",
+    "copy_result": "複製結果",
+    "to_uppercase": "轉為大寫",
+    "error": "錯誤",
+    "copied": "已複製",
+    "clear": "清除",
+    "copied_to_clipboard": "已複製到剪貼板",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "年",
+    "today": "今天",
+    "yesterday": "昨天",
+    "days_ago": "天前",
+    "month_unit": "月",
+    "day_unit": "日",
+    "year_unit": "年",
+    "confirm_delete": "確認刪除",
+    "cancel": "取消",
+    "confirm": "確認",
+    "save": "保存",
+    "delete": "刪除",
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "close": "關閉",
+    "switch_dark": "切換至深色模式",
+    "switch_light": "切換至淺色模式",
+    "language_switch": "更改語言",
+    "weekdays": [
+      "星期日",
+      "星期一",
+      "星期二",
+      "星期三",
+      "星期四",
+      "星期五",
+      "星期六"
+    ]
+  },
+  "update": {
+    "found_new": "發現新版本",
+    "current_version": "當前版本",
+    "update_log": "更新日誌",
+    "remind_later": "稍後提醒",
+    "update_now": "立即更新"
+  },
+  "auth": {
+    "login_cancelled": "登入取消",
+    "click_to_logout": "點擊登出",
+    "logged_in": "已登入",
+    "logout": "登出",
+    "click_to_login": "點擊登入",
+    "logging_in": "登入中...",
+    "login_register": "登入/註冊",
+    "login_failed": "登入失敗",
+    "complete_login_in_browser": "請在瀏覽器中完成登入",
+    "cancel_login": "取消登入",
+    "login_timeout": "登入逾時",
+    "get_login_url_failed": "取得登入網址失敗",
+    "get_user_info_failed": "取得用戶資訊失敗",
+    "logout_failed": "登出失敗"
+  },
+  "ai": {
+    "module_direct": "快速訪問",
+    "open_module": "開啟 {{name}}, ",
+    "enter_now": "立即進入",
+    "currency_title": "貨幣兌換",
+    "view_details": "查看詳情",
+    "percent_title": "百分比計算",
+    "uppercase_title": "金額轉大寫",
+    "convert_now": "立即轉換",
+    "date_title": "日期計算",
+    "view_date_details": "查看日期詳情",
+    "tax_title": "稅務計算器",
+    "go_calculate": "開始計算",
+    "discount_title": "折扣計算",
+    "full_minus_title": "全額減免",
+    "tip_title": "小費計算",
+    "go_pay": "前往支付",
+    "health_title": "健康計算",
+    "calc_now": "立即計算",
+    "graph_title": "函數圖形",
+    "start_drawing": "開始繪圖",
+    "draw_function": "繪製函數 y = {{expr}}, ",
+    "open_graph_tool": "打開互動式圖形工具",
+    "unit_title": "單位轉換",
+    "smart_calc_title": "智慧計算",
+    "math_title": "智慧計算"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "計算器",
+      "tool": "工具",
+      "converter": "轉換器"
+    },
+    "items": {
+      "basic": "基本計算器",
+      "scientific": "科學計算器",
+      "fraction": "分數計算器",
+      "currency": "貨幣轉換器",
+      "relative": "相對呼叫",
+      "mortgage": "房貸計算器",
+      "tax": "稅務計算器",
+      "date": "日期計算器",
+      "radix": "進制轉換器",
+      "uppercase": "金額大寫",
+      "finance": "財務計算器",
+      "formula": "公式計算器",
+      "discount": "折扣與小費",
+      "account": "帳本",
+      "memo": "備忘",
+      "health": "健康計算器",
+      "graph": "圖表計算器",
+      "length": "長度",
+      "area": "面積",
+      "volume": "體積",
+      "temperature": "溫度",
+      "speed": "速度",
+      "time": "時間",
+      "weight": "重量",
+      "power": "功率",
+      "heat": "熱量",
+      "force": "力",
+      "pressure": "壓力",
+      "capacity": "容量",
+      "data": "資料儲存"
+    }
+  },
+  "home": {
+    "search_placeholder": "嘗試 AI 搜尋，例如 100 美元，100cm 轉 m...",
+    "smart_tips_label": "智慧提示：",
+    "tips": {
+      "date": "100 天後是什麼日期？",
+      "tax": "1.5 萬薪資要繳多少稅？",
+      "uppercase": "金額轉大寫",
+      "unit": "100cm 轉 m"
+    },
+    "smart_tag": "AI 智能解析",
+    "search_results_title": "搜尋結果",
+    "no_results_text": "未找到相關功能，請嘗試其他關鍵字"
+  },
+  "history": {
+    "title": "歷史紀錄",
+    "clear_all": "全部清除",
+    "empty": "尚無歷史紀錄",
+    "types": {
+      "basic": "基本",
+      "scientific": "科學",
+      "converter": "單位",
+      "currency": "貨幣",
+      "health": "健康",
+      "discount": "折扣",
+      "tax": "稅",
+      "tool": "工具",
+      "record": "記錄"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "分母不能為 0",
+      "error_zero_divisor": "除數不能為 0"
+    }
+  },
+  "converter": {
+    "unit_suffix": "轉換",
+    "categories": {
+      "length": "長度",
+      "area": "面積",
+      "volume": "體積",
+      "weight": "重量",
+      "temperature": "溫度",
+      "speed": "速度",
+      "time": "時間",
+      "power": "功率",
+      "heat": "熱量",
+      "force": "力",
+      "pressure": "壓力",
+      "capacity": "容量",
+      "data": "數據存儲"
+    },
+    "units": {
+      "km": "公里",
+      "m": "米",
+      "dm": "分米",
+      "cm": "厘米",
+      "mm": "毫米",
+      "μm": "微米",
+      "nm": "納米",
+      "mi": "英里",
+      "yd": "碼",
+      "ft": "英尺",
+      "in": "英寸",
+      "nmi": "海里",
+      "里": "里（中國裡）",
+      "丈": "丈",
+      "尺": "尺",
+      "寸": "寸",
+      "km²": "平方公里",
+      "ha": "公頃",
+      "m²": "平方米",
+      "dm²": "平方分米",
+      "cm²": "平方厘米",
+      "mm²": "平方毫米",
+      "mi²": "平方英里",
+      "acre": "英畝",
+      "yd²": "平方碼",
+      "ft²": "平方英尺",
+      "in²": "平方英寸",
+      "亩": "畝",
+      "分": "分（面積）",
+      "m³": "立方米",
+      "dm³": "立方分米",
+      "cm³": "立方厘米",
+      "mm³": "立方毫米",
+      "L": "升",
+      "mL": "毫升",
+      "gal": "加侖（美國）",
+      "gal(UK)": "加侖（英國）",
+      "pt": "品脫",
+      "ft³": "立方英尺",
+      "in³": "立方英寸",
+      "t": "公噸",
+      "kg": "千克",
+      "g": "克",
+      "mg": "毫克",
+      "μg": "微克",
+      "lb": "磅",
+      "oz": "盎司",
+      "ct": "克拉",
+      "斤": "市斤",
+      "两": "兩",
+      "钱": "錢",
+      "°C": "攝氏度",
+      "°F": "華氏度",
+      "K": "開爾文",
+      "°R": "蘭金度",
+      "°Ré": "勒穆爾度",
+      "m/s": "米/秒",
+      "km/h": "公里/小時",
+      "mph": "英里/小時",
+      "kn": "節",
+      "Ma": "馬赫",
+      "c": "光速",
+      "世纪": "世紀",
+      "年": "年",
+      "月": "月",
+      "周": "週",
+      "天": "天",
+      "h": "小時",
+      "min": "分鐘",
+      "s": "秒",
+      "ms": "毫秒",
+      "μs": "微秒",
+      "ns": "納秒",
+      "kW": "千瓦",
+      "W": "瓦特",
+      "mW": "毫瓦",
+      "hp": "馬力",
+      "PS": "公制馬力",
+      "kcal/s": "千卡/秒",
+      "BTU/s": "英熱單位/秒",
+      "kJ": "千焦耳",
+      "J": "焦耳",
+      "cal": "卡路里",
+      "kcal": "千卡路里",
+      "Wh": "瓦時",
+      "kWh": "千瓦時",
+      "BTU": "英國熱量單位",
+      "kN": "千牛頓",
+      "N": "牛頓",
+      "dyn": "達因",
+      "kgf": "公斤力",
+      "gf": "克力",
+      "lbf": "磅力",
+      "Pa": "帕斯卡",
+      "hPa": "百帕斯卡",
+      "kPa": "千帕斯卡",
+      "MPa": "兆帕",
+      "bar": "巴",
+      "mbar": "毫巴",
+      "atm": "大氣壓",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "托爾",
+      "kL": "千升",
+      "dL": "分升",
+      "cL": "厘升",
+      "qt": "夸脫",
+      "cup": "杯",
+      "fl oz": "液體盎司",
+      "bit": "位",
+      "B": "字節",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kbit",
+      "Mbit": "Mbit",
+      "Gbit": "Gbit"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "貨幣兌換",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "進制轉換器",
+      "dec": "十進制 (DEC)",
+      "bin": "二進制 (BIN)",
+      "oct": "八進制 (OCT)",
+      "hex": "十六進制 (HEX)"
+    },
+    "uppercase": {
+      "title": "金額大寫",
+      "zero_yuan_整": "零元整",
+      "zero": "零",
+      "digits": [
+        "零",
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九"
+      ],
+      "units": [
+        ", ",
+        "十",
+        "百",
+        "千"
+      ],
+      "big_units": [
+        ", ",
+        "萬",
+        "億",
+        "兆"
+      ],
+      "yuan": "元",
+      "zheng": "整",
+      "jiao": "角",
+      "fen": "分",
+      "negative": "負",
+      "back_to_calculator": "返回計算器",
+      "click_to_copy": "大寫（點擊複製）"
+    },
+    "mortgage": {
+      "title": "房貸計算器",
+      "commercial_loan": "商業貸款",
+      "fund_loan": "住房公積金",
+      "combined_loan": "組合貸款",
+      "loan_amount": "貸款金額",
+      "loan_rate": "貸款利率",
+      "fund_loan_amount": "公積金貸款金額",
+      "fund_loan_rate": "公積金貸款利率",
+      "commercial_loan_amount": "商業貸款金額",
+      "commercial_rate_type": "利率類型",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "基點",
+      "commercial_loan_rate": "商業利率",
+      "principal": "本金",
+      "interest": "利息",
+      "equal_monthly": "等額月供",
+      "equal_principal": "等本月供",
+      "payment_type": "付款方式",
+      "loan_years": "貸款年限",
+      "lpr_rate": "LPR利率",
+      "basis_points": "BP",
+      "base_rate": "基礎利率",
+      "rate_type": "利率類型",
+      "total_payment": "總支付金額",
+      "total_interest": "總利息",
+      "monthly_payment": "每月支付金額",
+      "first_month_payment": "首月",
+      "last_month_payment": "最後一個月",
+      "monthly_decrease": "每月減少",
+      "view_schedule": "查看計畫",
+      "hide_schedule": "隱藏計畫",
+      "schedule_title": "計畫",
+      "period": "期間",
+      "monthly_pay": "付款",
+      "principal_part": "本金",
+      "interest_part": "利息",
+      "remaining_principal": "剩餘",
+      "payment_method": "付款方式",
+      "loan_total": "貸款總額",
+      "repayment_periods": "還款期數",
+      "period_unit": "月",
+      "remaining": "剩餘"
+    },
+    "relative": {
+      "title": "親屬關係",
+      "my_gender": "我的性別：",
+      "placeholder": "點擊下方按鈕以新增關係",
+      "i_call_ta": "我稱他們為：",
+      "ta_calls_me": "他們稱我為：",
+      "reverse_check": "反轉",
+      "example_title": "常見範例",
+      "error_same_sex": "同性關係尚未支援",
+      "error_not_found": "關係過於疏遠或不在資料庫中",
+      "error_calc": "計算錯誤",
+      "prefix": "我的 ",
+      "connector": "'s ",
+      "labels": {
+        "f": "父親",
+        "m": "母親",
+        "h": "丈夫",
+        "w": "妻子",
+        "ob": "哥哥",
+        "lb": "弟弟",
+        "os": "姐姐",
+        "ls": "妹妹",
+        "s": "兒子",
+        "d": "女兒"
+      },
+      "buttons": {
+        "f": "父親",
+        "m": "母親",
+        "h": "丈夫",
+        "w": "妻子",
+        "ob": "哥哥+",
+        "lb": "哥哥-",
+        "os": "姐姐+",
+        "ls": "姐姐-",
+        "s": "兒子",
+        "d": "女兒"
+      },
+      "examples": {
+        "爷爷": "祖父",
+        "外婆": "祖母",
+        "伯父": "叔父(年長)",
+        "叔叔": "叔父(年輕)",
+        "舅舅": "舅父",
+        "姑姑": "姑姑"
+      }
+    },
+    "tax": {
+      "title": "稅金計算器",
+      "salary_label": "每月薪資",
+      "insurance_label": "社會保險",
+      "deduction_label": "專項扣除",
+      "threshold_label": "起徵點",
+      "hint": "扣除項目包括：子女教育、房租、房貸利息等。",
+      "after_tax_salary": "稅後薪資",
+      "taxable_income": "應稅所得",
+      "applicable_rate": "稅率",
+      "payable_tax": "應納稅額",
+      "table_title": "稅率級數（年度）",
+      "table_headers": [
+        "級數",
+        "應稅所得",
+        "稅率",
+        "扣除額"
+      ],
+      "ten_thousand_unit": "萬",
+      "history": {
+        "title": "薪資 ¥{{salary}} 稅額預估",
+        "expression": "薪資 {{salary}} - 保險 {{insurance}} - 扣除 {{deduction}}, ",
+        "result": "稅後 ¥{{afterTax}} (稅額 ¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "帳戶簿",
+      "expense": "支出",
+      "income": "收入",
+      "add_record": "新增項目",
+      "report": "報表",
+      "monthly_expense": "月支出",
+      "monthly_income": "月收入",
+      "balance": "餘額",
+      "no_records": "目前尚無紀錄",
+      "note": "備註",
+      "note_placeholder": "新增備註...",
+      "report_title": "報表",
+      "total_expense": "總支出",
+      "total_income": "總收入",
+      "expense_detail": "支出明細",
+      "income_detail": "收入明細",
+      "delete_confirm_text": "確定要刪除此筆紀錄嗎？",
+      "categories": {
+        "expense": {
+          "消费": "消費",
+          "餐饮": "飲食",
+          "购物": "購物",
+          "住房": "住房",
+          "交通": "交通",
+          "通讯": "通訊",
+          "娱乐": "娛樂",
+          "医疗": "醫療",
+          "教育": "教育",
+          "其他": "其他"
+        },
+        "income": {
+          "工资": "工資",
+          "奖金": "獎金",
+          "投资": "投資",
+          "兼职": "兼職",
+          "红包": "紅包",
+          "其他": "其他"
+        }
+      },
+      "weekdays": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ]
+    },
+    "memo": {
+      "title": "備忘錄",
+      "search_placeholder": "搜尋備忘錄...",
+      "no_title": "無標題",
+      "no_memos": "尚無備忘錄",
+      "title_label": "標題",
+      "content_placeholder": "輸入內容...",
+      "delete_confirm_text": "確定要刪除此備忘錄嗎？",
+      "pin": "置頂",
+      "unpin": "取消置頂"
+    },
+    "health": {
+      "title": "健康計算",
+      "bmi_label": "BMI 指數",
+      "bmr_label": "基礎代謝率",
+      "tdee_label": "總消耗熱量",
+      "gender": "性別",
+      "male": "男性",
+      "female": "女性",
+      "height": "身高 (cm)",
+      "weight": "體重 (kg)",
+      "age": "年齡",
+      "activity_level": "活動等級",
+      "activity": {
+        "sedentary": "久坐不動",
+        "light": "輕度 (每週1-3次)",
+        "moderate": "中度 (每週3-5次)",
+        "active": "活躍 (每週6-7次)",
+        "very_active": "非常活躍 (每日重勞動)"
+      },
+      "status": {
+        "underweight": "體重過輕",
+        "normal": "正常",
+        "overweight": "體重過重",
+        "obese": "肥胖"
+      }
+    },
+    "graph": {
+      "title": "函數圖形",
+      "placeholder": "輸入函數，例如 x^2, sin(x)...",
+      "x_min": "X 最小值",
+      "x_max": "X 最大值"
+    },
+    "formula": {
+      "title": "公式計算器",
+      "category_label": "類別",
+      "all": "全部",
+      "select_formula": "選擇公式",
+      "result_title": "結果",
+      "formula_label": "公式",
+      "variables_label": "變數",
+      "categories": {
+        "几何": "幾何",
+        "物理": "物理",
+        "数学": "數學",
+        "金融": "金融",
+        "健康": "健康"
+      },
+      "items": {
+        "circle_area": {
+          "name": "圓形面積",
+          "description": "以半徑計算面積",
+          "variables": {
+            "r": "半徑"
+          }
+        },
+        "circle_perimeter": {
+          "name": "圓周長",
+          "description": "以半徑計算周長",
+          "variables": {
+            "r": "半徑"
+          }
+        },
+        "sphere_volume": {
+          "name": "球體體積",
+          "description": "以半徑計算體積",
+          "variables": {
+            "r": "半徑"
+          }
+        },
+        "triangle_area": {
+          "name": "三角形面積",
+          "description": "以底和高度計算面積",
+          "variables": {
+            "a": "底",
+            "h": "高度"
+          }
+        },
+        "trapezoid_area": {
+          "name": "梯形面積",
+          "description": "以上下底和高度計算面積",
+          "variables": {
+            "a": "上底",
+            "b": "下底",
+            "h": "高度"
+          }
+        },
+        "cylinder_volume": {
+          "name": "圓柱體積",
+          "description": "以半徑和高度計算體積",
+          "variables": {
+            "r": "半徑",
+            "h": "高度"
+          }
+        },
+        "cone_volume": {
+          "name": "圓錐體積",
+          "description": "以半徑和高度計算體積",
+          "variables": {
+            "r": "半徑",
+            "h": "高度"
+          }
+        },
+        "speed": {
+          "name": "速度",
+          "description": "以距離和時間計算速度",
+          "variables": {
+            "s": "距離",
+            "t": "時間"
+          }
+        },
+        "acceleration": {
+          "name": "加速度",
+          "description": "計算加速度",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "牛頓第二定律",
+          "description": "計算力",
+          "variables": {
+            "m": "質量(kg)",
+            "a": "加速度(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "動能",
+          "description": "計算動能",
+          "variables": {
+            "m": "質量(kg)",
+            "v": "速度(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "位能",
+          "description": "計算位能",
+          "variables": {
+            "m": "質量(kg)",
+            "g": "g",
+            "h": "高度(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "歐姆定律",
+          "description": "計算電流",
+          "variables": {
+            "U": "電壓(V)",
+            "R": "電阻(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "電力",
+          "description": "計算功率",
+          "variables": {
+            "U": "電壓(V)",
+            "I": "電流(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "畢氏定理",
+          "description": "計算斜邊",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "二次方根",
+          "description": "ax²+bx+c=0 判別式",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "複利",
+          "description": "計算含利息總金額",
+          "variables": {
+            "P": "本金",
+            "r": "利率(%)",
+            "n": "年數"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "根據體重和身高計算BMI",
+          "variables": {
+            "weight": "體重(kg)",
+            "height": "身高(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "折扣與小費",
+      "original_price": "價格",
+      "price_placeholder": "輸入金額",
+      "discount_label": "折扣",
+      "percent": "百分比",
+      "flat_amount": "固定金額",
+      "tip_label": "小費",
+      "split_label": "分攤",
+      "person_unit": "人",
+      "result_title": "結果",
+      "saved_amount": "節省金額",
+      "discounted_price": "最終價格",
+      "tip_amount": "小費金額",
+      "total_price": "總金額",
+      "per_person": "每人"
+    },
+    "date": {
+      "title": "日期計算器",
+      "diff_mode": "日期差異",
+      "add_mode": "日期計算",
+      "convert_mode": "農曆轉換",
+      "start_date": "起始日期",
+      "end_date": "結束日期",
+      "base_date": "基準日期",
+      "diff_time": "時間差",
+      "before": "之前",
+      "after": "之後",
+      "result_title": "結果",
+      "diff_days": "天數差",
+      "workdays": "工作日",
+      "weeks": "週數",
+      "hours": "小時",
+      "minutes": "分鐘",
+      "solar2lunar": "陽曆轉農曆",
+      "lunar2solar": "農曆轉陽曆",
+      "solar_date": "陽曆日期",
+      "lunar": "農曆",
+      "shengxiao": "生肖",
+      "jieqi": "節氣",
+      "festival": "節日",
+      "leap_month": "閏月",
+      "leap_month_prefix": "閏",
+      "workdays_label": "工作日（不含週末）",
+      "lunar_year": "農曆年",
+      "lunar_month": "農曆月",
+      "lunar_day": "農曆日",
+      "invalid_date": "無效日期"
+    },
+    "finance": {
+      "title": "財務計算器",
+      "bank_mode": "銀行儲蓄",
+      "compound_mode": "複利計算",
+      "regular_mode": "定期投資",
+      "interest_yuan": "利息",
+      "interest_profit": "收益",
+      "total_yuan": "總計",
+      "total_sum": "總金額",
+      "bank_info": "輸入儲蓄資訊",
+      "bank_amount": "金額",
+      "bank_years": "年數",
+      "rate_percent": "利率 (%)",
+      "compound_info": "輸入投資資訊",
+      "initial_principal": "本金",
+      "invest_years": "年數",
+      "return_rate": "回報率 (%)",
+      "compound_freq": "頻率",
+      "regular_info": "輸入定期資訊",
+      "regular_amount": "每期金額",
+      "regular_years": "年數",
+      "regular_rate": "回報率 (%)",
+      "regular_freq": "頻率",
+      "total_return": "總回報",
+      "total_invest": "總投資額",
+      "overflow_error": "值溢出",
+      "freq": {
+        "year": "每年",
+        "month": "每月",
+        "day": "每日",
+        "week": "每週"
+      }
+    }
+  }
+}

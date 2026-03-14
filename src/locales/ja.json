@@ -1,0 +1,830 @@
+{
+  "common": {
+    "app_name": "オールカッキュレーター",
+    "app_icon_alt": "オールカッキュレーターのアイコン",
+    "subtext": "クンションAI製品",
+    "software_custom": "ソフトウェアカスタマイズ",
+    "feedback": "フィードバック",
+    "history": "履歴",
+    "icon_alt": "アイコン",
+    "back": "戻る",
+    "copy_result": "結果をコピー",
+    "to_uppercase": "大文字に変換",
+    "error": "エラー",
+    "copied": "コピー済み",
+    "clear": "クリア",
+    "copied_to_clipboard": "クリップボードにコピーされました",
+    "ten_thousand_yuan": "10k CNY",
+    "year": "年",
+    "today": "今日",
+    "yesterday": "昨日",
+    "days_ago": "日前",
+    "month_unit": "ヶ月",
+    "day_unit": "日",
+    "year_unit": "年",
+    "confirm_delete": "削除を確認",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "save": "保存",
+    "delete": "削除",
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "close": "閉じる",
+    "switch_dark": "ダークモードに切り替える",
+    "switch_light": "ライトモードに切り替える",
+    "language_switch": "言語を変更",
+    "weekdays": [
+      "日曜日",
+      "月曜日",
+      "火曜日",
+      "水曜日",
+      "木曜日",
+      "金曜日",
+      "土曜日"
+    ]
+  },
+  "update": {
+    "found_new": "新しいバージョンが見つかりました",
+    "current_version": "現在のバージョン",
+    "update_log": "アップデートログ",
+    "remind_later": "後でリマインド",
+    "update_now": "今すぐ更新"
+  },
+  "auth": {
+    "login_cancelled": "ログインがキャンセルされました",
+    "click_to_logout": "ログアウトするにはここをクリックしてください",
+    "logged_in": "ログイン中",
+    "logout": "ログアウト",
+    "click_to_login": "ログインするにはここをクリックしてください",
+    "logging_in": "ログイン中...",
+    "login_register": "ログイン/登録",
+    "login_failed": "ログイン失敗",
+    "complete_login_in_browser": "ブラウザでログインを完了してください",
+    "cancel_login": "ログインをキャンセル",
+    "login_timeout": "ログインタイムアウト",
+    "get_login_url_failed": "ログインURLの取得に失敗しました",
+    "get_user_info_failed": "ユーザー情報の取得に失敗しました",
+    "logout_failed": "ログアウトに失敗しました"
+  },
+  "ai": {
+    "module_direct": "クイックアクセス",
+    "open_module": ", {{name}}を開く",
+    "enter_now": "今すぐ入力",
+    "currency_title": "通貨交換",
+    "view_details": "詳細を見る",
+    "percent_title": "パーセンテージ計算",
+    "uppercase_title": "金額を大文字に変換",
+    "convert_now": "現在の変換",
+    "date_title": "日付計算",
+    "view_date_details": "日付の詳細を見る",
+    "tax_title": "税金計算",
+    "go_calculate": "計算する",
+    "discount_title": "割引計算",
+    "full_minus_title": "全額控除",
+    "tip_title": "チップ計算",
+    "go_pay": "支払いへ",
+    "health_title": "健康計算",
+    "calc_now": "今すぐ計算",
+    "graph_title": "関数グラフ",
+    "start_drawing": "描画を開始",
+    "draw_function": "関数 y = {{expr}} を描画",
+    "open_graph_tool": "インタラクティブなグラフツールを開く",
+    "unit_title": "単位変換",
+    "smart_calc_title": "スマート計算",
+    "math_title": "スマート計算"
+  },
+  "modules": {
+    "categories": {
+      "calculator": "電卓",
+      "tool": "ツール",
+      "converter": "コンバーター"
+    },
+    "items": {
+      "basic": "基本電卓",
+      "scientific": "科学電卓",
+      "fraction": "分数電卓",
+      "currency": "通貨コンバーター",
+      "relative": "相対コール",
+      "mortgage": "住宅ローン電卓",
+      "tax": "税金計算",
+      "date": "日付計算",
+      "radix": "基数コンバーター",
+      "uppercase": "金額を大文字に",
+      "finance": "ファイナンス電卓",
+      "formula": "式電卓",
+      "discount": "割引とチップ",
+      "account": "アカウントブック",
+      "memo": "メモ",
+      "health": "健康計算機",
+      "graph": "グラフ計算機",
+      "length": "長さ",
+      "area": "面積",
+      "volume": "体積",
+      "temperature": "温度",
+      "speed": "速度",
+      "time": "時間",
+      "weight": "重量",
+      "power": "電力",
+      "heat": "熱",
+      "force": "力",
+      "pressure": "圧力",
+      "capacity": "容量",
+      "data": "データストレージ"
+    }
+  },
+  "home": {
+    "search_placeholder": "AI検索を試してください。例: 100ドル、100cmをmに...",
+    "smart_tips_label": "スマートなヒント:",
+    "tips": {
+      "date": "100日後はどの日付ですか？",
+      "tax": "1.5万円の給与に対する税金はいくらですか？",
+      "uppercase": "金額を大文字に変換",
+      "unit": "100cmをmに"
+    },
+    "smart_tag": "AIスマートパース",
+    "search_results_title": "検索結果",
+    "no_results_text": "関連する機能が見つかりませんでした。別のキーワードを試してください"
+  },
+  "history": {
+    "title": "履歴",
+    "clear_all": "すべてクリア",
+    "empty": "まだ履歴はありません",
+    "types": {
+      "basic": "基本",
+      "scientific": "科学的",
+      "converter": "単位",
+      "currency": "通貨",
+      "health": "健康",
+      "discount": "割引",
+      "tax": "税金",
+      "tool": "ツール",
+      "record": "記録"
+    }
+  },
+  "calculator": {
+    "fraction": {
+      "error_zero_denominator": "分母は0にできません",
+      "error_zero_divisor": "割る数は0にできません"
+    }
+  },
+  "converter": {
+    "unit_suffix": "変換",
+    "categories": {
+      "length": "長さ",
+      "area": "面積",
+      "volume": "体積",
+      "weight": "重量",
+      "temperature": "温度",
+      "speed": "速度",
+      "time": "時間",
+      "power": "電力",
+      "heat": "熱",
+      "force": "力",
+      "pressure": "圧力",
+      "capacity": "容量",
+      "data": "データストレージ"
+    },
+    "units": {
+      "km": "キロメートル",
+      "m": "メートル",
+      "dm": "デシメートル",
+      "cm": "センチメートル",
+      "mm": "ミリメートル",
+      "μm": "マイクロメートル",
+      "nm": "ナノメートル",
+      "mi": "マイル",
+      "yd": "ヤード",
+      "ft": "フィート",
+      "in": "インチ",
+      "nmi": "ノットマイル",
+      "里": "里（中国のマイル）",
+      "丈": "丈",
+      "尺": "尺",
+      "寸": "寸",
+      "km²": "平方キロメートル",
+      "ha": "ヘクタール",
+      "m²": "平方メートル",
+      "dm²": "平方デシメートル",
+      "cm²": "平方センチメートル",
+      "mm²": "平方ミリメートル",
+      "mi²": "平方マイル",
+      "acre": "エーカー",
+      "yd²": "平方ヤード",
+      "ft²": "平方フィート",
+      "in²": "平方インチ",
+      "亩": "畝",
+      "分": "分（面積）",
+      "m³": "立方メートル",
+      "dm³": "立方デシメートル",
+      "cm³": "立方センチメートル",
+      "mm³": "立方ミリメートル",
+      "L": "リットル",
+      "mL": "ミリリットル",
+      "gal": "ガロン（米国）",
+      "gal(UK)": "ガロン（英国）",
+      "pt": "パイント",
+      "ft³": "立方フィート",
+      "in³": "立方インチ",
+      "t": "トン",
+      "kg": "キログラム",
+      "g": "グラム",
+      "mg": "ミリグラム",
+      "μg": "マイクログラム",
+      "lb": "ポンド",
+      "oz": "オンス",
+      "ct": "カラット",
+      "斤": "斤",
+      "两": "両",
+      "钱": "錢",
+      "°C": "セ氏度",
+      "°F": "華氏度",
+      "K": "ケルビン",
+      "°R": "ランキン",
+      "°Ré": "レオムール",
+      "m/s": "メートル毎秒",
+      "km/h": "キロメートル毎時",
+      "mph": "マイル毎時",
+      "kn": "ノット",
+      "Ma": "マッハ",
+      "c": "光速",
+      "世纪": "世紀",
+      "年": "年",
+      "月": "月",
+      "周": "週",
+      "天": "日",
+      "h": "時間",
+      "min": "分",
+      "s": "秒",
+      "ms": "ミリ秒",
+      "μs": "マイクロ秒",
+      "ns": "ナノ秒",
+      "kW": "キロワット",
+      "W": "ワット",
+      "mW": "ミリワット",
+      "hp": "馬力",
+      "PS": "メトリック馬力",
+      "kcal/s": "キロカロリー毎秒",
+      "BTU/s": "BTU毎秒",
+      "kJ": "キロジュール",
+      "J": "ジュール",
+      "cal": "カロリー",
+      "kcal": "キロカロリー",
+      "Wh": "ワット時",
+      "kWh": "キロワット時",
+      "BTU": "英国熱量単位",
+      "kN": "キロニュートン",
+      "N": "ニュートン",
+      "dyn": "ダイン",
+      "kgf": "キログラム力",
+      "gf": "グラム力",
+      "lbf": "ポンド力",
+      "Pa": "パスカル",
+      "hPa": "ヘクトパスカル",
+      "kPa": "キロパスカル",
+      "MPa": "メガパスカル",
+      "bar": "バー",
+      "mbar": "ミリバー",
+      "atm": "気圧",
+      "mmHg": "mmHg",
+      "inHg": "inHg",
+      "lbf/ft²(psf)": "psf",
+      "lbf/in²(psi)": "psi",
+      "kgf/cm²": "kgf/cm²",
+      "kgf/m²": "kgf/m²",
+      "mmH₂O": "mmH₂O",
+      "Torr": "トルール",
+      "kL": "キロリットル",
+      "dL": "デシリットル",
+      "cL": "センチリットル",
+      "qt": "クォート",
+      "cup": "カップ",
+      "fl oz": "フロイドオンス",
+      "bit": "ビット",
+      "B": "バイト",
+      "KB": "KB",
+      "MB": "MB",
+      "GB": "GB",
+      "TB": "TB",
+      "PB": "PB",
+      "Kbit": "Kビット",
+      "Mbit": "Mビット",
+      "Gbit": "Gビット"
+    }
+  },
+  "tool": {
+    "currency": {
+      "title": "通貨交換",
+      "names": {
+        "CNY": "CNY",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "HKD": "HKD",
+        "TWD": "TWD",
+        "SGD": "SGD",
+        "AUD": "AUD",
+        "CAD": "CAD",
+        "CHF": "CHF"
+      }
+    },
+    "radix": {
+      "title": "基数変換",
+      "dec": "十進数 (DEC)",
+      "bin": "二進数 (BIN)",
+      "oct": "八進数 (OCT)",
+      "hex": "十六進数 (HEX)"
+    },
+    "uppercase": {
+      "title": "大文字の金額",
+      "zero_yuan_整": "ゼロ元のみ",
+      "zero": "ゼロ",
+      "digits": [
+        "ゼロ",
+        "ワン",
+        "ツー",
+        "スリー",
+        "フォー",
+        "ファイブ",
+        "シックス",
+        "セブン",
+        "エイト",
+        "ナイン"
+      ],
+      "units": [
+        ", ",
+        "テン",
+        "ヒャク",
+        "セン"
+      ],
+      "big_units": [
+        ", ",
+        "ジンマン",
+        "ヒャクマーメン",
+        "トリリオン"
+      ],
+      "yuan": "ユアン",
+      "zheng": "オニ",
+      "jiao": "ジアオ",
+      "fen": "フェン",
+      "negative": "ネガティブ",
+      "back_to_calculator": "計算機に戻る",
+      "click_to_copy": "大文字（コピーするにはクリック）"
+    },
+    "mortgage": {
+      "title": "住宅ローン計算機",
+      "commercial_loan": "商業ローン",
+      "fund_loan": "住宅基金",
+      "combined_loan": "統合ローン",
+      "loan_amount": "ローン金額",
+      "loan_rate": "ローン利率",
+      "fund_loan_amount": "基金ローン金額",
+      "fund_loan_rate": "基金ローン利率",
+      "commercial_loan_amount": "商業ローン金額",
+      "commercial_rate_type": "利率タイプ",
+      "commercial_lpr": "LPR",
+      "commercial_basis_points": "ベーシスポイント",
+      "commercial_loan_rate": "商業利率",
+      "principal": "元本",
+      "interest": "利息",
+      "equal_monthly": "均等月払い",
+      "equal_principal": "均等元本払い",
+      "payment_type": "支払いタイプ",
+      "loan_years": "ローン年数",
+      "lpr_rate": "LPR利率",
+      "basis_points": "BP",
+      "base_rate": "ベースレート",
+      "rate_type": "利率タイプ",
+      "total_payment": "総支払い額",
+      "total_interest": "総利息",
+      "monthly_payment": "月々の支払い",
+      "first_month_payment": "最初の月",
+      "last_month_payment": "最後の月",
+      "monthly_decrease": "毎月の減少",
+      "view_schedule": "スケジュールを表示",
+      "hide_schedule": "スケジュールを非表示",
+      "schedule_title": "スケジュール",
+      "period": "期間",
+      "monthly_pay": "支払い",
+      "principal_part": "元金",
+      "interest_part": "利息",
+      "remaining_principal": "残高",
+      "payment_method": "支払い方法",
+      "loan_total": "ローン総額",
+      "repayment_periods": "返済期間",
+      "period_unit": "ヶ月",
+      "remaining": "残り"
+    },
+    "relative": {
+      "title": "関係者コール",
+      "my_gender": "私の性別:",
+      "placeholder": "下のボタンをクリックして関係を追加してください",
+      "i_call_ta": "私は彼らを:",
+      "ta_calls_me": "彼らは私を:",
+      "reverse_check": "逆転",
+      "example_title": "一般的な例",
+      "error_same_sex": "同性間の関係はまだサポートされていません",
+      "error_not_found": "関係が遠すぎたり、データベースに存在しません",
+      "error_calc": "計算エラー",
+      "prefix": "私の ",
+      "connector": "'s ",
+      "labels": {
+        "f": "父親",
+        "m": "母親",
+        "h": "夫",
+        "w": "妻",
+        "ob": "長男",
+        "lb": "次男",
+        "os": "長女",
+        "ls": "次女",
+        "s": "息子",
+        "d": "娘"
+      },
+      "buttons": {
+        "f": "父親",
+        "m": "母親",
+        "h": "夫",
+        "w": "妻",
+        "ob": "兄＋",
+        "lb": "兄－",
+        "os": "姉＋",
+        "ls": "姉－",
+        "s": "息子",
+        "d": "娘"
+      },
+      "examples": {
+        "爷爷": "祖父",
+        "外婆": "祖母",
+        "伯父": "叔父(年長)",
+        "叔叔": "叔父(年下)",
+        "舅舅": "舅父",
+        "姑姑": "叔母"
+      }
+    },
+    "tax": {
+      "title": "税金計算機",
+      "salary_label": "月給",
+      "insurance_label": "社会保険",
+      "deduction_label": "特別控除",
+      "threshold_label": "控除額",
+      "hint": "控除には、子供の教育費、家賃、住宅ローン利子などがあります。",
+      "after_tax_salary": "税引後給与",
+      "taxable_income": "課税所得",
+      "applicable_rate": "税率",
+      "payable_tax": "支払う税金",
+      "table_title": "税額表（年間）",
+      "table_headers": [
+        "段階",
+        "課税所得",
+        "税率",
+        "控除"
+      ],
+      "ten_thousand_unit": "万",
+      "history": {
+        "title": "給与¥{{salary}}の税金予測",
+        "expression": "税前{{salary}} - 保険{{insurance}} - 控除{{deduction}}, ",
+        "result": "税引後¥{{afterTax}} (税金¥{{tax}})"
+      }
+    },
+    "account": {
+      "title": "アカウント帳",
+      "expense": "支出",
+      "income": "収入",
+      "add_record": "項目を追加",
+      "report": "レポート",
+      "monthly_expense": "月ごとの支出",
+      "monthly_income": "月ごとの収入",
+      "balance": "残高",
+      "no_records": "まだ記録はありません",
+      "note": "メモ",
+      "note_placeholder": "メモを追加...",
+      "report_title": "レポート",
+      "total_expense": "合計支出",
+      "total_income": "合計収入",
+      "expense_detail": "支出詳細",
+      "income_detail": "収入詳細",
+      "delete_confirm_text": "この記録を削除してもよろしいですか？",
+      "categories": {
+        "expense": {
+          "消费": "消費",
+          "餐饮": "食事",
+          "购物": "買い物",
+          "住房": "住居",
+          "交通": "交通",
+          "通讯": "通信",
+          "娱乐": "娯楽",
+          "医疗": "医療",
+          "教育": "教育",
+          "其他": "その他"
+        },
+        "income": {
+          "工资": "給与",
+          "奖金": "ボーナス",
+          "投资": "投資",
+          "兼职": "アルバイト",
+          "红包": "レッドパケット",
+          "其他": "その他"
+        }
+      },
+      "weekdays": [
+        "日",
+        "月",
+        "火",
+        "水",
+        "木",
+        "金",
+        "土"
+      ]
+    },
+    "memo": {
+      "title": "メモ",
+      "search_placeholder": "メモを検索...",
+      "no_title": "タイトルなし",
+      "no_memos": "まだメモはありません",
+      "title_label": "タイトル",
+      "content_placeholder": "内容を入力...",
+      "delete_confirm_text": "このメモを削除してよろしいですか？",
+      "pin": "ピン",
+      "unpin": "ピン解除"
+    },
+    "health": {
+      "title": "健康計算",
+      "bmi_label": "BMI指数",
+      "bmr_label": "基礎代謝量",
+      "tdee_label": "TDEE",
+      "gender": "性別",
+      "male": "男性",
+      "female": "女性",
+      "height": "身長 (cm)",
+      "weight": "体重 (kg)",
+      "age": "年齢",
+      "activity_level": "活動レベル",
+      "activity": {
+        "sedentary": "座りがち",
+        "light": "軽い (週1〜3回)",
+        "moderate": "中程度 (週3〜5回)",
+        "active": "アクティブ (週6〜7回)",
+        "very_active": "非常にアクティブ (毎日重労働)"
+      },
+      "status": {
+        "underweight": "やせ型",
+        "normal": "標準",
+        "overweight": "肥満",
+        "obese": "極度の肥満"
+      }
+    },
+    "graph": {
+      "title": "関数グラフ",
+      "placeholder": "関数を入力してください。例: x^2, sin(x)...",
+      "x_min": "X 最小",
+      "x_max": "X 最大"
+    },
+    "formula": {
+      "title": "数式電卓",
+      "category_label": "カテゴリ",
+      "all": "すべて",
+      "select_formula": "数式を選択",
+      "result_title": "結果",
+      "formula_label": "式",
+      "variables_label": "変数",
+      "categories": {
+        "几何": "幾何学",
+        "物理": "物理学",
+        "数学": "数学",
+        "金融": "ファイナンス",
+        "健康": "健康"
+      },
+      "items": {
+        "circle_area": {
+          "name": "円の面積",
+          "description": "半径で面積を計算",
+          "variables": {
+            "r": "半径"
+          }
+        },
+        "circle_perimeter": {
+          "name": "円周",
+          "description": "半径で円周を計算",
+          "variables": {
+            "r": "半径"
+          }
+        },
+        "sphere_volume": {
+          "name": "球の体積",
+          "description": "半径で体積を計算",
+          "variables": {
+            "r": "半径"
+          }
+        },
+        "triangle_area": {
+          "name": "三角形の面積",
+          "description": "底辺と高さで面積を計算",
+          "variables": {
+            "a": "底辺",
+            "h": "高さ"
+          }
+        },
+        "trapezoid_area": {
+          "name": "台形の面積",
+          "description": "上底と下底と高さで面積を計算",
+          "variables": {
+            "a": "上底",
+            "b": "下底",
+            "h": "高さ"
+          }
+        },
+        "cylinder_volume": {
+          "name": "円柱の体積",
+          "description": "半径と高さで体積を計算",
+          "variables": {
+            "r": "半径",
+            "h": "高さ"
+          }
+        },
+        "cone_volume": {
+          "name": "円錐の体積",
+          "description": "半径と高さで体積を計算",
+          "variables": {
+            "r": "半径",
+            "h": "高さ"
+          }
+        },
+        "speed": {
+          "name": "速度",
+          "description": "距離と時間で速度を計算",
+          "variables": {
+            "s": "距離",
+            "t": "時間"
+          }
+        },
+        "acceleration": {
+          "name": "加速度",
+          "description": "加速度を計算",
+          "variables": {
+            "v0": "v0",
+            "v": "v",
+            "t": "t"
+          }
+        },
+        "force": {
+          "name": "ニュートンの第二法則",
+          "description": "力の計算",
+          "variables": {
+            "m": "質量(kg)",
+            "a": "加速度(m/s²)"
+          }
+        },
+        "kinetic_energy": {
+          "name": "運動エネルギー",
+          "description": "運動エネルギーを計算",
+          "variables": {
+            "m": "質量(kg)",
+            "v": "速度(m/s)"
+          }
+        },
+        "potential_energy": {
+          "name": "位置エネルギー",
+          "description": "位置エネルギーを計算",
+          "variables": {
+            "m": "質量(kg)",
+            "g": "g",
+            "h": "高さ(m)"
+          }
+        },
+        "ohm_law": {
+          "name": "オームの法則",
+          "description": "電流を計算",
+          "variables": {
+            "U": "電圧(V)",
+            "R": "抵抗(Ω)"
+          }
+        },
+        "power_electric": {
+          "name": "電力",
+          "description": "電力を計算",
+          "variables": {
+            "U": "電圧(V)",
+            "I": "電流(A)"
+          }
+        },
+        "pythagorean": {
+          "name": "ピタゴラスの定理",
+          "description": "斜辺を計算",
+          "variables": {
+            "a": "a",
+            "b": "b"
+          }
+        },
+        "quadratic": {
+          "name": "二次方程式の解",
+          "description": "ax²+bx+c=0 判別式",
+          "variables": {
+            "a": "a",
+            "b": "b",
+            "c": "c"
+          }
+        },
+        "compound_interest": {
+          "name": "複利計算",
+          "description": "利息を含む合計を計算",
+          "variables": {
+            "P": "元本",
+            "r": "利率(%)",
+            "n": "年数"
+          }
+        },
+        "bmi": {
+          "name": "BMI",
+          "description": "体重と身長でBMIを計算",
+          "variables": {
+            "weight": "体重(kg)",
+            "height": "身長(m)"
+          }
+        }
+      }
+    },
+    "discount": {
+      "title": "割引とチップ",
+      "original_price": "価格",
+      "price_placeholder": "金額を入力",
+      "discount_label": "割引",
+      "percent": "パーセント",
+      "flat_amount": "固定金額",
+      "tip_label": "チップ",
+      "split_label": "分割",
+      "person_unit": "人",
+      "result_title": "結果",
+      "saved_amount": "節約額",
+      "discounted_price": "最終価格",
+      "tip_amount": "チップ額",
+      "total_price": "合計価格",
+      "per_person": "1人あたり"
+    },
+    "date": {
+      "title": "日付計算",
+      "diff_mode": "日付差",
+      "add_mode": "日付計算",
+      "convert_mode": "旧暦変換",
+      "start_date": "開始日",
+      "end_date": "終了日",
+      "base_date": "ベース日",
+      "diff_time": "時間差",
+      "before": "以前",
+      "after": "以降",
+      "result_title": "結果",
+      "diff_days": "日数差",
+      "workdays": "勤務日",
+      "weeks": "週",
+      "hours": "時間",
+      "minutes": "分",
+      "solar2lunar": "太陽暦から旧暦",
+      "lunar2solar": "旧暦から太陽暦",
+      "solar_date": "太陽暦日",
+      "lunar": "旧暦",
+      "shengxiao": "干支",
+      "jieqi": "節気",
+      "festival": "祝日",
+      "leap_month": "閏月",
+      "leap_month_prefix": "閏",
+      "workdays_label": "勤務日 (土日を除く)",
+      "lunar_year": "旧暦年",
+      "lunar_month": "旧暦月",
+      "lunar_day": "旧暦日",
+      "invalid_date": "無効な日付"
+    },
+    "finance": {
+      "title": "ファイナンス計算機",
+      "bank_mode": "銀行貯蓄",
+      "compound_mode": "複利計算",
+      "regular_mode": "定期投資",
+      "interest_yuan": "利息",
+      "interest_profit": "利益",
+      "total_yuan": "合計",
+      "total_sum": "合計金額",
+      "bank_info": "貯蓄情報入力",
+      "bank_amount": "金額",
+      "bank_years": "年数",
+      "rate_percent": "利率 (%)",
+      "compound_info": "投資情報入力",
+      "initial_principal": "元本",
+      "invest_years": "年数",
+      "return_rate": "リターン率 (%)",
+      "compound_freq": "頻度",
+      "regular_info": "定期情報入力",
+      "regular_amount": "期間ごとの金額",
+      "regular_years": "年数",
+      "regular_rate": "リターン率 (%)",
+      "regular_freq": "頻度",
+      "total_return": "総収益",
+      "total_invest": "総投資",
+      "overflow_error": "値オーバーフロー",
+      "freq": {
+        "year": "年間",
+        "month": "月次",
+        "day": "毎日",
+        "week": "週次"
+      }
+    }
+  }
+}

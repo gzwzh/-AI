@@ -2,10 +2,12 @@ import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import { evaluate } from 'mathjs'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './GraphCalculator.scss'
 
 export default function GraphCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const [expression, setExpression] = useState('x^2')
@@ -36,7 +38,7 @@ export default function GraphCalculator() {
 
   return (
     <div className="tool-page graph">
-      <ToolHeader title="函数绘图" />
+      <ToolHeader title={t('tool.graph.title')} />
 
       <main className="tool-content">
         <div className="input-panel">
@@ -46,16 +48,16 @@ export default function GraphCalculator() {
               type="text" 
               value={expression} 
               onChange={e => setExpression(e.target.value)}
-              placeholder="输入函数, 如 x^2, sin(x)..."
+              placeholder={t('tool.graph.placeholder')}
             />
           </div>
           <div className="range-inputs">
             <div className="range-item">
-              <label>X 最小值</label>
+              <label>{t('tool.graph.x_min')}</label>
               <input type="number" value={range.min} onChange={e => setRange({...range, min: Number(e.target.value)})} />
             </div>
             <div className="range-item">
-              <label>X 最大值</label>
+              <label>{t('tool.graph.x_max')}</label>
               <input type="number" value={range.max} onChange={e => setRange({...range, max: Number(e.target.value)})} />
             </div>
           </div>

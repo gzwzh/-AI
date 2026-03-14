@@ -1,9 +1,11 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import ToolHeader from '@/components/ToolHeader'
 import './DiscountCalculator.scss'
 
 export default function DiscountCalculator() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const [originalPrice, setOriginalPrice] = useState<number>(0)
@@ -47,18 +49,18 @@ export default function DiscountCalculator() {
 
   return (
     <div className="tool-page discount">
-      <ToolHeader title="折扣与小费" />
+      <ToolHeader title={t('tool.discount.title')} />
 
       <main className="tool-content">
         <div className="input-section">
           <div className="input-group">
-            <label>原价</label>
+            <label>{t('tool.discount.original_price')}</label>
             <div className="flat-input-wrapper">
               <input 
                 type="number" 
                 value={originalPrice || ''} 
                 onChange={(e) => setOriginalPrice(Number(e.target.value))}
-                placeholder="请输入金额"
+                placeholder={t('tool.discount.price_placeholder')}
               />
               <span className="unit">元</span>
             </div>
@@ -66,19 +68,19 @@ export default function DiscountCalculator() {
 
           <div className="input-group">
             <div className="label-with-toggle">
-              <label>折扣</label>
+              <label>{t('tool.discount.discount_label')}</label>
               <div className="type-toggle">
                 <button 
                   className={discountType === 'percent' ? 'active' : ''} 
                   onClick={() => setDiscountType('percent')}
                 >
-                  百分比
+                  {t('tool.discount.percent')}
                 </button>
                 <button 
                   className={discountType === 'amount' ? 'active' : ''} 
                   onClick={() => setDiscountType('amount')}
                 >
-                  直减金额
+                  {t('tool.discount.flat_amount')}
                 </button>
               </div>
             </div>
@@ -98,11 +100,12 @@ export default function DiscountCalculator() {
                 <div className="slider-container">
                   <input 
                     type="range" 
-                    min="0" max="100" 
+                    min="0" 
+                    max="100" 
                     value={discountRate} 
                     onChange={(e) => setDiscountRate(Number(e.target.value))}
                   />
-                  <span className="value-label">{discountRate}% OFF</span>
+                  <span className="rate-display">{discountRate}% OFF</span>
                 </div>
               </>
             ) : (
@@ -111,7 +114,7 @@ export default function DiscountCalculator() {
                   type="number" 
                   value={discountAmountInput || ''} 
                   onChange={(e) => setDiscountAmountInput(Number(e.target.value))}
-                  placeholder="请输入直减金额"
+                  placeholder={t('tool.discount.price_placeholder')}
                 />
                 <span className="unit">元</span>
               </div>
@@ -119,9 +122,9 @@ export default function DiscountCalculator() {
           </div>
 
           <div className="input-group">
-            <label>小费 (%)</label>
+            <label>{t('tool.discount.tip_label')}</label>
             <div className="quick-options">
-              {[10, 15, 18, 20, 25].map(rate => (
+              {[0, 10, 15, 18, 20].map(rate => (
                 <button 
                   key={rate} 
                   className={`quick-btn ${tipRate === rate ? 'active' : ''}`}
@@ -134,47 +137,57 @@ export default function DiscountCalculator() {
             <div className="slider-container">
               <input 
                 type="range" 
-                min="0" max="30" 
+                min="0" 
+                max="50" 
                 value={tipRate} 
                 onChange={(e) => setTipRate(Number(e.target.value))}
               />
-              <span className="value-label">{tipRate}% TIP</span>
+              <span className="rate-display">{tipRate}% TIP</span>
             </div>
           </div>
 
           <div className="input-group">
-            <label>分摊人数</label>
-            <div className="stepper">
+            <label>{t('tool.discount.split_label')}</label>
+            <div className="split-input">
               <button onClick={() => setSplitCount(Math.max(1, splitCount - 1))}>-</button>
-              <span className="count">{splitCount} 人</span>
+              <input 
+                type="number" 
+                value={splitCount} 
+                onChange={(e) => setSplitCount(Math.max(1, Number(e.target.value)))}
+              />
               <button onClick={() => setSplitCount(splitCount + 1)}>+</button>
+              <span className="unit">{t('tool.discount.person_unit')}</span>
             </div>
           </div>
         </div>
 
-        <div className="result-panel">
-          <div className="result-item">
-            <span>折扣省下</span>
-            <span className="value">¥ {calculation.discountAmount}</span>
-          </div>
-          <div className="result-item">
-            <span>折后价格</span>
-            <span className="value">¥ {calculation.discountedPrice}</span>
-          </div>
-          <div className="result-item">
-            <span>小费金额</span>
-            <span className="value">¥ {calculation.tipAmount}</span>
-          </div>
-          <div className="divider"></div>
-          <div className="result-total">
-            <div className="total-label">总计支付</div>
-            <div className="total-value">¥ {calculation.totalPrice}</div>
-          </div>
-          {splitCount > 1 && (
-            <div className="per-person">
-              每人应付: ¥ {calculation.perPerson}
+        <div className="result-card">
+          <h3>{t('tool.discount.result_title')}</h3>
+          <div className="result-grid">
+            <div className="result-item">
+              <span className="label">{t('tool.discount.saved_amount')}</span>
+              <span className="value expense">-¥ {calculation.discountAmount}</span>
             </div>
-          )}
+            <div className="result-item">
+              <span className="label">{t('tool.discount.discounted_price')}</span>
+              <span className="value">¥ {calculation.discountedPrice}</span>
+            </div>
+            <div className="result-item">
+              <span className="label">{t('tool.discount.tip_amount')}</span>
+              <span className="value">¥ {calculation.tipAmount}</span>
+            </div>
+            <div className="divider"></div>
+            <div className="result-item total">
+              <span className="label">{t('tool.discount.total_price')}</span>
+              <span className="value">¥ {calculation.totalPrice}</span>
+            </div>
+            {splitCount > 1 && (
+              <div className="result-item per-person">
+                <span className="label">{t('tool.discount.per_person')}</span>
+                <span className="value highlight">¥ {calculation.perPerson}</span>
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>

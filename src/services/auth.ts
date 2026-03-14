@@ -1,4 +1,5 @@
 import CryptoJS from 'crypto-js'
+import i18n from '@/i18n'
 import { API_BASE_URL, SECRET_KEY, API_ENDPOINTS, POLL_CONFIG } from '@/config/api'
 
 export interface SignedNonce {
@@ -58,10 +59,10 @@ export async function getWebLoginUrl(): Promise<string> {
     if (result.code === 1) {
       return result.data.login_url
     } else {
-      throw new Error(`获取登录地址失败：${result.msg}`)
+      throw new Error(`${i18n.t('auth.get_login_url_failed')}：${result.msg}`)
     }
   } catch (error) {
-    throw new Error(`获取登录地址异常：${error}`)
+    throw new Error(`${i18n.t('auth.get_login_url_failed')}：${error}`)
   }
 }
 
@@ -75,7 +76,7 @@ export async function pollToken(
 
   while (Date.now() - startTime < timeout * 1000) {
     if (onCancel && onCancel()) {
-      throw new Error('登录已取消')
+      throw new Error(i18n.t('auth.login_cancelled'))
     }
 
     try {
@@ -98,7 +99,7 @@ export async function pollToken(
     await new Promise(resolve => setTimeout(resolve, POLL_CONFIG.INTERVAL))
   }
 
-  throw new Error('登录超时')
+  throw new Error(i18n.t('auth.login_timeout'))
 }
 
 export async function checkLogin(token: string): Promise<boolean> {
@@ -136,7 +137,7 @@ export async function getUserInfo(token: string): Promise<UserInfo> {
   if (result.code === 1) {
     return result.data.user_info
   } else {
-    throw new Error(`获取用户信息失败：${result.msg}`)
+    throw new Error(`${i18n.t('auth.get_user_info_failed')}：${result.msg}`)
   }
 }
 
@@ -151,6 +152,6 @@ export async function logout(token: string): Promise<void> {
 
   const result: LoginResponse = await response.json()
   if (result.code !== 1) {
-    throw new Error(`退出登录失败：${result.msg}`)
+    throw new Error(`${i18n.t('auth.logout_failed')}：${result.msg}`)
   }
 }

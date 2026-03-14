@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useThemeStore } from '@/stores/theme'
 import { useAuthStore } from '@/stores/auth'
 import { useHistoryStore } from '@/stores/history'
@@ -28,6 +29,7 @@ import Memo from '@/views/tool/Memo'
 import './App.scss'
 
 function App() {
+  const { t } = useTranslation()
   const theme = useThemeStore((state) => state.theme)
   const initializeAuth = useAuthStore((state) => state.initializeAuth)
   const isHistoryOpen = useHistoryStore((state) => state.isOpen)
