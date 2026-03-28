@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { useThemeStore } from '@/stores/theme'
 import { useAuthStore } from '@/stores/auth'
 import { useHistoryStore } from '@/stores/history'
-import UpdateModal from '@/components/UpdateModal'
 import WindowControls from '@/components/WindowControls'
 import HistorySidebar from '@/components/HistorySidebar'
 import Home from '@/views/Home'
@@ -45,7 +44,6 @@ function App() {
 
   return (
     <div className={`app ${theme} ${isHistoryOpen ? 'sidebar-open' : ''}`}>
-      <UpdateModal />
       <HistorySidebar />
       <Routes>
         <Route path="/" element={<Home />} />

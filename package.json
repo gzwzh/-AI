@@ -64,12 +64,6 @@
         "to": "计算器.ico"
       }
     ],
-    "extraFiles": [
-      {
-        "from": "updater.exe",
-        "to": "."
-      }
-    ],
     "win": {
       "target": [
         {
@@ -102,7 +96,8 @@
         "zip"
       ],
       "icon": "public/计算器.png",
-      "category": "public.app-category.utilities"
+      "category": "public.app-category.utilities",
+      "artifactName": "全能计算器-${version}.${ext}"
     },
     "nsis": {
       "oneClick": false,

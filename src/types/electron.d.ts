@@ -1,7 +1,5 @@
 export interface IElectronAPI {
   getAppVersion: () => Promise<string>
-  checkUpdate: (software: string, version: string) => Promise<any>
-  startUpdate: (updateInfo: any) => Promise<void>
   openExternal: (url: string) => Promise<{ success: boolean; error?: string }>
   request: (options: {
     url: string

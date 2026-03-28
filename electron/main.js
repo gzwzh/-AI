@@ -169,65 +169,6 @@ ipcMain.on('window-close', () => {
   if (win) win.close()
 })
 
-ipcMain.handle('check-update', async (event, software, version) => {
-  try {
-    const url = `http://software.kunqiongai.com:8000/api/v1/updates/check/?software=${software}&version=${version}`
-    console.log('Checking update:', url)
-    const response = await fetch(url)
-    const data = await response.json()
-    console.log('Update response:', data)
-    return data
-  } catch (error) {
-    console.error('Check update error:', error)
-    return { has_update: false, error: error.message }
-  }
-})
-
-ipcMain.handle('start-update', (event, updateInfo) => {
-  let installDir = path.dirname(app.getPath('exe'))
-  let updaterPath = path.join(installDir, 'updater.exe')
-  let exeName = path.basename(app.getPath('exe'))
-
-  if (isDev) {
-    updaterPath = path.join(__dirname, '..', 'updater.exe')
-    installDir = path.join(__dirname, '..')
-  } else {
-    const fs = require('fs')
-    if (!fs.existsSync(updaterPath)) {
-      const resourcePath = path.join(process.resourcesPath, '..', 'updater.exe')
-      if (fs.existsSync(resourcePath)) {
-        updaterPath = resourcePath
-      }
-    }
-  }
-
-  const args = [
-    '--url', updateInfo.download_url,
-    '--hash', updateInfo.package_hash || '',
-    '--dir', installDir,
-    '--exe', exeName,
-    '--pid', process.pid.toString()
-  ]
-
-  console.log('Starting updater:', updaterPath, args)
-
-  try {
-    const subprocess = spawn(updaterPath, args, {
-      detached: true,
-      stdio: 'ignore'
-    })
-
-    subprocess.on('error', (err) => {
-      console.error('Failed to spawn updater (subprocess error):', err)
-    })
-
-    subprocess.unref()
-    app.quit()
-  } catch (e) {
-    console.error('Failed to spawn updater:', e)
-  }
-})
-
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
