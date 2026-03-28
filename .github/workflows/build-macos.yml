@@ -23,8 +23,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate macOS icon
+        run: |
+          mkdir -p build/icon.iconset
+          sips -z 16 16 public/计算器.png --out build/icon.iconset/icon_16x16.png
+          sips -z 32 32 public/计算器.png --out build/icon.iconset/icon_16x16@2x.png
+          sips -z 32 32 public/计算器.png --out build/icon.iconset/icon_32x32.png
+          sips -z 64 64 public/计算器.png --out build/icon.iconset/icon_32x32@2x.png
+          sips -z 128 128 public/计算器.png --out build/icon.iconset/icon_128x128.png
+          sips -z 256 256 public/计算器.png --out build/icon.iconset/icon_128x128@2x.png
+          sips -z 256 256 public/计算器.png --out build/icon.iconset/icon_256x256.png
+          sips -z 512 512 public/计算器.png --out build/icon.iconset/icon_256x256@2x.png
+          sips -z 512 512 public/计算器.png --out build/icon.iconset/icon_512x512.png
+          cp public/计算器.png build/icon.iconset/icon_512x512@2x.png
+          iconutil -c icns build/icon.iconset -o build/计算器.icns
+
       - name: Build macOS package
-        run: npm run electron:build:mac
+        run: npx electron-builder --mac zip --config.directories.output=release_mac --config.mac.icon=build/计算器.icns --config.mac.artifactName=全能计算器-\${version}.\${ext}
 
       - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
