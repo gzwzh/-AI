@@ -2,13 +2,19 @@
   "name": "calculator",
   "version": "1.0.7",
   "description": "全能计算器 - PC端",
-  "author": "鲲穹AI",
+  "homepage": "https://github.com/gzwzh/-AI",
+  "author": {
+    "name": "鲲穹AI",
+    "email": "contact@kunqiong.ai"
+  },
   "main": "electron/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5175 && electron .\"",
     "electron:build": "vite build && electron-builder --win --config",
+    "electron:build:linux:pkg": "vite build && electron-builder --linux deb AppImage --config --config.directories.output=release_linux_pkg",
+    "electron:build:mac": "vite build && electron-builder --mac --config --config.directories.output=release_mac",
     "test:auth": "tsx src/__tests__/auth.test.ts"
   },
   "dependencies": {
@@ -45,7 +51,7 @@
     "appId": "com.calculator",
     "productName": "全能计算器",
     "directories": {
-      "output": "release_1.0.7"
+      "output": "release_final_v2"
     },
     "files": [
       "dist/**/*",
@@ -81,6 +87,22 @@
       ],
       "icon": "public/计算器.ico",
       "signAndEditExecutable": true
+    },
+    "linux": {
+      "target": [
+        "tar.gz",
+        "deb"
+      ],
+      "icon": "public/计算器.png",
+      "category": "Utility",
+      "artifactName": "全能计算器-${version}.${ext}"
+    },
+    "mac": {
+      "target": [
+        "zip"
+      ],
+      "icon": "public/计算器.png",
+      "category": "public.app-category.utilities"
     },
     "nsis": {
       "oneClick": false,

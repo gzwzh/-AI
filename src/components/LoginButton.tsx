@@ -10,6 +10,7 @@ import {
   logout
 } from '@/services/auth'
 import Toast from './Toast'
+import { openExternalUrl } from '@/utils/externalLink'
 import './LoginButton.scss'
 
 export default function LoginButton() {
@@ -69,7 +70,10 @@ export default function LoginButton() {
       console.log('完整登录 URL:', loginUrl)
       
       // 打开登录页面
-      window.open(loginUrl, '_blank')
+      const opened = await openExternalUrl(loginUrl)
+      if (!opened) {
+        throw new Error(t('auth.login_failed'))
+      }
       
       // 显示取消登录对话框
       setShowCancelDialog(true)

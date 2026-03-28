@@ -1,6 +1,7 @@
 import CryptoJS from 'crypto-js'
 import i18n from '@/i18n'
 import { API_BASE_URL, SECRET_KEY, API_ENDPOINTS, POLL_CONFIG } from '@/config/api'
+import { requestJson } from '@/utils/http'
 
 export interface SignedNonce {
   nonce: string
@@ -41,26 +42,24 @@ export function generateSignedNonce(): SignedNonce {
   }
 }
 
-
 export function encodeSignedNonce(signedNonce: SignedNonce): string {
   const jsonStr = JSON.stringify(signedNonce)
   let urlSafeStr = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(jsonStr))
-  // 替换base64中的URL不安全字符
   urlSafeStr = urlSafeStr.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '')
   return urlSafeStr
 }
 
 export async function getWebLoginUrl(): Promise<string> {
   try {
-    const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.GET_WEB_LOGIN_URL}`, {
+    const result = await requestJson<LoginResponse>(`${API_BASE_URL}${API_ENDPOINTS.GET_WEB_LOGIN_URL}`, {
       method: 'POST'
     })
-    const result: LoginResponse = await response.json()
+
     if (result.code === 1) {
       return result.data.login_url
-    } else {
-      throw new Error(`${i18n.t('auth.get_login_url_failed')}：${result.msg}`)
     }
+
+    throw new Error(`${i18n.t('auth.get_login_url_failed')}：${result.msg}`)
   } catch (error) {
     throw new Error(`${i18n.t('auth.get_login_url_failed')}：${error}`)
   }
@@ -81,17 +80,15 @@ export async function pollToken(
 
     try {
       const url = `${pollUrl}?client_type=desktop&client_nonce=${encodeURIComponent(encodedNonce)}`
-      const response = await fetch(url, {
+      const result = await requestJson<LoginResponse>(url, {
         method: 'POST'
       })
 
-      const result: LoginResponse = await response.json()
-
       if (result.code === 1) {
         return result.data.token
-      } else {
-        console.log(`轮询异常：${result.msg}`)
       }
+
+      console.log(`轮询异常：${result.msg}`)
     } catch (error) {
       console.log(`轮询失败：${error}`)
     }
@@ -104,7 +101,7 @@ export async function pollToken(
 
 export async function checkLogin(token: string): Promise<boolean> {
   try {
-    const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.CHECK_LOGIN}`, {
+    const result = await requestJson<LoginResponse>(`${API_BASE_URL}${API_ENDPOINTS.CHECK_LOGIN}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -112,11 +109,6 @@ export async function checkLogin(token: string): Promise<boolean> {
       body: `token=${token}`
     })
 
-    if (!response.ok) {
-      return false
-    }
-
-    const result: LoginResponse = await response.json()
     return result.code === 1
   } catch (error) {
     console.error('检查登录异常：', error)
@@ -125,7 +117,7 @@ export async function checkLogin(token: string): Promise<boolean> {
 }
 
 export async function getUserInfo(token: string): Promise<UserInfo> {
-  const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.GET_USER_INFO}`, {
+  const result = await requestJson<LoginResponse>(`${API_BASE_URL}${API_ENDPOINTS.GET_USER_INFO}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -133,16 +125,15 @@ export async function getUserInfo(token: string): Promise<UserInfo> {
     }
   })
 
-  const result: LoginResponse = await response.json()
   if (result.code === 1) {
     return result.data.user_info
-  } else {
-    throw new Error(`${i18n.t('auth.get_user_info_failed')}：${result.msg}`)
   }
+
+  throw new Error(`${i18n.t('auth.get_user_info_failed')}：${result.msg}`)
 }
 
 export async function logout(token: string): Promise<void> {
-  const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.LOGOUT}`, {
+  const result = await requestJson<LoginResponse>(`${API_BASE_URL}${API_ENDPOINTS.LOGOUT}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -150,7 +141,6 @@ export async function logout(token: string): Promise<void> {
     }
   })
 
-  const result: LoginResponse = await response.json()
   if (result.code !== 1) {
     throw new Error(`${i18n.t('auth.logout_failed')}：${result.msg}`)
   }

@@ -1,27 +1,82 @@
 const { app, BrowserWindow, Menu, shell, ipcMain } = require('electron')
 const path = require('path')
 const { spawn } = require('child_process')
+const os = require('os')
 
-// 判断是否为开发环境：检查是否通过 electron . 启动且有 node_modules
 const isDev = !app.isPackaged
 
+function isWsl() {
+  return process.platform === 'linux' && (
+    Boolean(process.env.WSL_INTEROP) ||
+    os.release().toLowerCase().includes('microsoft')
+  )
+}
+
+function spawnDetached(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      detached: true,
+      stdio: 'ignore',
+      ...options
+    })
+
+    child.once('error', reject)
+    child.once('spawn', () => {
+      child.unref()
+      resolve()
+    })
+  })
+}
+
+function escapePowerShellString(value) {
+  return String(value).replace(/'/g, "''")
+}
+
+function openExternalUrl(url) {
+  if (!url || typeof url !== 'string') {
+    return Promise.reject(new Error('Invalid external URL'))
+  }
+
+  if (isWsl()) {
+    const escapedUrl = escapePowerShellString(url)
+    const openers = [
+      () => spawnDetached('powershell.exe', [
+        '-NoProfile',
+        '-ExecutionPolicy',
+        'Bypass',
+        '-Command',
+        `Start-Process '${escapedUrl}'`
+      ]),
+      () => spawnDetached('cmd.exe', ['/c', 'start', '""', url], { shell: true }),
+      () => spawnDetached('xdg-open', [url]),
+      () => shell.openExternal(url)
+    ]
+
+    return openers.reduce(
+      (promise, open) => promise.catch(() => open()),
+      Promise.reject(new Error('No external opener available in WSL'))
+    )
+  }
+
+  return shell.openExternal(url)
+}
+
 function createWindow() {
-  // 隐藏菜单栏
   Menu.setApplicationMenu(null)
-  
+
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
     minWidth: 700,
     minHeight: 560,
-    frame: false, // 彻底隐藏原生边框和标题栏
+    frame: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     },
     show: false,
-    title: 'All Calculator',
+    title: '全能计算器',
     icon: path.join(__dirname, '../public/计算器.ico')
   })
 
@@ -31,27 +86,66 @@ function createWindow() {
 
   if (isDev) {
     win.loadURL('http://localhost:5175/')
-    win.webContents.openDevTools() // 开发模式打开调试工具
+    win.webContents.openDevTools()
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'))
   }
 
-  // 处理外部链接，在系统默认浏览器中打开
   win.webContents.on('new-window', (event, url) => {
     event.preventDefault()
-    shell.openExternal(url)
+    openExternalUrl(url).catch((error) => {
+      console.error('Failed to open external URL:', error)
+    })
   })
 
-  // 处理页面内的链接点击
   win.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url)
-    return { action: 'deny' }  // 阻止在Electron中打开新窗口
+    openExternalUrl(details.url).catch((error) => {
+      console.error('Failed to open external URL:', error)
+    })
+    return { action: 'deny' }
   })
 }
 
-// IPC Handlers
 ipcMain.handle('get-app-version', () => {
   return app.getVersion()
+})
+
+ipcMain.handle('open-external', async (event, url) => {
+  if (!url) {
+    return { success: false, error: 'Missing URL' }
+  }
+
+  await openExternalUrl(url)
+  return { success: true }
+})
+
+ipcMain.handle('http-request', async (event, options = {}) => {
+  const { url, method = 'GET', headers = {}, body } = options
+
+  if (!url) {
+    return { ok: false, status: 0, error: 'Missing URL' }
+  }
+
+  try {
+    const response = await fetch(url, {
+      method,
+      headers,
+      body
+    })
+
+    const text = await response.text()
+    return {
+      ok: response.ok,
+      status: response.status,
+      text
+    }
+  } catch (error) {
+    return {
+      ok: false,
+      status: 0,
+      error: error.message || String(error)
+    }
+  }
 })
 
 ipcMain.on('window-minimize', () => {
@@ -98,19 +192,12 @@ ipcMain.handle('start-update', (event, updateInfo) => {
     updaterPath = path.join(__dirname, '..', 'updater.exe')
     installDir = path.join(__dirname, '..')
   } else {
-    // 生产环境下，如果 updater.exe 不在 exe 同级目录，可能在 resources 目录或其他位置
-    // 根据 package.json 配置，extraFiles: [{"from": "updater.exe", "to": "."}]
-    // 这意味着它应该在 exe 同级目录下。
-    // 但是，有些情况下（如 nsis 安装后），可能需要检查路径。
-    // 另外，如果是未打包运行（虽然 !isDev，但可能是 electron 启动的），需要注意。
-    
-    // 检查文件是否存在，如果不存在尝试 resources 目录（防止配置变更）
     const fs = require('fs')
     if (!fs.existsSync(updaterPath)) {
-        const resourcePath = path.join(process.resourcesPath, '..', 'updater.exe')
-        if (fs.existsSync(resourcePath)) {
-            updaterPath = resourcePath
-        }
+      const resourcePath = path.join(process.resourcesPath, '..', 'updater.exe')
+      if (fs.existsSync(resourcePath)) {
+        updaterPath = resourcePath
+      }
     }
   }
 
@@ -129,7 +216,7 @@ ipcMain.handle('start-update', (event, updateInfo) => {
       detached: true,
       stdio: 'ignore'
     })
-    
+
     subprocess.on('error', (err) => {
       console.error('Failed to spawn updater (subprocess error):', err)
     })
