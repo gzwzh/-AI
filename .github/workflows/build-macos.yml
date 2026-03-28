@@ -39,7 +39,7 @@ jobs:
           iconutil -c icns build/icon.iconset -o build/计算器.icns
 
       - name: Build macOS package
-        run: npx electron-builder --mac zip --config.directories.output=release_mac --config.mac.icon=build/计算器.icns --config.mac.artifactName=全能计算器-\${version}.\${ext}
+        run: npx electron-builder --mac zip --publish never --config.directories.output=release_mac --config.mac.icon=build/计算器.icns --config.mac.artifactName=全能计算器-\${version}.\${ext}
 
       - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
